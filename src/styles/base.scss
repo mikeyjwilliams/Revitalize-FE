@@ -1,0 +1,65 @@
+// Fonts
+@import url('https://use.typekit.net/she4pxn.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+@import 'reset';
+// Vars and Mixins
+@import 'variables';
+@import 'global';
+@import 'mixins';
+
+// Pages Here
+@import '../views/Landing/LandingPage.scss';
+
+@import '../views/Login/Login.scss';
+@import '../views/Register/Register.scss';
+
+@import '../views/ProjectsHome/CTAplusTrending/CTAPlusTrades.scss';
+@import '../views/ProjectsHome/SubscribeCTA/SubscribeCTA.scss';
+@import '../views/ProjectsHome/RecomendedPlusStories/RecommendedPlusStories.scss';
+@import '../views/ProjectsHome/ProjectsHome.scss';
+@import '../views/ProjectsHome/ProjectsHome.scss';
+@import '../views/ProjectsHome/CTAplusTrending/CTAPlusTrades.scss';
+@import '../views/ProjectsHome/SubscribeCTA/SubscribeCTA.scss';
+@import '../views/ProjectsHome/RecomendedPlusStories/RecommendedPlusStories.scss';
+
+@import '../views/Messages/Messages.scss';
+
+@import '../views/ProjectPage/ProjectPage.scss';
+
+@import '../views/CreateProjWizard/CreateProjectWizard.scss';
+
+// Browse pages
+@import '../views/Browse/Browse.scss';
+@import '../views/BrowseAll/BrowseAll.scss';
+
+@import '../views/About/About.scss';
+@import '../components/PhotoUpload/Droppy.scss';
+
+// Components Here
+@import '../components/Card/Card.scss';
+@import '../components/Layout/Footer.scss';
+@import '../components/Layout/Nav.scss';
+
+// Mapbox
+@import '../../node_modules/mapbox-gl/dist/mapbox-gl.css';
+@import '../../node_modules/react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
+@import '../components/Map/SearchableMap.scss';
+
+// Settings page
+@import '../views/SetupProfile/SetupProfile.scss';
+
+//Student Application Form
+@import '../views/StudentApplicationForm/StudentApplicationForm.scss';
+
+// Dashboard
+@import '../views/DashboardV2/Dashboard.scss';
+
+// Progress Bar
+@import '../components/ProgressBar/ProgressBar.scss';
+
+// Loading spinner
+@import '../components/LoadingSpinner/LoadingSpinner.scss';
+
+// Initial Avatar
+@import '../components/InitialAvatar/InitialAvatar.scss';
