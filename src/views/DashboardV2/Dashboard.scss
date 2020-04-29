@@ -75,11 +75,19 @@
                 border-bottom-color: $bleached-black;
                 border-bottom-style: solid;
                 border-bottom-width: 3px;
+                .dashboard-section-inner-container {
+                    @include skeleton-section-dark;
+                    @include bottomBoxShadowDark;
+                }
             }
             hr {
                 border-top-color: rgba(255, 255, 255, 0.18);
             }
         }
     }
+    .dashboard-stats{
+      .a-container p{
+        color:$snow-white;
+      }
+    }
 }
-
