@@ -5,6 +5,17 @@
 	height: 360px;
 	font-size: 1.2rem;
 	@include subtleBoxShadow;
+
+	@media #{$desktop} {
+		max-width: 220px; //maximum size a project card can expand in full view.
+	}
+	@media #{$tablet} {
+		max-width: 220px; // card in views below 1200px and above 500px
+	}
+	@media #{$mobile} {
+		max-width: 350px; // cards in views below 500px
+	}
+
 	.project-card-image {
 		width: 100%;
 		position: relative;
@@ -47,7 +58,6 @@
 		padding: 10px;
 		height: calc(100% - 150px);
 		justify-content: space-between;
-		max-width: 220px;
 
 		.project-card-body-descript {
 			h5 {
