@@ -5,8 +5,8 @@
  */
 import React from 'react';
 
-import Nav from '../../components/Layout/Nav';
-import Footer from '../../components/Layout/Footer';
+// import Nav from '../../components/Layout/Nav';
+// import Footer from '../../components/Layout/Footer';
 
 import Header from './Header/Header';
 import ProjectSpotlight from './ProjectSpotlight/ProjectSpotlight';
@@ -24,7 +24,7 @@ class LandingPage extends React.Component {
 	render() {
 		return (
 			<>
-			<Nav />
+			{/*<Nav /> */}
 			<div className="landing">
 				<Header />
 				<CrowdFunding />
@@ -32,7 +32,7 @@ class LandingPage extends React.Component {
 				<FeaturedProjects />
 				<SearchProjects />
 			</div>
-			<Footer />
+			{/*<Footer /> */}
 			</>
 		);
 	}

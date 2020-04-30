@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import Nav from '../../components/Layout/Nav';
-import Footer from '../../components/Layout/Footer';
+// import Nav from '../../components/Layout/Nav';
+// import Footer from '../../components/Layout/Footer';
 
 import Top from './Top/Top';
 import ProjectCard from './ProjectCard/ProjectCard';
@@ -38,12 +38,12 @@ const BrowseAll = () => {
 
 	return (
 		<>
-			<Nav />
+			{/*<Nav /> */}
 			<div className="browse-all-container">
-				
+
 				<Top submitQuery={submitQuery} queryFormState={queryFormState} setQueryFormState={setQueryFormState}  />
 
-				
+
 
 				<section className="browse-all-project-card-container">
 					{projectState && projectState.projects
@@ -52,7 +52,7 @@ const BrowseAll = () => {
 				</section>
 
 			</div>
-			<Footer />
+			{/*<Footer /> */}
 		</>
 	);
 };

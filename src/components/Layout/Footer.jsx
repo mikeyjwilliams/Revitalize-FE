@@ -16,6 +16,7 @@ const links = [
 export default function Footer() {
 	return (
 		<div className="footer">
+		
 
 			<ul className="links-container">
 				{links.map(({ key, path, label }) => (
@@ -31,7 +32,7 @@ export default function Footer() {
 				<a href="https://Linkedin.com" alt="LinkedIn"> <FaLinkedin /> </a>
 				<a href="https://twitter.com" alt="Twitter"> <FaTwitter /> </a>
 			</div>
-			
+
 			<div className="bottom-footer">
 				<div className="copyright">ReVitalize</div>
 				<i>&copy;2019 All Rights Reserved</i>
@@ -40,5 +41,3 @@ export default function Footer() {
 		</div>
 	);
 }
-
-

@@ -5,8 +5,8 @@ import moment from 'moment';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_PROJECT } from '../../graphql/mutations/Project';
 
-import Nav from '../../components/Layout/Nav';
-import Footer from '../../components/Layout/Footer';
+// import Nav from '../../components/Layout/Nav';
+// import Footer from '../../components/Layout/Footer';
 import Form1 from './Form1/Form1';
 import Form2 from './Form2/Form2';
 import Form3 from './Form3/Form3';
@@ -62,7 +62,7 @@ const CreateProjectWizard = ({ history }) => {
 			country: "United States",
 			zip: parseInt(projectDetails.zip, 10),
 		};
-		
+
 		console.log("added project in crw  1", newProjectDetails);
 
 		// SOS FRANK: UPDATE CACHE
@@ -75,7 +75,7 @@ const CreateProjectWizard = ({ history }) => {
 
 	return (
 		<>
-			<Nav />
+			{/*<Nav />*/}
 			<section className="create-project-wizard-container">
 				<div className="create-project">
 					<div className="form-plus-quote-container">
@@ -139,7 +139,7 @@ const CreateProjectWizard = ({ history }) => {
 					</div>
 				</div>
 			</section>
-			<Footer />
+				{/*<Footer />*/}
 		</>
 	);
 };

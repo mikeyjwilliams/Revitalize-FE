@@ -8,8 +8,8 @@ import { GET_USER } from "../../graphql/queries";
 import Toggle from "react-toggle";
 import "react-toggle/style.css"
 
-import Nav from "../../components/Layout/Nav";
-import Footer from "../../components/Layout/Footer";
+// import Nav from "../../components/Layout/Nav";
+// import Footer from "../../components/Layout/Footer";
 
 
 const SetupProfile = props => {
@@ -71,9 +71,9 @@ const SetupProfile = props => {
 
     return (
         <>
-            {props.destination === "settings" ? (
-                <Nav />
-            ) : null}
+            {/*props.destination === "settings" ? (
+                {/*<Nav />
+            ) : null} */}
 
             <section
                 className={`setup-profile-container ${props.destination === "settings" ? "settings-view" : ""}`}
@@ -202,13 +202,11 @@ const SetupProfile = props => {
                     ) : null}
                 </div>
             </section>
-            {props.destination === "settings" ? (
-                <Footer />
-            ) : null}
+            {/*{props.destination === "settings" ? (
+                {/*<Footer />            ) : null */}
         </>
     );
 };
 
 
 export default  withRouter(SetupProfile);
-

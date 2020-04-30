@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import Nav from '../../components/Layout/Nav';
-import Footer from "../../components/Layout/Footer";
+// import Nav from '../../components/Layout/Nav';
+// import Footer from "../../components/Layout/Footer";
 import Sidebar from './DashboardComponents/Sidebar/Sidebar';
 import DashNav from "./DashboardComponents/DashNav/DashNav";
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
@@ -34,7 +34,7 @@ const Dashboard = () => {
 
     const [ selectedProject, setProject ] = useState({ project: null, id: null, showMore: false, buttonToggle: false });
 
-    
+
     // This useQuery pulls in tons of data and can pull more! See graphql/queries to adjust what it pulls in
     const { loading, error, data } = useQuery( GET_USER_PROFILE );
 
@@ -46,7 +46,7 @@ const Dashboard = () => {
     const setAvailableDashNavTabs = (newAvailTabArray, howMany) => {
         setDashNavTab({ ...dashNavTabState, selectedDashNavTab: newAvailTabArray[0], dashTabs: newAvailTabArray, dashTabCount: howMany })
     };
-    
+
     const selectDashNavTab = userSelectedTab => {
         setMainTabs({ ...mainTabs, selectedMainTab: "" });
         setProject({ project: null, id: null, showMore: false, buttonToggle: false });
@@ -54,7 +54,7 @@ const Dashboard = () => {
     };
 
 
-    
+
 
     useEffect(() => {
         // refetch();
@@ -77,7 +77,7 @@ const Dashboard = () => {
         <>
             {data.me.projects ? setAvailableDashNavTabs : null}
             <div className="dashboard-container" >
-                <Nav />
+                {/*<Nav /> */}
                     <section className="dashboard">
                         <Sidebar
                             user={data.me}
@@ -169,7 +169,7 @@ const Dashboard = () => {
                             }
                         </section>
                     </section>
-                <Footer />
+                {/*<Footer /> */}
             </div>
 
         </>

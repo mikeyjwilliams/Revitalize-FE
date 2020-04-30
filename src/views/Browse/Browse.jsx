@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Nav from '../../components/Layout/Nav';
-import Footer from '../../components/Layout/Footer';
+// import Nav from '../../components/Layout/Nav';
+// import Footer from '../../components/Layout/Footer';
 
 import Top from './Top/Top';
 import Spotlight from './Spotlight/Spotlight';
@@ -15,7 +15,7 @@ const Start = () => {
 
 	return (
 		<>
-			<Nav />
+			{/*<Nav /> */}
 			<div className="browse-container">
 				<Top />
 				<Spotlight />
@@ -25,7 +25,7 @@ const Start = () => {
 				<Noteworthy />
 				<Hire />
 			</div>
-			<Footer />
+			{/*<Footer /> */}
 		</>
 	);
 };
