@@ -14,7 +14,7 @@ const links = [
 
 export default function Footer() {
 	return (
-		<div className="footer">
+		<footer className="footer">
 			<ul className="links-container">
 				{links.map(({ key, path, label }) => (
 					<li key={key}>
@@ -46,6 +46,6 @@ export default function Footer() {
 				<div className="copyright">ReVitalize</div>
 				<i>&copy;2019 All Rights Reserved</i>
 			</div>
-		</div>
+		</footer>
 	);
 }
