@@ -188,7 +188,7 @@ const SetupProfile = props => {
                                             placeholder="State"
                                             value={profileData.state}
                                             onChange={handleChanges}
-                                        /> {" "}{' '}
+                                        /> {" "}{' '}{' '}
                                         <input
                                             name="zip"
                                             type="text"
