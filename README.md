@@ -1,4 +1,6 @@
 # Important Links
+[![Maintainability](https://api.codeclimate.com/v1/badges/7d5a9c830a852fd00e18/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/revitalized-fe/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7d5a9c830a852fd00e18/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/revitalized-fe/test_coverage)
 
 [Production deploy](https://revitalize.community)
 [Staging deploy](https://revitalize.netlify.com)
