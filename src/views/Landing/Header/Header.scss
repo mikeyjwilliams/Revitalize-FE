@@ -343,7 +343,7 @@
 		}
 		.value-tiles {
 			div {
-				color: $machiavellian;
+				color: darken($machiavellian, 10%);
 			}
 		}
 	}
@@ -355,7 +355,7 @@
 			.opportunities,
 			.pathways {
 				a {
-					color: $saphire-mox;
+					color: $cerulean;
 				}
 			}
 		}
