@@ -1,6 +1,6 @@
 # Important Links
-[![Maintainability](https://api.codeclimate.com/v1/badges/7d5a9c830a852fd00e18/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/revitalized-fe/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/7d5a9c830a852fd00e18/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/revitalized-fe/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5baf4f53288ddd737410/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/Revitalize-FE/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5baf4f53288ddd737410/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/Revitalize-FE/test_coverage)
 
 [Production deploy](https://revitalize.community)
 [Staging deploy](https://revitalize.netlify.com)
