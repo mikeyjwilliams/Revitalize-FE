@@ -34,8 +34,13 @@ const Nav = props => {
 
 	if(darkModeActive === null){
 		setDarkMode(false);
+	} else if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
+		document.querySelector('body').classList.add('dark-mode');
+	} else {
+		document.querySelector('body').classList.remove('dark-mode');
 	}
 	console.log("dark mode nav:", darkModeActive);
+
 
 	//custom hook for window.onClick
 	const [
