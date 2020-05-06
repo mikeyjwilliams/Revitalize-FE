@@ -43,6 +43,7 @@
 			margin-right: 20px;
 			margin-left: 20px;
 			background-size: 100px;
+			text-decoration: none;
 			@media #{$mobile} {
 				font-size: 3.3rem;
 			}
@@ -80,6 +81,7 @@
 		.social-links-container {
 			a {
 				color: $dark-electric-blue;
+				text-decoration: none;
 			}
 		}
 		.bottom-footer {
