@@ -1,5 +1,6 @@
 .project-card-container {
 	background-color: $snow-white;
+
 	margin: 10px;
 	border-radius: 5px;
 	height: 360px;
@@ -58,8 +59,14 @@
 		padding: 10px;
 		height: calc(100% - 150px);
 		justify-content: space-between;
+		.dark-mode{
+			background-color: $bleached-black;
+		}
 
 		.project-card-body-descript {
+			.dark-mode{
+				background-color: $bleached-black;
+			}
 			h5 {
 				margin: 10px 0;
 				width: 100%;
@@ -92,15 +99,18 @@
 }
 
 .dark-mode {
-	.project-card {
-		.project-card-inner {
-			color: $snow-white;
-			background-color: $darkness;
+	.project-card-container{
+		background-color: $darkness;
+		.project-card {
+			.project-card-inner {
+				color: $snow-white;
+				background-color: $darkness;
 
-			.project-card-body {
-				.project-card-body-money {
-					div {
-						background-color: $maastricht-blue;
+				.project-card-body {
+					.project-card-body-money {
+						div {
+							background-color: $maastricht-blue;
+						}
 					}
 				}
 			}

@@ -30,7 +30,17 @@ const authenticatedLinks = [
 
 const Nav = props => {
 	const [activeHamburger, setActiveHamburger] = useState(false);
-	const [darkModeActive, setDarkMode] = useState(false);
+	const [darkModeActive, setDarkMode] = useState(JSON.parse(localStorage.getItem('dark-mode')));
+
+	if(darkModeActive === null){
+		setDarkMode(false);
+	} else if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
+		document.querySelector('body').classList.add('dark-mode');
+	} else {
+		document.querySelector('body').classList.remove('dark-mode');
+	}
+	console.log("dark mode nav:", darkModeActive);
+
 
 	//custom hook for window.onClick
 	const [
@@ -42,6 +52,11 @@ const Nav = props => {
 	const toggleDarkMode = () => {
 		setDarkMode(!darkModeActive);
 		localStorage.setItem('dark-mode', !darkModeActive);
+		if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
+			document.querySelector('body').classList.add('dark-mode');
+		} else {
+			document.querySelector('body').classList.remove('dark-mode');
+		}
 	};
 
 	const setActive = e => {
@@ -51,13 +66,13 @@ const Nav = props => {
 		}
 	};
 
-	useEffect(() => {
-		if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
-			document.querySelector('body').classList.add('dark-mode');
-		} else {
-			document.querySelector('body').classList.remove('dark-mode');
-		}
-	}, [darkModeActive]);
+	// useEffect(() => {
+	// 	if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
+	// 		document.querySelector('body').classList.add('dark-mode');
+	// 	} else {
+	// 		document.querySelector('body').classList.remove('dark-mode');
+	// 	}
+	// }, [darkModeActive]);
 
 	// Current user
 	const { client, loading, error, data } = useQuery(GET_USER);
