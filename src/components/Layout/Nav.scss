@@ -235,6 +235,9 @@ nav {
 					color: $maastricht-blue;
 					background-color: $snow-white;
 				}
+				@media #{$tablet} {
+					font-size: 2.2rem;
+				}
 			}
 			.user {
 				color: $snow-white;
