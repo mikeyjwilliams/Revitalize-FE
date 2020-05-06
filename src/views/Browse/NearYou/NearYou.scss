@@ -4,6 +4,7 @@
 		margin-left: -1%;
 	}
 }
+	.near-you-section {
 		.carousel-card-inner.__near-you {
 			height: 290px;
 			.carousel-card-image {
@@ -37,9 +38,10 @@
 				font-size: 1.6rem;
 			}
 		}
-	
+	}
 
 .dark-mode {
+  .near-you-section {
 	.carousel-card {
 		.carousel-card-inner.__near-you {
 			a {
@@ -47,4 +49,5 @@
 			}
 		}
 	}
+  }
 }
