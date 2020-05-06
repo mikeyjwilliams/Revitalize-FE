@@ -24,7 +24,7 @@ class LandingPage extends React.Component {
 	render() {
 		return (
 			<>
-			{/*<Nav /> */}
+			
 			<div className="landing">
 				<Header />
 				<CrowdFunding />
@@ -32,7 +32,7 @@ class LandingPage extends React.Component {
 				<FeaturedProjects />
 				<SearchProjects />
 			</div>
-			{/*<Footer /> */}
+
 			</>
 		);
 	}

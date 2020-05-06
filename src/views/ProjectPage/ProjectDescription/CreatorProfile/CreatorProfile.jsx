@@ -1,7 +1,7 @@
 import React from 'react';
 // import email from '../../../../assets/SingleProjectPage/email.png';
 import { FaEnvelope } from "react-icons/fa";
-import InitialAvatar from "../../../../components/InitialAvatar/InitialAvatar";
+import InitialAvatar from "../../../../helpers/InitialAvatar";
 
 const CreatorProfile = ({ projectCreator }) => {
 	return (
@@ -10,12 +10,12 @@ const CreatorProfile = ({ projectCreator }) => {
 				{projectCreator.profileImage ? (
 					<img className="profilePic" src={projectCreator.profileImage} alt="Profile" />
 				) : (
-					<InitialAvatar 
-						firstName={projectCreator.firstName} 
+					<InitialAvatar
+						firstName={projectCreator.firstName}
 						lastName={projectCreator.lastName}
-						height="120" 
-						width="120" 
-						useRandomColor={1}
+						height="120"
+						width="120"
+
 						className="creator-profile-image"
 					/>
 				)}

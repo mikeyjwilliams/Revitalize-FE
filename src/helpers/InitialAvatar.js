@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 
-export const InitialAvatar = props => {
+const InitialAvatar = props => {
 
 
     const getInitials = (firstName, lastName) => {
@@ -14,16 +14,16 @@ export const InitialAvatar = props => {
     }
     const initials = getInitials(props.firstName, props.lastName);
 
-    const getRandomColor = () => {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
-    const randomColorBg = getRandomColor();
-    const randomColorFg = getRandomColor();
+    // const getRandomColor = () => {
+    //     const letters = '0123456789ABCDEF';
+    //     let color = '#';
+    //     for (let i = 0; i < 6; i++) {
+    //         color += letters[Math.floor(Math.random() * 16)];
+    //     }
+    //     return color;
+    // }
+    // const randomColorBg = getRandomColor();
+    // const randomColorFg = getRandomColor();
 
     const getDimensions = heightOrWidth => {
         if (heightOrWidth) {
@@ -37,7 +37,7 @@ export const InitialAvatar = props => {
 
     const getFontSize = (tall, wide) => {
         if (tall && wide) {
-            const output = (Number(tall) + Number(wide)) / 2;
+            const output = (Number(tall) + Number(wide)) / 2.4;
             return Math.ceil(output * 0.5);
         }
         return "16"
@@ -50,8 +50,8 @@ export const InitialAvatar = props => {
         width: ${finalWidth + "px"};
         font-size: ${finalFontSize + "px"};
         border-radius: 100%;
-        background-color: ${props.useRandomColor ? randomColorBg : "rgba(230,230,230,1)"};
-        color: ${props.useRandomColor ? randomColorFg : "black"};
+        background-color: #235597;
+        color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -59,9 +59,8 @@ export const InitialAvatar = props => {
         font-weight: bold;
         letter-spacing: 2px;
         margin: 0 auto;
+        padding: 5px;
     `
     return <Avatar>{initials}</Avatar>;
 }
-
-
-
+export default InitialAvatar;

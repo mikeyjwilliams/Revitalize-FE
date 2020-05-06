@@ -5,7 +5,7 @@ import { FaMoon, FaCog, FaWindowClose } from 'react-icons/fa';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER } from '../../graphql/queries/Users';
 
-import { InitialAvatar } from '../../helpers/InitialAvatar.js';
+import InitialAvatar from '../../helpers/InitialAvatar.js';
 import { useWindowHook } from '../../helpers/windowOnClickHook.js';
 
 const unauthenticatedLinks = [
@@ -51,13 +51,7 @@ const Nav = props => {
 		}
 	};
 
-	useEffect(() => {
-		if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
-			document.querySelector('body').classList.add('dark-mode');
-		} else {
-			document.querySelector('body').classList.remove('dark-mode');
-		}
-	}, [darkModeActive]);
+
 
 	// Current user
 	const { client, loading, error, data } = useQuery(GET_USER);
@@ -135,12 +129,12 @@ const Nav = props => {
 									<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
 								) : (
 									<InitialAvatar
-										height={40}
-										width={40}
-										className="user-icon"
+										height={60}
+										width={60}
+
 										firstName={data.me.firstName}
 										lastName={data.me.lastName}
-										useRandomColor={1}
+
 									/>
 								)}
 

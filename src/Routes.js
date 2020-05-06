@@ -26,10 +26,11 @@ import StudentApplicationForm from './views/StudentApplicationForm/StudentApplic
 export const Routes = () => {
 	return (
 		<BrowserRouter>
-			<div className="page-container">
-				
+			<div className="page-container"> {/* this was added to help debug footer */}
+
 				<Nav />
-				<Switch>
+				<Switch> {/* Add components here.. this will swap out anything in the body of the app.. Nav and Footer will be static
+					unless we make a new Router File.*/}
 					{/* public routes */}
 					<Route exact path="/" component={LandingPage} />
 					<Route exact path="/register" component={Register} />
