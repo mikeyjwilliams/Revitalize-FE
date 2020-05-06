@@ -2,6 +2,8 @@
 	.slider {
 		width: 101.5%;
 		margin-left: -1%;
+	}
+}
 		.carousel-card-inner.__near-you {
 			height: 290px;
 			.carousel-card-image {
@@ -35,14 +37,13 @@
 				font-size: 1.6rem;
 			}
 		}
-	}
-}
+	
 
 .dark-mode {
 	.carousel-card {
 		.carousel-card-inner.__near-you {
 			a {
-				color: $maastricht-blue;
+				color: $sky-blue;
 			}
 		}
 	}
