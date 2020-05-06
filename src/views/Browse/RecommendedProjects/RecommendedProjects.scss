@@ -44,10 +44,12 @@
 .recommened-projects-section{
 	.slider {
 		.carousel-card-body-descript {
-				h5 {
+			 h5 {
 				color: $sky-blue;
-			  }
-			}
+				text-decoration: underline; // work around too have underline same color as text - MW
+				text-decoration-color: $sky-blue;
+			 }
+		   }
   		}
 	}
 }
