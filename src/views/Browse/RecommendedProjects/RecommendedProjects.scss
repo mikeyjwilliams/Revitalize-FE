@@ -1,4 +1,5 @@
-.browse-container .recommened-projects-section {
+//.browse-container
+ .recommened-projects-section {
 	.slider {
 		width: 101.5%;
 		margin-left: -1%;
@@ -37,5 +38,16 @@
 				}
 			}
 		}
+	}
+}
+.dark-mode {
+.recommened-projects-section{
+	.slider {
+		.carousel-card-body-descript {
+				h5 {
+				color: $sky-blue;
+			  }
+			}
+  		}
 	}
 }
