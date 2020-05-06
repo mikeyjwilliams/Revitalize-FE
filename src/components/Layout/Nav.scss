@@ -204,6 +204,10 @@ nav {
 .dropdown-darkMode{
 	font-size: 2.6rem;
 	color: $snow-white;
+
+	&:hover{
+		cursor: pointer;
+	}
 }
 
 .dark-mode {
