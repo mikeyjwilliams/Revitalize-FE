@@ -46,6 +46,10 @@
 			justify-content: flex-end;
 
 			.carousel-card-location {
+				border: 1px solid $cerulean;
+				border-radius: 5px;
+				background-color: $cerulean;
+				opacity: 0.9;
 				z-index: 1;
 			}
 
@@ -57,11 +61,11 @@
 			// 	left: 0;
 			// 	border-radius: 5px 5px 0 0;
 			// 	background: linear-gradient(196deg, rgba($bleached-black, 1), rgba(#414141, 0.15));
-			// 	opacity: 0.4;
-			// 	// &:hover {
-			// 	// 	opacity: 0.5;
-			// 	// 	transition-duration: 1s;
-			// 	// }
+			// 	opacity: 0.5;
+			// 	&:hover {
+			// 		opacity: 0;
+			// 		transition-duration: 1s;
+			// 	}
 			// }
 
 			&:before {
