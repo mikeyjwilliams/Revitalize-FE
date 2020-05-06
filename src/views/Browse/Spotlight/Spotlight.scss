@@ -44,6 +44,9 @@
 			background: linear-gradient(133deg, rgba($bleached-black, 1), rgba(#414141, 0.15));
 			opacity: 0.5;
 		}
+		@media #{$mobile} {
+			padding: 0;
+		}
 		h2 {
 			text-transform: uppercase;
 			line-height: 2;
@@ -81,7 +84,16 @@
 			margin: 0;
 			background-color: $orilean-blue;
 			margin: 5px 0;
-			opacity: 0.5;
+			opacity: 0.7;
 			border-radius: 5%;
 		}
 	}
+
+.dark-mode {
+	.spotlight-card {
+		color: $snow-white;
+		.spotlight {
+			background-color: $black-void;
+		}
+	}
+}
