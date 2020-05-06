@@ -4,11 +4,8 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	padding: 15px;
-	height: 320px;
-	position: relative;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	height: 338px;
+
 	@media (max-width: '750px') {
 		height: 385px;
 	}
