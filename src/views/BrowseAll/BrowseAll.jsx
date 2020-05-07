@@ -13,11 +13,11 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import { QUERY_PROJECTS } from '../../graphql/queries';
 
 const BrowseAll = () => {
-	const [ projectState, setProjectState ] = useState();
-	const [ queryFormState, setQueryFormState ] = useState({ query: "" });
+	const [projectState, setProjectState] = useState();
+	const [queryFormState, setQueryFormState] = useState({ query: "" });
 
 
-	const [ queryProjects, { loading, data } ] = useLazyQuery( QUERY_PROJECTS );
+	const [queryProjects, { loading, data }] = useLazyQuery(QUERY_PROJECTS);
 
 
 	useEffect(() => {
@@ -39,11 +39,11 @@ const BrowseAll = () => {
 	return (
 		<>
 			<Nav />
-			<div className="browse-all-container">
-				
-				<Top submitQuery={submitQuery} queryFormState={queryFormState} setQueryFormState={setQueryFormState}  />
+			<main className="browse-all-container">
 
-				
+				<Top submitQuery={submitQuery} queryFormState={queryFormState} setQueryFormState={setQueryFormState} />
+
+
 
 				<section className="browse-all-project-card-container">
 					{projectState && projectState.projects
@@ -51,7 +51,7 @@ const BrowseAll = () => {
 						: null}
 				</section>
 
-			</div>
+			</main>
 			<Footer />
 		</>
 	);
