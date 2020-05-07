@@ -218,7 +218,7 @@ const Nav = props => {
 										))}
 										<li>
 											<Link to="/register">
-												<button className="register">Get Started</button>
+												<button type="button" className="register">Get Started</button>
 											</Link>
 										</li>
 									</ul>
