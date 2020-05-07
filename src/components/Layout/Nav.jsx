@@ -126,41 +126,43 @@ const Nav = props => {
 									</li>
 								),
 							)}
-							<div className="user" tabIndex="0" onClick={setActive}>
-								{data.me.firstName !== null ? (
-									<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
-								) : (
-										<span className="user-personal-greeting">Welcome</span>
-									)}
+							<li>
+								<div className="user" tabIndex="0" onClick={setActive}>
+									{data.me.firstName !== null ? (
+										<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
+									) : (
+											<span className="user-personal-greeting">Welcome</span>
+										)}
 
-								{data.me.profileImage !== null ? (
-									<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
-								) : (
-										<InitialAvatar
-											height={40}
-											width={40}
-											className="user-icon"
-											firstName={data.me.firstName}
-											lastName={data.me.lastName}
-											useRandomColor={1}
-										/>
-									)}
+									{data.me.profileImage !== null ? (
+										<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
+									) : (
+											<InitialAvatar
+												height={40}
+												width={40}
+												className="user-icon"
+												firstName={data.me.firstName}
+												lastName={data.me.lastName}
+												useRandomColor={1}
+											/>
+										)}
 
-								<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
-									<div className="arrow-up"></div>
-									<Link to="/settings" className="dropdown-option">
-										<FaCog className="icon" /> Settings
+									<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
+										<div className="arrow-up"></div>
+										<Link to="/settings" className="dropdown-option">
+											<FaCog className="icon" /> Settings
 									</Link>
-									<div onClick={toggleDarkMode} className="dropdown-option">
-										<FaMoon className="icon" />
+										<div onClick={toggleDarkMode} className="dropdown-option">
+											<FaMoon className="icon" />
 										Dark mode
 									</div>
-									<div onClick={logout} className="dropdown-option">
-										<FaWindowClose className="icon" />
+										<div onClick={logout} className="dropdown-option">
+											<FaWindowClose className="icon" />
 										Log out
 									</div>
+									</div>
 								</div>
-							</div>
+							</li>
 						</>
 					) : (
 							<>
