@@ -111,9 +111,11 @@ const Nav = props => {
 						<>
 							{authenticatedLinks.map(link =>
 								link.label === 'Create Project' ? (
-									<Link to={link.href} key={link.key}>
-										<button className="create-project-button">{link.label}</button>
-									</Link>
+									<li>
+										<Link to={link.href} key={link.key}>
+											<button className="create-project-button">{link.label}</button>
+										</Link>
+									</li>
 								) : link.label === 'Logout' ? (
 									<li className="navLinks logout" onClick={logout} key={link.key}>
 										<Link to={link.href}>{link.label}</Link>
