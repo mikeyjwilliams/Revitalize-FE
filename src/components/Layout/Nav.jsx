@@ -75,7 +75,7 @@ const Nav = props => {
 					<div className="leftNav">
 						<Link to="/" title="Home">
 							<div className="logo">
-								<span>Revitalize </span>
+								<h1>Revitalize </h1>
 							</div>
 						</Link>
 					</div>
@@ -87,7 +87,7 @@ const Nav = props => {
 					<div className="leftNav">
 						<Link to="/" title="Home">
 							<div className="logo">
-								<span>Revitalize </span>
+								<h1>Revitalize </h1>
 							</div>
 						</Link>
 					</div>
@@ -100,7 +100,7 @@ const Nav = props => {
 			<div className="leftNav">
 				<Link to="/" title="Home">
 					<div className="logo">
-						<span>ReVitalize </span>
+						<h1>ReVitalize </h1>
 					</div>
 				</Link>
 			</div>
@@ -128,21 +128,21 @@ const Nav = props => {
 								{data.me.firstName !== null ? (
 									<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
 								) : (
-									<span className="user-personal-greeting">Welcome</span>
-								)}
+										<span className="user-personal-greeting">Welcome</span>
+									)}
 
 								{data.me.profileImage !== null ? (
 									<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
 								) : (
-									<InitialAvatar
-										height={40}
-										width={40}
-										className="user-icon"
-										firstName={data.me.firstName}
-										lastName={data.me.lastName}
-										useRandomColor={1}
-									/>
-								)}
+										<InitialAvatar
+											height={40}
+											width={40}
+											className="user-icon"
+											firstName={data.me.firstName}
+											lastName={data.me.lastName}
+											useRandomColor={1}
+										/>
+									)}
 
 								<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
 									<div className="arrow-up"></div>
@@ -161,33 +161,33 @@ const Nav = props => {
 							</div>
 						</>
 					) : (
-						<>
-							{unauthenticatedLinks.map(({ key, href, label }) => (
-								<li className="navLinks" key={key}>
-									<Link to={href}>{label}</Link>
+							<>
+								{unauthenticatedLinks.map(({ key, href, label }) => (
+									<li className="navLinks" key={key}>
+										<Link to={href}>{label}</Link>
+									</li>
+								))}
+								<li>
+									<Link to="/register">
+										<button className="register">Get Started</button>
+									</Link>
 								</li>
-							))}
-							<li>
-								<Link to="/register">
-									<button className="register">Get Started</button>
-								</Link>
-							</li>
-							<div className="dark-mode-emoji">
-								<FaMoon onClick={() => toggleDarkMode()} />
-							</div>
-							{!localStorage.getItem('token') && (
-								<div
-									onClick={setActive}
-									className={`hamburger hamburger--squeeze ${activeHamburger && 'is-active'}`}
-									type="button"
-								>
-									<span className="hamburger-box">
-										<span className="hamburger-inner"></span>
-									</span>
+								<div className="dark-mode-emoji">
+									<FaMoon onClick={() => toggleDarkMode()} />
 								</div>
-							)}
-						</>
-					)}
+								{!localStorage.getItem('token') && (
+									<div
+										onClick={setActive}
+										className={`hamburger hamburger--squeeze ${activeHamburger && 'is-active'}`}
+										type="button"
+									>
+										<span className="hamburger-box">
+											<span className="hamburger-inner"></span>
+										</span>
+									</div>
+								)}
+							</>
+						)}
 				</ul>
 			</div>
 
@@ -203,26 +203,26 @@ const Nav = props => {
 												<Link to={href}>{label}</Link>
 											</li>
 										) : (
-											<li className="navLinks-overlay" key={key}>
-												<Link to={href}>{label}</Link>
-											</li>
-										),
+												<li className="navLinks-overlay" key={key}>
+													<Link to={href}>{label}</Link>
+												</li>
+											),
 									)}
 								</>
 							) : (
-								<ul>
-									{unauthenticatedLinks.map(({ key, href, label }) => (
-										<li className="navLinks-overlay" key={key}>
-											<Link to={href}>{label}</Link>
+									<ul>
+										{unauthenticatedLinks.map(({ key, href, label }) => (
+											<li className="navLinks-overlay" key={key}>
+												<Link to={href}>{label}</Link>
+											</li>
+										))}
+										<li>
+											<Link to="/register">
+												<button className="register">Get Started</button>
+											</Link>
 										</li>
-									))}
-									<li>
-										<Link to="/register">
-											<button className="register">Get Started</button>
-										</Link>
-									</li>
-								</ul>
-							)}
+									</ul>
+								)}
 						</ul>
 					</div>
 				</div>
