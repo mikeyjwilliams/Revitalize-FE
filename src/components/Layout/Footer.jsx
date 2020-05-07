@@ -26,12 +26,12 @@ export default function Footer() {
 			</ul>
 
 			<div className="social-links-container">
-				<a href="https://github.com" alt="Github"> <FaGithub /> </a>
-				<a href="https://facebook.com" alt="Facebook"> <FaFacebookF /> </a>
-				<a href="https://Linkedin.com" alt="LinkedIn"> <FaLinkedin /> </a>
-				<a href="https://twitter.com" alt="Twitter"> <FaTwitter /> </a>
+				<a href="https://github.com" alt="Github" aria-label="github link"> <FaGithub /> </a>
+				<a href="https://facebook.com" alt="Facebook" aria-label="facebook link"> <FaFacebookF /> </a>
+				<a href="https://Linkedin.com" alt="LinkedIn" aria-label="linkedIn social media link"> <FaLinkedin /> </a>
+				<a href="https://twitter.com" alt="Twitter" aria-label="twitter link"> <FaTwitter /> </a>
 			</div>
-			
+
 			<div className="bottom-footer">
 				<div className="copyright">ReVitalize</div>
 				<i>&copy;2019 All Rights Reserved</i>
