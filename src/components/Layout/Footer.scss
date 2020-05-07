@@ -4,9 +4,10 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	padding: 15px;
-	height: 338px;
+	height: 340px;
+
 	@media (max-width: '750px') {
-		height: 385px;
+		height: 400px;
 	}
 	.links-container {
 		display: flex;
