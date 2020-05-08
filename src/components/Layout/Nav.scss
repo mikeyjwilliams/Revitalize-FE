@@ -51,7 +51,7 @@ nav {
 				align-self: center;
 				font-size: 2.8rem;
 				letter-spacing: 0.09em;
-				color: $chillFi-purple;
+			//	color: $chillFi-purple;
 			}
 			.loading-banner {
 				margin-left: 20px;
@@ -62,7 +62,7 @@ nav {
 		}
 	}
 	.right-nav {
-		color: $chillFi-purple;
+		// color: $chillFi-purple;
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
@@ -88,6 +88,8 @@ nav {
 					color: $chillFi-purple;
 					letter-spacing: 0.06em;
 					line-height: 0.9;
+
+					@include nav-types;
 				}
 			}
 			.logout {
@@ -211,6 +213,11 @@ nav {
 		ul {
 			.navLinks a {
 				color: $snow-white;
+
+				@include nav-types(
+					$snow-white,
+				 	$cerulean,
+				  	$sub-zero);
 			}
 			.login {
 				color: $snow-white;

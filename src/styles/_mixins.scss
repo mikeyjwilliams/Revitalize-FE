@@ -80,5 +80,26 @@
 	padding: 15px 15px 15px 15px;
 }
 
+@mixin nav-types(
+	$anchor-color: $chillFi-purple,
+	$visit-color: $erudite-purple,
+	$hover-color: $cerulean) {
+
+	
+	&:link {
+		color: $anchor-color;
+	}
+
+	&:visited {
+		color: $visit-color;
+	}
+
+	&:hover {
+		color: $hover-color;
+	}
+
+	
+}
+
 
 
