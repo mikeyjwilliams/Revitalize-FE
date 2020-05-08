@@ -24,45 +24,19 @@ import electrician from "../../../assets/BrowsePage/electrician.jpg"
 import carpenter from "../../../assets/BrowsePage/carpenter2.jpg"
 
 const Hours = () => {
-	const companies = [
-		{
-			name: 'men-working',
-			image: `${menWorking}`,
-			logo: `${weworkLogo}`,
-			paintbrush: `${weworkBrush}`,
-			link: 'https://www.wework.com'
-		},
-		// {
-		// 	name: 'Habitat for Humanity',
-		// 	image: `${habitat}`,
-		// 	logo: `${habitatLogo}`,
-		// 	paintbrush: `${habitatBrush}`,
-		// 	link: 'https://www.habitat.org'
-		// },
-		// {
-		// 	name: 'TaskRabbit',
-		// 	image: `${taskrabbit}`,
-		// 	logo: `${taskrabbitLogo}`,
-		// 	paintbrush: `${taskrabbitBrush}`,
-		// 	link: 'https://www.taskrabbit.com'
-		// },
-	];
 
 	return (
 		<div className="hireContainer">
 			<h4>Put in Your Hours With Revitalize!</h4>
 			<div className="companies">
-				{/* {companies.map(c => {
-					return <Company key={c.name} info={c} />;
-				})} */}
-				<img className="companyContainer" src={menWorking} />
+				<img className="companyContainer1" src={menWorking} />
 				<img className="companyContainer" src={electrician} />
 				<img className="companyContainer" src={carpenter} />
-				
+
 			</div>
 		</div>
 	);
-	
+
 };
 
 export default Hours;
