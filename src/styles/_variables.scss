@@ -46,12 +46,17 @@ $live-fg: #15630e;
 $notlive-bg: #ffe3e3;
 $notlive-fg: #630e0e;
 
+// font families
+$primary-font: 'futura-pt', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
 //media queries
 $mobile: 'only screen and (max-width:500px)';
 $tablet: 'only screen and (max-width:1200px)';
 $tablet-small: 'only screen and (max-width:800px)';
 $tablet-short: 'only screen and (max-height:550px)';
 $desktop: 'only screen and (min-width:1200px)';
+
 
 // color mappings
 .color-erudite-purple {
