@@ -80,12 +80,18 @@
 	padding: 15px 15px 15px 15px;
 }
 
+/**
+* mixin nav-types()
+*  defualt colors set if no colors are given.
+* $anchor-color -> anchor links color
+* $visit-color -> visited links color
+* $hover-color -> hover links color
+**/
 @mixin nav-types(
 	$anchor-color: $chillFi-purple,
 	$visit-color: $erudite-purple,
 	$hover-color: $cerulean) {
 
-	
 	&:link {
 		color: $anchor-color;
 	}
@@ -97,8 +103,6 @@
 	&:hover {
 		color: $hover-color;
 	}
-
-	
 }
 
 
