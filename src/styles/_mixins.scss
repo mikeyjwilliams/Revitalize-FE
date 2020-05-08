@@ -82,11 +82,11 @@
 
 /**
 * mixin nav-types()
-*  defualt colors set if no colors are given.
+*  default colors set if no colors are given.
 * $anchor-color -> anchor links color
 * $visit-color -> visited links color
 * $hover-color -> hover links color
-**/
+ - MW **/ 
 @mixin nav-types(
 	$anchor-color: $chillFi-purple,
 	$visit-color: $erudite-purple,
