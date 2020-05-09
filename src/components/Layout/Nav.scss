@@ -211,22 +211,15 @@ nav {
 			}
 		}
 		ul {
-			.navLinks a {
+			.navLinks  a{
 				color: $snow-white;
 
 				@include nav-types(
-					$snow-white,
-				 	$cerulean,
-				  	$sub-zero);
+					$anchor-color: $snow-white,
+				 	$visit-color: $maastricht-blue,
+				  	$hover-color: $sub-zero);
 			}
-			.login {
-				color: $snow-white;
-				background-color: $maastricht-blue;
-				&:hover {
-					color: $maastricht-blue;
-					background-color: $snow-white;
-				}
-			}
+	
 			.register {
 				color: $snow-white;
 				background-color: $maastricht-blue;
@@ -235,7 +228,7 @@ nav {
 					background-color: $snow-white;
 				}
 			}
-			.user {
+			.user { // username becomes white
 				color: $snow-white;
 			}
 		}

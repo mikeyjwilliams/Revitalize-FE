@@ -89,7 +89,7 @@
  - MW **/ 
 @mixin nav-types(
 	$anchor-color: $chillFi-purple,
-	$visit-color: $erudite-purple,
+	$visit-color: darken($erudite-purple, 10%),
 	$hover-color: $cerulean) {
 
 	&:link {
@@ -102,6 +102,9 @@
 
 	&:hover {
 		color: $hover-color;
+	}
+	&:active {
+		color: $anchor-color;
 	}
 }
 
