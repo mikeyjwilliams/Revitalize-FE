@@ -37,6 +37,7 @@ nav {
 		margin-left: 10px;
 		a {
 			text-decoration: none;
+			@include nav-types();
 		}
 		.logo {
 			display: flex;
@@ -254,9 +255,7 @@ nav {
 				border-top: 15px solid $maastricht-blue;
 			}
 			.dropdown-option {
-				// &:hover {
-				// 	background-color: darken($maastricht-blue, 7.5%);
-				// }
+
 				&:hover {
 					background-color: $snow-white;
 					color: darken($maastricht-blue, 7.5%);
@@ -265,19 +264,3 @@ nav {
 		}
 	}
 }
-
-// nav.nav-frosted {
-// 	// // This is the frosted glass effect
-// 	// background-color: rgba($erudite-purple, 0.75);
-// 	// backdrop-filter: blur(8px);
-// 	width: 100%;
-// 	position: fixed;
-// 	@media #{$mobile} {
-// 		background: inherit;
-// 		height: 90px;
-// 	}
-// 	@media #{$tablet} {
-// 		background: inherit;
-// 		height: 90px;
-// 	}
-// }
