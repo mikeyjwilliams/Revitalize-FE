@@ -4,9 +4,10 @@ import { FaGithub, FaFacebookF, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const links = [
 	// { path: "#", label: "Learn More" },
-	{ path: '/about', label: 'Team' },
+	{ path: '/about', label: 'About' },
 	{ path: '/createproject', label: 'Create Project' },
 	{ path: '/projects', label: 'Projects' },
+	{ path: '/team', label: 'Team' },
 ].map(link => {
 	link.key = `nav-link-${link.href}-${link.label}`;
 	return link;
