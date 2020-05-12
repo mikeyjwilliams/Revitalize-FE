@@ -36,15 +36,15 @@ nav {
 		align-self: center;
 		margin-left: 10px;
 		a {
-			text-decoration: none;
-			@include nav-types();
-		}
+		@include nav-types();
+		text-decoration: none;
+		
 		.logo {
 			display: flex;
 			align-items: center;
 			margin: 20px;
 
-			span {
+			h1 {
 				@media #{$tablet} {
 					color: $abatross;
 				}
@@ -53,6 +53,7 @@ nav {
 				font-size: 2.8rem;
 				letter-spacing: 0.09em;
 			//	color: $chillFi-purple;
+		}
 			}
 			.loading-banner {
 				margin-left: 20px;
@@ -90,7 +91,7 @@ nav {
 					letter-spacing: 0.06em;
 					line-height: 0.9;
 
-					@include nav-types;
+					@include nav-types();
 				}
 			}
 			.logout {
@@ -207,25 +208,35 @@ nav {
 }
 
 .dark-mode {
-	nav {
+    .leftNav {
+	         a {
+				 @include nav-types(
+						$anchor-color: $snow-white,
+						$visit-color: $snow-white,
+						$hover-color: $sub-zero);
+				  }
 		.logo {
-			span {
-				color: $snow-white;
-			}
+				h1 {
+					color: inherit;
+		  		}
+  			 }
 			.loading-banner {
 				color: $mirage;
 			}
-		}
-		ul {
-			.navLinks  a{
-				color: $snow-white;
+		
+			ul {
+				.navLinks  a {
+					color: $snow-white;
 
-				@include nav-types(
-					$anchor-color: $snow-white,
-				 	$visit-color: $maastricht-blue,
-				  	$hover-color: $sub-zero);
+					@include nav-types(
+						$anchor-color: $snow-white,
+						$visit-color: $luigi,
+						$hover-color: $sub-zero);
+				}
 			}
-	
+		}
+
+
 			.register {
 				color: $snow-white;
 				background-color: $maastricht-blue;
@@ -238,6 +249,7 @@ nav {
 				color: $snow-white;
 			}
 		}
+	
 		.right-nav .dark-mode-emoji {
 			svg {
 				color: $maastricht-blue;
@@ -261,6 +273,5 @@ nav {
 					color: darken($maastricht-blue, 7.5%);
 				}
 			}
-		}
-	}
 }
+	
