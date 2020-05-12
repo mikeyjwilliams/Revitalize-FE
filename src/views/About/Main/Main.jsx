@@ -6,10 +6,6 @@ const Main = () => {
 			<h1 className="title">Crowdfunding for community projects you care about</h1>
 			<div className="main-content">
 				<div className="main-left">
-					<img
-						src="https://res.cloudinary.com/revitalize/image/upload/v1570036130/about%20page/Circle_2019_sc3ml9.svg"
-						alt="background circles and year"
-					/>
 				</div>
 				<div className="main-right">
 					<p>
