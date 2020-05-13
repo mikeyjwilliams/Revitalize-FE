@@ -34,10 +34,10 @@
 .carousel-card {
 	.carousel-card-inner {
 		background-color: $snow-white;
-		margin: 10px;
+		margin: 5px;
 		border-radius: 5px;
 		height: 360px;
-		font-size: 1.2rem;
+		font-size: 1.6rem;
 		@include subtleBoxShadow;
 		.carousel-card-image {
 			width: 100%;
@@ -97,7 +97,7 @@
 
 			.carousel-card-body-descript {
 				h5 {
-					margin: 10px 0;
+					margin: 5px 0;
 					width: 100%;
 					white-space: nowrap;
 					overflow: hidden;
@@ -108,7 +108,7 @@
 				}
 				.display-text-group {
 					margin: 10px 0;
-					font-size: 1.4rem;
+					font-size: 1.6rem;
 					.displayed-text {
 						margin: 10px 0;
 					}
