@@ -55,10 +55,13 @@ const Form2 = ({ address, city, state, zip, handleChanges, setFormPosition }) =>
 
 	return (
 		<form onSubmit={nextStep} className="form-2">
-			<h4>Street Address</h4>
+			<label htmlFor="projectAddress">
+				<h3>Street Address</h3>
+			</label>
 			<input
 				name="address"
 				type="text"
+				id="projectAddress"
 				className={`proj-street-address ${errors.address && `errorBorder`}`}
 				value={address}
 				onChange={e => {
@@ -71,10 +74,13 @@ const Form2 = ({ address, city, state, zip, handleChanges, setFormPosition }) =>
 
 			<div className="address-details">
 				<div className="address-details-city">
-					<h4>City</h4>
+					<label htmlFor="projectCity">
+						<h3>City</h3>
+					</label>
 					<input
 						name="city"
 						type="text"
+						id="projectCity"
 						className={`proj-city ${errors.city && `errorBorder`}`}
 						value={city}
 						onChange={e => {
@@ -87,7 +93,9 @@ const Form2 = ({ address, city, state, zip, handleChanges, setFormPosition }) =>
 				</div>
 
 				<div className="address-details-state">
-					<h4>State</h4>
+					<label htmlFor="projectState">
+						<h3>State</h3>
+					</label>
 					<select
 						className={`${errors.state && `errorBorder`}`}
 						onChange={e => {
@@ -95,6 +103,7 @@ const Form2 = ({ address, city, state, zip, handleChanges, setFormPosition }) =>
 							validateInput(e);
 						}}
 						name="state"
+						id="projectState"
 					>
 						{states.map((eachState, i) => {
 							if (i === 0) {
@@ -116,10 +125,13 @@ const Form2 = ({ address, city, state, zip, handleChanges, setFormPosition }) =>
 				</div>
 			</div>
 			<div className="address-details-zip">
-				<h4>Zip Code</h4>
+				<label htmlFor="projectZip">
+					<h3>Zip Code</h3>
+				</label>
 				<input
 					name="zip"
 					type="number"
+					id="projectZip"
 					className={`proj-zip ${errors.zip && `errorBorder`}`}
 					value={zip}
 					onChange={e => {
