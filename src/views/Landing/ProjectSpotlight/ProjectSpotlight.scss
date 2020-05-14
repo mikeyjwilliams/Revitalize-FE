@@ -36,11 +36,10 @@
 		flex-direction: row;
 		max-width: 1600px;
 		margin: 0 auto;
-		
 		.project-spotlight {
 			display: flex;
 		    justify-content: space-around;
-			width: 100%;
+			max-width: 100%;
 			background-color: $luigi;
 				@media #{$tablet} {
 					flex-direction: row;
@@ -49,10 +48,20 @@
 				@media #{$mobile} {
 					flex-direction: column;
 				}
-				.user-photo {
+				
+				.user-image {
+					width: 45%;
+					
+					margin: 0 auto;
+					@media #{$mobile} {
+						.user-image {
+							width: 95%;
+					  }
+					}
+					.user-photo {
 					width: 90%;
 					height: 90%;
-					
+
 					margin: 30px auto;
 					// @media #{$tablet} {
 					// 	padding: 10px;
@@ -66,19 +75,9 @@
 						align-items: center;
 					}
 				}
-				.user-image {
-					width: 45%;
-					border: 1px solid black;
-					margin: 0 auto;
-					@media #{$mobile} {
-						.user-image {
-							width: 100%;
-					  }
-					}
-				}
+			}
 
 				.user-details {
-					border: 1px solid red;
 					width: 45%;
 					text-align: center;
 					align-self: center;
@@ -116,9 +115,9 @@
 						width: 95%;
 					}
 				}
-			}
-			
-		}
+		    }
+	   }	
+		
 	}
 
 
