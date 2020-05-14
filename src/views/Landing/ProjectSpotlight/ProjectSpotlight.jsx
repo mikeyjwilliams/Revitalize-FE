@@ -15,8 +15,9 @@ const ProjectSpotlight = () => {
 
 	return (
 		<section className="project-spotlight-container">
+			<h2 className="section-title">Project Spotlight</h2>
 			<div className="project-spotlight-content">
-				<h2 className="section-title">Project Spotlight</h2>
+
 				<div className="project-spotlight">
 					<div className="user-image">
 						<img className="user-photo" src={Theatre} alt="Alger-Theater" />
@@ -27,9 +28,8 @@ const ProjectSpotlight = () => {
 					</div>
 
 				</div>
-
 			</div>
-		</section >
+		</section>
 	);
 };
 
