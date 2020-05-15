@@ -14,23 +14,24 @@
 			letter-spacing: 0.06em;
 			margin: 0 auto;
 			padding-bottom: 10px;
-			padding-top: 25px;
+			padding-top: 35px;
 			text-align: center;
 			@media #{$tablet} {
 				margin: 0 auto;
 				text-align: center;
 			}
 			@media #{$mobile} {
+				padding-top: 45px;
 				flex-direction: column;
 				font-size: 3.2rem;
 				text-align: center;
 			}
 		}
 	.project-spotlight-content{
-		display: flex;
-		flex-direction: row;
+		display: flex; 
+		flex-direction: row; // content in large view will be horizontal.
 		max-width: 1600px;
-		margin: 0 auto;
+		margin: inherit;
 		.project-spotlight {
 			display: flex;
 		    justify-content: space-around;
@@ -40,12 +41,12 @@
 					flex-direction: row;
 				}
 				@media #{$mobile} {
-					flex-direction: column;
+					flex-direction: column; // content in mobile view will be vertical.
 				}
 
 				.user-image {
-					width: 45%;
-
+					// image width container image size relative to width set within | tablet | mobile.
+					width: 45%; 
 					margin: 0 auto;
 					@media #{$tablet} {
 						width: 75%;
@@ -55,24 +56,24 @@
 
 					}
 					.user-photo {
+					// image width relative to image width within .user-image desktop | tablet | mobile
 					width: 90%;
-					height: 90%;
-
 					margin: 30px auto;
 					@media #{$tablet} {
 						padding: 10px 0 15px 25px;
 						width: 100%;
 					}
 					@media #{$mobile} {
-						padding: 10px;
+						padding: 10px 0;
+						margin: 10px auto;
 						width: 100%;
-
-						align-items: center;
+						
 					}
 				}
 			}
 
 				.user-details {
+					// width sets up box space for text content in desktop | tablet | mobile
 					width: 45%;
 					text-align: center;
 					align-self: center;
@@ -81,15 +82,14 @@
 						width: 80%;
 						text-align: center;
 						align-self: center;
-
 					}
-
 					@media #{$mobile} {
+						width: 100%;
 						display: flex;
 						justify-content: center;
-						margin: 0 auto;
-						width: 80%;
+						margin: 0 auto 25px;
 						margin-top: 10px;
+						padding: 0 20px;
 						font-size: 1.8rem;
 
 					}
@@ -119,8 +119,15 @@
 
 
 .dark-mode {
-	.project-spotlight {
+	.project-spotlight-container { 
+		// to have both the container containing the header & the box holding the
+		// spotlight box background must be done this way to do 2 things.
+		// 1. have the same color
+		// 2. cascade down so you only change color in one place. - MW
 		background-color: $police-blue;
+		.project-spotlight {
+			background-color: inherit;
+		}
 	}
 }
 
