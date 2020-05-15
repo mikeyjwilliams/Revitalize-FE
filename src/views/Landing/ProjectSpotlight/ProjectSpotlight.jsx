@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import rubiconPhones from '../../../assets/LandingPage/RubiconPhones.png';
-import phoneLeft from "../../../assets/LandingPage/PhoneLeft.png";
 import Theatre from '../../../assets/LandingPage/Theatre.svg';
 
 const ProjectSpotlight = () => {
@@ -10,8 +8,6 @@ const ProjectSpotlight = () => {
 
 	const [projectTitle] = useState('Alger Theatre - Detroit, MI');
 	const [projectStory] = useState(initStory);
-
-	// still need to make images dynamic
 
 	return (
 		<section className="project-spotlight-container">
