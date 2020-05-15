@@ -17,7 +17,7 @@
 .dashboard-container {
 	// background-color: scale-color($silver-lining, $alpha: -65%);
 	background-color: $franks-grey;
-	height: 100%;
+
 	.dashboard {
 		width: 100%;
 		max-width: 1820px;
@@ -25,6 +25,8 @@
 		display: flex;
 		padding-left: 20px;
 		padding-right: 20px;
+		margin-bottom: 340px;
+		height: 80%;
 		.dashboard-body {
 			width: calc(75% - 20px);
 			margin-left: 20px;

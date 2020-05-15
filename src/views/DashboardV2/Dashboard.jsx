@@ -164,7 +164,6 @@ const Dashboard = () => {
 						</section>
 					</section>
 				</div>
-
 				<Footer />
 			</div>
 		</>
