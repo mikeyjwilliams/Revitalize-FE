@@ -1,4 +1,5 @@
-@import '../../../styles/mixins';
+// @import '../../../styles/variables';
+// @import '../../../styles/mixins';
 
 .project-spotlight-container {
 	background-color: $luigi;
@@ -29,7 +30,7 @@
 		}
 	.project-spotlight-content{
 		display: flex; 
-		flex-direction: row; // content in large view will be horizontal.
+		flex-direction: row; // content in large view will be horizontal. -MW
 		max-width: 1600px;
 		margin: inherit;
 		.project-spotlight {
@@ -41,11 +42,11 @@
 					flex-direction: row;
 				}
 				@media #{$mobile} {
-					flex-direction: column; // content in mobile view will be vertical.
+					flex-direction: column; // content in mobile view will be vertical. -MW
 				}
 
 				.user-image {
-					// image width container image size relative to width set within | tablet | mobile.
+					// image width container image size relative to width set within | tablet | mobile. -MW
 					width: 45%; 
 					margin: 0 auto;
 					@media #{$tablet} {
@@ -56,7 +57,7 @@
 
 					}
 					.user-photo {
-					// image width relative to image width within .user-image desktop | tablet | mobile
+					// image width relative to image width within .user-image desktop | tablet | mobile -MW
 					width: 90%;
 					margin: 30px auto;
 					@media #{$tablet} {
@@ -73,7 +74,7 @@
 			}
 
 				.user-details {
-					// width sets up box space for text content in desktop | tablet | mobile
+					// width sets up box space for text content in desktop | tablet | mobile -MW
 					width: 45%;
 					text-align: center;
 					align-self: center;
@@ -85,7 +86,8 @@
 					}
 					@media #{$mobile} {
 						width: 100%;
-						display: flex;
+						display: flex; // flex items so can vertically align items. -MW
+						flex-direction: column;
 						justify-content: center;
 						margin: 0 auto 25px;
 						margin-top: 10px;
@@ -120,12 +122,9 @@
 
 .dark-mode {
 	.project-spotlight-container { 
-		// to have both the container containing the header & the box holding the
-		// spotlight box background must be done this way to do 2 things.
-		// 1. have the same color
-		// 2. cascade down so you only change color in one place. - MW
 		background-color: $police-blue;
 		.project-spotlight {
+			// inherit so cascades from parent container. - MW
 			background-color: inherit;
 		}
 	}
