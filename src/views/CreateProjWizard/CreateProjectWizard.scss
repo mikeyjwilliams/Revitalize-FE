@@ -10,7 +10,6 @@
 	// min-height: 1000px;
 	// background-color: $franks-grey;
 	height: 100%;
-	margin: 0px 0px 340px 0px;
 
 	.errorText {
 		color: red;
@@ -74,7 +73,6 @@
 			.ui-section {
 				background-color: $snow-white;
 				width: 65%;
-
 
 				@media #{$tablet} {
 					width: 100%;
@@ -198,10 +196,10 @@
 	// .title{
 	// 	color: $dark-blue-gray;
 	// }
-	.create-project-wizard-container{
-		.create-project{
-			.form-plus-quote-container{
-				.ui-section{
+	.create-project-wizard-container {
+		.create-project {
+			.form-plus-quote-container {
+				.ui-section {
 					background-color: $darkness;
 				}
 			}
