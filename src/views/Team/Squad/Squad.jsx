@@ -12,7 +12,13 @@ import skyelar from '../../../assets/AboutPage/skyelar.png';
 import anthony from '../../../assets/AboutPage/anthony.png';
 import elan from '../../../assets/AboutPage/elan.png';
 import theia from '../../../assets/AboutPage/theia.png';
-import Lucy from '../../../assets/AboutPage/Lucy.png';
+// import michael from '../../../assets/AboutPage/michael.png';
+// import mikey from '../../../assets/AboutPage/mikey.png';
+// import chase from '../../../assets/AboutPage/chase.png';
+// import dalton from '../../../assets/AboutPage/dalton.png';
+// import jules from '../../../assets/AboutPage/jules.png';
+// import bryan from '../../../assets/AboutPage/bryan.png';
+
 const Squad = () => {
 	const squad = [
 		{
