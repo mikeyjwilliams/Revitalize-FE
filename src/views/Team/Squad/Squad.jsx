@@ -12,12 +12,12 @@ import skyelar from '../../../assets/AboutPage/skyelar.png';
 import anthony from '../../../assets/AboutPage/anthony.png';
 import elan from '../../../assets/AboutPage/elan.png';
 import theia from '../../../assets/AboutPage/theia.png';
-// import michael from '../../../assets/AboutPage/michael.png';
-// import mikey from '../../../assets/AboutPage/mikey.png';
-// import chase from '../../../assets/AboutPage/chase.png';
-// import dalton from '../../../assets/AboutPage/dalton.png';
-// import jules from '../../../assets/AboutPage/jules.png';
-// import bryan from '../../../assets/AboutPage/bryan.png';
+import michaelM from '../../../assets/AboutPage/michaelM.png';
+import michaelW from '../../../assets/AboutPage/michaelW.png';
+import chase from '../../../assets/AboutPage/chase.png';
+import dalton from '../../../assets/AboutPage/dalton.png';
+import jules from '../../../assets/AboutPage/jules.png';
+import bryan from '../../../assets/AboutPage/bryan.png';
 
 const Squad = () => {
 	const squad = [
@@ -170,7 +170,7 @@ const Squad = () => {
 		{
 			name: 'Michael Williams',
 			role: 'Full-Stack Developer',
-			image: `${anthony}`,
+			image: `${michaelW}`,
 			background: '#ffb588',
 			bio:
 				'Michael resides south of sunny St. Pete, FL. He enjoys art, playing guitar, and solving problems with code. Michael likes to help out when possible and pair program remote or in person.',
@@ -182,7 +182,7 @@ const Squad = () => {
 		{
 			name: 'Chase Collins',
 			role: 'Full-Stack Developer',
-			image: `${anthony}`,
+			image: `${chase}`,
 			background: '#ffb588',
 			bio:
 				'Chase hails from Colorado. He is married to an amazing wife Alexandria. He enjoys long walks with Maple(the family corgi), rock-climbing, reading and pounding on a keyboard.',
@@ -194,7 +194,7 @@ const Squad = () => {
 		{
 			name: 'Bryan Adams',
 			role: 'Team Lead, Full-Stack Developer',
-			image: `${anthony}`,
+			image: `${bryan}`,
 			background: '#ffb588',
 			bio:
 				'Bryan is a team lead and full-stack developer from Utah. Bryan has an amazing wife named Sarah, and a beautiful daughter named Kairi. When Bryan is not coding, you will still find him glued to his chair, playing video games.',
@@ -206,7 +206,7 @@ const Squad = () => {
 		{
 			name: 'Dalton Walker',
 			role: 'Full-Stack Developer',
-			image: `${anthony}`,
+			image: `${dalton}`,
 			background: '#ffb588',
 			bio:
 				'Dalton comes from sunny Orlando, FL. He enjoys slapping the bass, lifting weights and crunching through some code!',
@@ -218,7 +218,7 @@ const Squad = () => {
 		{
 			name: 'Michael Martin',
 			role: 'Full-Stack Developer',
-			image: `${anthony}`,
+			image: `${michaelM}`,
 			background: '#ffb588',
 			bio:
 				'Mike hails from the harsh winters in ole Wisconsin. Besides coding Mike enjoys building computers and dabling in video editing, in general he just loves solving problems.',
@@ -230,7 +230,7 @@ const Squad = () => {
 		{
 			name: 'Jules Louis',
 			role: 'Full-Stack Developer',
-			image: `${anthony}`,
+			image: `${jules}`,
 			background: '#ffb588',
 			bio:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
