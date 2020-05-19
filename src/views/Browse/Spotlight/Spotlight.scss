@@ -58,6 +58,9 @@
 		a {
 			display: flex;
 			align-items: flex-end;
+			&:hover {
+				color: $mirage;
+			}
 		}
 		.spotlight {
 			display: flex;
