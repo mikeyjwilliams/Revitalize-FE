@@ -9,7 +9,7 @@
 		justify-content: space-around;
 		margin: 0 auto;
 		width: 80%;
-    	max-width: 1400px;
+		max-width: 1400px;
 		@media (max-width: '750px') {
 			flex-direction: column;
 			text-align: center;
@@ -26,7 +26,7 @@
 				margin-top: auto;
 			}
 			a {
-				color: $snow-white;
+				@include nav-types($anchor-color: $snow-white, $visit-color: $mirage, $hover-color: $luigi);
 				font-size: 2.6rem;
 				@media #{$mobile} {
 					font-size: 3rem;
@@ -71,21 +71,27 @@
 	.footer {
 		background-color: $police-blue;
 		.links-container {
-			li {
-				a {
-					color: $dark-electric-blue;		
-				}
+			a {
+				color: lighten($maastricht-blue, 12%);
+				@include nav-types(
+					$anchor-color: lighten($maastricht-blue, 12%),
+					$visit-color: $maastricht-blue,
+					$hover-color: lighten($dark-electric-blue, 20%)
+				);
 			}
-
 		}
 		.social-links-container {
 			a {
-				color: $dark-electric-blue;
+				@include nav-types(
+					$anchor-color: $dark-electric-blue,
+					$visit-color: $mirage,
+					$hover-color: lighten($dark-electric-blue, 20%)
+				);
 				text-decoration: none;
 			}
 		}
-		.bottom-footer {
-			color: lighten($maastricht-blue, 12%);
-		}
+		// .bottom-footer {
+		// 	color: lighten($maastricht-blue, 12%);
+		// }
 	}
 }
