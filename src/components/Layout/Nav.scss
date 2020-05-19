@@ -36,24 +36,24 @@ nav {
 		align-self: center;
 		margin-left: 10px;
 		a {
-		@include nav-types();
-		text-decoration: none;
-		
-		.logo {
-			display: flex;
-			align-items: center;
-			margin: 20px;
+			@include nav-types();
+			text-decoration: none;
 
-			h1 {
-				@media #{$tablet} {
-					color: $abatross;
+			.logo {
+				display: flex;
+				align-items: center;
+				margin: 20px;
+
+				h1 {
+					@media #{$tablet} {
+						color: $abatross;
+					}
+					font-family: 'futura-pt';
+					align-self: center;
+					font-size: 2.8rem;
+					letter-spacing: 0.09em;
+					//	color: $chillFi-purple;
 				}
-				font-family: 'futura-pt';
-				align-self: center;
-				font-size: 2.8rem;
-				letter-spacing: 0.09em;
-			//	color: $chillFi-purple;
-		}
 			}
 			.loading-banner {
 				margin-left: 20px;
@@ -137,10 +137,10 @@ nav {
 						display: none;
 					}
 					.arrow-up {
-						width: 0; 
-						height: 0; 
+						width: 0;
+						height: 0;
 						border-left: 15px solid $chillFi-purple;
-						border-right: 15px solid $chillFi-purple;	
+						border-right: 15px solid $chillFi-purple;
 						border-bottom: 15px solid $chillFi-purple;
 						border-top: 15px solid $chillFi-purple;
 						position: absolute;
@@ -208,70 +208,63 @@ nav {
 }
 
 .dark-mode {
-    .leftNav {
-	         a {
-				 @include nav-types(
-						$anchor-color: $snow-white,
-						$visit-color: $snow-white,
-						$hover-color: $sub-zero);
-				  }
+	.leftNav {
+		a {
+			@include nav-types($anchor-color: $snow-white, $visit-color: $snow-white, $hover-color: $sub-zero);
+		}
 		.logo {
-				h1 {
-					color: inherit;
-		  		}
-  			 }
-			.loading-banner {
-				color: $mirage;
-			}
-		
-			ul {
-				.navLinks  a {
-					color: $snow-white;
-
-					@include nav-types(
-						$anchor-color: $snow-white,
-						$visit-color: $luigi,
-						$hover-color: $sub-zero);
-				}
+			h1 {
+				color: inherit;
 			}
 		}
-
-
-			.register {
+		.loading-banner {
+			color: $mirage;
+		}
+	}
+	.right-nav {
+		ul {
+			.navLinks a {
 				color: $snow-white;
-				background-color: $maastricht-blue;
-				&:hover {
-					color: $maastricht-blue;
-					background-color: $snow-white;
-				}
-			}
-			.user { // username becomes white
-				color: $snow-white;
-			}
-		}
-	
-		.right-nav .dark-mode-emoji {
-			svg {
-				color: $maastricht-blue;
-			}
-			@media #{$tablet} {
-				display: none;
-			}
-		}
-		.right-nav ul .user .dropdown {
-			background-color: $maastricht-blue;
-			.arrow-up {
-				border-left: 15px solid $maastricht-blue;
-				border-right: 15px solid $maastricht-blue;	
-				border-bottom: 15px solid $maastricht-blue;
-				border-top: 15px solid $maastricht-blue;
-			}
-			.dropdown-option {
 
-				&:hover {
-					background-color: $snow-white;
-					color: darken($maastricht-blue, 7.5%);
-				}
+				@include nav-types($anchor-color: $snow-white, $visit-color: $luigi, $hover-color: $sub-zero);
 			}
+		}
+	}
+
+	.register {
+		color: $snow-white;
+		background-color: $maastricht-blue;
+		&:hover {
+			color: $maastricht-blue;
+			background-color: $snow-white;
+		}
+	}
+	.user {
+		// username becomes white
+		color: $snow-white;
+	}
 }
-	
+
+.right-nav .dark-mode-emoji {
+	svg {
+		color: $maastricht-blue;
+	}
+	@media #{$tablet} {
+		display: none;
+	}
+}
+.right-nav ul .user .dropdown {
+	background-color: $maastricht-blue;
+	.arrow-up {
+		border-left: 15px solid $maastricht-blue;
+		border-right: 15px solid $maastricht-blue;
+		border-bottom: 15px solid $maastricht-blue;
+		border-top: 15px solid $maastricht-blue;
+	}
+	.dropdown-option {
+		&:hover {
+			background-color: $snow-white;
+			color: darken($maastricht-blue, 7.5%);
+		}
+	}
+}
