@@ -32,11 +32,12 @@
 		display: flex; 
 		flex-direction: row; // content in large view will be horizontal. -MW
 		max-width: 1600px;
-		margin: inherit;
+		margin: 15px auto;
 		.project-spotlight {
 			display: flex;
 		    justify-content: space-around;
 			max-width: 100%;
+			margin-bottom: 75px;
 			background-color: $luigi;
 				@media #{$tablet} {
 					flex-direction: row;
@@ -59,7 +60,7 @@
 					.user-photo {
 					// image width relative to image width within .user-image desktop | tablet | mobile -MW
 					width: 90%;
-					margin: 30px auto;
+					margin: 10px auto;
 					@media #{$tablet} {
 						padding: 10px 0 15px 25px;
 						width: 100%;
