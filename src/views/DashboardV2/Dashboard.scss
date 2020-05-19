@@ -18,7 +18,7 @@
 	// background-color: scale-color($silver-lining, $alpha: -65%);
 	background-color: $franks-grey;
 
-	height:100%;
+	// height:100%;
 	.dashboard {
 		width: 100%;
 		max-width: 1820px;
@@ -26,11 +26,13 @@
 		display: flex;
 		padding-left: 20px;
 		padding-right: 20px;
-		// margin-bottom: 340px;
-		// height: 100%;
+		height:100%;
+		margin-bottom: 320px;
+
 		.dashboard-body {
 			width: calc(75% - 20px);
 			margin-left: 20px;
+			// margin-bottom: 20px;
 		}
 
 		.dashboard-picture-icons,
