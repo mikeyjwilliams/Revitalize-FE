@@ -223,10 +223,12 @@ nav {
 	}
 	.right-nav {
 		ul {
-			.navLinks a {
-				color: $snow-white;
+			.navLinks {
+				a {
+					color: $snow-white;
 
-				@include nav-types($anchor-color: $snow-white, $visit-color: $luigi, $hover-color: $sub-zero);
+					@include nav-types($anchor-color: $snow-white, $visit-color: $luigi, $hover-color: $sub-zero);
+				}
 			}
 		}
 	}
