@@ -29,7 +29,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 60px 0;
+		padding: 0;
+		margin-bottom: 50px;
 		.form-plus-quote-container {
 			@include cardBoxShadow;
 			background-color: $chillFi-purple;

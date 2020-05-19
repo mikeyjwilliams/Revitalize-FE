@@ -75,6 +75,7 @@ const CreateProjectWizard = ({ history }) => {
 
 	return (
 		<>
+		<div className="page-container">
 			<Nav />
 			<section className="create-project-wizard-container">
 				<div className="create-project">
@@ -138,8 +139,11 @@ const CreateProjectWizard = ({ history }) => {
 						</div>
 					</div>
 				</div>
-				<Footer />
+
+
 			</section>
+			</div>
+			<Footer />
 		</>
 	);
 };
