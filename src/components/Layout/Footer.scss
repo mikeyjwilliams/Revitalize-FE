@@ -36,6 +36,7 @@
 				font-size: 2.6rem;
 				@media #{$mobile} {
 					font-size: 3rem;
+					margin-top: 35px;
 				}
 			}
 		}
@@ -43,14 +44,20 @@
 	.social-links-container {
 		text-align: center;
 		margin-top: 65px;
+		@media #{$mobile} {
+			margin-top: 35px;
+
+		}
 		a {
 			color: $snow-white;
 			font-size: 3rem;
 			margin-right: 20px;
 			margin-left: 20px;
+
 			background-size: 100px;
 			@media #{$mobile} {
 				font-size: 3.3rem;
+
 			}
 		}
 	}
