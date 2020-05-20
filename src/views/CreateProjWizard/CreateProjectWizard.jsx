@@ -77,7 +77,7 @@ const CreateProjectWizard = ({ history }) => {
 		<>
 		<div className="page-container">
 			<Nav />
-			<section className="create-project-wizard-container">
+
 				<div className="create-project">
 					<div className="form-plus-quote-container">
 						<q className="quote">
@@ -141,7 +141,7 @@ const CreateProjectWizard = ({ history }) => {
 				</div>
 
 
-			</section>
+			
 			</div>
 			<Footer />
 		</>

@@ -77,7 +77,7 @@ const Dashboard = () => {
 	return (
 		<>
 			{data.me.projects ? setAvailableDashNavTabs : null}
-			<div className="dashboard-container">
+
 				<div className="page-container">
 					<Nav />
 					<section className="dashboard">
@@ -165,7 +165,7 @@ const Dashboard = () => {
 					</section>
 				</div>
 				<Footer />
-			</div>
+			
 		</>
 	);
 };
