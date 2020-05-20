@@ -64,16 +64,12 @@ nav {
 		}
 	}
 	.right-nav {
-		// color: $chillFi-purple;
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
 		font-size: 2.3rem;
 		width: 100%;
 		margin-right: 20px;
-		*:focus {
-			outline: none;
-		}
 		ul {
 			display: flex;
 			align-items: center;
@@ -87,7 +83,7 @@ nav {
 					margin-right: 300px;
 				}
 				a {
-					color: $chillFi-purple;
+					
 					letter-spacing: 0.06em;
 					line-height: 0.9;
 
@@ -202,6 +198,7 @@ nav {
 			}
 			svg {
 				color: $chillFi-purple;
+				@include nav-types();
 			}
 		}
 	}
@@ -247,13 +244,20 @@ nav {
 	}
 }
 
-.right-nav .dark-mode-emoji {
-	svg {
-		color: $maastricht-blue;
-	}
-	@media #{$tablet} {
-		display: none;
-	}
+.right-nav {
+	.dark-mode-emoji {
+		svg {
+			color: $maastricht-blue;
+			@include nav-types(
+				$anchor-color: $snow-white,
+				$hover-color: $luigi,
+				$visit-color: $maastricht-blue
+			);
+		}
+		@media #{$tablet} {
+			display: none;
+		}
+  }
 }
 .right-nav ul .user .dropdown {
 	background-color: $maastricht-blue;
