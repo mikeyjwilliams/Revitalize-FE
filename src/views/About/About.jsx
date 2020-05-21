@@ -12,7 +12,6 @@ const About = () => {
 			<Header />
 			<Main />
 			{/* <Squad /> */}
-
 			<Footer />
 		</div>
 	);

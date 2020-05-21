@@ -12,12 +12,14 @@ import skyelar from '../../../assets/AboutPage/skyelar.png';
 import anthony from '../../../assets/AboutPage/anthony.png';
 import elan from '../../../assets/AboutPage/elan.png';
 import theia from '../../../assets/AboutPage/theia.png';
+import Lucy from '../../../assets/AboutPage/Lucy.png';
 import michaelM from '../../../assets/AboutPage/michaelM.png';
 import michaelW from '../../../assets/AboutPage/michaelW.png';
 import chase from '../../../assets/AboutPage/chase.png';
-import dalton from '../../../assets/AboutPage/dalton.png';
+import dalton from '../../../assets/AboutPage/Dalton.png';
 import jules from '../../../assets/AboutPage/jules.png';
 import bryan from '../../../assets/AboutPage/bryan.png';
+
 
 const Squad = () => {
 	const squad = [
@@ -204,40 +206,40 @@ const Squad = () => {
 			site: '',
 		},
 		{
-			name: 'Dalton Walker',
-			role: 'Full-Stack Developer',
-			image: `${dalton}`,
-			background: '#ffb588',
-			bio:
-				'Dalton comes from sunny Orlando, FL. He enjoys slapping the bass, lifting weights and crunching through some code!',
-			github: 'https://github.com/daltonwalkerdw',
-			linkedIn: 'https://www.linkedin.com',
-			twitter: 'https://twitter.com',
-			site: '',
+		    name: 'Dalton Walker',
+		    role: 'Full-Stack Developer',
+		    image: `${dalton}`,
+		    background: '#ffb588',
+		    bio:
+		        'Dalton comes from sunny Orlando, FL. He enjoys slapping the bass, lifting weights and crunching through some code!',
+		    github: 'https://github.com/daltonwalkerdw',
+		    linkedIn: 'https://www.linkedin.com',
+		    twitter: 'https://twitter.com',
+		    site: '',
 		},
 		{
-			name: 'Michael Martin',
-			role: 'Full-Stack Developer',
-			image: `${michaelM}`,
-			background: '#ffb588',
-			bio:
-				'Mike hails from the harsh winters in ole Wisconsin. Besides coding Mike enjoys building computers and dabling in video editing, in general he just loves solving problems.',
-			github: 'https://github.com/littleonetwo',
-			linkedIn: 'https://www.linkedin.com',
-			twitter: 'https://twitter.com',
-			site: '',
+		    name: 'Michael Martin',
+		    role: 'Full-Stack Developer',
+		    image: `${michaelM}`,
+		    background: '#ffb588',
+		    bio:
+		        'Mike hails from the harsh winters in ole Wisconsin. Besides coding Mike enjoys building computers and dabling in video editing, in general he just loves solving problems.',
+		    github: 'https://github.com/littleonetwo',
+		    linkedIn: 'https://www.linkedin.com',
+		    twitter: 'https://twitter.com',
+		    site: '',
 		},
 		{
-			name: 'Jules Louis',
-			role: 'Full-Stack Developer',
-			image: `${jules}`,
-			background: '#ffb588',
-			bio:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-			github: 'https://github.com/chefboyrdeuce',
-			linkedIn: 'https://www.linkedin.com/julespl',
-			twitter: 'https://twitter.com/hustleallday',
-			site: '',
+		    name: 'Jules Louis',
+		    role: 'Full-Stack Developer',
+		    image: `${jules}`,
+		    background: '#ffb588',
+		    bio:
+		        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		    github: 'https://github.com/chefboyrdeuce',
+		    linkedIn: 'https://www.linkedin.com/julespl',
+		    twitter: 'https://twitter.com/hustleallday',
+		    site: '',
 		}
 	];
 
@@ -253,7 +255,7 @@ const Squad = () => {
 				<div className="squad">
 					{squad.map((person, index) => (
 						<div className={`person index${index}`} style={{ backgroundColor: `${person.background}` }}>
-							{index !== 13 ? (
+						
 								<>
 									<h2 className="name"> {person.name}</h2>
 									<h3 className="role"> {person.role}</h3>
@@ -306,7 +308,7 @@ const Squad = () => {
 										</div>
 									</div>
 								</>
-							) : null}
+							
 						</div>
 					))}
 				</div>
