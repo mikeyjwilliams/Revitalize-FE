@@ -185,7 +185,7 @@ const Squad = () => {
 			name: 'Chase Collins',
 			role: 'Full-Stack Developer',
 			image: `${chase}`,
-			background: '#ffb588',
+			background: '#235597',
 			bio:
 				'Chase hails from Colorado. He is married to an amazing wife Alexandria. He enjoys long walks with Maple(the family corgi), rock-climbing, reading and pounding on a keyboard.',
 			github: 'https://github.com/Chase-42',
@@ -197,7 +197,7 @@ const Squad = () => {
 			name: 'Bryan Adams',
 			role: 'Team Lead, Full-Stack Developer',
 			image: `${bryan}`,
-			background: '#ffb588',
+			background: '#d6ad2f',
 			bio:
 				'Bryan is a team lead and full-stack developer from Utah. Bryan has an amazing wife named Sarah, and a beautiful daughter named Kairi. When Bryan is not coding, you will still find him glued to his chair, playing video games.',
 			github: 'https://github.com/BryanKAdams',
@@ -209,7 +209,7 @@ const Squad = () => {
 		    name: 'Dalton Walker',
 		    role: 'Full-Stack Developer',
 		    image: `${dalton}`,
-		    background: '#ffb588',
+		    background: '#49a2ff',
 		    bio:
 		        'Dalton comes from sunny Orlando, FL. He enjoys slapping the bass, lifting weights and crunching through some code!',
 		    github: 'https://github.com/daltonwalkerdw',
@@ -221,7 +221,7 @@ const Squad = () => {
 		    name: 'Michael Martin',
 		    role: 'Full-Stack Developer',
 		    image: `${michaelM}`,
-		    background: '#ffb588',
+		    background: '#f78539',
 		    bio:
 		        'Mike hails from the harsh winters in ole Wisconsin. Besides coding Mike enjoys building computers and dabling in video editing, in general he just loves solving problems.',
 		    github: 'https://github.com/littleonetwo',
@@ -233,7 +233,7 @@ const Squad = () => {
 		    name: 'Jules Louis',
 		    role: 'Full-Stack Developer',
 		    image: `${jules}`,
-		    background: '#ffb588',
+		    background: '#4840ba',
 		    bio:
 		        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 		    github: 'https://github.com/chefboyrdeuce',
