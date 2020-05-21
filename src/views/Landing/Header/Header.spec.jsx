@@ -1,13 +1,13 @@
 import React from 'react';
-import { render, cleanup, screen, getByText } from '@testing-library/react';
+import * as rtl from '@testing-library/react';
 import Header from './Header';
 import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-afterEach(cleanup);
+afterEach(rtl.cleanup);
 
 test('Renders display correctly', () => {
-	const container = render(
+	const container = rtl.render(
 		<Router>
 			<Header />
 		</Router>,
