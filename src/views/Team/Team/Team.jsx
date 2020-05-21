@@ -235,7 +235,7 @@ const Squad = () => {
 		    image: `${jules}`,
 		    background: '#4840ba',
 		    bio:
-		        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		        'Jules is a Husband and Father of 2 currently living in South Florida.  A serial entrepreneur with experience in digital media and ecommerce.  When not coding he is a voracious reader.',
 		    github: 'https://github.com/chefboyrdeuce',
 		    linkedIn: 'https://www.linkedin.com/julespl',
 		    twitter: 'https://twitter.com/hustleallday',
