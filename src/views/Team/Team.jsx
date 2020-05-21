@@ -11,7 +11,7 @@ const About = () => {
 		<div>
 			<Nav />
 			<Header />
-			<Main />
+			{/* <Main /> */}
 			<Team />
 			{/* <Labs10Squad /> */}
 			<Footer />
