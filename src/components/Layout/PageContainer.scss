@@ -1,11 +1,9 @@
-html, body, #root {
-  height:100%;
-  margin:0;
+html,
+body{
+	height: 100%;
+	margin: 0;
 }
 
-
-
-.page-container{
-  min-height: 100%;
-  margin-bottom: -339px;
+.page-container {
+	min-height: calc(100vh - 301px); //use calc to get window content then make space for a footer, should prevent overlapping in most cases
 }
