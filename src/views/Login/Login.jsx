@@ -51,7 +51,7 @@ const Login = props => {
 	return (
 		<>
 			<div className="login-container">
-				<FaArrowLeft onClick={goBack} />
+				<FaArrowLeft className="back-arrow" onClick={goBack} />
 				<div className="login-container-left">
 
 					<div className="login-form">
@@ -83,7 +83,7 @@ const Login = props => {
 						</div>
 						<form className="login-local" onSubmit={handleSubmit}>
 							<p className="login-title">Email</p>
-							<input 
+							<input
 								name='email'
 								type='email'
 								placeholder="Email..."
@@ -110,7 +110,9 @@ const Login = props => {
 						</form>
 					</div>
 				</div>
-				<div className="imgContainer"></div>
+				<div className="imgContainer">
+					
+				</div>
 			</div>
 		</>
 	);

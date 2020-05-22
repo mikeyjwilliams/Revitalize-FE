@@ -5,8 +5,6 @@ import moment from 'moment';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_PROJECT } from '../../graphql/mutations/Project';
 
-// import Nav from '../../components/Layout/Nav';
-// import Footer from '../../components/Layout/Footer';
 import Form1 from './Form1/Form1';
 import Form2 from './Form2/Form2';
 import Form3 from './Form3/Form3';

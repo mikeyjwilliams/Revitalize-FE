@@ -1,8 +1,5 @@
 import React from 'react';
 
-// import Nav from '../../components/Layout/Nav';
-// import Footer from '../../components/Layout/Footer';
-
 import Top from './Top/Top';
 import Spotlight from './Spotlight/Spotlight';
 import RecommendedProjects from './RecommendedProjects/RecommendedProjects';
@@ -15,7 +12,7 @@ const Start = () => {
 
 	return (
 		<>
-			{/*<Nav /> */}
+
 			<div className="browse-container">
 				<Top />
 				<Spotlight />
@@ -25,7 +22,7 @@ const Start = () => {
 				<Hours />
 				<Noteworthy />
 			</div>
-			{/*<Footer /> */}
+
 		</>
 	);
 };

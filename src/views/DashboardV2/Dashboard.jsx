@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
 import Sidebar from './DashboardComponents/Sidebar/Sidebar';
 import DashNav from './DashboardComponents/DashNav/DashNav';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';

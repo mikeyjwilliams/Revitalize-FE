@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Routes
@@ -24,11 +24,15 @@ import AuthenticateUser from './utils/AuthenticateUser';
 import StudentApplicationForm from './views/StudentApplicationForm/StudentApplicationForm';
 
 export const Routes = () => {
+	const [navSelect, setNavSelect] = useState({clicked:false}); //this is used to track where the user is clicking to change behavior in the display.
+
 	return (
 		<BrowserRouter>
 			<div className="page-container"> {/* this was added to help debug footer */}
 
-				<Nav />
+				<div className={`nav-${navSelect.clicked ? 'on':'off'}`}>  {/*This is used to turn off nav when not needed*/}
+					<Nav navSelect={navSelect} setNavSelect={setNavSelect} />
+				</div>
 				<Switch> {/* Add components here.. this will swap out anything in the body of the app.. Nav and Footer will be static
 					unless we make a new Router File.*/}
 					{/* public routes */}
@@ -62,8 +66,10 @@ export const Routes = () => {
 						render={props => <StudentApplicationForm {...props} />}
 					/>
 				</Switch>
+
 			</div>
 			<Footer />
+
 		</BrowserRouter>
 	);
 };

@@ -44,6 +44,9 @@ const Nav = props => {
 	}
 	console.log("dark mode nav:", darkModeActive);
 
+	// useEffect()
+
+
 
 	//custom hook for window.onClick
 	const [

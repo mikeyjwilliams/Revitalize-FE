@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-// import Nav from '../../components/Layout/Nav';
-// import Footer from '../../components/Layout/Footer';
-
 import Top from './Top/Top';
 import ProjectCard from './ProjectCard/ProjectCard';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
@@ -38,7 +35,7 @@ const BrowseAll = () => {
 
 	return (
 		<>
-			{/*<Nav /> */}
+
 			<div className="browse-all-container">
 
 				<Top submitQuery={submitQuery} queryFormState={queryFormState} setQueryFormState={setQueryFormState}  />
@@ -52,7 +49,7 @@ const BrowseAll = () => {
 				</section>
 
 			</div>
-			{/*<Footer /> */}
+
 		</>
 	);
 };
