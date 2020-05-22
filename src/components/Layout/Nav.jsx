@@ -30,7 +30,20 @@ const authenticatedLinks = [
 
 const Nav = props => {
 	const [activeHamburger, setActiveHamburger] = useState(false);
-	const [darkModeActive, setDarkMode] = useState(false);
+	const [darkModeActive, setDarkMode] = useState(JSON.parse(localStorage.getItem('dark-mode')));
+	let darkModeStatus = "Dark Mode Off";
+
+	if(darkModeActive === null){
+		setDarkMode(false);
+	} else if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
+		document.querySelector('body').classList.add('dark-mode');
+		darkModeStatus = "Dark Mode On";
+	} else {
+		document.querySelector('body').classList.remove('dark-mode');
+		darkModeStatus = "Dark Mode Off";
+	}
+	console.log("dark mode nav:", darkModeActive);
+
 
 	//custom hook for window.onClick
 	const [
@@ -42,6 +55,11 @@ const Nav = props => {
 	const toggleDarkMode = () => {
 		setDarkMode(!darkModeActive);
 		localStorage.setItem('dark-mode', !darkModeActive);
+		if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
+			document.querySelector('body').classList.add('dark-mode');
+		} else {
+			document.querySelector('body').classList.remove('dark-mode');
+		}
 	};
 
 	const setActive = e => {
@@ -51,13 +69,13 @@ const Nav = props => {
 		}
 	};
 
-	useEffect(() => {
-		if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
-			document.querySelector('body').classList.add('dark-mode');
-		} else {
-			document.querySelector('body').classList.remove('dark-mode');
-		}
-	}, [darkModeActive]);
+	// useEffect(() => {
+	// 	if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
+	// 		document.querySelector('body').classList.add('dark-mode');
+	// 	} else {
+	// 		document.querySelector('body').classList.remove('dark-mode');
+	// 	}
+	// }, [darkModeActive]);
 
 	// Current user
 	const { client, loading, error, data } = useQuery(GET_USER);
@@ -134,15 +152,15 @@ const Nav = props => {
 								{data.me.profileImage !== null ? (
 									<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
 								) : (
-										<InitialAvatar
-											height={40}
-											width={40}
-											className="user-icon"
-											firstName={data.me.firstName}
-											lastName={data.me.lastName}
-											useRandomColor={1}
-										/>
-									)}
+									<InitialAvatar
+										height={40}
+										width={40}
+										className="user-icon"
+										firstName={data.me.firstName}
+										lastName={data.me.lastName}
+
+									/>
+								)}
 
 								<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
 									<div className="arrow-up"></div>
@@ -208,6 +226,12 @@ const Nav = props => {
 												</li>
 											),
 									)}
+									<li>
+										<div onClick={toggleDarkMode} className="dropdown-darkMode">
+
+										{darkModeStatus}
+										</div>
+									</li>
 								</>
 							) : (
 									<ul>
@@ -221,8 +245,25 @@ const Nav = props => {
 												<button className="register">Get Started</button>
 											</Link>
 										</li>
+<<<<<<< HEAD
 									</ul>
 								)}
+=======
+									))}
+									<li>
+										<Link to="/register">
+											<button className="register">Get Started</button>
+										</Link>
+									</li>
+									<li>
+										<div onClick={toggleDarkMode} className="dropdown-darkMode">
+
+											{darkModeStatus}
+										</div>
+									</li>
+								</ul>
+							)}
+>>>>>>> master
 						</ul>
 					</div>
 				</div>

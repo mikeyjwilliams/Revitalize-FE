@@ -4,6 +4,12 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	padding: 15px;
+	z-index: 999;
+	width: 100%;
+	height: 300px;
+	@media (max-width: '750px') {
+		height: 475px;
+	}
 	.links-container {
 		display: flex;
 		justify-content: space-around;
@@ -30,6 +36,7 @@
 				font-size: 2.6rem;
 				@media #{$mobile} {
 					font-size: 3rem;
+					margin-top: 35px;
 				}
 			}
 		}
@@ -37,11 +44,15 @@
 	.social-links-container {
 		text-align: center;
 		margin-top: 65px;
+		@media #{$mobile} {
+			margin-top: 35px;
+		}
 		a {
 			color: $snow-white;
 			font-size: 3rem;
 			margin-right: 20px;
 			margin-left: 20px;
+
 			background-size: 100px;
 			text-decoration: none;
 			@media #{$mobile} {
@@ -71,13 +82,10 @@
 	.footer {
 		background-color: $police-blue;
 		.links-container {
-			a {
-				color: lighten($maastricht-blue, 12%);
-				@include nav-types(
-					$anchor-color: lighten($maastricht-blue, 12%),
-					$visit-color: $maastricht-blue,
-					$hover-color: lighten($dark-electric-blue, 20%)
-				);
+			li {
+				a {
+					color: $dark-electric-blue;
+				}
 			}
 		}
 		.social-links-container {

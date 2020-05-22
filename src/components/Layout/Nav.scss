@@ -70,6 +70,10 @@ nav {
 		font-size: 2.3rem;
 		width: 100%;
 		margin-right: 20px;
+		*:focus {
+			outline: none;
+		}
+
 		ul {
 			display: flex;
 			align-items: center;
@@ -200,7 +204,18 @@ nav {
 				color: $chillFi-purple;
 				@include nav-types();
 			}
+
+
 		}
+	}
+}
+
+.dropdown-darkMode{
+	font-size: 2.6rem;
+	color: $snow-white;
+
+	&:hover{
+		cursor: pointer;
 	}
 }
 
@@ -226,8 +241,12 @@ nav {
 
 					@include nav-types($anchor-color: $snow-white, $visit-color: $luigi, $hover-color: $sub-zero);
 				}
+				@media #{$tablet} {
+					font-size: 2.2rem;
+				}
 			}
 		}
+<<<<<<< HEAD
 	}
 
 	.register {
@@ -236,6 +255,29 @@ nav {
 		&:hover {
 			color: $maastricht-blue;
 			background-color: $snow-white;
+=======
+		.right-nav .dark-mode-emoji {
+			svg {
+				color: $maastricht-blue;
+			}
+			@media #{$tablet} {
+				display: none;
+			}
+		}
+		.right-nav ul .user .dropdown {
+			background-color: $maastricht-blue;
+			.arrow-up {
+				border-left: 15px solid $maastricht-blue;
+				border-right: 15px solid $maastricht-blue;
+				border-bottom: 15px solid $maastricht-blue;
+				border-top: 15px solid $maastricht-blue;
+			}
+			.dropdown-option {
+				&:hover {
+					background-color: darken($maastricht-blue, 7.5%);
+				}
+			}
+>>>>>>> master
 		}
 	}
 	.user {
