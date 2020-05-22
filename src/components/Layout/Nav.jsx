@@ -31,19 +31,18 @@ const authenticatedLinks = [
 const Nav = props => {
 	const [activeHamburger, setActiveHamburger] = useState(false);
 	const [darkModeActive, setDarkMode] = useState(JSON.parse(localStorage.getItem('dark-mode')));
-	let darkModeStatus = "Dark Mode Off";
+	let darkModeStatus = 'Dark Mode Off';
 
-	if(darkModeActive === null){
+	if (darkModeActive === null) {
 		setDarkMode(false);
 	} else if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
 		document.querySelector('body').classList.add('dark-mode');
-		darkModeStatus = "Dark Mode On";
+		darkModeStatus = 'Dark Mode On';
 	} else {
 		document.querySelector('body').classList.remove('dark-mode');
-		darkModeStatus = "Dark Mode Off";
+		darkModeStatus = 'Dark Mode Off';
 	}
-	console.log("dark mode nav:", darkModeActive);
-
+	console.log('dark mode nav:', darkModeActive);
 
 	//custom hook for window.onClick
 	const [
@@ -146,8 +145,8 @@ const Nav = props => {
 								{data.me.firstName !== null ? (
 									<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
 								) : (
-										<span className="user-personal-greeting">Welcome</span>
-									)}
+									<span className="user-personal-greeting">Welcome</span>
+								)}
 
 								{data.me.profileImage !== null ? (
 									<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
@@ -158,7 +157,6 @@ const Nav = props => {
 										className="user-icon"
 										firstName={data.me.firstName}
 										lastName={data.me.lastName}
-
 									/>
 								)}
 
@@ -179,33 +177,33 @@ const Nav = props => {
 							</div>
 						</>
 					) : (
-							<>
-								{unauthenticatedLinks.map(({ key, href, label }) => (
-									<li className="navLinks" key={key}>
-										<Link to={href}>{label}</Link>
-									</li>
-								))}
-								<li>
-									<Link to="/register">
-										<button className="register">Get Started</button>
-									</Link>
+						<>
+							{unauthenticatedLinks.map(({ key, href, label }) => (
+								<li className="navLinks" key={key}>
+									<Link to={href}>{label}</Link>
 								</li>
-								<div className="dark-mode-emoji">
-									<FaMoon onClick={() => toggleDarkMode()} />
+							))}
+							<li>
+								<Link to="/register">
+									<button className="register">Get Started</button>
+								</Link>
+							</li>
+							<div className="dark-mode-emoji">
+								<FaMoon onClick={() => toggleDarkMode()} />
+							</div>
+							{!localStorage.getItem('token') && (
+								<div
+									onClick={setActive}
+									className={`hamburger hamburger--squeeze ${activeHamburger && 'is-active'}`}
+									type="button"
+								>
+									<span className="hamburger-box">
+										<span className="hamburger-inner"></span>
+									</span>
 								</div>
-								{!localStorage.getItem('token') && (
-									<div
-										onClick={setActive}
-										className={`hamburger hamburger--squeeze ${activeHamburger && 'is-active'}`}
-										type="button"
-									>
-										<span className="hamburger-box">
-											<span className="hamburger-inner"></span>
-										</span>
-									</div>
-								)}
-							</>
-						)}
+							)}
+						</>
+					)}
 				</ul>
 			</div>
 
@@ -221,34 +219,29 @@ const Nav = props => {
 												<Link to={href}>{label}</Link>
 											</li>
 										) : (
-												<li className="navLinks-overlay" key={key}>
-													<Link to={href}>{label}</Link>
-												</li>
-											),
+											<li className="navLinks-overlay" key={key}>
+												<Link to={href}>{label}</Link>
+											</li>
+										),
 									)}
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
-
-										{darkModeStatus}
+											{darkModeStatus}
 										</div>
 									</li>
 								</>
 							) : (
-									<ul>
-										{unauthenticatedLinks.map(({ key, href, label }) => (
-											<li className="navLinks-overlay" key={key}>
-												<Link to={href}>{label}</Link>
-											</li>
-										))}
-										<li>
-											<Link to="/register">
-												<button className="register">Get Started</button>
-											</Link>
+								<ul>
+									{unauthenticatedLinks.map(({ key, href, label }) => (
+										<li className="navLinks-overlay" key={key}>
+											<Link to={href}>{label}</Link>
 										</li>
-<<<<<<< HEAD
-									</ul>
-								)}
-=======
+									))}
+									<li>
+										<Link to="/register">
+											<button className="register">Get Started</button>
+										</Link>
+									</li>
 									))}
 									<li>
 										<Link to="/register">
@@ -257,13 +250,11 @@ const Nav = props => {
 									</li>
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
-
 											{darkModeStatus}
 										</div>
 									</li>
 								</ul>
 							)}
->>>>>>> master
 						</ul>
 					</div>
 				</div>
