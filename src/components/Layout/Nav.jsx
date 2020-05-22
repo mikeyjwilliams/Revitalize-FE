@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import Skeleton from "react-loading-skeleton";
+
 import { FaMoon, FaCog, FaWindowClose } from 'react-icons/fa';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER } from '../../graphql/queries/Users';
@@ -69,17 +69,6 @@ const Nav = props => {
 		}
 	};
 
-<<<<<<< HEAD
-
-=======
-	// useEffect(() => {
-	// 	if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
-	// 		document.querySelector('body').classList.add('dark-mode');
-	// 	} else {
-	// 		document.querySelector('body').classList.remove('dark-mode');
-	// 	}
-	// }, [darkModeActive]);
->>>>>>> 7445d33e37bec6439bc9ef3646060e568f667a37
 
 	// Current user
 	const { client, loading, error, data } = useQuery(GET_USER);
