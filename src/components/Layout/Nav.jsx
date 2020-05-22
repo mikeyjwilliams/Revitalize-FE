@@ -31,13 +31,16 @@ const authenticatedLinks = [
 const Nav = props => {
 	const [activeHamburger, setActiveHamburger] = useState(false);
 	const [darkModeActive, setDarkMode] = useState(JSON.parse(localStorage.getItem('dark-mode')));
+	let darkModeStatus = "Dark Mode Off";
 
 	if(darkModeActive === null){
 		setDarkMode(false);
 	} else if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
 		document.querySelector('body').classList.add('dark-mode');
+		darkModeStatus = "Dark Mode On";
 	} else {
 		document.querySelector('body').classList.remove('dark-mode');
+		darkModeStatus = "Dark Mode Off";
 	}
 	console.log("dark mode nav:", darkModeActive);
 
@@ -227,6 +230,12 @@ const Nav = props => {
 											</li>
 										),
 									)}
+									<li>
+										<div onClick={toggleDarkMode} className="dropdown-darkMode">
+
+										{darkModeStatus}
+										</div>
+									</li>
 								</>
 							) : (
 								<ul>
@@ -239,6 +248,12 @@ const Nav = props => {
 										<Link to="/register">
 											<button className="register">Get Started</button>
 										</Link>
+									</li>
+									<li>
+										<div onClick={toggleDarkMode} className="dropdown-darkMode">
+
+											{darkModeStatus}
+										</div>
 									</li>
 								</ul>
 							)}
