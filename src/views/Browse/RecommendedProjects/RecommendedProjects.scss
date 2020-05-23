@@ -20,12 +20,14 @@
 		.carousel-card-body {
 			height: calc(100% - 181px);
 			.carousel-card-body-descript {
-				h5 {
+				a {
+					// drills down to h5 inside of 'a' tag so it looks like a link. -MW
 					color: $chillFi-purple;
+					text-decoration: underline;
 					@include nav-types(
 						$anchor-color: $chillFi-purple,
-						$visit-color: $police-blue,
-						$hover-color: $black-void
+						$hover-color: $black-void,
+						$visit-color: $mirage
 					);
 				}
 				.display-text-group {
