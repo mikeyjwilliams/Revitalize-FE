@@ -89,7 +89,7 @@ nav {
 					letter-spacing: 0.06em;
 					line-height: 0.9;
 
-					@include nav-types();
+					@include nav-types($visit-color: $mirage);
 				}
 			}
 			.logout {
@@ -235,7 +235,7 @@ nav {
 				a {
 					color: $snow-white;
 
-					@include nav-types($anchor-color: $snow-white, $visit-color: $luigi, $hover-color: $sub-zero);
+					@include nav-types($anchor-color: $snow-white, $hover-color: $sub-zero, $visit-color: $static-grey);
 				}
 				@media #{$tablet} {
 					font-size: 2.2rem;
