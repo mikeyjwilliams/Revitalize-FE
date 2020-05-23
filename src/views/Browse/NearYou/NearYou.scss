@@ -20,15 +20,9 @@
 			height: calc(100% - 155px);
 			.carousel-card-body-descript {
 				a {
-					//color: inherit;
+					@include nav-theme($light-theme: true);
 					h5 {
 						margin: 0 auto;
-						text-decoration: underline;
-						@include nav-types(
-							$anchor-color: $chillFi-purple,
-							$hover-color: $erudite-purple,
-							$visit-color: $mirage
-						);
 					}
 				}
 				.carousel-card-header {
@@ -42,7 +36,7 @@
 		}
 		a {
 			color: $chillFi-purple;
-			@include nav-types($anchor-color: $chillFi-purple, $hover-color: $erudite-purple, $visit-color: $mirage);
+			@include nav-theme($light-theme: true);
 			display: flex;
 			align-items: flex-end;
 			font-size: 1.6rem;
@@ -55,7 +49,7 @@
 		.carousel-card {
 			.carousel-card-inner.__near-you {
 				a {
-					color: $sky-blue;
+					@include nav-theme($light-theme: false);
 				}
 			}
 		}
