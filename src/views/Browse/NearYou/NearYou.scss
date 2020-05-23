@@ -4,53 +4,54 @@
 		margin-left: -1%;
 	}
 }
-	.near-you-section {
-		.carousel-card-inner.__near-you {
-			height: 290px;
-			.carousel-card-image {
-				justify-content: flex-start;
-				.carousel-card-location {
-					position: absolute;
-					color: $snow-white;
-					padding: 10px;
-					font-size: 1.4rem;
-				}
-			}
-			.carousel-card-body {
-				height: calc(100% - 155px);
-				.carousel-card-body-descript {
-					a {
-						color: inherit;
-						h5 {
-							margin: 0 auto;
-						}
-					}
-					.carousel-card-header {
-						margin-bottom: 15px;
-					}
-				}
-				.display-text-group {
-					font-size: 1.4rem;
-					margin: 10px auto;
-				}
-			}
-			a {
-				color: $chillFi-purple;
-				display: flex;
-				align-items: flex-end;
-				font-size: 1.6rem;
+.near-you-section {
+	.carousel-card-inner.__near-you {
+		height: 290px;
+		.carousel-card-image {
+			justify-content: flex-start;
+			.carousel-card-location {
+				position: absolute;
+				color: $snow-white;
+				padding: 10px;
+				font-size: 1.4rem;
 			}
 		}
+		.carousel-card-body {
+			height: calc(100% - 155px);
+			.carousel-card-body-descript {
+				a {
+					color: inherit;
+					h5 {
+						margin: 0 auto;
+					}
+				}
+				.carousel-card-header {
+					margin-bottom: 15px;
+				}
+			}
+			.display-text-group {
+				font-size: 1.4rem;
+				margin: 10px auto;
+			}
+		}
+		a {
+			color: $chillFi-purple;
+			@include nav-types($anchor-color: $chillFi-purple, $hover-color: $erudite-purple, $visit-color: $mirage);
+			display: flex;
+			align-items: flex-end;
+			font-size: 1.6rem;
+		}
 	}
+}
 
 .dark-mode {
-  .near-you-section {
-	.carousel-card {
-		.carousel-card-inner.__near-you {
-			a {
-				color: $sky-blue;
+	.near-you-section {
+		.carousel-card {
+			.carousel-card-inner.__near-you {
+				a {
+					color: $sky-blue;
+				}
 			}
 		}
 	}
-  }
 }

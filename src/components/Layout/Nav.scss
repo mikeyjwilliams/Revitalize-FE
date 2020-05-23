@@ -1,5 +1,5 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+//@import '../../styles/variables';
+//@import '../../styles/mixins';
 @import './Hamburger';
 @import './Overlay';
 
@@ -36,7 +36,8 @@ nav {
 		align-self: center;
 		margin-left: 10px;
 		a {
-			@include nav-types();
+			color: $chillFi-purple;
+			@include nav-types($anchor-color: $chillFi-purple, $visit-color: $chillFi-purple);
 			text-decoration: none;
 
 			.logo {
@@ -284,7 +285,9 @@ nav {
 		.dark-mode-emoji {
 			svg {
 				color: $maastricht-blue;
-				@include nav-types($anchor-color: $snow-white, $hover-color: $luigi, $visit-color: $maastricht-blue);
+				&:hover {
+					color: $snow-white;
+				}
 			}
 			@media #{$tablet} {
 				display: none;
