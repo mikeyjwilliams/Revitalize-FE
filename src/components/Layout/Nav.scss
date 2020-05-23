@@ -37,8 +37,7 @@ nav {
 		margin-left: 10px;
 		a {
 			color: $chillFi-purple;
-			@include nav-types($anchor-color: $chillFi-purple, $visit-color: $chillFi-purple);
-			text-decoration: none;
+			@include nav-types($anchor-color: $chillFi-purple, $visit-color: $chillFi-purple, $decoration: none);
 
 			.logo {
 				display: flex;
@@ -53,7 +52,6 @@ nav {
 					align-self: center;
 					font-size: 2.8rem;
 					letter-spacing: 0.09em;
-					//	color: $chillFi-purple;
 				}
 			}
 			.loading-banner {
