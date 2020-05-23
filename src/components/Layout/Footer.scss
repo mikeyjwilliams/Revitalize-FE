@@ -101,12 +101,7 @@
 		}
 		.social-links-container {
 			a {
-				@include nav-types(
-					$anchor-color: $dark-electric-blue,
-					$visit-color: lighten($chillFi-purple, 25%),
-					$hover-color: lighten($ocean-blue, 10%),
-					$decoration: none
-				);
+				@include nav-theme($light-theme: false, $text-dec: none);
 			}
 		}
 	}

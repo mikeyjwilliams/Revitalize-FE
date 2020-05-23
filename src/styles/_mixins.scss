@@ -146,94 +146,63 @@
 		}
 	}
 }
-@mixin nav-theme($light-theme: true) {
+@mixin nav-theme($light-theme: true, $text-dec: underline) {
 	@if $light-theme {
 		$anchor-color: $anchor-color--nav-light;
 		$visit-color: $visit-color--nav-light;
 		$hover-color: $hover-color--nav-light;
-		$decoration: underline;
+		$decoration: $text-dec;
 
 		&:link {
 			color: $anchor-color;
-			@if $decoration == underline {
-				text-decoration: underline;
-				text-decoration-color: $anchor-color;
-			} @else {
-				text-decoration: none;
-			}
+			text-decoration: $decoration;
+			text-decoration-color: $anchor-color;
 		}
 
 		&:visited {
 			color: $visit-color;
-			@if $decoration == underline {
-				text-decoration: underline;
-				text-decoration-color: $visit-color;
-			} @else {
-				text-decoration: none;
-			}
+			text-decoration: $decoration;
+			text-decoration-color: $visit-color;
 		}
 
 		&:hover {
 			color: $hover-color;
-			@if $decoration == underline {
-				text-decoration: underline;
-				text-decoration-color: $hover-color;
-			} @else {
-				text-decoration: none;
-			}
+			text-decoration: $decoration;
+			text-decoration-color: $hover-color;
 		}
 		&:active {
 			color: $anchor-color;
-			@if $decoration == underline {
-				text-decoration: underline;
-				text-decoration-color: $anchor-color;
-			} @else {
-				text-decoration: none;
-			}
+			text-decoration: $decoration;
+			text-decoration-color: $anchor-color;
 		}
 	} @else {
 		$anchor-color: $anchor-color--nav-dark;
 		$visit-color: $visit-color--nav-dark;
 		$hover-color: $hover-color--nav-dark;
-		$decoration: underline;
+		$decoration: $text-dec;
 
 		&:link {
 			color: $anchor-color;
-			@if $decoration == underline {
-				text-decoration: underline;
-				text-decoration-color: $anchor-color;
-			} @else {
-				text-decoration: none;
-			}
+			text-decoration: $decoration;
+			text-decoration-color: $anchor-color;
 		}
 
 		&:visited {
 			color: $visit-color;
-			@if $decoration == underline {
-				text-decoration: underline;
-				text-decoration-color: $visit-color;
-			} @else {
-				text-decoration: none;
-			}
+			text-decoration: $decoration;
+			text-decoration-color: $visit-color;
+			text-decoration: none;
 		}
 
 		&:hover {
 			color: $hover-color;
-			@if $decoration == underline {
-				text-decoration: underline;
-				text-decoration-color: $hover-color;
-			} @else {
-				text-decoration: none;
-			}
+			text-decoration: $decoration;
+			text-decoration-color: $hover-color;
 		}
 		&:active {
 			color: $anchor-color;
-			@if $decoration == underline {
-				text-decoration: underline;
-				text-decoration-color: $anchor-color;
-			} @else {
-				text-decoration: none;
-			}
+			text-decoration: $decoration;
+			text-decoration-color: $anchor-color;
 		}
 	}
 }
