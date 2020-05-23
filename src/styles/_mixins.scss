@@ -94,17 +94,21 @@
 @mixin nav-types($anchor-color: $chillFi-purple, $visit-color: darken($erudite-purple, 10%), $hover-color: $cerulean) {
 	&:link {
 		color: $anchor-color;
+		@content;
 	}
 
 	&:visited {
 		color: $visit-color;
+		@content;
 	}
 
 	&:hover {
 		color: $hover-color;
+		@content;
 	}
 	&:active {
 		color: $anchor-color;
+		@content;
 	}
 }
 
