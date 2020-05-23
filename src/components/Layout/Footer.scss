@@ -95,13 +95,13 @@
 		.links-container {
 			li {
 				a {
-					color: $dark-electric-blue;
+					@include nav-theme($light-theme: false);
 				}
 			}
 		}
 		.social-links-container {
 			a {
-				@include nav-theme($light-theme: false, $text-dec: none);
+				@include nav-theme($light-theme: false, $decoration: none);
 			}
 		}
 	}

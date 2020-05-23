@@ -39,6 +39,12 @@
 		height: 360px;
 		font-size: 1.2rem;
 		@include subtleBoxShadow;
+
+		a {
+			color: $cerulean;
+			@include nav-types($anchor-color: $cerulean, $visit-color: $erudite-purple, $hover-color: $mutant-turtle);
+		}
+
 		.carousel-card-image {
 			width: 100%;
 			position: relative;
@@ -92,6 +98,7 @@
 				border-radius: 5px 5px 0 0;
 			}
 		}
+
 		.carousel-card-body {
 			display: flex;
 			flex-direction: column;
@@ -106,9 +113,6 @@
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					&:hover {
-						@include text-shadow;
-					}
 				}
 				.display-text-group {
 					margin: 10px 0;

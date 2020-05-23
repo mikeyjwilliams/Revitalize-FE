@@ -146,63 +146,60 @@
 		}
 	}
 }
-@mixin nav-theme($light-theme: true, $text-dec: underline) {
+@mixin nav-theme($light-theme: true, $decoration: underline) {
 	@if $light-theme {
 		$anchor-color: $anchor-color--nav-light;
 		$visit-color: $visit-color--nav-light;
 		$hover-color: $hover-color--nav-light;
-		$decoration: $text-dec;
 
 		&:link {
 			color: $anchor-color;
-			text-decoration: $decoration;
 			text-decoration-color: $anchor-color;
+			text-decoration: $decoration;
 		}
 
 		&:visited {
 			color: $visit-color;
-			text-decoration: $decoration;
 			text-decoration-color: $visit-color;
+			text-decoration: $decoration;
 		}
 
 		&:hover {
 			color: $hover-color;
-			text-decoration: $decoration;
 			text-decoration-color: $hover-color;
+			text-decoration: $decoration;
 		}
 		&:active {
 			color: $anchor-color;
-			text-decoration: $decoration;
 			text-decoration-color: $anchor-color;
+			text-decoration: $decoration;
 		}
-	} @else {
+	} @else if false {
 		$anchor-color: $anchor-color--nav-dark;
 		$visit-color: $visit-color--nav-dark;
 		$hover-color: $hover-color--nav-dark;
-		$decoration: $text-dec;
 
 		&:link {
 			color: $anchor-color;
-			text-decoration: $decoration;
 			text-decoration-color: $anchor-color;
+			text-decoration: $decoration;
 		}
 
 		&:visited {
 			color: $visit-color;
-			text-decoration: $decoration;
 			text-decoration-color: $visit-color;
-			text-decoration: none;
+			text-decoration: $decoration;
 		}
 
 		&:hover {
 			color: $hover-color;
+			text-decoration-color: $visit-color;
 			text-decoration: $decoration;
-			text-decoration-color: $hover-color;
 		}
 		&:active {
 			color: $anchor-color;
+			text-decoration-color: $visit-color;
 			text-decoration: $decoration;
-			text-decoration-color: $anchor-color;
 		}
 	}
 }
