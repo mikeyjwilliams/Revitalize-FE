@@ -21,14 +21,10 @@
 			height: calc(100% - 181px);
 			.carousel-card-body-descript {
 				a {
-					// drills down to h5 inside of 'a' tag so it looks like a link. -MW
+					// the h5 is nested in the a tag here. -MW
 					color: $chillFi-purple;
 					text-decoration: underline;
-					@include nav-types(
-						$anchor-color: $chillFi-purple,
-						$hover-color: $black-void,
-						$visit-color: $mirage
-					);
+					@include nav-types($anchor-color: $chillFi-purple, $visit-color: $mirage);
 				}
 				.display-text-group {
 					.displayed-text {
@@ -50,11 +46,15 @@
 	.recommened-projects-section {
 		.slider {
 			.carousel-card-body-descript {
-				h5 {
-					color: $sky-blue;
-					text-decoration: underline;
-					@include nav-types($anchor-color: $sky-blue, $visit-color: $sub-zero, $hover-color: $luigi);
+				a {
+					// h5 is nested in the a tag here -MW
+					@include nav-types(
+						$anchor-color: lighten($maastricht-blue, 50%),
+						$visit-color: darken($static-grey, 15%),
+						$hover-color: $dark-electric-blue
+					);
 				}
+				//color: $sky-blue;
 			}
 		}
 	}
