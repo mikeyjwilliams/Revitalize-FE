@@ -84,34 +84,6 @@
 	padding: 15px 15px 15px 15px;
 }
 
-/**
-* mixin nav-types()
-*  default colors set if no colors are given.
-* $anchor-color -> anchor links color
-* $visit-color -> visited links color
-* $hover-color -> hover links color
- - MW **/
-@mixin nav-types($anchor-color: $chillFi-purple, $visit-color: darken($erudite-purple, 10%), $hover-color: $cerulean) {
-	&:link {
-		color: $anchor-color;
-		@content;
-	}
-
-	&:visited {
-		color: $visit-color;
-		@content;
-	}
-
-	&:hover {
-		color: $hover-color;
-		@content;
-	}
-	&:active {
-		color: $anchor-color;
-		@content;
-	}
-}
-
 @mixin skeleton-section-dark {
 	// border: 1px solid $static-grey;
 	border-bottom-color: $darkness2;
@@ -119,4 +91,58 @@
 	border-bottom-width: 3px;
 	// margin: 5px 10px 5px 10px;
 	padding: 15px 15px 15px 15px;
+}
+
+/**
+* mixin nav-types()
+*  default colors set if no colors are given.
+* $anchor-color -> anchor links color
+* $visit-color -> visited links color
+* $hover-color -> hover links color
+* IF $decoration is injects as none in include no underline
+ - MW **/
+@mixin nav-types(
+	$anchor-color: $chillFi-purple,
+	$visit-color: darken($erudite-purple, 10%),
+	$hover-color: $cerulean,
+	$decoration: underline
+) {
+	&:link {
+		color: $anchor-color;
+		@if $decoration == underline {
+			text-decoration: underline;
+			text-decoration-color: $anchor-color;
+		} @else {
+			text-decoration: none;
+		}
+	}
+
+	&:visited {
+		color: $visit-color;
+		@if $decoration == underline {
+			text-decoration: underline;
+			text-decoration-color: $visit-color;
+		} @else {
+			text-decoration: none;
+		}
+	}
+
+	&:hover {
+		color: $hover-color;
+		@if $decoration == underline {
+			text-decoration: underline;
+			text-decoration-color: $hover-color;
+		} @else {
+			text-decoration: none;
+		}
+	}
+	&:active {
+		color: $anchor-color;
+		@if $decoration == underline {
+			text-decoration: underline;
+			text-decoration-color: $anchor-color;
+		} @else {
+			text-decoration: none;
+		}
+	}
 }
