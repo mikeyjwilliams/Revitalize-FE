@@ -46,10 +46,11 @@ $dark-blue-gray: #25415c;
 // basic shades for mixins and other uses
 //===================================================
 $text-color--nav-light: $chillFi-purple;
+$anchor-color--nav-light: $chillFi-purple;
 $visit-color--nav-light: $mirage;
 $hover-color--nav-light: $sub-zero;
 
-$text-color--nav-dark: lighten($maastricht-blue, 55%);
+$anchor-color--nav-dark: lighten($maastricht-blue, 55%);
 $visit-color--nav-dark: darken($static-grey, 15%);
 $hover-color--nav-dark: $dark-electric-blue;
 
