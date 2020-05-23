@@ -20,9 +20,15 @@
 			height: calc(100% - 155px);
 			.carousel-card-body-descript {
 				a {
-					color: inherit;
+					//color: inherit;
 					h5 {
 						margin: 0 auto;
+						text-decoration: underline;
+						@include nav-types(
+							$anchor-color: $chillFi-purple,
+							$hover-color: $erudite-purple,
+							$visit-color: $mirage
+						);
 					}
 				}
 				.carousel-card-header {
