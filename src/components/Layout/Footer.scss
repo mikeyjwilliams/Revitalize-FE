@@ -32,7 +32,12 @@
 				margin-top: auto;
 			}
 			a {
-				@include nav-types($anchor-color: $snow-white, $visit-color: $mirage, $hover-color: $luigi);
+				//color: lighten($saphire-mox, 20%);
+				@include nav-types(
+					$visit-color: $static-grey,
+					$anchor-color: lighten($saphire-mox, 20%),
+					$hover-color: $snow-white
+				);
 				font-size: 2.6rem;
 				@media #{$mobile} {
 					font-size: 3rem;
@@ -48,15 +53,21 @@
 			margin-top: 35px;
 		}
 		a {
-			color: $snow-white;
 			font-size: 3rem;
 			margin-right: 20px;
 			margin-left: 20px;
-
 			background-size: 100px;
-			text-decoration: none;
 			@media #{$mobile} {
 				font-size: 3.3rem;
+			}
+			svg {
+				color: lighten($saphire-mox, 20%);
+				@include nav-types(
+					$anchor-color: lighten($saphire-mox, 20%),
+					$hover-color: $snow-white,
+					$visit-color: $static-grey,
+					$decoration: none
+				);
 			}
 		}
 	}
@@ -92,10 +103,10 @@
 			a {
 				@include nav-types(
 					$anchor-color: $dark-electric-blue,
-					$visit-color: $mirage,
-					$hover-color: lighten($dark-electric-blue, 20%)
+					$visit-color: lighten($chillFi-purple, 25%),
+					$hover-color: lighten($ocean-blue, 10%),
+					$decoration: none
 				);
-				text-decoration: none;
 			}
 		}
 	}
