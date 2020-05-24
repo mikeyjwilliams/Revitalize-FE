@@ -101,7 +101,8 @@
 					font-size: 1.8rem;
 					color: $snow-white;
 					@include nav-types(
-						$anchor-color: $snow-white,
+						// new and noteworthy links bottom of projects page -MW
+							$anchor-color: $snow-white,
 						$hover-color: lighten($cerulean, 25%),
 						$visit-color: darken($blue-valentine, 15%)
 					);
