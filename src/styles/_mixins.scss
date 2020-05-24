@@ -118,7 +118,6 @@
 		text-decoration: $decoration;
 		text-decoration-color: $visit-color;
 	}
-
 	&:hover {
 		color: $hover-color;
 		text-decoration: $decoration;
@@ -158,7 +157,7 @@
 			text-decoration-color: $anchor-color;
 			text-decoration: $decoration;
 		}
-	} @else if false {
+	} @else {
 		$anchor-color: $anchor-color--nav-dark;
 		$visit-color: $visit-color--nav-dark;
 		$hover-color: $hover-color--nav-dark;
