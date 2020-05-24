@@ -109,41 +109,25 @@
 ) {
 	&:link {
 		color: $anchor-color;
-		@if $decoration == underline {
-			text-decoration: underline;
-			text-decoration-color: $anchor-color;
-		} @else {
-			text-decoration: none;
-		}
+		text-decoration: $decoration;
+		text-decoration-color: $anchor-color;
 	}
 
 	&:visited {
 		color: $visit-color;
-		@if $decoration == underline {
-			text-decoration: underline;
-			text-decoration-color: $visit-color;
-		} @else {
-			text-decoration: none;
-		}
+		text-decoration: $decoration;
+		text-decoration-color: $visit-color;
 	}
 
 	&:hover {
 		color: $hover-color;
-		@if $decoration == underline {
-			text-decoration: underline;
-			text-decoration-color: $hover-color;
-		} @else {
-			text-decoration: none;
-		}
+		text-decoration: $decoration;
+		text-decoration-color: $hover-color;
 	}
 	&:active {
 		color: $anchor-color;
-		@if $decoration == underline {
-			text-decoration: underline;
-			text-decoration-color: $anchor-color;
-		} @else {
-			text-decoration: none;
-		}
+		text-decoration: $decoration;
+		text-decoration-color: $anchor-color;
 	}
 }
 @mixin nav-theme($light-theme: true, $decoration: underline) {
