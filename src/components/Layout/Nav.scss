@@ -218,7 +218,12 @@ nav {
 .dark-mode {
 	.leftNav {
 		a {
-			@include nav-types($anchor-color: $snow-white, $visit-color: $snow-white, $hover-color: $sub-zero);
+			@include nav-types(
+				$anchor-color: $snow-white,
+				$visit-color: $snow-white,
+				$hover-color: $sub-zero,
+				$decoration: none
+			);
 		}
 		.logo {
 			h1 {
@@ -235,7 +240,7 @@ nav {
 				a {
 					color: $snow-white;
 
-					@include nav-types($anchor-color: $snow-white, $hover-color: $sub-zero, $visit-color: $static-grey);
+					@include nav-theme($light-theme: true);
 				}
 				@media #{$tablet} {
 					font-size: 2.2rem;
