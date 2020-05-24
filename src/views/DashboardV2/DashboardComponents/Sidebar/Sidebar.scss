@@ -32,13 +32,6 @@
 	.info-container {
 		margin: 5% 0;
 		font-family: $secondary-font;
-		p {
-			color: $mirage;
-			font-size: 1.6rem;
-			font-weight: 500;
-			line-height: 1.61;
-			letter-spacing: 0.96px;
-		}
 		span {
 			font-size: 1.8rem;
 			font-weight: 500;
@@ -110,6 +103,7 @@
 	}
 }
 .a-container {
+	color: $black-void;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-evenly;
@@ -160,6 +154,19 @@
 		font-size: 1.5rem;
 	}
 }
+
+.dashboard-stats {
+	.a-container {
+		p {
+			color: $mirage;
+			font-size: 1.6rem;
+			font-weight: 500;
+			line-height: 1.61;
+			letter-spacing: 0.96px;
+		}
+	}
+}
+
 .dark-mode {
 	.sidebar-top {
 		h3,
@@ -172,7 +179,7 @@
 		color: $snow-white;
 		.a-container {
 			p {
-				color: $black-void;
+				color: $snow-white;
 			}
 		}
 	}
