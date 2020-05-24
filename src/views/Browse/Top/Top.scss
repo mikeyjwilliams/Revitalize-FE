@@ -51,8 +51,14 @@
 				background-color: $silver-lining;
 				padding: 10px;
 				border-radius: 0 3px 3px 0;
+
 				@media #{$tablet} {
 					padding: 15px;
+				}
+				a {
+					div {
+						@include nav-theme($light-theme: true);
+					}
 				}
 			}
 
@@ -97,12 +103,11 @@
 }
 
 .dark-mode {
-	.topContainer {
-		.interests {
-			.interest {
-				background-color: $darkness;
-				color: $static-grey;
-			}
+	.interest {
+		background-color: $darkness;
+
+		.inner-interest {
+			@include nav-theme($light-theme: false);
 		}
 	}
 }
