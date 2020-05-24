@@ -64,17 +64,13 @@
 		}
 
 		.project-card-body-descript {
-			a {
-				@include nav-theme($light-theme: true);
-			}
-
 			.dark-mode {
 				background-color: $bleached-black;
 			}
 			a {
-				@include nav-theme($light-theme: false);
-
+				@include nav-theme($light-theme: true);
 				h5 {
+					@include nav-theme($light-theme: true);
 					// color: $chillFi-purple;
 
 					margin: 10px 0;
@@ -106,6 +102,13 @@
 }
 
 .dark-mode {
+	.project-card-container {
+		.project-card-body-descript {
+			a {
+				@include nav-theme($light-theme: false);
+			}
+		}
+	}
 	.project-card-container {
 		background-color: $darkness;
 		.project-card {

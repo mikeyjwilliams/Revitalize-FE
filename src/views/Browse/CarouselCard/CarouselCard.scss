@@ -41,8 +41,7 @@
 		@include subtleBoxShadow;
 
 		a {
-			color: $cerulean;
-			@include nav-types($anchor-color: $cerulean, $visit-color: $erudite-purple, $hover-color: $mutant-turtle);
+			@include nav-theme($light-theme: true);
 		}
 
 		.carousel-card-image {
