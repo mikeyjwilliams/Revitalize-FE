@@ -12,11 +12,10 @@ import Noteworthy from './Noteworthy/Noteworthy';
 import Hours from './Hire/Hire';
 
 const Start = () => {
-
 	return (
 		<>
 			<Nav />
-			<div className="browse-container">
+			<main className="browse-container">
 				<Top />
 				<Spotlight />
 				<RecommendedProjects />
@@ -24,7 +23,8 @@ const Start = () => {
 				<NearYou />
 				<Hours />
 				<Noteworthy />
-			</div>
+				<Hire />
+			</main>
 			<Footer />
 		</>
 	);
