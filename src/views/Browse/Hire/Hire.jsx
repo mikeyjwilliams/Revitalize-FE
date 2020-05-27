@@ -9,14 +9,14 @@ import carpenter from '../../../assets/BrowsePage/carpenter2.jpg';
 
 const Hours = () => {
 	return (
-		<div className="hireContainer">
+		<section className="hireContainer">
 			<h4>Put in Your Hours With Revitalize!</h4>
 			<div className="companies">
 				<img className="companyContainer1" src={menWorking} alt="tradesmen and apprentice working on a job" />
 				<img className="companyContainer" src={electrician} alt="tradesmen working on an electric pole" />
 				<img className="companyContainer" src={carpenter} alt="tradesman and apprentice working on project" />
 			</div>
-		</div>
+		</section>
 	);
 };
 
