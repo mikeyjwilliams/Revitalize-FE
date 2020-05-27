@@ -92,7 +92,7 @@ const Nav = props => {
 					<div className="leftNav">
 						<Link to="/" title="Home">
 							<div className="logo">
-								<span>Revitalize </span>
+								<h1>Revitalize </h1>
 							</div>
 						</Link>
 					</div>
@@ -104,7 +104,7 @@ const Nav = props => {
 					<div className="leftNav">
 						<Link to="/" title="Home">
 							<div className="logo">
-								<span>Revitalize </span>
+								<h1>Revitalize </h1>
 							</div>
 						</Link>
 					</div>
@@ -117,7 +117,7 @@ const Nav = props => {
 			<div className="leftNav">
 				<Link to="/" title="Home">
 					<div className="logo">
-						<span>ReVitalize </span>
+						<h1>ReVitalize </h1>
 					</div>
 				</Link>
 			</div>
