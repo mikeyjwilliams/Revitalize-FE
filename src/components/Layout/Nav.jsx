@@ -198,9 +198,11 @@ const Nav = props => {
 									<button className="register">Get Started</button>
 								</Link>
 							</li>
-							<div className="dark-mode-emoji">
-								<FaMoon onClick={() => toggleDarkMode()} />
-							</div>
+							<li>
+								<div className="dark-mode-emoji">
+									<FaMoon onClick={() => toggleDarkMode()} />
+								</div>
+							</li>
 							{!localStorage.getItem('token') && (
 								<li>
 									<div
