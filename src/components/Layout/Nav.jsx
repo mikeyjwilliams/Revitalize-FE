@@ -31,19 +31,18 @@ const authenticatedLinks = [
 const Nav = props => {
 	const [activeHamburger, setActiveHamburger] = useState(false);
 	const [darkModeActive, setDarkMode] = useState(JSON.parse(localStorage.getItem('dark-mode')));
-	let darkModeStatus = "Dark Mode Off";
+	let darkModeStatus = 'Dark Mode Off';
 
-	if(darkModeActive === null){
+	if (darkModeActive === null) {
 		setDarkMode(false);
 	} else if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
 		document.querySelector('body').classList.add('dark-mode');
-		darkModeStatus = "Dark Mode On";
+		darkModeStatus = 'Dark Mode On';
 	} else {
 		document.querySelector('body').classList.remove('dark-mode');
-		darkModeStatus = "Dark Mode Off";
+		darkModeStatus = 'Dark Mode Off';
 	}
-	console.log("dark mode nav:", darkModeActive);
-
+	console.log('dark mode nav:', darkModeActive);
 
 	//custom hook for window.onClick
 	const [
@@ -93,7 +92,7 @@ const Nav = props => {
 					<div className="leftNav">
 						<Link to="/" title="Home">
 							<div className="logo">
-								<span>Revitalize </span>
+								<h1>Revitalize </h1>
 							</div>
 						</Link>
 					</div>
@@ -105,7 +104,7 @@ const Nav = props => {
 					<div className="leftNav">
 						<Link to="/" title="Home">
 							<div className="logo">
-								<span>Revitalize </span>
+								<h1>Revitalize </h1>
 							</div>
 						</Link>
 					</div>
@@ -118,7 +117,7 @@ const Nav = props => {
 			<div className="leftNav">
 				<Link to="/" title="Home">
 					<div className="logo">
-						<span>ReVitalize </span>
+						<h1>ReVitalize </h1>
 					</div>
 				</Link>
 			</div>
@@ -158,7 +157,6 @@ const Nav = props => {
 										className="user-icon"
 										firstName={data.me.firstName}
 										lastName={data.me.lastName}
-
 									/>
 								)}
 
@@ -228,8 +226,7 @@ const Nav = props => {
 									)}
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
-
-										{darkModeStatus}
+											{darkModeStatus}
 										</div>
 									</li>
 								</>
@@ -245,9 +242,14 @@ const Nav = props => {
 											<button className="register">Get Started</button>
 										</Link>
 									</li>
+									))}
+									<li>
+										<Link to="/register">
+											<button className="register">Get Started</button>
+										</Link>
+									</li>
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
-
 											{darkModeStatus}
 										</div>
 									</li>

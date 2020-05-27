@@ -1,5 +1,5 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+//@import '../../styles/variables';
+//@import '../../styles/mixins';
 @import './Hamburger';
 @import './Overlay';
 
@@ -36,22 +36,23 @@ nav {
 		align-self: center;
 		margin-left: 10px;
 		a {
-			text-decoration: none;
-		}
-		.logo {
-			display: flex;
-			align-items: center;
-			margin: 20px;
+			color: $chillFi-purple;
+			@include nav-types($anchor-color: $chillFi-purple, $visit-color: $chillFi-purple, $decoration: none);
 
-			span {
-				@media #{$tablet} {
-					color: $abatross;
+			.logo {
+				display: flex;
+				align-items: center;
+				margin: 20px;
+
+				h1 {
+					@media #{$tablet} {
+						color: $abatross;
+					}
+					font-family: 'futura-pt';
+					align-self: center;
+					font-size: 2.8rem;
+					letter-spacing: 0.09em;
 				}
-				font-family: 'futura-pt';
-				align-self: center;
-				font-size: 2.8rem;
-				letter-spacing: 0.09em;
-				color: $chillFi-purple;
 			}
 			.loading-banner {
 				margin-left: 20px;
@@ -62,7 +63,6 @@ nav {
 		}
 	}
 	.right-nav {
-		color: $chillFi-purple;
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
@@ -86,9 +86,10 @@ nav {
 					margin-right: 300px;
 				}
 				a {
-					color: $chillFi-purple;
 					letter-spacing: 0.06em;
 					line-height: 0.9;
+
+					@include nav-types($visit-color: $mirage);
 				}
 			}
 			.logout {
@@ -101,6 +102,7 @@ nav {
 				.user-personal-greeting {
 					user-select: none;
 					margin-right: 20px;
+					@include nav-types();
 					@media #{$tablet} {
 						color: $snow-white;
 					}
@@ -151,8 +153,12 @@ nav {
 						font-size: 2.6rem;
 						padding: 5px;
 						display: flex;
+						// &:hover {
+						// 	background-color: darken($chillFi-purple, 7.5%);
+						// }
 						&:hover {
-							background-color: darken($chillFi-purple, 7.5%);
+							color: $chillFi-purple;
+							background-color: $snow-white;
 						}
 						.icon {
 							width: 26px;
@@ -194,96 +200,116 @@ nav {
 			}
 			svg {
 				color: $chillFi-purple;
+				@include nav-types();
 			}
-
-
 		}
 	}
 }
 
-.dropdown-darkMode{
+.dropdown-darkMode {
 	font-size: 2.6rem;
 	color: $snow-white;
 
-	&:hover{
+	&:hover {
 		cursor: pointer;
 	}
 }
 
 .dark-mode {
-	nav {
+	.leftNav {
+		a {
+			@include nav-types(
+				$anchor-color: $snow-white,
+				$visit-color: $snow-white,
+				$hover-color: $sub-zero,
+				$decoration: none
+			);
+		}
 		.logo {
-			span {
-				color: $snow-white;
-			}
-			.loading-banner {
-				color: $mirage;
+			h1 {
+				color: inherit;
 			}
 		}
+		.loading-banner {
+			color: $mirage;
+		}
+	}
+	.right-nav {
 		ul {
-			.navLinks a {
-				color: $snow-white;
-			}
-			.login {
-				color: $snow-white;
-				background-color: $maastricht-blue;
-				&:hover {
-					color: $maastricht-blue;
-					background-color: $snow-white;
-				}
-			}
-			.register {
-				color: $snow-white;
-				background-color: $maastricht-blue;
-				&:hover {
-					color: $maastricht-blue;
-					background-color: $snow-white;
+			.navLinks {
+				a {
+					color: $snow-white;
+
+					@include nav-theme($light-theme: false);
 				}
 				@media #{$tablet} {
 					font-size: 2.2rem;
 				}
 			}
-			.user {
-				color: $snow-white;
+		}
+	}
+
+	.register {
+		color: $snow-white;
+		background-color: $maastricht-blue;
+		&:hover {
+			color: $maastricht-blue;
+			background-color: $snow-white;
+			.right-nav .dark-mode-emoji {
+				svg {
+					color: $maastricht-blue;
+				}
+				@media #{$tablet} {
+					display: none;
+				}
+			}
+			.right-nav ul .user .dropdown {
+				background-color: $maastricht-blue;
+				.arrow-up {
+					border-left: 15px solid $maastricht-blue;
+					border-right: 15px solid $maastricht-blue;
+					border-bottom: 15px solid $maastricht-blue;
+					border-top: 15px solid $maastricht-blue;
+				}
+				.dropdown-option {
+					&:hover {
+						background-color: darken($maastricht-blue, 7.5%);
+					}
+				}
 			}
 		}
-		.right-nav .dark-mode-emoji {
+		.user {
+			// username becomes white
+			color: $snow-white;
+		}
+	}
+
+	.right-nav {
+		.dark-mode-emoji {
 			svg {
 				color: $maastricht-blue;
+				&:hover {
+					color: $snow-white;
+				}
 			}
 			@media #{$tablet} {
 				display: none;
 			}
 		}
-		.right-nav ul .user .dropdown {
-			background-color: $maastricht-blue;
-			.arrow-up {
-				border-left: 15px solid $maastricht-blue;
-				border-right: 15px solid $maastricht-blue;
-				border-bottom: 15px solid $maastricht-blue;
-				border-top: 15px solid $maastricht-blue;
-			}
-			.dropdown-option {
-				&:hover {
-					background-color: darken($maastricht-blue, 7.5%);
-				}
+	}
+	.right-nav ul .user .dropdown {
+		background-color: $maastricht-blue;
+		.arrow-up {
+			border-left: 15px solid $maastricht-blue;
+			border-right: 15px solid $maastricht-blue;
+			border-bottom: 15px solid $maastricht-blue;
+			border-top: 15px solid $maastricht-blue;
+		}
+		.dropdown-option {
+			&:hover {
+				background-color: $snow-white;
+				color: darken($maastricht-blue, 7.5%);
 			}
 		}
 	}
 }
-
-// nav.nav-frosted {
-// 	// // This is the frosted glass effect
-// 	// background-color: rgba($erudite-purple, 0.75);
-// 	// backdrop-filter: blur(8px);
-// 	width: 100%;
-// 	position: fixed;
-// 	@media #{$mobile} {
-// 		background: inherit;
-// 		height: 90px;
-// 	}
-// 	@media #{$tablet} {
-// 		background: inherit;
-// 		height: 90px;
-// 	}
-// }

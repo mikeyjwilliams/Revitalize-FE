@@ -16,14 +16,16 @@ const Spotlight = () => {
 	const shifty = data.projectsNearMe.shift();
 
 	return (
-		<div className="spotlight-container">
-			<div className="spotlight-card" style={{ backgroundImage: `url(${shifty.featuredImage})` }}>
-				<h2>SPOTLIGHT</h2>
-				<h3>{shifty.name}</h3>
-				<p>{shifty.description}</p>
-				<Link to={`/project/${shifty.slug}`}>
-					Learn more <FaAngleRight />
-				</Link>
+		<div className="spotlight-container" style={{ backgroundImage: `url(${shifty.featuredImage})` }}>
+			<div className="spotlight-card" >
+				<div className="spotlight">
+					<h2>SPOTLIGHT</h2>
+					<h3>{shifty.name}</h3>
+					<p>{shifty.description}</p>
+					<Link to={`/project/${shifty.slug}`}>
+						Learn more <FaAngleRight />
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
