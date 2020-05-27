@@ -50,27 +50,48 @@
 			grid-template-columns: repeat(3, 1fr);
 			grid-auto-rows: minmax(0, 4.83%);
 			grid-template-areas:
-				'anthony	        .           .'
-				'anthony        kerry         .'
-				'anthony        kerry        alex'
-				'anthony        kerry        alex'
-				'  .            kerry        alex'
-				'ruth             .          alex'
-				'ruth           jose           .'
-				'ruth           jose         elan'
-				'ruth           jose         elan'
-				' .             jose         elan'
-				'omar            .           elan'
-				'omar          skyelar        .'
-				'omar          skyelar      clark'
-				'omar          skyelar      clark'
-				' .            skyelar      clark'
-				'frank           .          clark'
-				'frank       theia        .  '
-				'frank        theia      Lucy'
-				'frank       theia       Lucy'
-				'  .         theia       Lucy'
-				'  .             .         Lucy';
+					'anthony	        .           .'
+					'anthony        kerry         .'
+					'anthony        kerry        alex'
+					'anthony        kerry        alex'
+					'  .            kerry        alex'
+					'ruth             .          alex'
+					'ruth           jose           .'
+					'ruth           jose         elan'
+					'ruth           jose         elan'
+					' .             jose         elan'
+					'omar            .           elan'
+					'omar          skyelar        .'
+					'omar          skyelar      clark'
+					'omar          skyelar      clark'
+					' .            skyelar      clark'
+					'michaelW           .          clark'
+					'michaelW       theia        .  '
+					'michaelW       theia      Lucy'			
+					'michaelW       theia      Lucy'
+					'  .            theia      Lucy'
+					'michaelW            .      Lucy'
+					'michaelW		bryan				.'
+					'michaelW       bryan        dalton'	
+					'michaelW       bryan        dalton'
+					'  .            bryan        dalton'		
+					'  .              .          dalton';						
+					
+		
+		// .labs10squad{
+		// 	display: grid;
+		// 	grid-gap: 0;
+		// 	grid-template-columns: repeat(3, 1fr);
+		// 	grid-auto-rows: minmax(0, 4.83%);
+		// 	grid-template-areas:
+		// 		'michaelW			.			.'
+		// 		'michaelW       chase         .'	
+		// 		'michaelW       chase        bryan'
+		// 		'michaelW       chase        bryan'		
+		// 		'  .            chase        bryan'		
+		// 		' 	          .       	     bryan'
+		// 											;	
+
 
 			@media #{$tablet} {
 				grid-template-columns: repeat(2, 1fr);
@@ -113,6 +134,7 @@
 			.person {
 				position: relative;
 				width: 100%;
+				// grid-area: auto;
 
 				@media #{$mobile} {
 					width: 100%;
@@ -203,7 +225,6 @@
 				height: 70%;
 			}
 		}
-
 		.index0 {
 			grid-area: anthony;
 		}
@@ -248,8 +269,24 @@
 			// }
 		}
 		.index11 {
-			grid-area: Lucy;
+			grid-area: michaelW;
 		}
+		// .index12 {
+		// 	grid-area: chase;
+		// }
+		.index13 {
+			grid-area: bryan;
+		}
+		.index14 {
+			grid-area: dalton;
+		}
+		// .index15 {
+		// 	grid-area: michaelM;
+		// }
+		// .index16 {
+		// 	grid-area: jules;
+		// }
+		
 	}
 }
 .dark-mode {
