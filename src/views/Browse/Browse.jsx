@@ -15,14 +15,16 @@ const Start = () => {
 	return (
 		<>
 			<Nav />
-			<main className="browse-container">
-				<Top />
-				<Spotlight />
-				<RecommendedProjects />
-				<CreateProject />
-				<NearYou />
-				<Hours />
-				<Noteworthy />
+			<main>
+				<div className="browse-container">
+					<Top />
+					<Spotlight />
+					<RecommendedProjects />
+					<CreateProject />
+					<NearYou />
+					<Hours />
+					<Noteworthy />
+				</div>
 			</main>
 			<Footer />
 		</>
