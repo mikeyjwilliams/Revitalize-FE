@@ -77,12 +77,15 @@ const Form3 = ({
 	return (
 		<form onSubmit={nextStep} className="form-3">
 			<div className="form-1-field">
-				<h4>Project Duration</h4>
+				<label htmlFor="projectDuration">
+					<h3>Project Duration</h3>
+				</label>
 				<div className="duration">
 					<input
 						required
 						name="duration"
 						type="number"
+						id="projectDuration"
 						className={`duration-input ${errors.duration && `errorBorder`}`}
 						placeholder="Number of months"
 						value={duration}
@@ -97,12 +100,15 @@ const Form3 = ({
 			</div>
 
 			<div className="form-1-field">
-				<h4>Goal Amount</h4>
+				<label htmlFor="projectAmount">
+					<h3>Goal Amount</h3>
+				</label>
 				<input
 					min="0"
 					step="0.10"
 					name="goalAmount"
 					type="number"
+					id="projectAmount"
 					className={`proj-budget ${errors.goalAmount && `errorBorder`}`}
 					placeholder="How much money needs to be raised"
 					value={goalAmount === 0 ? '' : goalAmount}
@@ -115,9 +121,12 @@ const Form3 = ({
 			</div>
 
 			<div className="form-1-field">
-				<h4>Project Difficulty Level</h4>
+				<label htmlFor="projectDifficulty">
+					<h3>Project Difficulty Level</h3>
+				</label>
 				<select
 					name="difficulty"
+					id="projectDifficulty"
 					value={difficulty}
 					onChange={e => {
 						validateInput(e);
@@ -131,8 +140,15 @@ const Form3 = ({
 				{errors.difficulty && <p className="errorText">Please select a difficulty</p>}
 			</div>
 
-			<h4>Project Photos</h4>
-			<Droppy images={images} setProjectDetails={setProjectDetails} projectDetails={projectDetails} />
+			<label htmlFor="projectPhoto">
+				<h3>Project Photos</h3>
+			</label>
+			<Droppy
+				id="projectPhoto"
+				images={images}
+				setProjectDetails={setProjectDetails}
+				projectDetails={projectDetails}
+			/>
 			{errors.images && images.length <= 0 && <p className="errorText">Please upload photos of your project</p>}
 			{errors.images && images.length > 5 && (
 				<p className="errorText">Sorry, but you can only upload 5 photos or less</p>

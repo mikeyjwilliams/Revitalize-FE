@@ -187,6 +187,12 @@ const Nav = props => {
 									<Link to={href}>{label}</Link>
 								</li>
 							))}
+							{/* <li>
+									<Link to="/register">
+										<button className="register">Get Started</button>
+									</Link>
+								</li>
+							))} */}
 							<li>
 								<Link to="/register">
 									<button className="register">Get Started</button>
@@ -243,6 +249,12 @@ const Nav = props => {
 											<Link to={href}>{label}</Link>
 										</li>
 									))}
+									{/* <li>
+											<Link to="/register">
+												<button type="button" className="register">Get Started</button>
+											</Link>
+										</li>
+									))} */}
 									<li>
 										<Link to="/register">
 											<button className="register">Get Started</button>
