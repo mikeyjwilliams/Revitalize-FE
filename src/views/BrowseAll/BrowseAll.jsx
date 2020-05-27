@@ -7,50 +7,46 @@ import Top from './Top/Top';
 import ProjectCard from './ProjectCard/ProjectCard';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
-
 // Graphql
 import { useLazyQuery } from '@apollo/react-hooks';
 import { QUERY_PROJECTS } from '../../graphql/queries';
 
 const BrowseAll = () => {
 	const [projectState, setProjectState] = useState();
-	const [queryFormState, setQueryFormState] = useState({ query: "" });
-
+	const [queryFormState, setQueryFormState] = useState({ query: '' });
 
 	const [queryProjects, { loading, data }] = useLazyQuery(QUERY_PROJECTS);
 
-
 	useEffect(() => {
-		submitQuery()
+		submitQuery();
 		data && setProjectState({ projects: data.projects });
-
 	}, [data]);
 
 	const submitQuery = async () => {
-		const queried = await queryProjects({ variables: { query: queryFormState.query } })
+		const queried = await queryProjects({ variables: { query: queryFormState.query } });
 		console.log(queried);
-	}
+	};
 
-
-
-	if (loading) return <LoadingSpinner />
+	if (loading) return <LoadingSpinner />;
 	// if (error) return <h3>error</h3>;
 
 	return (
 		<>
 			<Nav />
-			<main className="browse-all-container">
+			<main>
+				<div className="browse-all-container">
+					<Top
+						submitQuery={submitQuery}
+						queryFormState={queryFormState}
+						setQueryFormState={setQueryFormState}
+					/>
 
-				<Top submitQuery={submitQuery} queryFormState={queryFormState} setQueryFormState={setQueryFormState} />
-
-
-
-				<section className="browse-all-project-card-container">
-					{projectState && projectState.projects
-						? projectState.projects.map(project => <ProjectCard project={project} key={project.id} />)
-						: null}
-				</section>
-
+					<section className="browse-all-project-card-container">
+						{projectState && projectState.projects
+							? projectState.projects.map(project => <ProjectCard project={project} key={project.id} />)
+							: null}
+					</section>
+				</div>
 			</main>
 			<Footer />
 		</>
