@@ -44,7 +44,7 @@
 }
 
 @mixin subtleBoxShadow {
-	box-shadow: 0px 0px 5px 0px rgba(10,10,10,0.25);
+	box-shadow: 0px 0px 5px 0px rgba(10, 10, 10, 0.25);
 }
 
 @mixin subtleBoxShadowDark {
@@ -54,7 +54,6 @@
 @mixin cardBoxShadow {
 	box-shadow: 0px 4px 5px -3px rgba(10, 10, 10, 0.35);
 }
-
 
 @mixin bottomBoxShadow {
 	box-shadow: 0px 4px 3px -3px rgba(10, 10, 10, 0.25);
@@ -68,10 +67,8 @@
 }
 
 @mixin subtleBoxShadowDistance {
-	box-shadow: 0px 0px 22px -10px rgba(10, 10, 10, 0.10);
+	box-shadow: 0px 0px 22px -10px rgba(10, 10, 10, 0.1);
 }
-
-
 
 @mixin text-shadow {
 	text-shadow: 1px 1px 3px rgba(10, 10, 10, 0.25);
@@ -81,16 +78,46 @@
 @mixin skeleton-section {
 	// border: 1px solid $static-grey;
 	border-bottom-color: $static-grey;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
 	// margin: 5px 10px 5px 10px;
 	padding: 15px 15px 15px 15px;
 }
 @mixin skeleton-section-dark {
 	// border: 1px solid $static-grey;
 	border-bottom-color: $darkness2;
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
 	// margin: 5px 10px 5px 10px;
 	padding: 15px 15px 15px 15px;
+}
+
+@mixin btn-main($bg-color: $chillFi-purple, $color: $snow-white, $margin: 8% 0, $width: 11rem) {
+	font-family: $font-family--primary;
+	font-size: 1.8rem;
+	background: $bg-color;
+	color: $color;
+	margin: $margin;
+	padding: 1.6rem 2rem;
+	border-radius: 0.25rem;
+	border-width: 3px;
+	border-color: $color;
+	border-style: solid;
+	width: $width;
+	transition: 0.2s all ease-in-out;
+	user-select: none;
+	&:hover {
+		@if $bg-color == $snow-white {
+			background-color: $color;
+			color: $bg-color;
+		} @else {
+			background-color: lighten($bg-color, 50%);
+			color: $black-void;
+		}
+		cursor: pointer;
+		border: 2px solid $bg-color;
+	}
+	&:active {
+		transform: scale(0.5);
+	}
 }
