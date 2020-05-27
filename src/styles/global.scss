@@ -19,6 +19,9 @@ a {
 	color: inherit;
 	user-select: none;
 	cursor: pointer;
+	&:focus {
+		outline: dotted;
+	}
 }
 
 i {

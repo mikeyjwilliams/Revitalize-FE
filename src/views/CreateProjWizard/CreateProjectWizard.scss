@@ -2,211 +2,212 @@
 @import './Form2/Form2.scss';
 @import './Form3/Form3.scss';
 
+.errorText {
+	color: red;
+}
 
-	.errorText {
+.errorBorder {
+	color: red;
+	border-radius: 5px;
+	border: 1px solid red !important;
+
+	&::placeholder {
 		color: red;
 	}
+}
 
-	.errorBorder {
-		color: red;
-		border-radius: 5px;
-		border: 1px solid red !important;
-
-		&::placeholder {
-			color: red;
-		}
-	}
-
-	.create-project {
+.create-project {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin-bottom: 50px;
+	min-height: 935px;
+	.form-plus-quote-container {
+		@include cardBoxShadow;
+		background-color: $chillFi-purple;
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 0;
-		margin-bottom: 50px;
-		min-height: 935px;
-		.form-plus-quote-container {
-			@include cardBoxShadow;
-			background-color: $chillFi-purple;
-			display: flex;
-			justify-content: space-around;
+		justify-content: space-around;
+		width: 100%;
+		height: 935px;
+		max-width: 1200px;
+		position: relative;
+		z-index: 5;
+		@media #{$tablet} {
 			width: 100%;
-			height: 935px;
-			max-width: 1200px;
-			position: relative;
-			z-index: 5;
+			margin-left: unset;
+		}
+
+		q.quote {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			width: 35%;
+			padding: 0 60px;
+			white-space: nowrap;
+			h5 {
+				height: auto;
+				margin: auto 0;
+				text-align: center;
+				letter-spacing: 0.06em;
+				color: $elans-grey;
+			}
+			p {
+				height: auto;
+				padding-bottom: 120px;
+				font-size: 1.8rem;
+				color: $elans-grey;
+			}
+			@media #{$tablet} {
+				display: none;
+			}
+		}
+		.ui-section {
+			background-color: $snow-white;
+			width: 65%;
+
 			@media #{$tablet} {
 				width: 100%;
-				margin-left: unset;
 			}
-
-			q.quote {
+			@media #{$mobile} {
+				width: 100%;
+			}
+			.title {
+				display: block;
+				margin: 40px auto 40px 8%;
+			}
+			.progress-tracker {
 				display: flex;
 				flex-direction: column;
-				align-items: center;
-				text-align: center;
-				width: 35%;
-				padding: 0 60px;
-				white-space: nowrap;
-				h5 {
-					height: auto;
-					margin: auto 0;
-					text-align: center;
-					letter-spacing: 0.06em;
-					color: $elans-grey;
-				}
-				p {
-					height: auto;
-					padding-bottom: 120px;
-					font-size: 1.8rem;
-					color: $elans-grey;
-				}
-				@media #{$tablet} {
-					display: none;
+				justify-content: space-around;
+				min-width: 100%;
+				.tracker {
+					display: flex;
+					justify-content: space-around;
+					width: 50%;
+					margin: 30px auto 45px 8%;
+					.step {
+						border-radius: 5px;
+						background: #ecebf3;
+						width: 32%;
+						height: 10px;
+					}
+					.active {
+						background-color: $chillFi-purple;
+					}
 				}
 			}
-			.ui-section {
-				background-color: $snow-white;
-				width: 65%;
-
+			form {
+				display: flex;
+				flex-direction: column;
+				margin: 0 8% 0 8%;
+				// height: 500px;
 				@media #{$tablet} {
-					width: 100%;
+					width: 60%;
 				}
 				@media #{$mobile} {
-					width: 100%;
+					width: 80%;
 				}
-				.title {
-					display: block;
-					margin: 40px auto 40px 8%;
-				}
-				.progress-tracker {
-					display: flex;
-					flex-direction: column;
-					justify-content: space-around;
-					min-width: 100%;
-					.tracker {
-						display: flex;
-						justify-content: space-around;
-						width: 50%;
-						margin: 30px auto 45px 8%;
-						.step {
-							border-radius: 5px;
-							background: #ecebf3;
-							width: 32%;
-							height: 10px;
-						}
-						.active {
-							background-color: $chillFi-purple;
-						}
-					}
-				}
-				form {
-					display: flex;
-					flex-direction: column;
-					margin: 0 8% 0 8%;
-					// height: 500px;
-					@media #{$tablet} {
-						width: 60%;
-					}
-					@media #{$mobile} {
-						width: 80%;
-					}
-					h2 {
-						// margin: 3% auto auto 0;
+				h2 {
+					// margin: 3% auto auto 0;
 
-						height: auto;
-						// font-size: 18px;
-						line-height: 24px;
-						letter-spacing: 0.06em;
-					}
-					input {
-						border: 1px solid $mirage;
-						margin: 6px 0 6px 0;
+					height: auto;
+					// font-size: 18px;
+					line-height: 24px;
+					letter-spacing: 0.06em;
+				}
+				input {
+					border: 1px solid $mirage;
+					margin: 6px 0 6px 0;
 
-						&:focus {
-							color: $chillFi-purple;
-							border: 1px solid $chillFi-purple;
-						}
+					&:focus {
+						color: $chillFi-purple;
+						border: 1px solid $luigi;
+					}
+				}
+				button {
+					@include buttonStyler($chillFi-purple, $snow-white, none);
+					border-radius: 3px;
+					align-self: flex-end;
+				}
+				select,
+				option {
+					font-family: 'Roboto';
+					padding: 0 15px;
+					width: 200px;
+
+					&:focus {
+						border: 1px solid $luigi;
+						color: $chillFi-purple;
+						outline: none;
+					}
+				}
+
+				.form-navigation {
+					display: flex;
+					height: 100px;
+					justify-content: space-between;
+					.prev-step {
+						order: -1;
+						margin: 20px;
+					}
+					.prev-step2 {
+						//added for debug purposes
+						order: -1;
+						margin: 20px;
+						position: relative;
+						top: 100px;
+					}
+					.next-step {
+						margin: 20px;
+					}
+					.next-step2 {
+						//added for debug purposes
+						margin: 20px;
+						position: relative;
+						top: 100px;
+					}
+					.next-step3 {
+						//added for debug purposes
+						margin: 20px;
+						position: relative;
+						top: 40px;
 					}
 					button {
-						@include buttonStyler($chillFi-purple, $snow-white, none);
-						border-radius: 3px;
-						align-self: flex-end;
-					}
-					select,
-					option {
-						font-family: 'Roboto';
-						padding: 0 15px;
-						width: 200px;
-
-						&:focus {
-							border: 1px solid $chillFi-purple;
-							color: $chillFi-purple;
-							outline: none;
-						}
-					}
-
-					.form-navigation {
+						width: unset;
 						display: flex;
-						height:100px;
-						justify-content: space-between;
-						.prev-step {
-							order: -1;
-							margin:20px;
-						}
-						.prev-step2 { //added for debug purposes
-							order: -1;
-							margin:20px;
-							position: relative;
-							top: 100px;
-						}
-						.next-step{
-							margin:20px;
-						}
-						.next-step2{ //added for debug purposes
-							margin:20px;
-							position: relative;
-							top: 100px;
-						}
-						.next-step3{ //added for debug purposes
-							margin:20px;
-							position: relative;
-							top: 40px;
-						}
-						button {
-							width: unset;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-						}
-						button.submit {
-							background-color: $mutant-turtle;
-							margin:20px;
-						}
+						justify-content: center;
+						align-items: center;
 					}
-					.form-navigation.first-step {
-						justify-content: flex-end;
+					button.submit {
+						background-color: $mutant-turtle;
+						margin: 20px;
 					}
-					.description {
-						height: 11rem;
-					}
+				}
+				.form-navigation.first-step {
+					justify-content: flex-end;
+				}
+				.description {
+					height: 11rem;
+				}
 
-					.start-date {
-						font-family: 'futura-pt';
-					}
-					textarea {
-						border: 1px solid $mirage;
-						max-width: 95%;
+				.start-date {
+					font-family: 'futura-pt';
+				}
+				textarea {
+					border: 1px solid $mirage;
+					max-width: 95%;
 
-						&:focus {
-							color: $chillFi-purple;
-							border: 1px solid $chillFi-purple;
-						}
+					&:focus {
+						color: $chillFi-purple;
+						border: 1px solid $luigi;
 					}
 				}
 			}
 		}
 	}
-
+}
 
 .dark-mode {
 	// .title{
@@ -214,7 +215,6 @@
 	// }
 	.create-project-wizard-container {
 		.create-project {
-
 			.form-plus-quote-container {
 				.ui-section {
 					background-color: $darkness;

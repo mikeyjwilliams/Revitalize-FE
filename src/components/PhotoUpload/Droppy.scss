@@ -12,7 +12,9 @@
 		align-items: center;
 		&:active,
 		&:focus {
-			outline: none;
+			outline: medium;
+			outline-color: $luigi;
+			border-color: $luigi;
 		}
 	}
 }
