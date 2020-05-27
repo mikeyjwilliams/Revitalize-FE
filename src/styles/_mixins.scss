@@ -121,6 +121,7 @@
 	&:active {
 		transform: scale(0.98);
 	}
+}
 /**
 * mixin nav-types()
 *  default colors set if no colors are given.
@@ -157,6 +158,7 @@
 		text-decoration-color: $anchor-color;
 	}
 }
+
 @mixin nav-theme($light-theme: true, $decoration: underline) {
 	@if $light-theme {
 		$anchor-color: $anchor-color--nav-light;
@@ -214,4 +216,3 @@
 		}
 	}
 }
-	
