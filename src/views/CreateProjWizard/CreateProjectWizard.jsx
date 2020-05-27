@@ -78,7 +78,7 @@ const CreateProjectWizard = ({ history }) => {
 			<div className="page-container">
 				<Nav />
 
-				<div className="create-project">
+				<main className="create-project">
 					<div className="form-plus-quote-container">
 						<q className="quote">
 							<h5>
@@ -138,7 +138,7 @@ const CreateProjectWizard = ({ history }) => {
 							) : null}
 						</div>
 					</div>
-				</div>
+				</main>
 			</div>
 			<Footer />
 		</>
