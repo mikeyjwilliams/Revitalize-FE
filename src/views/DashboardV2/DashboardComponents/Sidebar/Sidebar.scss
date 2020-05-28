@@ -108,10 +108,7 @@
 	flex-flow: row wrap;
 	justify-content: space-evenly;
 	margin-bottom: 6%;
-	a {
-		color: $blue-valentine;
-		font-size: 1.6rem;
-	}
+
 	.figure {
 		.empty {
 			height: 30px;
@@ -158,11 +155,19 @@
 .dashboard-stats {
 	.a-container {
 		p {
-			color: $mirage;
+			color: $dark-grey;
 			font-size: 1.6rem;
 			font-weight: 500;
 			line-height: 1.61;
 			letter-spacing: 0.96px;
+		}
+		a {
+			font-size: 1.6rem;
+			@include nav-types(
+				$anchor-color: $chillFi-purple,
+				$visit-color: $ruby-enchantment,
+				$hover-color: $dark-grey
+			);
 		}
 	}
 }
