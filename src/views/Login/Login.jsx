@@ -51,7 +51,7 @@ const Login = props => {
 	return (
 		<>
 			<div className="login-container">
-				<FaArrowLeft onClick={goBack} />
+				<FaArrowLeft data-testid="backArrow" onClick={goBack} />
 				<div className="login-container-left">
 
 					<div className="login-form">
@@ -71,7 +71,7 @@ const Login = props => {
 								<div>
 									<a className="login-button" href={`${process.env.REACT_APP_OAUTH_FACEBOOK_LINK}`}>
 										<img src={fbLogo} alt="Facebook logo" />
-										<h5>Sign In With Facebook</h5>
+										<h5 data-testid="h5">Sign In With Facebook</h5>
 									</a>
 								</div>
 							</button>
@@ -83,7 +83,8 @@ const Login = props => {
 						</div>
 						<form className="login-local" onSubmit={handleSubmit}>
 							<p className="login-title">Email</p>
-							<input 
+							<input
+								data-testid="email"
 								name='email'
 								type='email'
 								placeholder="Email..."
@@ -95,6 +96,7 @@ const Login = props => {
 								{/* <span className="">Forgot Password?</span> */}
 							</div>
 							<input
+							    data-testid="password"
 								name="password"
 								type="password"
 								placeholder="Password..."
@@ -106,7 +108,7 @@ const Login = props => {
 									Don't have an account? <Link to='/register' style={{ textDecoration: `underline` }}>Create One</Link>
 								</p>
 							</div>
-							<button>Log In</button>
+							<button data-testid="toggle">Log In</button>
 						</form>
 					</div>
 				</div>
