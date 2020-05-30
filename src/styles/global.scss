@@ -4,6 +4,7 @@ html {
 }
 
 body {
+	background-color: $franks-grey;
 	font-family: $default-font;
 	button:focus {
 		outline: none;
