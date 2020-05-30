@@ -10,7 +10,14 @@ test('Renders footer correctly', () => {
 			<Footer />
 		</Router>,
 	);
+});
 
+test('links have correct text content & href', () => {
+	const container = rtl.render(
+		<Router>
+			<Footer />
+		</Router>,
+	);
 	const lItems = document.getElementsByTagName('a');
 
 	expect(lItems[0]).toHaveTextContent('About');
