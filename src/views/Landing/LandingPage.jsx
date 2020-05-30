@@ -24,15 +24,15 @@ class LandingPage extends React.Component {
 	render() {
 		return (
 			<>
-			<Nav />
-			<div className="landing">
-				<Header />
-				<CrowdFunding />
-				<ProjectSpotlight />
-				<FeaturedProjects />
-				<SearchProjects />
-			</div>
-			<Footer />
+				<Nav />
+				<main className="landing">
+					<Header />
+					<CrowdFunding />
+					<ProjectSpotlight />
+					<FeaturedProjects />
+					<SearchProjects />
+				</main>
+				<Footer />
 			</>
 		);
 	}

@@ -13,6 +13,14 @@ import anthony from '../../../assets/AboutPage/anthony.png';
 import elan from '../../../assets/AboutPage/elan.png';
 import theia from '../../../assets/AboutPage/theia.png';
 import Lucy from '../../../assets/AboutPage/Lucy.png';
+import michaelM from '../../../assets/AboutPage/michaelM.png';
+import michaelW from '../../../assets/AboutPage/michaelW.png';
+import chase from '../../../assets/AboutPage/chase.png';
+import dalton from '../../../assets/AboutPage/Dalton.png';
+import jules from '../../../assets/AboutPage/jules.png';
+import bryan from '../../../assets/AboutPage/bryan.png';
+
+
 const Squad = () => {
 	const squad = [
 		{
@@ -161,6 +169,78 @@ const Squad = () => {
 			twitter: '',
 			site: '',
 		},
+		{
+			name: 'Michael Williams',
+			role: 'Full-Stack Developer',
+			image: `${michaelW}`,
+			background: '#ffb588',
+			bio:
+				'Michael resides south of sunny St. Pete, FL. He enjoys art, playing guitar, and solving problems with code. Michael likes to help out when possible and pair program remote or in person.',
+			github: 'https://github.com/mikeyjwilliams',
+			linkedIn: 'https://www.linkedin.com',
+			twitter: 'https://twitter.com',
+			site: '',
+		},
+		{
+			name: 'Chase Collins',
+			role: 'Full-Stack Developer',
+			image: `${chase}`,
+			background: '#235597',
+			bio:
+				'Chase hails from Colorado. He is married to an amazing wife Alexandria. He enjoys long walks with Maple(the family corgi), rock-climbing, reading and pounding on a keyboard.',
+			github: 'https://github.com/Chase-42',
+			linkedIn: 'https://www.linkedin.com/in/chase-collins42/',
+			twitter: 'https://twitter.com',
+			site: 'https://chase-collins-portfolio.netlify.app/',
+		},
+		{
+			name: 'Bryan Adams',
+			role: 'Team Lead, Full-Stack Developer',
+			image: `${bryan}`,
+			background: '#d6ad2f',
+			bio:
+				'Bryan is a team lead and full-stack developer from Utah. Bryan has an amazing wife named Sarah, and a beautiful daughter named Kairi. When Bryan is not coding, you will still find him glued to his chair, playing video games.',
+			github: 'https://github.com/BryanKAdams',
+			linkedIn: 'https://www.linkedin.com/in/chase-collins42/',
+			twitter: 'https://twitter.com',
+			site: '',
+		},
+		{
+		    name: 'Dalton Walker',
+		    role: 'Full-Stack Developer',
+		    image: `${dalton}`,
+		    background: '#49a2ff',
+		    bio:
+		        'Dalton comes from sunny Orlando, FL. He enjoys slapping the bass, lifting weights and crunching through some code!',
+		    github: 'https://github.com/daltonwalkerdw',
+		    linkedIn: 'https://www.linkedin.com',
+		    twitter: 'https://twitter.com',
+		    site: '',
+		},
+		{
+		    name: 'Michael Martin',
+		    role: 'Full-Stack Developer',
+		    image: `${michaelM}`,
+		    background: '#f78539',
+		    bio:
+		        'Mike hails from the harsh winters in ole Wisconsin. Besides coding Mike enjoys building computers and dabling in video editing, in general he just loves solving problems.',
+		    github: 'https://github.com/littleonetwo',
+		    linkedIn: 'https://www.linkedin.com',
+		    twitter: 'https://twitter.com',
+		    site: '',
+		},
+		{
+		    name: 'Jules Louis',
+		    role: 'Full-Stack Developer',
+		    image: `${jules}`,
+		    background: '#4840ba',
+		    bio:
+		        'Jules is a Husband and Father of 2 currently living in South Florida.  A serial entrepreneur with experience in digital media and ecommerce.  When not coding he is a voracious reader.',
+		    github: 'https://github.com/chefboyrdeuce',
+		    linkedIn: 'https://www.linkedin.com/julespl',
+		    twitter: 'https://twitter.com/hustleallday',
+		    site: '',
+		}
 	];
 
 	return (
@@ -175,7 +255,7 @@ const Squad = () => {
 				<div className="squad">
 					{squad.map((person, index) => (
 						<div className={`person index${index}`} style={{ backgroundColor: `${person.background}` }}>
-							{index !== 13 ? (
+						
 								<>
 									<h2 className="name"> {person.name}</h2>
 									<h3 className="role"> {person.role}</h3>
@@ -228,7 +308,7 @@ const Squad = () => {
 										</div>
 									</div>
 								</>
-							) : null}
+							
 						</div>
 					))}
 				</div>

@@ -15,6 +15,7 @@ import ProjectPage from './views/ProjectPage/ProjectPage';
 import ProjectDonationPage from './views/ProjectDonationPage/ProjectDonationPage';
 import About from './views/About/About';
 import FAQ from './views/FAQ/FAQ';
+import Team from './views/Team/Team'
 
 // Utils
 import AuthenticateUser from './utils/AuthenticateUser';
@@ -31,6 +32,7 @@ export const Routes = () => {
 			<Route exact path="/oauth/:token" component={AuthenticateUser} />
 			<Route exact path="/about" component={About} />
 			<Route exact path="/faq" component={FAQ} />
+			<Route exact path="/team" component={Team} />
 
 			{/* private routes */}
 			<Route
