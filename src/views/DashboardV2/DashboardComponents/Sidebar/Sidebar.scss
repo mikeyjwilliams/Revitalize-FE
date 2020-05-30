@@ -188,6 +188,7 @@
 			}
 		}
 	}
+
 	.info-container {
 		p,
 		span {
@@ -209,14 +210,14 @@
 			}
 		}
 	}
-	.dashboard-sidebar-footer {
+	.dashboard-sidebar {
 		h5 {
 			color: $snow-white;
 		}
-		.number {
-			background-color: $snow-white;
-			color: $black-void;
-		}
+		// .number {
+		// 	background-color: $snow-white;
+		// 	color: $black-void;
+		// }
 		.a-container {
 			.count {
 				color: $black-void;
