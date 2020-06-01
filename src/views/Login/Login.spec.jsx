@@ -127,7 +127,7 @@ it("checks input for password", async () => {
 	// 	  text: new Text('hello', { type: 'string' })
 	// },
 
-	// expect(handleChanges).toHaveBeenCalled();
+	expect(handleChanges).toHaveBeenCalledTimes(0);
 
 })
 
