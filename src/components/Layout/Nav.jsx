@@ -10,7 +10,7 @@ import { useWindowHook } from '../../helpers/windowOnClickHook.js';
 
 const unauthenticatedLinks = [
 	{ href: '/projects', label: 'Projects' },
-	{ href: '/about', label: 'Team' },
+	{ href: '/about', label: 'About' },
 	{ href: '/login', label: 'Log In' },
 ].map(link => {
 	link.key = `nav-link-${link.href}-${link.label}`;
