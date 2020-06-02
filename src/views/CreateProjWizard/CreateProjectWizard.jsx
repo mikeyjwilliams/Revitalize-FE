@@ -75,10 +75,10 @@ const CreateProjectWizard = ({ history }) => {
 
 	return (
 		<>
-		<div className="page-container">
-			<Nav />
+			<div className="page-container">
+				<Nav />
 
-				<div className="create-project">
+				<main className="create-project">
 					<div className="form-plus-quote-container">
 						<q className="quote">
 							<h5>
@@ -95,7 +95,7 @@ const CreateProjectWizard = ({ history }) => {
 
 						<div className="ui-section">
 							<div className="progress-tracker">
-								<h1 className="title">Create Project</h1>
+								<h2 className="title">Create Project</h2>
 								<div className="tracker">
 									<div className={formPosition >= 1 ? `step active` : `step`}></div>
 									<div className={formPosition >= 2 ? `step active` : `step`}></div>
@@ -138,10 +138,7 @@ const CreateProjectWizard = ({ history }) => {
 							) : null}
 						</div>
 					</div>
-				</div>
-
-
-			
+				</main>
 			</div>
 			<Footer />
 		</>
