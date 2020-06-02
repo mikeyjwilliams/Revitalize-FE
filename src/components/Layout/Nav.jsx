@@ -162,19 +162,20 @@ const Nav = props => {
 											lastName={data.me.lastName}
 										/>
 									)}
-								</div>
-								<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
-									<div className="arrow-up"></div>
-									<Link to="/settings" className="dropdown-option">
-										<FaCog className="icon" /> Settings
-									</Link>
-									<div onClick={toggleDarkMode} className="dropdown-option">
-										<FaMoon className="icon" />
-										Dark mode
-									</div>
-									<div onClick={logout} className="dropdown-option">
-										<FaWindowClose className="icon" />
-										Log out
+
+									<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
+										<div className="arrow-up"></div>
+										<Link to="/settings" className="dropdown-option">
+											<FaCog className="icon" /> Settings
+										</Link>
+										<div onClick={toggleDarkMode} className="dropdown-option">
+											<FaMoon className="icon" />
+											Dark mode
+										</div>
+										<div onClick={logout} className="dropdown-option">
+											<FaWindowClose className="icon" />
+											Log out
+										</div>
 									</div>
 								</div>
 							</li>
@@ -238,23 +239,27 @@ const Nav = props => {
 									</li>
 								</>
 							) : (
-								<ul>
+								<>
 									{unauthenticatedLinks.map(({ key, href, label }) => (
 										<li className="navLinks-overlay" key={key}>
-											<Link to={href}>{label}</Link>
+											<div>
+												<Link to={href}>{label}</Link>
+											</div>
 										</li>
 									))}
 									<li>
-										<Link to="/register">
-											<button className="register">Get Started</button>
-										</Link>
+										<div>
+											<Link to="/register">
+												<button className="register">Get Started</button>
+											</Link>
+										</div>
 									</li>
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
 											{darkModeStatus}
 										</div>
 									</li>
-								</ul>
+								</>
 							)}
 						</ul>
 					</div>
