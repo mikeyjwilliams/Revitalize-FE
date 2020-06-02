@@ -1,0 +1,28 @@
+		.squad {
+			display: grid;
+			grid-gap: 0;
+			grid-template-columns: repeat(3, 1fr);
+			grid-auto-rows: minmax(0, 4.83%);
+			grid-template-areas:
+				'anthony	        .           .'
+				'anthony        kerry         .'
+				'anthony        kerry        alex'
+				'anthony        kerry        alex'
+				'  .            kerry        alex'
+				'ruth             .          alex'
+				'ruth           jose           .'
+				'ruth           jose         elan'
+				'ruth           jose         elan'
+				' .             jose         elan'
+				'omar            .           elan'
+				'omar          skyelar        .'
+				'omar          skyelar      clark'
+				'omar          skyelar      clark'
+				' .            skyelar      clark'
+				'frank           .          clark'
+				'frank       theia        .  '
+                'frank       theia      Lucy'
+                
+				'frank       theia      Lucy'
+				'  .         theia      Lucy'
+				'  .             .      Lucy';

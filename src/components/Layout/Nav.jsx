@@ -162,20 +162,19 @@ const Nav = props => {
 											lastName={data.me.lastName}
 										/>
 									)}
-
-									<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
-										<div className="arrow-up"></div>
-										<Link to="/settings" className="dropdown-option">
-											<FaCog className="icon" /> Settings
-										</Link>
-										<div onClick={toggleDarkMode} className="dropdown-option">
-											<FaMoon className="icon" />
-											Dark mode
-										</div>
-										<div onClick={logout} className="dropdown-option">
-											<FaWindowClose className="icon" />
-											Log out
-										</div>
+								</div>
+								<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
+									<div className="arrow-up"></div>
+									<Link to="/settings" className="dropdown-option">
+										<FaCog className="icon" /> Settings
+									</Link>
+									<div onClick={toggleDarkMode} className="dropdown-option">
+										<FaMoon className="icon" />
+										Dark mode
+									</div>
+									<div onClick={logout} className="dropdown-option">
+										<FaWindowClose className="icon" />
+										Log out
 									</div>
 								</div>
 							</li>
@@ -187,12 +186,6 @@ const Nav = props => {
 									<Link to={href}>{label}</Link>
 								</li>
 							))}
-							{/* <li>
-									<Link to="/register">
-										<button className="register">Get Started</button>
-									</Link>
-								</li>
-							))} */}
 							<li>
 								<Link to="/register">
 									<button className="register">Get Started</button>
@@ -251,12 +244,6 @@ const Nav = props => {
 											<Link to={href}>{label}</Link>
 										</li>
 									))}
-									{/* <li>
-											<Link to="/register">
-												<button type="button" className="register">Get Started</button>
-											</Link>
-										</li>
-									))} */}
 									<li>
 										<Link to="/register">
 											<button className="register">Get Started</button>

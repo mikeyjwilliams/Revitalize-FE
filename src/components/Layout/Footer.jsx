@@ -8,6 +8,7 @@ const links = [
 	{ path: '/createproject', label: 'Create Project' },
 	{ path: '/projects', label: 'Projects' },
 	{ path: '/team', label: 'Team' },
+	{ path: '/faq', label: 'FAQ' },
 ].map(link => {
 	link.key = `nav-link-${link.href}-${link.label}`;
 	return link;
@@ -33,7 +34,7 @@ export default function Footer() {
 					{' '}
 					<FaFacebookF />{' '}
 				</a>
-				<a href="https://Linkedin.com" alt="LinkedIn" aria-label="linkedin link">
+				<a href="https://Linkedin.com" alt="LinkedIn" aria-label="linkedIn social media link">
 					{' '}
 					<FaLinkedin />{' '}
 				</a>

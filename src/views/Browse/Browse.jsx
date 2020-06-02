@@ -9,22 +9,20 @@ import RecommendedProjects from './RecommendedProjects/RecommendedProjects';
 import NearYou from './NearYou/NearYou';
 import CreateProject from './CreateProject/CreateProject';
 import Noteworthy from './Noteworthy/Noteworthy';
-import Hours from './Hire/Hire';
+import Hire from './Hire/Hire';
 
 const Start = () => {
 	return (
 		<>
 			<Nav />
-			<main>
-				<div className="browse-container">
-					<Top />
-					<Spotlight />
-					<RecommendedProjects />
-					<CreateProject />
-					<NearYou />
-					<Hours />
-					<Noteworthy />
-				</div>
+			<main className="browse-container">
+				<Top />
+				<Spotlight />
+				<RecommendedProjects />
+				<CreateProject />
+				<NearYou />
+				<Hire />
+				<Noteworthy />
 			</main>
 			<Footer />
 		</>
