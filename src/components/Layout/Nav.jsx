@@ -233,13 +233,17 @@ const Nav = props => {
 								<ul>
 									{unauthenticatedLinks.map(({ key, href, label }) => (
 										<li className="navLinks-overlay" key={key}>
-											<Link to={href}>{label}</Link>
+											<div>
+												<Link to={href}>{label}</Link>
+											</div>
 										</li>
 									))}
 									<li>
-										<Link to="/register">
-											<button className="register">Get Started</button>
-										</Link>
+										<div>
+											<Link to="/register">
+												<button className="register">Get Started</button>
+											</Link>
+										</div>
 									</li>
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
