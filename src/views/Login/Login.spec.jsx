@@ -77,7 +77,7 @@ it("checks placeholder text", () => {
 			</Router>, container);
 	});
 
-	// get ahold of the button element, and trigger some clicks on it
+	
 	const input = document.querySelector("[data-testid=email]");
 	
 	expect(input.hasAttribute("placeholder")).toEqual(true);

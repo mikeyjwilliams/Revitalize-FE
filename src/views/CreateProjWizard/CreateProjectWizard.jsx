@@ -21,19 +21,19 @@ let currentDate = moment().format('YYYY-MM-DD');
 
 const CreateProjectWizard = ({ history }) => {
 	let [projectDetails, setProjectDetails] = useState({
-		name: "",
+		name: '',
 		startDate: currentDate,
-		country: "United States",
+		country: 'United States',
 		duration: 1,
-		description: "",
-		address: "",
-		city: "",
-		state: "",
-		zip: "",
-		goalAmount: 100.00,
-		difficulty: "Easy",
+		description: '',
+		address: '',
+		city: '',
+		state: '',
+		zip: '',
+		goalAmount: 100.0,
+		difficulty: 'Easy',
 		images: [],
-		featuredImage: "",
+		featuredImage: '',
 	});
 	const [formPosition, setFormPosition] = useState(1);
 	const [addProject] = useMutation(ADD_PROJECT);
@@ -59,25 +59,26 @@ const CreateProjectWizard = ({ history }) => {
 	const submitForm = async () => {
 		let newProjectDetails = {
 			...projectDetails,
-			country: "United States",
+			country: 'United States',
 			zip: parseInt(projectDetails.zip, 10),
 		};
-		
-		console.log("added project in crw  1", newProjectDetails);
+
+		console.log('added project in crw  1', newProjectDetails);
 
 		// SOS FRANK: UPDATE CACHE
 		const addedProj = await addProject({ variables: { data: newProjectDetails } });
 
-		console.log("added project in crw", addedProj);
+		console.log('added project in crw', addedProj);
 
 		history.push(`/project/${addedProj.data.createProject.slug}`);
 	};
 
 	return (
 		<>
-			<Nav />
-			<section className="create-project-wizard-container">
-				<div className="create-project">
+			<div className="page-container">
+				<Nav />
+
+				<main className="create-project">
 					<div className="form-plus-quote-container">
 						<q className="quote">
 							<h5>
@@ -94,7 +95,7 @@ const CreateProjectWizard = ({ history }) => {
 
 						<div className="ui-section">
 							<div className="progress-tracker">
-								<h1 className="title">Create Project</h1>
+								<h2 className="title">Create Project</h2>
 								<div className="tracker">
 									<div className={formPosition >= 1 ? `step active` : `step`}></div>
 									<div className={formPosition >= 2 ? `step active` : `step`}></div>
@@ -137,8 +138,8 @@ const CreateProjectWizard = ({ history }) => {
 							) : null}
 						</div>
 					</div>
-				</div>
-			</section>
+				</main>
+			</div>
 			<Footer />
 		</>
 	);

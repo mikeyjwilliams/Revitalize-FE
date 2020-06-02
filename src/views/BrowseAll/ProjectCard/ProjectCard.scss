@@ -1,6 +1,3 @@
-
-
-
 .project-card-container {
 	background-color: $snow-white;
 
@@ -9,6 +6,17 @@
 	height: 360px;
 	font-size: 1.2rem;
 	@include subtleBoxShadow;
+
+	@media #{$desktop} {
+		max-width: 220px; //maximum size a project card can expand in full view.
+	}
+	@media #{$tablet} {
+		max-width: 220px; // card in views below 1200px and above 500px
+	}
+	@media #{$mobile} {
+		max-width: 350px; // cards in views below 500px
+	}
+
 	.project-card-image {
 		width: 100%;
 		position: relative;
@@ -29,6 +37,7 @@
 			object-fit: cover;
 			border-radius: 5px 5px 0 0;
 		}
+		
 
 		.after {
 			position: absolute;
@@ -37,16 +46,23 @@
 			bottom: 0;
 			left: 0;
 			border-radius: 5px 5px 0 0;
-			background: linear-gradient(196deg, rgba($bleached-black, 1.0),  rgba(#414141, 0.15));
+			background: linear-gradient(196deg, rgba($bleached-black, 1), rgba(#414141, 0.15));
 			opacity: 1;
 			&:hover {
 				opacity: 0.5;
 				transition-duration: 1s;
 			}
 		}
-
-
 	}
+	.project-card-body-descript {
+			i {
+				font-size: 1.4rem;
+			}
+			.project-description {
+				font-size: 1.5rem;
+				white-space: normal;
+			}
+		}
 	.project-card-body {
 		display: flex;
 		flex-direction: column;
@@ -91,7 +107,6 @@
 		}
 	}
 }
-
 
 .dark-mode {
 	.project-card-container{

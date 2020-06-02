@@ -1,4 +1,3 @@
-
 .login-container {
 	background: $erudite-purple;
 	color: $snow-white;
@@ -11,6 +10,10 @@
 		font-size: 4rem;
 		position: fixed;
 		margin: 20px;
+	}
+	h2 {
+		// for landmarks to be correct in login-container altering h2 size only here. -MW
+		font-size: 2rem;
 	}
 	.login-container-left {
 		min-height: 100vh;
