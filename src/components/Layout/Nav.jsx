@@ -42,7 +42,6 @@ const Nav = props => {
 		document.querySelector('body').classList.remove('dark-mode');
 		darkModeStatus = 'Dark Mode Off';
 	}
-	console.log('dark mode nav:', darkModeActive);
 
 	//custom hook for window.onClick
 	const [
