@@ -123,7 +123,7 @@ const CarouselCard = props => {
 						<Link to={`/project/${card.slug}`}>
 							<h5>{card.name}</h5>
 						</Link>
-						<Truncate lines={3} ellipsis={`...`}>
+						<Truncate lines={2} ellipsis={`...`}>
 							{card.description}
 						</Truncate>
 					</div>
