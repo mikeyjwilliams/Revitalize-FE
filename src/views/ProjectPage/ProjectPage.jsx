@@ -77,7 +77,7 @@ const ProjectPage = ({ match }) => {
 	return (
 		<>
 			<Nav />
-			<div className="project-page-container">
+			<main className="project-page-container">
 				<div className="singleProjectVectorContainer">
 					<div
 						className="singleProjectVector"
@@ -175,7 +175,7 @@ const ProjectPage = ({ match }) => {
 					setDeleteBool={setDeleteBool}
 					refetch={refetch}
 				/>
-			</div>
+			</main>
 			<Footer />
 		</>
 	);

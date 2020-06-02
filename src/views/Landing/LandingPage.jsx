@@ -18,9 +18,7 @@ import CrowdFunding from './CrowdFunding/CrowdFunding';
 // import Testimonials from './Testimonials/Testimonials';
 // import FullScaleApp from './FullScaleApp/FullScaleApp';
 
-
 class LandingPage extends React.Component {
-
 	render() {
 		return (
 			<>
@@ -37,6 +35,5 @@ class LandingPage extends React.Component {
 		);
 	}
 }
-
 
 export default LandingPage;

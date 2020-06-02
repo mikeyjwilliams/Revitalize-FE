@@ -10,7 +10,7 @@ import { useWindowHook } from '../../helpers/windowOnClickHook.js';
 
 const unauthenticatedLinks = [
 	{ href: '/projects', label: 'Projects' },
-	{ href: '/about', label: 'Team' },
+	{ href: '/about', label: 'About' },
 	{ href: '/login', label: 'Log In' },
 ].map(link => {
 	link.key = `nav-link-${link.href}-${link.label}`;
@@ -42,7 +42,6 @@ const Nav = props => {
 		document.querySelector('body').classList.remove('dark-mode');
 		darkModeStatus = 'Dark Mode Off';
 	}
-	console.log('dark mode nav:', darkModeActive);
 
 	//custom hook for window.onClick
 	const [
@@ -143,39 +142,39 @@ const Nav = props => {
 									</li>
 								),
 							)}
-
-							<div className="user" tabIndex="0" onClick={setActive}>
-								{data.me.firstName !== null ? (
-									<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
-								) : (
-									<span className="user-personal-greeting">Welcome</span>
-								)}
-
-								{data.me.profileImage !== null ? (
-									<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
-								) : (
-									<InitialAvatar
-										height={40}
-										width={40}
-										className="user-icon"
-										firstName={data.me.firstName}
-										lastName={data.me.lastName}
-									/>
-								)}
-							</div>
 							<li>
-								<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
-									<div className="arrow-up"></div>
-									<Link to="/settings" className="dropdown-option">
-										<FaCog className="icon" /> Settings
-									</Link>
-									<div onClick={toggleDarkMode} className="dropdown-option">
-										<FaMoon className="icon" />
-										Dark mode
-									</div>
-									<div onClick={logout} className="dropdown-option">
-										<FaWindowClose className="icon" />
-										Log out
+								<div className="user" tabIndex="0" onClick={setActive}>
+									{data.me.firstName !== null ? (
+										<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
+									) : (
+										<span className="user-personal-greeting">Welcome</span>
+									)}
+
+									{data.me.profileImage !== null ? (
+										<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
+									) : (
+										<InitialAvatar
+											height={40}
+											width={40}
+											className="user-icon"
+											firstName={data.me.firstName}
+											lastName={data.me.lastName}
+										/>
+									)}
+
+									<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
+										<div className="arrow-up"></div>
+										<Link to="/settings" className="dropdown-option">
+											<FaCog className="icon" /> Settings
+										</Link>
+										<div onClick={toggleDarkMode} className="dropdown-option">
+											<FaMoon className="icon" />
+											Dark mode
+										</div>
+										<div onClick={logout} className="dropdown-option">
+											<FaWindowClose className="icon" />
+											Log out
+										</div>
 									</div>
 								</div>
 							</li>
@@ -239,23 +238,27 @@ const Nav = props => {
 									</li>
 								</>
 							) : (
-								<ul>
+								<>
 									{unauthenticatedLinks.map(({ key, href, label }) => (
 										<li className="navLinks-overlay" key={key}>
-											<Link to={href}>{label}</Link>
+											<div>
+												<Link to={href}>{label}</Link>
+											</div>
 										</li>
 									))}
 									<li>
-										<Link to="/register">
-											<button className="register">Get Started</button>
-										</Link>
+										<div>
+											<Link to="/register">
+												<button className="register">Get Started</button>
+											</Link>
+										</div>
 									</li>
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
 											{darkModeStatus}
 										</div>
 									</li>
-								</ul>
+								</>
 							)}
 						</ul>
 					</div>
