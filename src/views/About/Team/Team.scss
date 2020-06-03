@@ -128,7 +128,7 @@
 					font-size: 1.57vw;
 					line-height: 1.61;
 					letter-spacing: 1.8px;
-
+					// color controlled by .squad-person-info -MW
 					@media #{$tablet} {
 						font-size: 2.57vw;
 					}
@@ -143,7 +143,7 @@
 					font-size: 1.2vw;
 					line-height: 1.61;
 					letter-spacing: 1.38px;
-
+					// color controlled by .squad-person-info -MW
 					@media #{$tablet} {
 						font-size: 1.6vw;
 					}
