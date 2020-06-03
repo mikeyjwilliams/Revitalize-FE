@@ -2,7 +2,7 @@
 	background-color: $chillFi-purple;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 23rem;
+	margin-bottom: 3rem;
 	overflow: hidden;
 
 	@media (max-width: 500px) {
@@ -27,24 +27,6 @@
 		}
 		@media (max-width: 1135px) {
 			font-size: 5rem;
-		}
-	}
-	img {
-		object-fit: contain;
-		@media (max-width: 1860px) {
-			width: 32%;
-		}
-		@media (max-width: 855px) {
-			width: 30%;
-		}
-		@media (max-width: 770px) {
-			display: none;
-		}
-	}
-	.img2 {
-		margin-bottom: -66px;
-		@media (max-width: 1860px) {
-			margin-bottom: -90px;
 		}
 	}
 }
