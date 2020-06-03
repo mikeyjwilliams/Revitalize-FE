@@ -37,13 +37,14 @@ nav {
 		margin-left: 10px;
 		a {
 			text-decoration: none;
+
 		}
 		.logo {
 			display: flex;
 			align-items: center;
 			margin: 20px;
 
-			span {
+			h1 {
 				@media #{$tablet} {
 					color: $abatross;
 				}
@@ -52,6 +53,14 @@ nav {
 				font-size: 2.8rem;
 				letter-spacing: 0.09em;
 				color: $chillFi-purple;
+				padding: 7px 9px;
+				&:hover{
+					padding: 5px 7px;
+					border: 2px solid $maastricht-blue;
+					border-radius: 5px;
+					background-color: $maastricht-blue;
+					color: $snow-white;
+				}
 			}
 			.loading-banner {
 				margin-left: 20px;
@@ -69,9 +78,6 @@ nav {
 		font-size: 2.3rem;
 		width: 100%;
 		margin-right: 20px;
-		*:focus {
-			outline: none;
-		}
 
 		ul {
 			display: flex;
@@ -87,8 +93,19 @@ nav {
 				}
 				a {
 					color: $chillFi-purple;
-					letter-spacing: 0.06em;
+					font-size: 2.2rem;
+					width: 150px;
+					padding: 5px 11px;
+					vertical-align: center;
+					letter-spacing: 0.04em;
 					line-height: 0.9;
+					&:hover{
+						border: 2px solid $maastricht-blue;
+						border-radius: 5px;
+						padding: 3px 9px;
+						color: $snow-white;
+						background-color: $maastricht-blue;
+					}
 				}
 			}
 			.logout {
@@ -169,8 +186,8 @@ nav {
 			button {
 				@include buttonStyler($chillFi-purple, $snow-white, none, auto 10px auto 0);
 				font-size: 2.2rem;
-				width: 160px;
-				padding: 11px 14px;
+				width: 150px;
+				padding: 9px 11px;
 				vertical-align: center;
 				@include subtleBoxShadow;
 				@media #{$tablet} {
@@ -195,17 +212,15 @@ nav {
 			svg {
 				color: $chillFi-purple;
 			}
-
-
 		}
 	}
 }
 
-.dropdown-darkMode{
+.dropdown-darkMode {
 	font-size: 2.6rem;
 	color: $snow-white;
 
-	&:hover{
+	&:hover {
 		cursor: pointer;
 	}
 }
@@ -213,6 +228,17 @@ nav {
 .dark-mode {
 	nav {
 		.logo {
+			h1{
+				color:$snow-white;
+				padding: 5px 7px;
+				&:hover{
+					border: 2px solid $chillFi-purple;
+					border-radius: 5px;
+					padding: 3px 5px;
+					color: $snow-white;
+					background-color: $chillFi-purple;
+				}
+			}
 			span {
 				color: $snow-white;
 			}
@@ -223,6 +249,14 @@ nav {
 		ul {
 			.navLinks a {
 				color: $snow-white;
+				&:hover{
+					border: 2px solid $chillFi-purple;
+					border-radius: 5px;
+					padding: 3px 9px;
+					color: $snow-white;
+					background-color: $chillFi-purple;
+				}
+
 			}
 			.login {
 				color: $snow-white;

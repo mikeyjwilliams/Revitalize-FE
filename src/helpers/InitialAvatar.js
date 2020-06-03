@@ -14,16 +14,6 @@ const InitialAvatar = props => {
     }
     const initials = getInitials(props.firstName, props.lastName);
 
-    // const getRandomColor = () => {
-    //     const letters = '0123456789ABCDEF';
-    //     let color = '#';
-    //     for (let i = 0; i < 6; i++) {
-    //         color += letters[Math.floor(Math.random() * 16)];
-    //     }
-    //     return color;
-    // }
-    // const randomColorBg = getRandomColor();
-    // const randomColorFg = getRandomColor();
 
     const getDimensions = heightOrWidth => {
         if (heightOrWidth) {
@@ -63,4 +53,5 @@ const InitialAvatar = props => {
     `
     return <Avatar>{initials}</Avatar>;
 }
+
 export default InitialAvatar;

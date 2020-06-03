@@ -14,6 +14,8 @@ import CreateProjectWizard from './views/CreateProjWizard/CreateProjectWizard';
 import ProjectPage from './views/ProjectPage/ProjectPage';
 import ProjectDonationPage from './views/ProjectDonationPage/ProjectDonationPage';
 import About from './views/About/About';
+import FAQ from './views/FAQ/FAQ';
+import Team from './views/Team/Team'
 
 import Nav from './components/Layout/Nav';
 import Footer from './components/Layout/Footer';
@@ -65,6 +67,7 @@ export const Routes = () => {
 						path="/project/:name/studentapplicationform"
 						render={props => <StudentApplicationForm {...props} />}
 					/>
+					<Route exact path="/team" component={Team} />
 				</Switch>
 
 			</div>

@@ -21,6 +21,11 @@ a {
 	color: inherit;
 	user-select: none;
 	cursor: pointer;
+	&:focus-visible {
+		outline: dotted;
+		outline-color: $luigi;
+		border-color: $luigi;
+	}
 }
 
 i {

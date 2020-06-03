@@ -5,5 +5,5 @@ body{
 }
 
 .page-container {
-	min-height: calc(100vh - 301px); //use calc to get window content then make space for a footer, should prevent overlapping in most cases
+	min-height: calc(100vh - 261px); //use calc to get window content then make space for a footer, should prevent overlapping in most cases
 }

@@ -168,6 +168,10 @@ const Squad = () => {
 			<h1 className="title">Meet The Squad</h1>
 			<h3 className="description">Meet the people that make all of the magic happen behind the scenes.</h3>
 			<div className="grid-container">
+				{/* <img
+					src="https://res.cloudinary.com/revitalize/image/upload/v1570036130/about%20page/Circle_2019_sc3ml9.svg"
+					alt="background circles and year"
+				/> */}
 				<div className="squad">
 					{squad.map((person, index) => (
 						<div className={`person index${index}`} style={{ backgroundColor: `${person.background}` }}>

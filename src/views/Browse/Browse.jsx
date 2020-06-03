@@ -6,22 +6,21 @@ import RecommendedProjects from './RecommendedProjects/RecommendedProjects';
 import NearYou from './NearYou/NearYou';
 import CreateProject from './CreateProject/CreateProject';
 import Noteworthy from './Noteworthy/Noteworthy';
-import Hours from './Hire/Hire';
+import Hire from './Hire/Hire';
 
 const Start = () => {
-
 	return (
 		<>
 
-			<div className="browse-container">
+			<main className="browse-container">
 				<Top />
 				<Spotlight />
 				<RecommendedProjects />
 				<CreateProject />
 				<NearYou />
-				<Hours />
+				<Hire />
 				<Noteworthy />
-			</div>
+			</main>
 
 		</>
 	);

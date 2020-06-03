@@ -6,11 +6,12 @@ const Top = props => {
 
 	return (
 		<div className="top-container browse-all">
-			<h2 className="title">
-				<div>Filter Projects</div>
-			</h2>
+			<label htmlFor="filter-label">
+				<h2 className="title">Filter Projects</h2>
+			</label>
 			<form onSubmit={submitQuery}>
 				<input
+					id="filter-label"
 					className="project-filter"
 					name="query"
 					type="text"

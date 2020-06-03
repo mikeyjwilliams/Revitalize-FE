@@ -10,7 +10,7 @@ import { useWindowHook } from '../../helpers/windowOnClickHook.js';
 
 const unauthenticatedLinks = [
 	{ href: '/projects', label: 'Projects' },
-	{ href: '/about', label: 'Team' },
+	{ href: '/about', label: 'About' },
 	{ href: '/login', label: 'Log In' },
 ].map(link => {
 	link.key = `nav-link-${link.href}-${link.label}`;
@@ -31,22 +31,17 @@ const authenticatedLinks = [
 const Nav = props => {
 	const [activeHamburger, setActiveHamburger] = useState(false);
 	const [darkModeActive, setDarkMode] = useState(JSON.parse(localStorage.getItem('dark-mode')));
-	let darkModeStatus = "Dark Mode Off";
+	let darkModeStatus = 'Dark Mode Off';
 
-	if(darkModeActive === null){
+	if (darkModeActive === null) {
 		setDarkMode(false);
 	} else if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
 		document.querySelector('body').classList.add('dark-mode');
-		darkModeStatus = "Dark Mode On";
+		darkModeStatus = 'Dark Mode On';
 	} else {
 		document.querySelector('body').classList.remove('dark-mode');
-		darkModeStatus = "Dark Mode Off";
+		darkModeStatus = 'Dark Mode Off';
 	}
-	console.log("dark mode nav:", darkModeActive);
-
-	// useEffect()
-
-
 
 	//custom hook for window.onClick
 	const [
@@ -89,7 +84,7 @@ const Nav = props => {
 					<div className="leftNav">
 						<Link to="/" title="Home">
 							<div className="logo">
-								<span>Revitalize </span>
+								<h1>Revitalize </h1>
 							</div>
 						</Link>
 					</div>
@@ -101,7 +96,7 @@ const Nav = props => {
 					<div className="leftNav">
 						<Link to="/" title="Home">
 							<div className="logo">
-								<span>Revitalize </span>
+								<h1>Revitalize </h1>
 							</div>
 						</Link>
 					</div>
@@ -114,7 +109,7 @@ const Nav = props => {
 			<div className="leftNav">
 				<Link to="/" title="Home">
 					<div className="logo">
-						<span>ReVitalize </span>
+						<h1>ReVitalize </h1>
 					</div>
 				</Link>
 			</div>
@@ -125,9 +120,11 @@ const Nav = props => {
 						<>
 							{authenticatedLinks.map(link =>
 								link.label === 'Create Project' ? (
-									<Link to={link.href} key={link.key}>
-										<button className="create-project-button">{link.label}</button>
-									</Link>
+									<li>
+										<Link to={link.href} key={link.key}>
+											<button className="create-project-button">{link.label}</button>
+										</Link>
+									</li>
 								) : link.label === 'Logout' ? (
 									<li className="navLinks logout" onClick={logout} key={link.key}>
 										<Link to={link.href}>{link.label}</Link>
@@ -138,41 +135,43 @@ const Nav = props => {
 									</li>
 								),
 							)}
-							<div className="user" tabIndex="0" onClick={setActive}>
-								{data.me.firstName !== null ? (
-									<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
-								) : (
-									<span className="user-personal-greeting">Welcome</span>
-								)}
+							<li>
+								<div className="user" tabIndex="0" onClick={setActive}>
 
-								{data.me.profileImage !== null ? (
-									<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
-								) : (
-									<InitialAvatar
-										height={60}
-										width={60}
+									{data.me.firstName !== null ? (
+										<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
+									) : (
+										<span className="user-personal-greeting">Welcome</span>
+									)}
 
-										firstName={data.me.firstName}
-										lastName={data.me.lastName}
+									{data.me.profileImage !== null ? (
+										<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
+									) : (
+										<InitialAvatar
+											height={60}
+											width={60}
 
-									/>
-								)}
+											firstName={data.me.firstName}
+											lastName={data.me.lastName}
+										/>
+									)}
 
-								<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
-									<div className="arrow-up"></div>
-									<Link to="/settings" className="dropdown-option">
-										<FaCog className="icon" /> Settings
-									</Link>
-									<div onClick={toggleDarkMode} className="dropdown-option">
-										<FaMoon className="icon" />
-										Dark mode
-									</div>
-									<div onClick={logout} className="dropdown-option">
-										<FaWindowClose className="icon" />
-										Log out
+									<div className={`dropdown ${!clicked && 'display-none'}`} name="drop" tabIndex="0">
+										<div className="arrow-up"></div>
+										<Link to="/settings" className="dropdown-option">
+											<FaCog className="icon" /> Settings
+										</Link>
+										<div onClick={toggleDarkMode} className="dropdown-option">
+											<FaMoon className="icon" />
+											Dark mode
+										</div>
+										<div onClick={logout} className="dropdown-option">
+											<FaWindowClose className="icon" />
+											Log out
+										</div>
 									</div>
 								</div>
-							</div>
+							</li>
 						</>
 					) : (
 						<>
@@ -183,22 +182,26 @@ const Nav = props => {
 							))}
 							<li>
 								<Link to="/register">
-									<button className="register">Get Started</button>
+									<button className="register">Sign Up!</button>
 								</Link>
 							</li>
-							<div className="dark-mode-emoji">
-								<FaMoon onClick={() => toggleDarkMode()} />
-							</div>
-							{!localStorage.getItem('token') && (
-								<div
-									onClick={setActive}
-									className={`hamburger hamburger--squeeze ${activeHamburger && 'is-active'}`}
-									type="button"
-								>
-									<span className="hamburger-box">
-										<span className="hamburger-inner"></span>
-									</span>
+							<li>
+								<div className="dark-mode-emoji">
+									<FaMoon onClick={() => toggleDarkMode()} />
 								</div>
+							</li>
+							{!localStorage.getItem('token') && (
+								<li>
+									<div
+										onClick={setActive}
+										className={`hamburger hamburger--squeeze ${activeHamburger && 'is-active'}`}
+										type="button"
+									>
+										<span className="hamburger-box">
+											<span className="hamburger-inner"></span>
+										</span>
+									</div>
+								</li>
 							)}
 						</>
 					)}
@@ -224,13 +227,12 @@ const Nav = props => {
 									)}
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
-
-										{darkModeStatus}
+											{darkModeStatus}
 										</div>
 									</li>
 								</>
 							) : (
-								<ul>
+								<>
 									{unauthenticatedLinks.map(({ key, href, label }) => (
 										<li className="navLinks-overlay" key={key}>
 											<div>
@@ -247,11 +249,10 @@ const Nav = props => {
 									</li>
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
-
 											{darkModeStatus}
 										</div>
 									</li>
-								</ul>
+								</>
 							)}
 						</ul>
 					</div>
