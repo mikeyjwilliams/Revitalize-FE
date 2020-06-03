@@ -7,13 +7,13 @@ import Footer from '../../components/Layout/Footer';
 
 const About = () => {
 	return (
-		<div>
+		<main>
 			<Nav />
 			<Header />
 			<Main />
 			{/* <Squad /> */}
 			<Footer />
-		</div>
+		</main>
 	);
 };
 
