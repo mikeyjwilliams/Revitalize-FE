@@ -8,14 +8,14 @@ import Footer from '../../components/Layout/Footer';
 
 const About = () => {
 	return (
-		<div>
+		<main>
 			<Nav />
 			<Header />
 			{/* <Main /> */}
 			<Team />
 			{/* <Labs10Squad /> */}
 			<Footer />
-		</div>
+		</main>
 	);
 };
 

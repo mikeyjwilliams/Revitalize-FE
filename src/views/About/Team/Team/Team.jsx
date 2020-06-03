@@ -1,25 +1,25 @@
 import React from 'react';
 
 // images
-import kerry from '../../../assets/AboutPage/kerry.png';
-import alex from '../../../assets/AboutPage/alex.png';
-import clark from '../../../assets/AboutPage/clark.png';
-import frank from '../../../assets/AboutPage/frank.png';
-import jose from '../../../assets/AboutPage/jose2.png';
-import omar from '../../../assets/AboutPage/omar.png';
-import ruth from '../../../assets/AboutPage/ruth.png';
-import skyelar from '../../../assets/AboutPage/skyelar.png';
-import anthony from '../../../assets/AboutPage/anthony.png';
-import elan from '../../../assets/AboutPage/elan.png';
-import theia from '../../../assets/AboutPage/theia.png';
-import Lucy from '../../../assets/AboutPage/Lucy.png';
-import michaelM from '../../../assets/AboutPage/michaelM.png';
-import michaelW from '../../../assets/AboutPage/michaelW.png';
-import chase from '../../../assets/AboutPage/chase.png';
-import dalton from '../../../assets/AboutPage/Dalton.png';
-import jules from '../../../assets/AboutPage/jules.png';
-import bryan from '../../../assets/AboutPage/bryan.png';
 
+import kerry from '../../../../assets/AboutPage/kerry.png';
+import alex from '../../../../assets/AboutPage/alex.png';
+import clark from '../../../../assets/AboutPage/clark.png';
+import frank from '../../../../assets/AboutPage/frank.png';
+import jose from '../../../../assets/AboutPage/jose2.png';
+import omar from '../../../../assets/AboutPage/omar.png';
+import ruth from '../../../../assets/AboutPage/ruth.png';
+import skyelar from '../../../../assets/AboutPage/skyelar.png';
+import anthony from '../../../../assets/AboutPage/anthony.png';
+import elan from '../../../../assets/AboutPage/elan.png';
+import theia from '../../../../assets/AboutPage/theia.png';
+import Lucy from '../../../../assets/AboutPage/Lucy.png';
+import michaelM from '../../../../assets/AboutPage/michaelM.png';
+import michaelW from '../../../../assets/AboutPage/michaelW.png';
+import chase from '../../../../assets/AboutPage/chase.png';
+import dalton from '../../../../assets/AboutPage/Dalton.png';
+import jules from '../../../../assets/AboutPage/jules.png';
+import bryan from '../../../../assets/AboutPage/bryan.png';
 
 const Squad = () => {
 	const squad = [
@@ -206,41 +206,41 @@ const Squad = () => {
 			site: '',
 		},
 		{
-		    name: 'Dalton Walker',
-		    role: 'Full-Stack Developer',
-		    image: `${dalton}`,
-		    background: '#49a2ff',
-		    bio:
-		        'Dalton comes from sunny Orlando, FL. He enjoys slapping the bass, lifting weights and crunching through some code!',
-		    github: 'https://github.com/daltonwalkerdw',
-		    linkedIn: 'https://www.linkedin.com',
-		    twitter: 'https://twitter.com',
-		    site: '',
+			name: 'Dalton Walker',
+			role: 'Full-Stack Developer',
+			image: `${dalton}`,
+			background: '#49a2ff',
+			bio:
+				'Dalton comes from sunny Orlando, FL. He enjoys slapping the bass, lifting weights and crunching through some code!',
+			github: 'https://github.com/daltonwalkerdw',
+			linkedIn: 'https://www.linkedin.com',
+			twitter: 'https://twitter.com',
+			site: '',
 		},
 		{
-		    name: 'Michael Martin',
-		    role: 'Full-Stack Developer',
-		    image: `${michaelM}`,
-		    background: '#f78539',
-		    bio:
-		        'Mike hails from the harsh winters in ole Wisconsin. Besides coding Mike enjoys building computers and dabling in video editing, in general he just loves solving problems.',
-		    github: 'https://github.com/littleonetwo',
-		    linkedIn: 'https://www.linkedin.com',
-		    twitter: 'https://twitter.com',
-		    site: '',
+			name: 'Michael Martin',
+			role: 'Full-Stack Developer',
+			image: `${michaelM}`,
+			background: '#f78539',
+			bio:
+				'Mike hails from the harsh winters in ole Wisconsin. Besides coding Mike enjoys building computers and dabling in video editing, in general he just loves solving problems.',
+			github: 'https://github.com/littleonetwo',
+			linkedIn: 'https://www.linkedin.com',
+			twitter: 'https://twitter.com',
+			site: '',
 		},
 		{
-		    name: 'Jules Louis',
-		    role: 'Full-Stack Developer',
-		    image: `${jules}`,
-		    background: '#4840ba',
-		    bio:
-		        'Jules is a Husband and Father of 2 currently living in South Florida.  A serial entrepreneur with experience in digital media and ecommerce.  When not coding he is a voracious reader.',
-		    github: 'https://github.com/chefboyrdeuce',
-		    linkedIn: 'https://www.linkedin.com/julespl',
-		    twitter: 'https://twitter.com/hustleallday',
-		    site: '',
-		}
+			name: 'Jules Louis',
+			role: 'Full-Stack Developer',
+			image: `${jules}`,
+			background: '#4840ba',
+			bio:
+				'Jules is a Husband and Father of 2 currently living in South Florida.  A serial entrepreneur with experience in digital media and ecommerce.  When not coding he is a voracious reader.',
+			github: 'https://github.com/chefboyrdeuce',
+			linkedIn: 'https://www.linkedin.com/julespl',
+			twitter: 'https://twitter.com/hustleallday',
+			site: '',
+		},
 	];
 
 	return (
@@ -255,60 +255,60 @@ const Squad = () => {
 				<div className="squad">
 					{squad.map((person, index) => (
 						<div className={`person index${index}`} style={{ backgroundColor: `${person.background}` }}>
-						
-								<>
+							<>
+								<div className="squad-person-info">
 									<h2 className="name"> {person.name}</h2>
 									<h3 className="role"> {person.role}</h3>
-									<div className="img-container">
-										<img src={person.image} alt="person" />
+								</div>
+								<div className="img-container">
+									<img src={person.image} alt="person" />
+								</div>
+								<div className="overlay">
+									<div className="text">{person.bio}</div>
+									<div className="social">
+										{person.github && (
+											<a
+												href={person.github}
+												alt="Github"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<i className="fa fa-github"></i>
+											</a>
+										)}
+										{person.linkedIn && (
+											<a
+												href={person.linkedIn}
+												alt="LinkedIn"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<i className="fa fa-linkedin"></i>
+											</a>
+										)}
+										{person.twitter && (
+											<a
+												href={person.twitter}
+												alt="Twitter"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<i className="fa fa-twitter"></i>
+											</a>
+										)}
+										{person.site && (
+											<a
+												href={person.site}
+												alt="Personal Site"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<i className="fa fa-user alt"></i>
+											</a>
+										)}
 									</div>
-									<div className="overlay">
-										<div className="text">{person.bio}</div>
-										<div className="social">
-											{person.github && (
-												<a
-													href={person.github}
-													alt="Github"
-													target="_blank"
-													rel="noopener noreferrer"
-												>
-													<i className="fa fa-github"></i>
-												</a>
-											)}
-											{person.linkedIn && (
-												<a
-													href={person.linkedIn}
-													alt="LinkedIn"
-													target="_blank"
-													rel="noopener noreferrer"
-												>
-													<i className="fa fa-linkedin"></i>
-												</a>
-											)}
-											{person.twitter && (
-												<a
-													href={person.twitter}
-													alt="Twitter"
-													target="_blank"
-													rel="noopener noreferrer"
-												>
-													<i className="fa fa-twitter"></i>
-												</a>
-											)}
-											{person.site && (
-												<a
-													href={person.site}
-													alt="Personal Site"
-													target="_blank"
-													rel="noopener noreferrer"
-												>
-													<i className="fa fa-user alt"></i>
-												</a>
-											)}
-										</div>
-									</div>
-								</>
-							
+								</div>
+							</>
 						</div>
 					))}
 				</div>
