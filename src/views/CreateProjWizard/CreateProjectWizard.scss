@@ -120,28 +120,17 @@
 				input {
 					border: 1px solid $mirage;
 					margin: 6px 0 6px 0;
-
-					&:focus {
-						color: $chillFi-purple;
-						border: 1px solid $chillFi-purple;
-					}
 				}
 				button {
-					// @include buttonStyler($chillFi-purple, $snow-white, none);
+					@include buttonStyler($chillFi-purple, $snow-white, none);
 					border-radius: 3px;
 					align-self: flex-end;
 				}
 				select,
 				option {
-					font-family: $primary-font;
+					font-family: 'Roboto';
 					padding: 0 15px;
 					width: 200px;
-
-					&:focus {
-						border: 1px solid $chillFi-purple;
-						color: $chillFi-purple;
-						outline: none;
-					}
 				}
 
 				.form-navigation {
@@ -207,11 +196,6 @@
 				textarea {
 					border: 1px solid $mirage;
 					max-width: 95%;
-
-					&:focus {
-						color: $chillFi-purple;
-						border: 1px solid $chillFi-purple;
-					}
 				}
 			}
 		}

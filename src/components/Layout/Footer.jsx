@@ -8,6 +8,7 @@ const links = [
 	{ path: '/createproject', label: 'Create Project' },
 	{ path: '/projects', label: 'Projects' },
 	{ path: '/team', label: 'Team' },
+	{ path: '/faq', label: 'FAQ' },
 ].map(link => {
 	link.key = `nav-link-${link.href}-${link.label}`;
 	return link;
@@ -25,19 +26,19 @@ export default function Footer() {
 			</ul>
 
 			<div className="social-links-container">
-				<a href="https://github.com" alt="Github">
+				<a href="https://github.com" alt="Github" aria-label="github link">
 					{' '}
 					<FaGithub />{' '}
 				</a>
-				<a href="https://facebook.com" alt="Facebook">
+				<a href="https://facebook.com" alt="Facebook" aria-label="facebook link">
 					{' '}
 					<FaFacebookF />{' '}
 				</a>
-				<a href="https://Linkedin.com" alt="LinkedIn">
+				<a href="https://Linkedin.com" alt="LinkedIn" aria-label="linkedIn social media link">
 					{' '}
 					<FaLinkedin />{' '}
 				</a>
-				<a href="https://twitter.com" alt="Twitter">
+				<a href="https://twitter.com" alt="Twitter" aria-label="twitter link">
 					{' '}
 					<FaTwitter />{' '}
 				</a>

@@ -3,16 +3,16 @@ import { GET_USER } from '../../../graphql/queries/Users'
 import { useQuery } from "@apollo/react-hooks";
 
 
-const Step1 = ({chosenTrade, setChosenTrade, setStep, trades, obj, setObj, errorHandle, setErrorHandle}) => {
+const Step1 = ({ chosenTrade, setChosenTrade, setStep, trades, obj, setObj, errorHandle, setErrorHandle }) => {
 
-    const {data} = useQuery(GET_USER)
+    const { data } = useQuery(GET_USER)
 
     const next = e => {
-        if(obj.trade.length === 0) {
-            setErrorHandle({...errorHandle, trade: true})
+        if (obj.trade.length === 0) {
+            setErrorHandle({ ...errorHandle, trade: true })
         } else {
             setStep(2)
-        }  
+        }
     }
 
     return (
@@ -22,8 +22,8 @@ const Step1 = ({chosenTrade, setChosenTrade, setStep, trades, obj, setObj, error
                 <div className='welcome-container'>
                     <h2>Hey {!data ? '...' : data.me.firstName}</h2>
                 </div>
-                <select onChange={(e) => {setChosenTrade(true); setObj({...obj, trade: e.target.value}); setErrorHandle({...errorHandle, trade: false})}}>
-                    <option 
+                <select onChange={(e) => { setChosenTrade(true); setObj({ ...obj, trade: e.target.value }); setErrorHandle({ ...errorHandle, trade: false }) }}>
+                    <option
                         selected
                         disabled
                     >Choose Your Trade</option>
@@ -31,19 +31,19 @@ const Step1 = ({chosenTrade, setChosenTrade, setStep, trades, obj, setObj, error
                 </select>
                 {errorHandle.trade && <p className='application-error'>Please choose your trade.</p>}
             </form>
-            {chosenTrade && 
-            <div>
-                <h4>Are you licensed in this trade?</h4>
-                <form className='radio-form'>
-                    <input onClick={() => setObj({...obj, licensed: true})} type='radio' name='choice'/>
-                    <label>Yes</label>
-                    <input defaultChecked onClick={() => setObj({...obj, licensed: false})} type='radio' name='choice'/>
-                    <label>No</label>
-                </form>
-            </div>}
+            {chosenTrade &&
+                <div>
+                    <h3>Are you licensed in this trade?</h3>
+                    <form className='radio-form'>
+                        <input id="license-yes" onClick={() => setObj({ ...obj, licensed: true })} type='radio' name='choice' />
+                        <label htmlFor="license-yes">Yes</label>
+                        <input id="license-no" defaultChecked onClick={() => setObj({ ...obj, licensed: false })} type='radio' name='choice' />
+                        <label htmlFor="license-no">No</label>
+                    </form>
+                </div>}
             <div className='button-container'>
                 <button onClick={next}>Next &rarr;</button>
-            </div>   
+            </div>
         </>
     )
 }
