@@ -8,7 +8,7 @@ function FAQ() {
 	return (
 		<>
 			<Nav />
-			<div className="page-container">
+			<main className="page-container">
 				<div className="accordion__div">
 					<h2>Frequently Asked Questions</h2>
 					<Accordion
@@ -40,7 +40,7 @@ function FAQ() {
    <p>A Project Manager is an individual or business with an interest in setting up community projects.</p>"
 					/>
 				</div>
-			</div>
+			</main>
 			<Footer />
 		</>
 	);

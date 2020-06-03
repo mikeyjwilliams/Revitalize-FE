@@ -1,8 +1,4 @@
-
-
-
 // .section.dashboard-header {}
-
 
 .dashboard .dashboard-body .dashboard-header.section {
 	width: 100%;
@@ -29,7 +25,7 @@
 				align-items: flex-start;
 				.project-status {
 					background-color: $franks-grey;
-					color: $mirage;
+					color: lighten($dark-grey, 17%);
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -84,13 +80,13 @@
 				}
 			}
 		}
-	
+
 		.add-tasks {
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
 			margin-right: 2rem;
-	
+
 			svg {
 				height: 35px;
 				width: 35px;
@@ -107,17 +103,17 @@
 					transition-duration: 0.5s;
 				}
 			}
-	
+
 			.add-task-title {
 				margin-right: 1rem;
 				font-size: 1.6rem;
-				color: $mirage;
+				color: darken($mirage, 27%);
 			}
 			.add-task-button {
 				font-size: 2.8rem;
 				color: $chillFi-purple;
 			}
-	
+
 			img {
 				width: 80%;
 				&:hover {
@@ -128,19 +124,19 @@
 		.header-top-right {
 			display: flex;
 		}
-	
+
 		.header-middle {
 			display: flex;
 			flex-direction: column;
 			.header-middle-geo {
-				color: $mirage;
+				color: lighten($dark-grey, 17%);
 				font-size: 1.6rem;
 			}
 			.header-middle-title {
 				color: $machiavellian;
 				font-size: 3.2rem;
 				margin-bottom: 16px;
-	
+
 				svg {
 					color: $chillFi-purple;
 					font-size: 1rem;
@@ -148,7 +144,7 @@
 				}
 			}
 			.header-middle-description {
-				color: $mirage;
+				color: lighten($dark-grey, 17%);
 				font-size: 2rem;
 				max-width: 970px;
 				width: 100%;
@@ -157,7 +153,7 @@
 				margin-bottom: 40px;
 			}
 		}
-	
+
 		.header-bottom {
 			display: flex;
 			justify-content: space-between;
@@ -199,14 +195,14 @@
 							transition-duration: 0.5s;
 						}
 					}
-					.bottom-button.manage, .bottom-button.close {
+					.bottom-button.manage,
+					.bottom-button.close {
 						color: $mirage;
 						font-size: 1.2rem;
-						font-family: "Roboto";
+						font-family: 'Roboto';
 						text-transform: uppercase;
 						padding-top: 10px;
 						line-height: 1;
-						
 					}
 					.bottom-button.arrow {
 						font-size: 3rem;
@@ -291,8 +287,14 @@
 				background-color: rgba($notlive-bg, 0.5);
 			}
 		}
+		.count {
+			color: $static-grey;
+		}
 
 		.add-tasks {
+			.add-task-title {
+				color: $static-grey;
+			}
 			.create-task-button {
 				color: $snow-white;
 			}

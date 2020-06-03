@@ -247,6 +247,12 @@ const Nav = props => {
 											</Link>
 										</div>
 									</li>
+									))}
+									<li>
+										<Link to="/register">
+											<button className="register">Get Started</button>
+										</Link>
+									</li>
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">
 											{darkModeStatus}

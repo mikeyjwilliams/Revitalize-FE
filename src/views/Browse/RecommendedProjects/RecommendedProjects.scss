@@ -1,4 +1,5 @@
-.browse-container .recommened-projects-section {
+//.browse-container
+.recommened-projects-section {
 	.slider {
 		width: 101.5%;
 		margin-left: -1%;
@@ -15,26 +16,45 @@
 					height: 181px;
 				}
 			}
-			.carousel-card-body {
-				height: calc(100% - 181px);
-				.carousel-card-body-descript {
-					h5 {
-						&:hover {
-						}
-					}
-					.display-text-group {
-						.displayed-text {
-							.read-more-button {
-							}
+		} // moved code below from out of __recommended so it wasn't so specific & could reach dark mode. -MW
+		.carousel-card-body {
+			height: calc(100% - 181px);
+			.carousel-card-body-descript {
+				a {
+					// the h5 is nested in the a tag here. -MW
+					color: $chillFi-purple;
+					text-decoration: underline;
+					@include nav-types($anchor-color: $chillFi-purple, $visit-color: $mirage);
+				}
+				.display-text-group {
+					.displayed-text {
+						.read-more-button {
 						}
 					}
 				}
-				.carousel-card-body-money {
-					div {
-					}
-					p {
-					}
+			}
+			.carousel-card-body-money {
+				div {
 				}
+				p {
+				}
+			}
+		}
+	}
+}
+.dark-mode {
+	.recommened-projects-section {
+		.slider {
+			.carousel-card-body-descript {
+				a {
+					// h5 is nested in the a tag here -MW
+					@include nav-types(
+						$anchor-color: lighten($maastricht-blue, 50%),
+						$visit-color: darken($static-grey, 15%),
+						$hover-color: $dark-electric-blue
+					);
+				}
+				//color: $sky-blue;
 			}
 		}
 	}

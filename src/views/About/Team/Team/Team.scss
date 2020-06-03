@@ -1,7 +1,6 @@
-// @import '../../styles/variables';
+@import '../../../styles/variables';
 
 .squad-container {
-	// background: red;
 	max-width: 1920px;
 	width: 100%;
 	margin-bottom: 10rem;
@@ -50,7 +49,7 @@
 			display: grid;
 			grid-gap: 0;
 			grid-template-columns: repeat(3, 1fr);
-			// grid-auto-rows: minmax(0, 4.83%);
+			grid-auto-rows: minmax(0, 4.83%);
 			grid-template-areas:
 				'anthony	        .           .'
 				'anthony        kerry         .'
@@ -67,12 +66,31 @@
 				'omar          skyelar      clark'
 				'omar          skyelar      clark'
 				' .            skyelar      clark'
-				'frank           .          clark'
-				'frank       theia        .  '
-				'frank        theia      Lucy'
-				'frank       theia       Lucy'
-				'  .         theia       Lucy'
-				'  .             .         Lucy';
+				'michaelW           .          clark'
+				'michaelW       theia        .  '
+				'michaelW       theia      Lucy'
+				'michaelW       theia      Lucy'
+				'  .            theia      Lucy'
+				'michaelW            .      Lucy'
+				'michaelW		bryan				.'
+				'michaelW       bryan        dalton'
+				'michaelW       bryan        dalton'
+				'  .            bryan        dalton'
+				'  .              .          dalton';
+
+			// .labs10squad{
+			// 	display: grid;
+			// 	grid-gap: 0;
+			// 	grid-template-columns: repeat(3, 1fr);
+			// 	grid-auto-rows: minmax(0, 4.83%);
+			// 	grid-template-areas:
+			// 		'michaelW			.			.'
+			// 		'michaelW       chase         .'
+			// 		'michaelW       chase        bryan'
+			// 		'michaelW       chase        bryan'
+			// 		'  .            chase        bryan'
+			// 		' 	          .       	     bryan'
+			// 											;
 
 			@media #{$tablet} {
 				grid-template-columns: repeat(2, 1fr);
@@ -115,7 +133,7 @@
 			.person {
 				position: relative;
 				width: 100%;
-				grid-area: auto;
+				// grid-area: auto;
 
 				@media #{$mobile} {
 					width: 100%;
@@ -129,7 +147,7 @@
 					font-size: 1.57vw;
 					line-height: 1.61;
 					letter-spacing: 1.8px;
-					color: $snow-white;
+					color: $black-void;
 
 					@media #{$tablet} {
 						font-size: 2.57vw;
@@ -251,8 +269,23 @@
 			// }
 		}
 		.index11 {
-			grid-area: Lucy;
+			grid-area: michaelW;
 		}
+		// .index12 {
+		// 	grid-area: chase;
+		// }
+		.index13 {
+			grid-area: bryan;
+		}
+		.index14 {
+			grid-area: dalton;
+		}
+		// .index15 {
+		// 	grid-area: michaelM;
+		// }
+		// .index16 {
+		// 	grid-area: jules;
+		// }
 	}
 }
 .dark-mode {

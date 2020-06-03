@@ -5,6 +5,7 @@
 	text-align: center;
 	transition: 0.2s all ease-in-out;
 	width: 100%;
+	text-decoration: none; // work around for paragraph text not to be underlined. - MW
 
 	&:hover {
 		cursor: pointer;
@@ -40,6 +41,7 @@
 	h3 {
 		margin: 30px auto 20px auto;
 		max-width: 407px;
+		text-decoration: underline; // work around so paragraph text is not underlined - MW
 		@media #{$tablet} {
 			font-size: 2.2rem;
 		}
@@ -52,6 +54,7 @@
 		margin: 30px auto 0 auto;
 		font-size: 1.8rem;
 		max-width: 75%;
+		text-decoration: none;
 		@media #{$tablet} {
 			font-size: 1.4rem;
 		}

@@ -39,6 +39,11 @@
 		height: 360px;
 		font-size: 1.6rem;
 		@include subtleBoxShadow;
+
+		a {
+			@include nav-theme($light-theme: true);
+		}
+
 		.carousel-card-image {
 			width: 100%;
 			position: relative;
@@ -46,6 +51,10 @@
 			justify-content: flex-end;
 
 			.carousel-card-location {
+				border: 1px solid $cerulean;
+				border-radius: 5px;
+				background-color: $saphire-mox;
+				opacity: 0.9;
 				z-index: 1;
 			}
 
@@ -57,11 +66,11 @@
 			// 	left: 0;
 			// 	border-radius: 5px 5px 0 0;
 			// 	background: linear-gradient(196deg, rgba($bleached-black, 1), rgba(#414141, 0.15));
-			// 	opacity: 0.4;
-			// 	// &:hover {
-			// 	// 	opacity: 0.5;
-			// 	// 	transition-duration: 1s;
-			// 	// }
+			// 	opacity: 0.5;
+			// 	&:hover {
+			// 		opacity: 0;
+			// 		transition-duration: 1s;
+			// 	}
 			// }
 
 			&:before {
@@ -88,6 +97,7 @@
 				border-radius: 5px 5px 0 0;
 			}
 		}
+
 		.carousel-card-body {
 			display: flex;
 			flex-direction: column;
@@ -102,9 +112,6 @@
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					&:hover {
-						@include text-shadow;
-					}
 				}
 				.display-text-group {
 					margin: 10px 0;

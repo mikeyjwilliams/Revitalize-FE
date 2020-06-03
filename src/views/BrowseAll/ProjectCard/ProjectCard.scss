@@ -69,22 +69,25 @@
 		padding: 10px;
 		height: calc(100% - 150px);
 		justify-content: space-between;
-		.dark-mode{
+		.dark-mode {
 			background-color: $bleached-black;
 		}
 
 		.project-card-body-descript {
-			.dark-mode{
+			.dark-mode {
 				background-color: $bleached-black;
 			}
-			h5 {
-				margin: 10px 0;
-				width: 100%;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				&:hover {
-					@include text-shadow;
+			a {
+				@include nav-theme($light-theme: true);
+				h5 {
+					@include nav-theme($light-theme: true);
+					// color: $chillFi-purple;
+
+					margin: 10px 0;
+					width: 100%;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 			}
 			.display-text-group {
@@ -109,7 +112,14 @@
 }
 
 .dark-mode {
-	.project-card-container{
+	.project-card-container {
+		.project-card-body-descript {
+			a {
+				@include nav-theme($light-theme: false);
+			}
+		}
+	}
+	.project-card-container {
 		background-color: $darkness;
 		.project-card {
 			.project-card-inner {

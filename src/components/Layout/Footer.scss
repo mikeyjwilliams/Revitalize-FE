@@ -33,7 +33,12 @@
 				margin-top: auto;
 			}
 			a {
-				color: $snow-white;
+				//color: lighten($saphire-mox, 20%);
+				@include nav-types(
+					$visit-color: $static-grey,
+					$anchor-color: lighten($saphire-mox, 20%),
+					$hover-color: $snow-white
+				);
 				font-size: 2.4rem;
 				@media #{$mobile} {
 					font-size: 2.8rem;
@@ -47,23 +52,28 @@
 		margin-top: 65px;
 		@media #{$mobile} {
 			margin-top: 35px;
-
 		}
 		a {
-			color: $snow-white;
 			font-size: 3rem;
 			margin-right: 20px;
 			margin-left: 20px;
-
 			background-size: 100px;
 			@media #{$mobile} {
 				font-size: 3.3rem;
-
+			}
+			svg {
+				color: lighten($saphire-mox, 20%);
+				@include nav-types(
+					$anchor-color: lighten($saphire-mox, 20%),
+					$hover-color: $snow-white,
+					$visit-color: $static-grey,
+					$decoration: none
+				);
 			}
 		}
 	}
 	.bottom-footer {
-		color: $saphire-mox;
+		color: $cerulean;
 		font-size: 1.8rem;
 		display: flex;
 		justify-content: flex-start;
@@ -86,17 +96,14 @@
 		.links-container {
 			li {
 				a {
-					color: $dark-electric-blue;
+					@include nav-theme($light-theme: false);
 				}
 			}
 		}
 		.social-links-container {
 			a {
-				color: $dark-electric-blue;
+				@include nav-theme($light-theme: false, $decoration: none);
 			}
-		}
-		.bottom-footer {
-			color: $maastricht-blue;
 		}
 	}
 }

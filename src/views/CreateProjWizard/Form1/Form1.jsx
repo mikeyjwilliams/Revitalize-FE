@@ -105,7 +105,7 @@ const Form1 = ({ name, description, handleChanges, setFormPosition, startDate })
 			</div>
 
 			<div className="form-navigation first-step">
-				<button className="next-step3">
+				<button className="next-step3 next-step">
 					Next&nbsp;
 					<FaArrowRight />
 				</button>
