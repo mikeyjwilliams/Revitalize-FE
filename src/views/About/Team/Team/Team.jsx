@@ -244,9 +244,9 @@ const Squad = () => {
 	];
 
 	return (
-		<div className="squad-container">
+		<main className="squad-container">
 			<h1 className="title">Meet The Squad</h1>
-			<h3 className="description">Meet the people that make all of the magic happen behind the scenes.</h3>
+			<h2 className="description">Meet the people that make all of the magic happen behind the scenes.</h2>
 			<div className="grid-container">
 				{/* <img
 					src="https://res.cloudinary.com/revitalize/image/upload/v1570036130/about%20page/Circle_2019_sc3ml9.svg"
@@ -270,6 +270,7 @@ const Squad = () => {
 											<a
 												href={person.github}
 												alt="Github"
+												aria-label={`Github-link of ${person.name}`}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
@@ -280,6 +281,7 @@ const Squad = () => {
 											<a
 												href={person.linkedIn}
 												alt="LinkedIn"
+												aria-label={`LinkedIn link of ${person.name}`}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
@@ -290,6 +292,7 @@ const Squad = () => {
 											<a
 												href={person.twitter}
 												alt="Twitter"
+												aria-label={`Twitter Link of ${person.name}`}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
@@ -300,6 +303,7 @@ const Squad = () => {
 											<a
 												href={person.site}
 												alt="Personal Site"
+												aria-label={`Personal site of ${person.name}`}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
@@ -313,7 +317,7 @@ const Squad = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 };
 
