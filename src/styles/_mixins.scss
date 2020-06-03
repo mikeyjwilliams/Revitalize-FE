@@ -216,3 +216,21 @@
 		}
 	}
 }
+
+@mixin squad-name-title-box($light-theme: true) {
+	@if $light-theme {
+		background: $sky-blue;
+		border-radius: 0.5em;
+		padding: 10px 15px;
+		margin: 10px 10px;
+		color: $dark-grey;
+		width: fit-content;
+	} @else {
+		background: rgba($black-void, 0.8);
+		border-radius: 0.5em;
+		padding: 10px 15px;
+		margin: 10px 10px;
+		color: $snow-white;
+		width: fit-content;
+	}
+}
