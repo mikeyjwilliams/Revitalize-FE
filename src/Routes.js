@@ -15,7 +15,7 @@ import ProjectPage from './views/ProjectPage/ProjectPage';
 import ProjectDonationPage from './views/ProjectDonationPage/ProjectDonationPage';
 import About from './views/About/About';
 import FAQ from './views/FAQ/FAQ';
-import Team from './views/Team/Team'
+import Team from './views/About/Team/Team';
 
 import Nav from './components/Layout/Nav';
 import Footer from './components/Layout/Footer';

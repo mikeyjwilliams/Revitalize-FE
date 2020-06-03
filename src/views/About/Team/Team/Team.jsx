@@ -1,24 +1,24 @@
 import React from 'react';
 
 // images
-import kerry from '../../../assets/AboutPage/kerry.png';
-import alex from '../../../assets/AboutPage/alex.png';
-import clark from '../../../assets/AboutPage/clark.png';
-import frank from '../../../assets/AboutPage/frank.png';
-import jose from '../../../assets/AboutPage/jose2.png';
-import omar from '../../../assets/AboutPage/omar.png';
-import ruth from '../../../assets/AboutPage/ruth.png';
-import skyelar from '../../../assets/AboutPage/skyelar.png';
-import anthony from '../../../assets/AboutPage/anthony.png';
-import elan from '../../../assets/AboutPage/elan.png';
-import theia from '../../../assets/AboutPage/theia.png';
-import Lucy from '../../../assets/AboutPage/Lucy.png';
-import michaelM from '../../../assets/AboutPage/michaelM.png';
-import michaelW from '../../../assets/AboutPage/michaelW.png';
-import chase from '../../../assets/AboutPage/chase.png';
-import dalton from '../../../assets/AboutPage/Dalton.png';
-import jules from '../../../assets/AboutPage/jules.png';
-import bryan from '../../../assets/AboutPage/bryan.png';
+import kerry from '../../../../assets/AboutPage/kerry.png';
+import alex from '../../../../assets/AboutPage/alex.png';
+import clark from '../../../../assets/AboutPage/clark.png';
+import frank from '../../../../assets/AboutPage/frank.png';
+import jose from '../../../../assets/AboutPage/jose2.png';
+import omar from '../../../../assets/AboutPage/omar.png';
+import ruth from '../../../../assets/AboutPage/ruth.png';
+import skyelar from '../../../../assets/AboutPage/skyelar.png';
+import anthony from '../../../../assets/AboutPage/anthony.png';
+import elan from '../../../../assets/AboutPage/elan.png';
+import theia from '../../../../assets/AboutPage/theia.png';
+import Lucy from '../../../../assets/AboutPage/Lucy.png';
+import michaelM from '../../../../assets/AboutPage/michaelM.png';
+import michaelW from '../../../../assets/AboutPage/michaelW.png';
+import chase from '../../../../assets/AboutPage/chase.png';
+import dalton from '../../../../assets/AboutPage/Dalton.png';
+import jules from '../../../../assets/AboutPage/jules.png';
+import bryan from '../../../../assets/AboutPage/bryan.png';
 
 
 const Squad = () => {
@@ -255,7 +255,7 @@ const Squad = () => {
 				<div className="squad">
 					{squad.map((person, index) => (
 						<div className={`person index${index}`} style={{ backgroundColor: `${person.background}` }}>
-						
+
 								<>
 									<h2 className="name"> {person.name}</h2>
 									<h3 className="role"> {person.role}</h3>
@@ -308,7 +308,7 @@ const Squad = () => {
 										</div>
 									</div>
 								</>
-							
+
 						</div>
 					))}
 				</div>

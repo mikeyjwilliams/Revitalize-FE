@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Hero2 from '../../../assets/AboutPage/Hero2.png';
+import Hero2 from '../../../../assets/AboutPage/Hero2.png';
 
 const Header = () => {
   return (
@@ -8,9 +8,9 @@ const Header = () => {
       <div className="about-header">
         <img
           src="https://res.cloudinary.com/revitalize/image/upload/v1570037035/about%20page/Hero_Images1_k5qnxo.svg"
-          alt="" 
+          alt=""
           className="img1" />
-        <h1>Team ReVitalize</h1> 
+        <h1>Team ReVitalize</h1>
         <img
           src={Hero2}
           alt=""
