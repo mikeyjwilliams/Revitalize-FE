@@ -155,7 +155,7 @@
 						@include btn-main($bg-color: $chillFi-purple, $color: $snow-white, $margin: 20px);
 					}
 					.submit {
-						@include btn-main($bg-color: $cerulean, $color: $snow-white, $margin: 20px);
+						@include btn-main($bg-color: darken($cerulean, 25%), $color: $snow-white, $margin: 20px);
 					}
 					.next-step {
 						margin: 20px;

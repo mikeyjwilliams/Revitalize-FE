@@ -165,8 +165,8 @@
 			font-size: 1.6rem;
 			@include nav-types(
 				$anchor-color: $chillFi-purple,
-				$visit-color: $ruby-enchantment,
-				$hover-color: $dark-grey
+				$visit-color: lighten($dark-grey, 10%),
+				$hover-color: $ruby-enchantment
 			);
 		}
 	}
@@ -221,6 +221,9 @@
 		.a-container {
 			.count {
 				color: $black-void;
+			}
+			a {
+				@include nav-theme($light-theme: false);
 			}
 		}
 	}
