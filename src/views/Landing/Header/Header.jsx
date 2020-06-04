@@ -16,7 +16,9 @@ const Header = () => {
 						A modern approach to <br />
 						building your community
 					</h2>
-					<h2 className="cta-title-tablet">A modern approach to building your community</h2>
+					<h2 className="cta-title-tablet" data-testid="title-test">
+						A modern approach to building your community
+					</h2>
 					<p>
 						ReVitalize is a crowdfunding platform <br /> that creates apprenticeship opportunities
 					</p>
