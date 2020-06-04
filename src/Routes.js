@@ -68,6 +68,7 @@ export const Routes = () => {
 						render={props => <StudentApplicationForm {...props} />}
 					/>
 					<Route exact path="/team" component={Team} />
+					<Route exact path="/faq" component={FAQ} />
 				</Switch>
 
 			</div>
