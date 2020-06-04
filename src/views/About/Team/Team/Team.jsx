@@ -243,7 +243,7 @@ const Squad = () => {
 
 	return (
 		<main className="squad-container">
-			<h1 className="title">Meet The Squad</h1>
+
 			<h2 className="description">Meet the people that make all of the magic happen behind the scenes.</h2>
 			<div className="grid-container">
 				{/* <img
@@ -310,7 +310,7 @@ const Squad = () => {
 										)}
 									</div>
 								</div>
-						
+
 						</div>
 					))}
 				</div>

@@ -37,6 +37,7 @@
 			margin: 0 auto;
 			.login-third-party {
 				margin: 0 auto;
+				text-decoration: none;
 				.login-welcome {
 					text-align: center;
 					color: $snow-white;
@@ -58,6 +59,7 @@
 						display: flex;
 						align-items: center;
 						margin: 0 20px;
+						text-decoration: none;
 						img {
 							margin-right: 20px;
 							height: 40px;
@@ -150,5 +152,13 @@
 	.login-container{
 		background: $erudite-purple;
 		color: $snow-white;
+	}
+	.back-arrow{
+		color:$snow-white;
+		background-color: $erudite-purple;
+		&:hover{
+			color:$erudite-purple;
+			background-color: $snow-white;
+		}
 	}
 }

@@ -10,7 +10,7 @@ const About = () => {
 
 			<Header />
 			<Main />
-			<Squad />
+			
 
 
 		</div>

@@ -98,6 +98,7 @@ nav {
 					vertical-align: center;
 					letter-spacing: 0.04em;
 					line-height: 0.9;
+					text-decoration: none;
 					&:hover{
 						border: 2px solid $maastricht-blue;
 						border-radius: 5px;
@@ -264,9 +265,11 @@ nav {
 		}
 	}
 	.right-nav {
+
 		ul {
 			.navLinks a {
 				color: $snow-white;
+
 				&:hover{
 					border: 2px solid $chillFi-purple;
 					border-radius: 5px;
