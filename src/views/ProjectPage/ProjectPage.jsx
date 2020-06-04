@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
-//Component Imports
-import Nav from '../../components/Layout/Nav';
-import Footer from '../../components/Layout/Footer';
 
 import ShareModal from './Modals/ShareModal';
 import DonateModal from './Modals/DonateModal';
@@ -76,7 +73,7 @@ const ProjectPage = ({ match }) => {
 
 	return (
 		<>
-			<Nav />
+
 			<main className="project-page-container">
 				<div className="singleProjectVectorContainer">
 					<div
@@ -176,7 +173,7 @@ const ProjectPage = ({ match }) => {
 					refetch={refetch}
 				/>
 			</main>
-			<Footer />
+
 		</>
 	);
 };

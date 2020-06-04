@@ -1,9 +1,10 @@
-@import '../../../styles/variables';
+//@import '../../../styles/variables';
 
 .squad-container {
 	// background: red;
-	max-width: 1920px;
-	width: 100%;
+	// max-width: 1920px;
+	width: 80%;
+	margin: 0 auto;
 	margin-bottom: 10rem;
 	@media #{$mobile} {
 		margin-bottom: 15rem;
@@ -15,7 +16,8 @@
 		font-size: 4.7vw;
 		line-height: 1.61;
 		letter-spacing: 5.4px;
-		color: $erudite-purple;
+
+		color: $snow-white;
 
 		@media #{$tablet} {
 			font-size: 5vw;
@@ -39,7 +41,9 @@
 		}
 	}
 	.grid-container {
-		padding: 0 13.8%;
+		// padding: 0 13.8%;
+		width: 80%;
+		margin: 0 10%;
 
 		@media #{$mobile} {
 			padding: 0 11%;
@@ -128,8 +132,7 @@
 					font-size: 1.57vw;
 					line-height: 1.61;
 					letter-spacing: 1.8px;
-					color: $snow-white;
-
+					// color controlled by .squad-person-info -MW
 					@media #{$tablet} {
 						font-size: 2.57vw;
 					}
@@ -144,8 +147,7 @@
 					font-size: 1.2vw;
 					line-height: 1.61;
 					letter-spacing: 1.38px;
-					color: $snow-white;
-
+					// color controlled by .squad-person-info -MW
 					@media #{$tablet} {
 						font-size: 1.6vw;
 					}
@@ -169,6 +171,7 @@
 					}
 				}
 			}
+
 			.overlay {
 				position: absolute;
 				display: flex;
@@ -177,7 +180,7 @@
 				bottom: 0;
 				left: 0;
 				right: 0;
-				background-color: rgba(0, 0, 0, 0.5);
+				background-color: rgba(0, 0, 0, 0.9);
 				overflow: hidden;
 				width: 100%;
 				height: 0;
@@ -253,9 +256,15 @@
 			grid-area: Lucy;
 		}
 	}
+	.squad-person-info {
+		@include squad-name-title-box($light-theme: true);
+	} // controls .name & .role color attribute -MW
 }
 .dark-mode {
 	.title {
 		color: $snow-white;
+	}
+	.squad-person-info {
+		@include squad-name-title-box($light-theme: false);
 	}
 }

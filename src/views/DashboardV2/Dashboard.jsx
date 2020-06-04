@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Nav from '../../components/Layout/Nav';
-import Footer from '../../components/Layout/Footer';
 import Sidebar from './DashboardComponents/Sidebar/Sidebar';
 import DashNav from './DashboardComponents/DashNav/DashNav';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
@@ -13,8 +11,7 @@ import HeaderMainSort from './HeaderMainSort/HeaderMainSort';
 // GQL
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER_PROFILE } from '../../graphql/queries/Users';
-// import { toIdValue } from 'apollo-utilities';
-// import { InMemoryCache } from 'apollo-cache-inmemory';
+
 
 const Dashboard = () => {
 	// Change these array values if you need to change the name of the dashnav tabs
@@ -78,8 +75,8 @@ const Dashboard = () => {
 		<>
 			{data.me.projects ? setAvailableDashNavTabs : null}
 
-			<main className="page-container">
-				<Nav />
+			<main>
+
 				<section className="dashboard">
 					<Sidebar user={data.me} project={selectedProject.project ? selectedProject.project : null} />
 					<section className="dashboard-body">
@@ -164,7 +161,7 @@ const Dashboard = () => {
 				</section>
 			</main>
 
-			<Footer />
+
 		</>
 	);
 };

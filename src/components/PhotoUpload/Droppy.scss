@@ -2,7 +2,7 @@
 	margin: 6px 0 10px 0;
 	.dropzone {
 		background-color: $silver-lining;
-		color: $static-grey;
+
 		border-radius: 5px;
 		border: 2px dashed $static-grey;
 		padding: 20px;
@@ -16,7 +16,9 @@
 		}
 	}
 }
-
+.drop-text-color--med {
+	color: darken($mirage, 20%);
+}
 .thumbs-container {
 	display: flex;
 	flex-direction: row;

@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Nav from '../../components/Layout/Nav';
-import Footer from '../../components/Layout/Footer';
-
 import Top from './Top/Top';
 import ProjectCard from './ProjectCard/ProjectCard';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
@@ -32,7 +29,7 @@ const BrowseAll = () => {
 
 	return (
 		<>
-			<Nav />
+
 			<main>
 				<div className="browse-all-container">
 					<Top
@@ -48,7 +45,7 @@ const BrowseAll = () => {
 					</section>
 				</div>
 			</main>
-			<Footer />
+			
 		</>
 	);
 };

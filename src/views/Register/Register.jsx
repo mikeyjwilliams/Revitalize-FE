@@ -35,7 +35,7 @@ const Register = props => {
 		setForm({ toggleForm: true });
 	};
 
-	const goBack = () => props.history.push('/');
+	const goBack = () => props.history.push('/login');
 
 	const [form, setForm] = useState({ toggleForm: false });
 	const toggleForm = () => setForm({ toggleForm: !state.toggleForm });
@@ -44,7 +44,7 @@ const Register = props => {
 		<>
 			{form.toggleForm ? <SetupProfile destination="modal" toggleForm={toggleForm} email={state.email} /> : null}
 			<main className="register-container">
-				<FaArrowLeft onClick={goBack} />
+				<FaArrowLeft onClick={goBack} className="back-arrow" />
 				<div className="register-container-left">
 					<div className="register-form">
 						<div className="register-third-party">

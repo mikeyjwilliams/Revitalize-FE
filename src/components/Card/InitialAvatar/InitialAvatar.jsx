@@ -60,5 +60,3 @@ const InitialAvatar = props => {
 }
 
 export default InitialAvatar;
-
-

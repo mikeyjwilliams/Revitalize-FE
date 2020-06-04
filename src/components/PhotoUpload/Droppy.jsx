@@ -51,9 +51,9 @@ const Droppy = props => {
 		<section className="droppy-container">
 			<div {...getRootProps({ className: 'dropzone' })}>
 				<input {...getInputProps()} />
-				<p>Upload project photos</p>
+				<p className="drop-text-color--med">Upload project photos</p>
 			</div>
-			<aside className="thumbs-container">{thumbs}</aside>
+			<section className="thumbs-container">{thumbs}</section>
 		</section>
 	);
 };

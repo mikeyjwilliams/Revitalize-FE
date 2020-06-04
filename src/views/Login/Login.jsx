@@ -45,7 +45,9 @@ const Login = props => {
 	return (
 		<>
 			<main className="login-container">
-				<FaArrowLeft data-testid="backArrow" onClick={goBack} />
+
+				<FaArrowLeft onClick={goBack} className="back-arrow" />
+
 				<div className="login-container-left">
 					<div className="login-form">
 						<div className="login-third-party">
