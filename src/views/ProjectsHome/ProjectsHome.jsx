@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Nav from '../../components/Layout/Nav.jsx';
-import Footer from '../../components/Layout/Footer.jsx';
+// import Nav from '../../components/Layout/Nav.jsx';
+// import Footer from '../../components/Layout/Footer.jsx';
 
 // import FeaturedProjects from './FeaturedProjects.jsx';
 import TopSection from './TopSection.jsx';
@@ -14,7 +14,7 @@ import RecommendedPlusStories from './RecomendedPlusStories/index.js';
 const ProjectsHome = () => {
 	return (
 		<>
-			<Nav />
+			{/*<Nav /> */}
 			<div className="projects-home">
 				<TopSection />
 				<FeaturedTrades />
@@ -24,7 +24,7 @@ const ProjectsHome = () => {
 				<SubscribeCTA />
 				<RecommendedPlusStories />
 			</div>
-			<Footer />
+			{/*<Footer /> */}
 		</>
 	);
 };

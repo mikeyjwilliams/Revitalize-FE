@@ -16,16 +16,8 @@
 	}
 }
 
-.create-project {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 0;
-	margin-bottom: 50px;
-	min-height: 935px;
-	.form-plus-quote-container {
-		@include cardBoxShadow;
-		background-color: $chillFi-purple;
+	.create-project {
+
 		display: flex;
 		justify-content: space-around;
 		width: 100%;
@@ -148,6 +140,15 @@
 						position: relative;
 						top: 100px;
 					}
+					// ----------------
+					// controls the color of the buttons
+					.prev-step,
+					.next-step {
+						@include btn-main($bg-color: $chillFi-purple, $color: $snow-white, $margin: 20px);
+					}
+					.submit {
+						@include btn-main($bg-color: darken($cerulean, 25%), $color: $snow-white, $margin: 20px);
+					}
 					.next-step {
 						margin: 20px;
 					}
@@ -170,7 +171,7 @@
 						align-items: center;
 					}
 					button.submit {
-						background-color: $mutant-turtle;
+						// background-color: $mutant-turtle;
 						margin: 20px;
 					}
 				}
@@ -191,7 +192,7 @@
 			}
 		}
 	}
-}
+
 
 .dark-mode {
 	// .title{

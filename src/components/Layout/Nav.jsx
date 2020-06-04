@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import Skeleton from "react-loading-skeleton";
+
 import { FaMoon, FaCog, FaWindowClose } from 'react-icons/fa';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER } from '../../graphql/queries/Users';
 
-import { InitialAvatar } from '../../helpers/InitialAvatar.js';
+import InitialAvatar from '../../helpers/InitialAvatar.js';
 import { useWindowHook } from '../../helpers/windowOnClickHook.js';
 
 const unauthenticatedLinks = [
@@ -67,13 +67,6 @@ const Nav = props => {
 		}
 	};
 
-	// useEffect(() => {
-	// 	if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
-	// 		document.querySelector('body').classList.add('dark-mode');
-	// 	} else {
-	// 		document.querySelector('body').classList.remove('dark-mode');
-	// 	}
-	// }, [darkModeActive]);
 
 	// Current user
 	const { client, loading, error, data } = useQuery(GET_USER);
@@ -144,6 +137,7 @@ const Nav = props => {
 							)}
 							<li>
 								<div className="user" tabIndex="0" onClick={setActive}>
+
 									{data.me.firstName !== null ? (
 										<span className="user-personal-greeting">{`Welcome, ${data.me.firstName}`}</span>
 									) : (
@@ -154,9 +148,9 @@ const Nav = props => {
 										<img className="user-icon" src={data.me.profileImage} alt={data.me.firstName} />
 									) : (
 										<InitialAvatar
-											height={40}
-											width={40}
-											className="user-icon"
+											height={60}
+											width={60}
+
 											firstName={data.me.firstName}
 											lastName={data.me.lastName}
 										/>
@@ -188,7 +182,7 @@ const Nav = props => {
 							))}
 							<li>
 								<Link to="/register">
-									<button className="register">Get Started</button>
+									<button className="register">Sign Up!</button>
 								</Link>
 							</li>
 							<li>
@@ -252,6 +246,12 @@ const Nav = props => {
 												<button className="register">Get Started</button>
 											</Link>
 										</div>
+									</li>
+									))}
+									<li>
+										<Link to="/register">
+											<button className="register">Get Started</button>
+										</Link>
 									</li>
 									<li>
 										<div onClick={toggleDarkMode} className="dropdown-darkMode">

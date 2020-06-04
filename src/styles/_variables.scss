@@ -39,17 +39,34 @@ $machiavellian: #00171f;
 $police-blue: #003459;
 $maastricht-blue: #007ea7;
 $dark-electric-blue: #00a8e8;
+$viridian: #42806d; // added for project spotlight
 $dark-blue-gray: #25415c;
 
 // Font-families
 $font-family--primary: 'futura-pt', sans-serif;
 $font-family--secondary: 'Roboto', sans-serif;
+//===================================================
+// basic shades for mixins and other uses
+//===================================================
+$text-color--nav-light: $chillFi-purple;
+$anchor-color--nav-light: $chillFi-purple;
+$visit-color--nav-light: $blue-valentine;
+$hover-color--nav-light: $sub-zero;
+
+$anchor-color--nav-dark: lighten($maastricht-blue, 35%);
+$visit-color--nav-dark: darken($static-grey, 15%);
+$hover-color--nav-dark: $dark-electric-blue;
 
 // Status colors
 $live-bg: #e3fff7;
 $live-fg: #15630e;
 $notlive-bg: #ffe3e3;
 $notlive-fg: #630e0e;
+
+// font families
+$primary-font: 'futura-pt', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+$default-font: sans-serif;
 
 //media queries
 $mobile: 'only screen and (max-width:500px)';

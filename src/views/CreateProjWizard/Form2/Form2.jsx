@@ -143,11 +143,11 @@ const Form2 = ({ address, city, state, zip, handleChanges, setFormPosition }) =>
 				{errors.zip && <p className="errorText">Please enter a valid zip code</p>}
 			</div>
 			<div className="form-navigation">
-				<button type="submit" className="next-step2">
+				<button type="submit" className="next-step next-step2">
 					Next&nbsp;
 					<FaArrowRight />
 				</button>
-				<button className="prev-step2" onClick={() => setFormPosition(1)}>
+				<button className="prev-step prev-step2" onClick={() => setFormPosition(1)}>
 					<FaArrowLeft />
 					&nbsp;Previous
 				</button>

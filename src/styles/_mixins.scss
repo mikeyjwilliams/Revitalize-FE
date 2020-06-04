@@ -83,6 +83,7 @@
 	// margin: 5px 10px 5px 10px;
 	padding: 15px 15px 15px 15px;
 }
+
 @mixin skeleton-section-dark {
 	// border: 1px solid $static-grey;
 	border-bottom-color: $darkness2;
@@ -115,9 +116,121 @@
 			color: $black-void;
 		}
 		cursor: pointer;
-		border: 2px solid $bg-color;
+		border: 3px solid $bg-color;
 	}
 	&:active {
-		transform: scale(0.5);
+		transform: scale(0.98);
+	}
+}
+/**
+* mixin nav-types()
+*  default colors set if no colors are given.
+* $anchor-color -> anchor links color
+* $visit-color -> visited links color
+* $hover-color -> hover links color
+* IF $decoration is injects as none in include no underline
+ - MW **/
+@mixin nav-types(
+	$anchor-color: $text-color--nav-light,
+	$visit-color: darken($erudite-purple, 10%),
+	$hover-color: $cerulean,
+	$decoration: underline
+) {
+	&:link {
+		color: $anchor-color;
+		text-decoration: $decoration;
+		text-decoration-color: $anchor-color;
+	}
+
+	&:visited {
+		color: $visit-color;
+		text-decoration: $decoration;
+		text-decoration-color: $visit-color;
+	}
+	&:hover {
+		color: $hover-color;
+		text-decoration: $decoration;
+		text-decoration-color: $hover-color;
+	}
+	&:active {
+		color: $anchor-color;
+		text-decoration: $decoration;
+		text-decoration-color: $anchor-color;
+	}
+}
+
+@mixin nav-theme($light-theme: true, $decoration: underline) {
+	@if $light-theme {
+		$anchor-color: $anchor-color--nav-light;
+		$visit-color: $visit-color--nav-light;
+		$hover-color: $hover-color--nav-light;
+
+		&:link {
+			color: $anchor-color;
+			text-decoration-color: $anchor-color;
+			text-decoration: $decoration;
+		}
+
+		&:visited {
+			color: $visit-color;
+			text-decoration-color: $visit-color;
+			text-decoration: $decoration;
+		}
+
+		&:hover {
+			color: $hover-color;
+			text-decoration-color: $hover-color;
+			text-decoration: $decoration;
+		}
+		&:active {
+			color: $anchor-color;
+			text-decoration-color: $anchor-color;
+			text-decoration: $decoration;
+		}
+	} @else {
+		$anchor-color: $anchor-color--nav-dark;
+		$visit-color: $visit-color--nav-dark;
+		$hover-color: $hover-color--nav-dark;
+
+		&:link {
+			color: $anchor-color;
+			text-decoration-color: $anchor-color;
+			text-decoration: $decoration;
+		}
+
+		&:visited {
+			color: $visit-color;
+			text-decoration-color: $visit-color;
+			text-decoration: $decoration;
+		}
+
+		&:hover {
+			color: $hover-color;
+			text-decoration-color: $visit-color;
+			text-decoration: $decoration;
+		}
+		&:active {
+			color: $anchor-color;
+			text-decoration-color: $visit-color;
+			text-decoration: $decoration;
+		}
+	}
+}
+
+@mixin squad-name-title-box($light-theme: true) {
+	@if $light-theme {
+		background: $sky-blue;
+		border-radius: 0.5em;
+		padding: 10px 15px;
+		margin: 10px 2.5%;
+		color: $dark-grey;
+		width: 95%;
+	} @else {
+		background: rgba($black-void, 0.8);
+		border-radius: 0.5em;
+		padding: 10px 15px;
+		margin: 10px 2.5%;
+		color: $snow-white;
+		width: 95%;
 	}
 }

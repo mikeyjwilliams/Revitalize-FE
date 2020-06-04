@@ -1,32 +1,43 @@
 .register-container {
-	background: $erudite-purple;
+
+	background: $blue-valentine;
 	color: $snow-white;
 	margin: 0 auto;
 	display: flex;
 	letter-spacing: 0.06em;
-	height: 100%;
-	font-size: 1.4rem;
+	height: calc(100vh - 351px);
+	font-size: 1rem;
+	h2{
+		font-size: 2rem
+	}
 	svg {
-		font-size: 4rem;
+		font-size: 3rem;
 		position: fixed;
 		margin: 20px;
 	}
-	h2 {
-		font-size: 2rem;
+	.back-arrow{
+		color:$snow-white;
+		background-color: $blue-valentine;
+		&:hover{
+			color:$blue-valentine;
+			background-color: $snow-white;
+		}
 	}
 	.register-container-left {
-		min-height: 100vh;
+		min-height: calc(100vh - 260px);
+
 		width: 100%;
 		min-width: 320px;
 		max-width: 800px;
-		padding-bottom: 140px;
-		padding-top: 100px;
+		padding-bottom: 1%;
+		padding-top: 1%;
 		.register-form {
 			width: 80%;
 			max-width: 400px;
 			margin: 0 auto;
 			.register-third-party {
 				margin: 0 auto;
+				text-decoration: none;
 				.register-welcome {
 					text-align: center;
 					color: $snow-white;
@@ -39,10 +50,16 @@
 					border-radius: 8px;
 					border: none;
 					cursor: pointer;
+					&:hover{
+						border: 2px solid $snow-white;
+						background-color: $erudite-purple;
+						color: $snow-white;
+					}
 					.register-button {
 						display: flex;
 						align-items: center;
 						margin: 0 20px;
+						text-decoration: none;
 						img {
 							margin-right: 20px;
 							height: 40px;
@@ -53,25 +70,24 @@
 			}
 			.register-middle {
 				margin: 0 auto;
-				padding: 40px 0;
+				padding: 10px 0;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				.register-Line {
+				.register-line {
 					height: 1px;
 					width: 40%;
 					background: $snow-white;
 				}
 			}
+
 			.register-local {
 				margin: 0 auto;
 				display: flex;
 				flex-direction: column;
-
 				.register-title {
 					margin: 0 0 5px 0;
 				}
-
 				.register-mid {
 					text-align: center;
 					padding: 5px 0 0 0;
@@ -79,44 +95,48 @@
 						font-style: italic;
 					}
 				}
-
 				span {
 					text-decoration: underline;
 					font-style: italic;
 					cursor: pointer;
 				}
-
 				.register-pass {
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
 					margin: 30px 0 5px 0;
 				}
-
 				button {
-					height: 50px;
+					height: 40px;
 					width: 50%;
 					max-width: 200px;
 					background: $ruby-enchantment;
 					margin: 0 auto;
-					margin-top: 40px;
+					margin-top: 20px;
 					border: none;
 					color: $snow-white;
-					font-size: 2rem;
+					font-size: 1.7rem;
 					border-radius: 5px;
 					cursor: pointer;
+					&:hover{
+						background-color: $erudite-purple;
+						border: 2px solid $snow-white;
+					}
 				}
 			}
 		}
 	}
 
 	.imgContainer {
-		background-attachment: fixed;
 		width: 100%;
-		background-image: url('https://res.cloudinary.com/revitalize/image/upload/c_scale,q_auto:good,w_1200/v1570043579/AuthPages/Login_p3rdln.png');
-		background-size: 100%;
-		background-position-y: 25%;
+		// height: calc(100vh - 300px);
+		height: calc(100vh - 351px);
+		background-image: url("https://images.pexels.com/photos/1171384/pexels-photo-1171384.jpeg?cs=srgb&dl=brown-concrete-brick-house-covered-by-green-leaf-vines-1171384.jpg&fm=jpg");
 		background-repeat: no-repeat;
+		background-position: right;
+		background-size: cover;
+
+
 		@media #{$tablet} {
 			background-size: cover;
 			background-position-y: unset;
@@ -124,6 +144,21 @@
 		}
 		@media #{$tablet-small} {
 			display: none;
+		}
+	}
+}
+
+.dark-mode{
+	.register-container{
+		background: $erudite-purple;
+		color: $snow-white;
+		.back-arrow{
+			color:$snow-white;
+			background-color: $erudite-purple;
+			&:hover{
+				color:$erudite-purple;
+				background-color: $snow-white;
+			}
 		}
 	}
 }
