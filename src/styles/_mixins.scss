@@ -222,15 +222,15 @@
 		background: $sky-blue;
 		border-radius: 0.5em;
 		padding: 10px 15px;
-		margin: 10px 10px;
+		margin: 10px 2.5%;
 		color: $dark-grey;
-		width: fit-content;
+		width: 95%;
 	} @else {
 		background: rgba($black-void, 0.8);
 		border-radius: 0.5em;
 		padding: 10px 15px;
-		margin: 10px 10px;
+		margin: 10px 2.5%;
 		color: $snow-white;
-		width: fit-content;
+		width: 95%;
 	}
 }
