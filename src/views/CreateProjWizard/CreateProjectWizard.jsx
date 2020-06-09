@@ -72,11 +72,11 @@ const CreateProjectWizard = ({ history }) => {
 	};
 
 	return (
-		<>
+
 
 				<main className="create-project">
 					<div className="form-plus-quote-container">
-						<q className="quote">
+						<div className="quote">
 							<h5>
 								“Yesterday I was clever,
 								<br />
@@ -87,7 +87,7 @@ const CreateProjectWizard = ({ history }) => {
 								so I am changing myself.”
 							</h5>
 							<p>Jalal ad-Din Rumi PERSIAN POET</p>
-						</q>
+						</div>
 
 						<div className="ui-section">
 							<div className="progress-tracker">
@@ -135,9 +135,9 @@ const CreateProjectWizard = ({ history }) => {
 						</div>
 					</div>
 				</main>
-			
 
-		</>
+
+
 	);
 };
 
