@@ -30,7 +30,7 @@
 	@media #{$tablet} {
 		width: 100%;
 		max-width: 100%;
-		// height:calc(100vw - 350px);
+		height:850px;
 		margin:0;
 	}
 
@@ -171,13 +171,29 @@
 				.prev-step {
 					order: -1;
 					margin: 20px;
+					@media #{$tablet}{
+						margin-left: 5%;
+					}
 				}
 				.prev-step2 {
 					//added for debug purposes
 					order: -1;
 					margin: 20px;
 					position: relative;
-					top: 100px;
+					top: 28px;
+					@media #{$tablet}{
+						left:180px;
+					}
+				}
+				.prev-step3 {
+					//added for debug purposes
+					order: -1;
+					margin: 20px;
+					position: relative;
+					// top: 100px;
+					@media #{$tablet}{
+						left:180px;
+					}
 				}
 				// ----------------
 				// controls the color of the buttons
@@ -198,13 +214,16 @@
 				.next-step{
 					@media #{$tablet} {
 						right: 20%;
+						@media #{$mobile} {
+							right: 5%;
+						}
 					}
 				}
 				.next-step2 {
 					//added for debug purposes
 					margin: 20px;
 					position: relative;
-					top: 100px;
+					top: 28px;
 					@media #{$tablet} {
 						right: 20%;
 						@media #{$mobile} {
@@ -236,6 +255,13 @@
 						color:$snow-white;
 						background-color: darken($chillFi-purple, 35%);
 					}
+					@media #{$tablet} {
+						position: relative;
+						right: 20%;
+						@media #{$mobile} {
+							right: 5%;
+						}
+					}
 
 				}
 			}
@@ -253,7 +279,7 @@
 				border: 1px solid $mirage;
 				max-width: 90%;
 				@media #{$tablet} {
-					max-width: 70%;
+					max-width: 80%;
 				}
 			}
 		}
