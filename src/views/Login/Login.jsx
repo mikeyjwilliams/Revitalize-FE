@@ -11,7 +11,7 @@ import googleLogo from '../../assets/AuthPages/Google.png';
 import fbLogo from '../../assets/AuthPages/fb-logo.png';
 
 const Login = props => {
-	const [loginUser, { client }] = useMutation(LOGIN_USER);
+	const [loginUser] = useMutation(LOGIN_USER);
 	// console.log(client)
 	const [state, setState] = useState({
 		email: '',
@@ -28,7 +28,7 @@ const Login = props => {
 	const handleSubmit = async event => {
 		event.preventDefault();
 		localStorage.setItem('token', '');
-		await client.resetStore();
+		// await client.resetStore();
 		const created = await loginUser({ variables: { data: state } });
 		setState({
 			email: '',
