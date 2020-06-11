@@ -79,6 +79,7 @@ const People = props => {
 					)}
 
 					<div className="people-profile name">
+						<span>status: {person.status}</span>
 						<h5>
 							{person.profile.firstName} {person.profile.lastName}
 						</h5>
@@ -102,7 +103,42 @@ const People = props => {
 						<div className="people-profile assign">
 							{person.trade ? <h5>Licensed</h5> : null}
 							<p>Application status:</p>
-							{person.status === 'PENDING' ? (
+							{/** section working on */}
+							<button
+								type="button"
+								value="ACCEPTED"
+								onClick={e => {
+									let statusObject = {
+										...projectApplicantState,
+										project: project.id,
+										profile: person.profile.id,
+										application: person.id,
+									};
+									// if (event.target.value === 'ACCEPTED') {
+									submitSetStatus('ACCEPTED', statusObject);
+									// }
+							>
+								Accept
+							</button>
+							<button
+								type="button"
+								value="DECLINED"
+								onClick={e => {
+									let statusObject = {
+										...projectApplicantState,
+										project: project.id,
+										profile: person.profile.id,
+										application: person.id,
+									};
+									// if (event.target.value === 'ACCEPTED') {
+									submitSetStatus('DECLINED', statusObject);
+									// }
+								}}
+							>
+								Decline
+							</button>
+
+							{/* {person.status === 'PENDING' ? (
 								<select
 									value={person.status}
 									onChange={event => {
@@ -124,13 +160,8 @@ const People = props => {
 									<option value="ACCEPTED">Accept Application</option>
 									<option value="DECLINED">Decline Application</option>
 								</select>
-							) : (
-								(person.status === 'ACCEPTED' || person.status === 'DECLINED') && (
-									<select disabled value={person.status}>
-										<option>{person.status}</option>
-									</select>
-								)
-							)}
+							) : ( */}
+							{/* {(person.status === 'ACCEPTED' || person.status === 'DECLINED') && <p>{person.status}</p>} */}
 						</div>
 					) : null}
 
