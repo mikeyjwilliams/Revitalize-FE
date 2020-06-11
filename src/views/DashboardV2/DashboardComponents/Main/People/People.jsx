@@ -114,9 +114,9 @@ const People = props => {
 										profile: person.profile.id,
 										application: person.id,
 									};
-									// if (event.target.value === 'ACCEPTED') {
+
 									submitSetStatus('ACCEPTED', statusObject);
-									// }
+								}}
 							>
 								Accept
 							</button>
