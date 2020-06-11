@@ -102,9 +102,10 @@ const People = props => {
 					props.dashNavTabState.selectedDashNavTab === props.possibleDashNavTabs[0] ? ( // If rendering applicants, allow setting status
 						<div className="people-profile assign">
 							{person.trade ? <h5>Licensed</h5> : null}
-							<p>Application status:</p>
+							{/* <p>Application status:</p> */}
 							{/** section working on */}
 							<button
+								className="btn-status"
 								type="button"
 								value="ACCEPTED"
 								onClick={e => {
@@ -121,6 +122,7 @@ const People = props => {
 								Accept
 							</button>
 							<button
+								className="btn-status"
 								type="button"
 								value="DECLINED"
 								onClick={e => {
