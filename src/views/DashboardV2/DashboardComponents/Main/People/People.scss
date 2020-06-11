@@ -113,4 +113,19 @@
 			color: inherit;
 		}
 	}
+	.people-profile {
+		.btn-status {
+			@include btn-main($bg-color: $police-blue, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+			// leave btn-main above cascade of rules that modify it below this comment -MW
+			padding: 0.25rem;
+			border-width: 1px;
+			border-radius: 0.5rem;
+			margin-bottom: 5px;
+			&:hover {
+				border-width: 1px;
+				background-color: $snow-white;
+				color: $police-blue;
+			}
+		}
+	}
 }
