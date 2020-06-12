@@ -1,9 +1,12 @@
-// .section.dashboard-header {}
+
 
 .dashboard .dashboard-body .dashboard-header.section {
 	width: 100%;
 	display: flex;
 	margin-bottom: 10px;
+	@media(max-width:"700px") {
+		width: 100%;
+	}
 	.dashboard-section-inner-container.show-more {
 		border: none;
 	}

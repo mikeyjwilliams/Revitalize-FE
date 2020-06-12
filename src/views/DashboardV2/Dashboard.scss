@@ -8,11 +8,7 @@
 @import './DashboardComponents/AddTask/AddTask.scss';
 @import './DashboardComponents/AddTrade/AddTrade.scss';
 
-// .section[class^='dashboard'] {  // .section.dashboard * selector
-//     @include skeleton-section;
-//     @include bottomBoxShadow;
-//     background: $snow-white;
-// }
+
 
 .dashboard {
 	width: 100%;
@@ -22,13 +18,22 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	height: 100%;
-	// margin-bottom: -320px;
+	@media(max-width: "700px"){
+		flex-direction: column;
+
+	}
 
 	.dashboard-body {
 		width: calc(75% - 20px);
 		margin-left: 20px;
 		margin-bottom: 20px;
+		@media(max-width:"700px") {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 5%;
+		}
 	}
+	
 
 	.dashboard-picture-icons,
 	.team-members .member-icons img {
@@ -46,7 +51,6 @@
 		margin-right: -2px;
 	}
 
-	// .section.dashboard * selector
 	.section[class^='dashboard'] {
 		@include subtleBoxShadowDistance;
 		background: $snow-white;
