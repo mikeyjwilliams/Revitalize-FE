@@ -79,7 +79,7 @@ const People = props => {
 					)}
 
 					<div className="people-profile name">
-						<span>status: {person.status}</span>
+						<span className="person-status">status: {person.status}</span> 
 						<h5>
 							{person.profile.firstName} {person.profile.lastName}
 						</h5>
@@ -101,9 +101,7 @@ const People = props => {
 					{selectedMainTab === mainTabs.projectAdminTabs[0] &&
 					props.dashNavTabState.selectedDashNavTab === props.possibleDashNavTabs[0] ? ( // If rendering applicants, allow setting status
 						<div className="people-profile assign">
-							{person.trade ? <h5>Licensed</h5> : null}
-							{/* <p>Application status:</p> */}
-							{/** section working on */}
+							{person.profile.licensed ? <h5>Licensed</h5> : null}
 							<button
 								className="btn-status"
 								type="button"
