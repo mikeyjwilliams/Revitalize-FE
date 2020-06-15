@@ -140,26 +140,29 @@ const Form3 = ({
 				{errors.difficulty && <p className="errorText">Please select a difficulty</p>}
 			</div>
 
-			<label htmlFor="projectPhoto">
-				<h3>Project Photos</h3>
-			</label>
-			<Droppy
-				id="projectPhoto"
-				images={images}
-				setProjectDetails={setProjectDetails}
-				projectDetails={projectDetails}
-			/>
-			{errors.images && images.length <= 0 && <p className="errorText">Please upload photos of your project</p>}
-			{errors.images && images.length > 5 && (
-				<p className="errorText">Sorry, but you can only upload 5 photos or less</p>
-			)}
+			<div className="form-1-field">
+				<label htmlFor="projectPhoto">
+					<h3>Project Photos</h3>
+				</label>
 
-			{errors.featuredImage && !projectDetails.featuredImage && (
-				<p className="errorText">Please select a photo to be featured</p>
-			)}
+				<Droppy
+					id="projectPhoto"
+					images={images}
+					setProjectDetails={setProjectDetails}
+					projectDetails={projectDetails}
+				/>
+				{errors.images && images.length <= 0 && <p className="errorText">Please upload photos of your project</p>}
+				{errors.images && images.length > 5 && (
+					<p className="errorText">Sorry, but you can only upload 5 photos or less</p>
+				)}
+
+				{errors.featuredImage && !projectDetails.featuredImage && (
+					<p className="errorText">Please select a photo to be featured</p>
+				)}
+			</div>
 
 			<div className="form-navigation">
-				<button className="prev-step" onClick={() => setFormPosition(2)}>
+				<button className="prev-step prev-step3" onClick={() => setFormPosition(2)}>
 					<FaArrowLeft />
 					&nbsp;Previous
 				</button>
