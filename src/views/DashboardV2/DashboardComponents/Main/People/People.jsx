@@ -102,7 +102,7 @@ const People = props => {
 					{selectedMainTab === mainTabs.projectAdminTabs[0] &&
 					props.dashNavTabState.selectedDashNavTab === props.possibleDashNavTabs[0] ? ( // If rendering applicants, allow setting status
 						<div className="people-profile assign">
-							{person.licensed ? <h5>Licensed</h5> : null}
+							{person.licensed ? <h5>Licensed</h5> : <h5>Not Licensed</h5>}
 							<button
 								className="btn-status"
 								type="button"
@@ -174,6 +174,7 @@ const People = props => {
                     </div> */}
 				</div>
 			</div>
+			<hr />
 		</>
 	);
 };
