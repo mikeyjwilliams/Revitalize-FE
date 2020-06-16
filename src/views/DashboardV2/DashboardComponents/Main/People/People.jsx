@@ -19,7 +19,6 @@ const People = props => {
 	});
 
 	useEffect(() => {
-		console.log('P ', person);
 		// Check verified
 		if (person.profile.verified) return setVerified(true);
 		setVerified(false);
