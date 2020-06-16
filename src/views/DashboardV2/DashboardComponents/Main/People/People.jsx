@@ -4,12 +4,15 @@ import React, { useState, useEffect } from 'react';
 // GQL
 import { ACCEPT_PROJECT_APPLICANT, DECLINE_PROJECT_APPLICANT } from '../../../../../graphql/mutations';
 
-import { useMutation } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
+
+import { GET_USER_PROFILE } from '../../../../../graphql/queries/Users';
 
 const People = props => {
 	const { project, person, selectedMainTab, mainTabs } = props;
 
 	const [, setVerified] = useState(false);
+	const updateLicense = useQuery(GET_USER_PROFILE);
 	const [acceptProjectApplicant] = useMutation(ACCEPT_PROJECT_APPLICANT);
 	const [declineProjectApplicant] = useMutation(DECLINE_PROJECT_APPLICANT);
 	const [projectApplicantState, setProjectApplicantState] = useState({
@@ -17,6 +20,10 @@ const People = props => {
 		profile: '', // Profile ID
 		application: '', // Application id?
 	});
+
+	// const { data, refetch } = useQuery(GET_PROJECT_BY_SLUG, {
+	// 	variables: { slug:  },
+	// });
 
 	useEffect(() => {
 		// Check verified
@@ -41,6 +48,7 @@ const People = props => {
 						application: person.id,
 					},
 				},
+				refetchQueries: [{ query: updateLicense }],
 			});
 		}
 		if (status === 'DECLINED') {
@@ -132,6 +140,7 @@ const People = props => {
 									};
 									// if (event.target.value === 'ACCEPTED') {
 									submitSetStatus('DECLINED', statusObject);
+									// refetch();
 									// }
 								}}
 							>
