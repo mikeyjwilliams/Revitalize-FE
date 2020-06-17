@@ -4,9 +4,7 @@ import React, { useState, useEffect } from 'react';
 // GQL
 import { ACCEPT_PROJECT_APPLICANT, DECLINE_PROJECT_APPLICANT } from '../../../../../graphql/mutations';
 
-import { useMutation, useQuery } from '@apollo/react-hooks';
-
-import { GET_USER_PROFILE } from '../../../../../graphql/queries/Users';
+import { useMutation } from '@apollo/react-hooks';
 
 const People = props => {
 	const { project, person, selectedMainTab, mainTabs, refetch } = props;
@@ -14,7 +12,6 @@ const People = props => {
 	const [, setVerified] = useState(false);
 	const [acceptProjectApplicant] = useMutation(ACCEPT_PROJECT_APPLICANT);
 	const [declineProjectApplicant] = useMutation(DECLINE_PROJECT_APPLICANT);
-	// const { loading, error, data,  } = useQuery(GET_USER_PROFILE);
 	const [projectApplicantState, setProjectApplicantState] = useState({
 		project: '', // project Id
 		profile: '', // Profile ID
@@ -35,10 +32,7 @@ const People = props => {
 			application: person.id,
 		});
 		if (status === 'ACCEPTED') {
-			// console.log("d.project", data.me.projects[0].applicants[0].status)
-
 			await acceptProjectApplicant({
-				
 				variables: {
 					data: {
 						...projectApplicantState,
@@ -46,13 +40,9 @@ const People = props => {
 						profile: person.profile.id,
 						application: person.id,
 					},
-					// refetchQueries: [{ query: GET_USER_PROFILE, variables: {status: data.me.projects[0].applicants[0].status}} ]
-					
 				},
-				
 			});
-			// console.log("d.project", data.me.projects[0].applicants[0].status)
-			refetch()
+			refetch(); // updates the query and refetch the data. -MW DW
 		}
 		if (status === 'DECLINED') {
 			await declineProjectApplicant({
@@ -65,19 +55,14 @@ const People = props => {
 					},
 				},
 			});
-			refetch()
+			refetch(); // updates the query and refetch the data. -MW DW
 		}
 
 		setProjectApplicantState({ project: '', profile: '', application: '' });
 	};
 
 	if (selectedMainTab === mainTabs.projectAdminTabs[0]) {
-		// Applicants
-		// console.log("this is an applicant")
 	}
-
-	// console.log("People props", props, projectApplicantState);
-
 	return (
 		<>
 			<div className="people-card-container">
@@ -91,7 +76,7 @@ const People = props => {
 					)}
 
 					<div className="people-profile name">
-						<span className="person-status">status: {person.status}</span> 
+						<span className="person-status">status: {person.status}</span>
 						<h5>
 							{person.profile.firstName} {person.profile.lastName}
 						</h5>
@@ -149,40 +134,8 @@ const People = props => {
 							>
 								Decline
 							</button>
-
-							{/* {person.status === 'PENDING' ? (
-								<select
-									value={person.status}
-									onChange={event => {
-										let statusObject = {
-											...projectApplicantState,
-											project: project.id,
-											profile: person.profile.id,
-											application: person.id,
-										};
-										if (event.target.value === 'ACCEPTED') {
-											submitSetStatus('ACCEPTED', statusObject);
-										}
-										if (event.target.value === 'DECLINED') {
-											submitSetStatus('DECLINED', statusObject);
-										}
-									}}
-								>
-									<option value="PENDING">Pending</option>
-									<option value="ACCEPTED">Accept Application</option>
-									<option value="DECLINED">Decline Application</option>
-								</select>
-							) : ( */}
-							{/* {(person.status === 'ACCEPTED' || person.status === 'DECLINED') && <p>{person.status}</p>} */}
 						</div>
 					) : null}
-
-					{/* <div className="people-profile verified">
-                        <Toggle
-                            defaultChecked={verified}
-                            onChange={() => setVerified(!verified)}
-                        />
-                    </div> */}
 				</div>
 			</div>
 		</>
