@@ -4,26 +4,22 @@ import React, { useState, useEffect } from 'react';
 // GQL
 import { ACCEPT_PROJECT_APPLICANT, DECLINE_PROJECT_APPLICANT } from '../../../../../graphql/mutations';
 
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 
 import { GET_USER_PROFILE } from '../../../../../graphql/queries/Users';
 
 const People = props => {
-	const { project, person, selectedMainTab, mainTabs } = props;
+	const { project, person, selectedMainTab, mainTabs, refetch } = props;
 
 	const [, setVerified] = useState(false);
-	const updateLicense = useQuery(GET_USER_PROFILE);
 	const [acceptProjectApplicant] = useMutation(ACCEPT_PROJECT_APPLICANT);
 	const [declineProjectApplicant] = useMutation(DECLINE_PROJECT_APPLICANT);
+	// const { loading, error, data,  } = useQuery(GET_USER_PROFILE);
 	const [projectApplicantState, setProjectApplicantState] = useState({
 		project: '', // project Id
 		profile: '', // Profile ID
 		application: '', // Application id?
 	});
-
-	// const { data, refetch } = useQuery(GET_PROJECT_BY_SLUG, {
-	// 	variables: { slug:  },
-	// });
 
 	useEffect(() => {
 		// Check verified
@@ -39,7 +35,10 @@ const People = props => {
 			application: person.id,
 		});
 		if (status === 'ACCEPTED') {
+			// console.log("d.project", data.me.projects[0].applicants[0].status)
+
 			await acceptProjectApplicant({
+				
 				variables: {
 					data: {
 						...projectApplicantState,
@@ -47,9 +46,13 @@ const People = props => {
 						profile: person.profile.id,
 						application: person.id,
 					},
+					// refetchQueries: [{ query: GET_USER_PROFILE, variables: {status: data.me.projects[0].applicants[0].status}} ]
+					
 				},
-				refetchQueries: [{ query: updateLicense }],
+				
 			});
+			// console.log("d.project", data.me.projects[0].applicants[0].status)
+			refetch()
 		}
 		if (status === 'DECLINED') {
 			await declineProjectApplicant({
@@ -62,6 +65,7 @@ const People = props => {
 					},
 				},
 			});
+			refetch()
 		}
 
 		setProjectApplicantState({ project: '', profile: '', application: '' });
@@ -87,7 +91,7 @@ const People = props => {
 					)}
 
 					<div className="people-profile name">
-						<span className="person-status">status: {person.status}</span>
+						<span className="person-status">status: {person.status}</span> 
 						<h5>
 							{person.profile.firstName} {person.profile.lastName}
 						</h5>
@@ -109,7 +113,7 @@ const People = props => {
 					{selectedMainTab === mainTabs.projectAdminTabs[0] &&
 					props.dashNavTabState.selectedDashNavTab === props.possibleDashNavTabs[0] ? ( // If rendering applicants, allow setting status
 						<div className="people-profile assign">
-							{person.licensed ? <h5>Licensed</h5> : <h5>Not Licensed</h5>}
+							{person.licensed ? <h5>Licensed</h5> : null}
 							<button
 								className="btn-status"
 								type="button"
@@ -140,7 +144,6 @@ const People = props => {
 									};
 									// if (event.target.value === 'ACCEPTED') {
 									submitSetStatus('DECLINED', statusObject);
-									// refetch();
 									// }
 								}}
 							>
@@ -182,7 +185,6 @@ const People = props => {
                     </div> */}
 				</div>
 			</div>
-			<hr />
 		</>
 	);
 };

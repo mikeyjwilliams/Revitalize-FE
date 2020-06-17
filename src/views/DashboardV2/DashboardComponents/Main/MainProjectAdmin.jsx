@@ -17,10 +17,10 @@ import LoadingSpinner from "../../../../components/LoadingSpinner/LoadingSpinner
 
 
 const MainProjectAdmin = props => {
-	const { project, mainTabs, setMainTabs, setAddTaskModal, dashNavTabState, possibleDashNavTabs } = props;
+	const { project, mainTabs, setMainTabs, setAddTaskModal, dashNavTabState, possibleDashNavTabs, refetch } = props;
 	// Moving away from managing any tab information anywhere other than in dashboard.
 
-	useEffect(() => {
+	useEffect(() => { 
 		setMainTabs({
 			...mainTabs,
 			selectedMainTab: mainTabs.projectAdminTabs[0]
@@ -44,7 +44,7 @@ const MainProjectAdmin = props => {
 					}
 					{project.applicants.map(applicant => (
 						<section className="list applicants" key={applicant.profile.id + Date.now()}>
-							<People person={applicant} mainTabs={mainTabs} selectedMainTab={mainTabs.selectedMainTab} project={project} dashNavTabState={dashNavTabState} possibleDashNavTabs={possibleDashNavTabs}  />
+							<People refetch={refetch} person={applicant} mainTabs={mainTabs} selectedMainTab={mainTabs.selectedMainTab} project={project} dashNavTabState={dashNavTabState} possibleDashNavTabs={possibleDashNavTabs}  />
 						</section>
 					))}
 				</>

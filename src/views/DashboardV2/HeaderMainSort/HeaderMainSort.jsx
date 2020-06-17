@@ -12,9 +12,9 @@ import AddTask from "../DashboardComponents/AddTask/AddTask";
 
 
 export default function HeaderMainSort(props) {
-    const { projectArray, selectedProject, setProject, mainTabs, setMainTabs, dashNavTabState, possibleDashNavTabs } = props;
+    const { projectArray, selectedProject, setProject, mainTabs, setMainTabs, dashNavTabState, possibleDashNavTabs, refetch } = props;
     const [ addTaskModal, setAddTaskModal ] = useState({ show: false, selectedProject: null, trade: null });
-
+ 
     if (!projectArray) return null;
     let renderedHeaderMain;
 
@@ -67,6 +67,7 @@ export default function HeaderMainSort(props) {
                     <Timeline  target={
                         <div className="tween-container">
                             <MainProjectAdmin
+                                refetch={refetch}
                                 project={project}
                                 mainTabs={mainTabs}
                                 selectedMainTab={mainTabs.selectedMainTab}
