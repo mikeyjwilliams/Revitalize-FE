@@ -27,6 +27,11 @@
 }
 // buttons for applicants
 .people-profile {
+	.email {
+		// aligns the email with the name and buttons.- MW
+		padding-top: 26px;
+	}
+
 	.btn-status {
 		@include btn-main($bg-color: $chillFi-purple, $color: $snow-white, $margin: 0 auto, $width: 10rem);
 		// leave btn-main above cascade of rules that modify it below -MW
@@ -53,6 +58,11 @@
 		// Added so you can have the decline status showup above the name. D.W.
 		margin-bottom: 20px;
 		font-size: 1.2rem;
+	}
+	.btn-sideways {
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
 	}
 }
 .people-card-container {

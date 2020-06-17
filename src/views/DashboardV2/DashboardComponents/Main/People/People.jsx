@@ -99,46 +99,49 @@ const People = props => {
 					{selectedMainTab === mainTabs.projectAdminTabs[0] &&
 					props.dashNavTabState.selectedDashNavTab === props.possibleDashNavTabs[0] ? ( // If rendering applicants, allow setting status
 						<div className="people-profile assign">
-							{person.licensed ? <h5>Licensed</h5> : null}
-							<button
-								className="btn-status"
-								type="button"
-								value="ACCEPTED"
-								onClick={e => {
-									let statusObject = {
-										...projectApplicantState,
-										project: project.id,
-										profile: person.profile.id,
-										application: person.id,
-									};
+							{person.licensed ? <h5>Licensed</h5> : <h5>Not Licensed</h5>}
+							<div className="btn-sideways">
+								<button
+									className="btn-status"
+									type="button"
+									value="ACCEPTED"
+									onClick={e => {
+										let statusObject = {
+											...projectApplicantState,
+											project: project.id,
+											profile: person.profile.id,
+											application: person.id,
+										};
 
-									submitSetStatus('ACCEPTED', statusObject);
-								}}
-							>
-								Accept
-							</button>
-							<button
-								className="btn-decline"
-								type="button"
-								value="DECLINED"
-								onClick={e => {
-									let statusObject = {
-										...projectApplicantState,
-										project: project.id,
-										profile: person.profile.id,
-										application: person.id,
-									};
-									// if (event.target.value === 'ACCEPTED') {
-									submitSetStatus('DECLINED', statusObject);
-									// }
-								}}
-							>
-								Decline
-							</button>
+										submitSetStatus('ACCEPTED', statusObject);
+									}}
+								>
+									Accept
+								</button>
+								<button
+									className="btn-decline"
+									type="button"
+									value="DECLINED"
+									onClick={e => {
+										let statusObject = {
+											...projectApplicantState,
+											project: project.id,
+											profile: person.profile.id,
+											application: person.id,
+										};
+										// if (event.target.value === 'ACCEPTED') {
+										submitSetStatus('DECLINED', statusObject);
+										// }
+									}}
+								>
+									Decline
+								</button>
+							</div>
 						</div>
 					) : null}
 				</div>
 			</div>
+			<hr />
 		</>
 	);
 };
