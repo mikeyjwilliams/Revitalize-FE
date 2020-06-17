@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Company from './Company/Company';
+// import Company from './Company/Company';
 // image import
 
 import menWorking from '../../../assets/BrowsePage/men-working.jpg';
