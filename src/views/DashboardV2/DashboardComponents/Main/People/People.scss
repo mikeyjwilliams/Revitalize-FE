@@ -37,13 +37,24 @@
 		&:hover {
 			border-width: 1px;
 		}
-		
-	  }
-    .person-status {      // Added so you can have the decline status showup above the name. D.W.
-	    margin-bottom: 20px;
-		font-size: 1.2rem; 
-		} 
 	}
+	.btn-decline {
+		@include btn-main($bg-color: $ruby-enchantment, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+		// leave btn-main above cascade of rules that modify it below -MW
+		padding: 0.25rem;
+		border-width: 1px;
+		border-radius: 0.5rem;
+		margin-bottom: 5px;
+		&:hover {
+			border-width: 1px;
+		}
+	}
+	.person-status {
+		// Added so you can have the decline status showup above the name. D.W.
+		margin-bottom: 20px;
+		font-size: 1.2rem;
+	}
+}
 .people-card-container {
 	width: 100%;
 	display: flex;
@@ -111,8 +122,6 @@
 	}
 }
 
-
-
 .dark-mode {
 	.people-card-container {
 		background-color: $bleached-black;
@@ -134,7 +143,23 @@
 				color: $police-blue;
 			}
 			// .people-status{
-			// 	color: 
+			// 	color:
+			// }
+		}
+		.btn-decline {
+			@include btn-main($bg-color: $ruby-enchantment, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+			// leave btn-main above cascade of rules that modify it below this comment -MW
+			padding: 0.25rem;
+			border-width: 1px;
+			border-radius: 0.5rem;
+			margin-bottom: 5px;
+			&:hover {
+				border-width: 1px;
+				background-color: $snow-white;
+				color: $ruby-enchantment;
+			}
+			// .people-status{
+			// 	color:
 			// }
 		}
 	}

@@ -55,6 +55,7 @@ const People = props => {
 					},
 				},
 			});
+			console.log('D ', project.applicants[1]);
 			refetch(); // updates the query and refetch the data. -MW DW
 		}
 
@@ -117,7 +118,7 @@ const People = props => {
 								Accept
 							</button>
 							<button
-								className="btn-status"
+								className="btn-decline"
 								type="button"
 								value="DECLINED"
 								onClick={e => {
