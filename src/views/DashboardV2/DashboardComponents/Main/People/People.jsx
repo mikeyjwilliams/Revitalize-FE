@@ -68,14 +68,7 @@ const People = props => {
 		<>
 			<div className="people-card-container">
 				<div className="people-body">
-					{person.profile.profileImage ? (
-						<div className="people-img-container">
-							<img src={person.profile.profileImage} alt="" />
-						</div>
-					) : (
 						<div className="display-none"></div>
-					)}
-
 					<div className="people-profile name">
 						<span className="person-status">status: {person.status}</span>
 						<h5>
@@ -100,8 +93,13 @@ const People = props => {
 					props.dashNavTabState.selectedDashNavTab === props.possibleDashNavTabs[0] ? ( // If rendering applicants, allow setting status
 						<div className="people-profile assign">
 							{person.licensed ? <h5>Licensed</h5> : <h5>Not Licensed</h5>}
-							<div className="btn-sideways">
-								<button
+							<div id="button-container" className="btn-sideways">
+                             { // Added ternary so button's will disappear to prevent bubbling                                      
+
+								 person.status === "PENDING" ? 
+							 (
+								 <>
+								 <button
 									className="btn-status"
 									type="button"
 									value="ACCEPTED"
@@ -112,7 +110,6 @@ const People = props => {
 											profile: person.profile.id,
 											application: person.id,
 										};
-
 										submitSetStatus('ACCEPTED', statusObject);
 									}}
 								>
@@ -129,13 +126,23 @@ const People = props => {
 											profile: person.profile.id,
 											application: person.id,
 										};
-										// if (event.target.value === 'ACCEPTED') {
 										submitSetStatus('DECLINED', statusObject);
-										// }
 									}}
 								>
 									Decline
 								</button>
+								</>
+							 )
+								: (
+									
+                                    <div>
+
+									</div>
+									
+								)
+
+                                  }
+
 							</div>
 						</div>
 					) : null}

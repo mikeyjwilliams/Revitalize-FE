@@ -73,6 +73,7 @@ const MainProjectAdmin = props => {
 		if (selectedTabView === mainTabs.projectAdminTabs[2]) {  // Trade Masters
 			const view = (
 				<>
+				{/* <hr></hr> */}
 					{project.tradeMasters.length === 0 ? (
 						<NoContent message="No Trade Masters" />
 					) : (
