@@ -55,7 +55,6 @@ const People = props => {
 					},
 				},
 			});
-			console.log('D ', project.applicants[1]);
 			refetch(); // updates the query and refetch the data. -MW DW
 		}
 
@@ -133,7 +132,7 @@ const People = props => {
 								</button>
 								</>
 							 )
-								: (
+								: (   // empty div to hold space
 									
                                     <div>
 
