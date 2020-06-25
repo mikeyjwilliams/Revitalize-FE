@@ -15,6 +15,9 @@
 			overflow: hidden;
     		object-fit: cover;
 			border-radius: 50%;
+			@media(max-width: "700px") {
+				height: 225px;
+			}
 		}
 		h3 {
 			color: $machiavellian;
