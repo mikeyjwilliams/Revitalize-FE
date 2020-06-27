@@ -74,52 +74,52 @@ const Register = props => {
 										</a>
 									</div>
 								</button>
-							</div>
-							<div className="register-middle">
-								<div className="register-Line"></div>
-								<p>or</p>
-								<div className="register-Line"></div>
-							</div>
-							<form className="register-local" onSubmit={handleSubmit}>
-								<label htmlFor="email-register">
-									<p className="register-title">Email</p>
-								</label>
-								<input
-									id="email-register"
-									name="email"
-									type="email"
-									placeholder="Email..."
-									value={state.email}
-									onChange={handleChanges}
-								/>
-								<div className="register-pass">
-									<label htmlFor="password-register">
-										<p className="">Password</p>
+
+								<div className="register-middle">
+									<div className="register-Line"></div>
+									<p>or</p>
+									<div className="register-Line"></div>
+								</div>
+								<form className="register-local" onSubmit={handleSubmit}>
+									<label htmlFor="email-register">
+										<p className="register-title">Email</p>
 									</label>
-									<span className="">Forgot Password?</span>
-								</div>
-								<input
-									id="password-register"
-									name="password"
-									type="password"
-									placeholder="Password..."
-									value={state.password}
-									onChange={handleChanges}
-								/>
-								<div className="register-mid">
-									<p>
-										Already have an acount?{' '}
-										<Link to="/login" style={{ textDecoration: `underline` }}>
-											Log in
-										</Link>
-									</p>
-								</div>
-								<button>Register</button>
-							</form>
+									<input
+										id="email-register"
+										name="email"
+										type="email"
+										placeholder="Email..."
+										value={state.email}
+										onChange={handleChanges}
+									/>
+									<div className="register-pass">
+										<label htmlFor="password-register">
+											<p className="">Password</p>
+										</label>
+										<span className="">Forgot Password?</span>
+									</div>
+									<input
+										id="password-register"
+										name="password"
+										type="password"
+										placeholder="Password..."
+										value={state.password}
+										onChange={handleChanges}
+									/>
+									<div className="register-mid">
+										<p>
+											Already have an acount?{' '}
+											<Link to="/login" style={{ textDecoration: `underline` }}>
+												Log in
+											</Link>
+										</p>
+									</div>
+									<button>Register</button>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
-				{/* <div className="imgContainer"></div> */}
 			</main>
 		</>
 	);
