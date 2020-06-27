@@ -45,76 +45,81 @@ const Register = props => {
 			{form.toggleForm ? <SetupProfile destination="modal" toggleForm={toggleForm} email={state.email} /> : null}
 			<main className="register-container">
 				<FaArrowLeft onClick={goBack} className="back-arrow" />
-				<div className="register-container-left">
+				<div className="register-container-main imgContainer">
 					<div className="register-form">
 						<div className="register-third-party">
-							<div className="register-welcome">
-								<h1>Get Started!</h1>
+							<div className="login-card">
+								<div className="register-welcome">
+									<h1>Get Started!</h1>
+								</div>
+								<button>
+									<div>
+										<a
+											className="register-button"
+											href={`${process.env.REACT_APP_OAUTH_GOOGLE_LINK}`}
+										>
+											<img src={googleLogo} alt="Google logo" />
+											<h2>Register With Google</h2>
+										</a>
+									</div>
+								</button>
+								<button>
+									<div>
+										<a
+											className="register-button"
+											href={`${process.env.REACT_APP_OAUTH_FACEBOOK_LINK}`}
+										>
+											<img src={fbLogo} alt="Facebook logo" />
+											<h2>Register With Facebook</h2>
+										</a>
+									</div>
+								</button>
 							</div>
-							<button>
-								<div>
-									<a className="register-button" href={`${process.env.REACT_APP_OAUTH_GOOGLE_LINK}`}>
-										<img src={googleLogo} alt="Google logo" />
-										<h2>Register With Google</h2>
-									</a>
-								</div>
-							</button>
-							<button>
-								<div>
-									<a
-										className="register-button"
-										href={`${process.env.REACT_APP_OAUTH_FACEBOOK_LINK}`}
-									>
-										<img src={fbLogo} alt="Facebook logo" />
-										<h2>Register With Facebook</h2>
-									</a>
-								</div>
-							</button>
-						</div>
-						<div className="register-middle">
-							<div className="register-Line"></div>
-							<p>or</p>
-							<div className="register-Line"></div>
-						</div>
-						<form className="register-local" onSubmit={handleSubmit}>
-							<label htmlFor="email-register">
-								<p className="register-title">Email</p>
-							</label>
-							<input
-								id="email-register"
-								name="email"
-								type="email"
-								placeholder="Email..."
-								value={state.email}
-								onChange={handleChanges}
-							/>
-							<div className="register-pass">
-								<label htmlFor="password-register">
-									<p className="">Password</p>
+							<div className="register-middle">
+								<div className="register-Line"></div>
+								<p>or</p>
+								<div className="register-Line"></div>
+							</div>
+							<form className="register-local" onSubmit={handleSubmit}>
+								<label htmlFor="email-register">
+									<p className="register-title">Email</p>
 								</label>
-								<span className="">Forgot Password?</span>
-							</div>
-							<input
-								id="password-register"
-								name="password"
-								type="password"
-								placeholder="Password..."
-								value={state.password}
-								onChange={handleChanges}
-							/>
-							<div className="register-mid">
-								<p>
-									Already have an acount?{' '}
-									<Link to="/login" style={{ textDecoration: `underline` }}>
-										Log in
-									</Link>
-								</p>
-							</div>
-							<button>Register</button>
-						</form>
+								<input
+									id="email-register"
+									name="email"
+									type="email"
+									placeholder="Email..."
+									value={state.email}
+									onChange={handleChanges}
+								/>
+								<div className="register-pass">
+									<label htmlFor="password-register">
+										<p className="">Password</p>
+									</label>
+									<span className="">Forgot Password?</span>
+								</div>
+								<input
+									id="password-register"
+									name="password"
+									type="password"
+									placeholder="Password..."
+									value={state.password}
+									onChange={handleChanges}
+								/>
+								<div className="register-mid">
+									<p>
+										Already have an acount?{' '}
+										<Link to="/login" style={{ textDecoration: `underline` }}>
+											Log in
+										</Link>
+									</p>
+								</div>
+								<button>Register</button>
+							</form>
+						</div>
 					</div>
 				</div>
-				<div className="imgContainer"></div>
+				{/* <div className="imgContainer"></div> */}
 			</main>
 		</>
 	);

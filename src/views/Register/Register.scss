@@ -1,5 +1,4 @@
 .register-container {
-
 	background: $blue-valentine;
 	color: $snow-white;
 	margin: 0 auto;
@@ -7,28 +6,28 @@
 	letter-spacing: 0.06em;
 	height: calc(100vh - 351px);
 	font-size: 1rem;
-	h2{
-		font-size: 2rem
+	h2 {
+		font-size: 2rem;
 	}
 	svg {
 		font-size: 3rem;
 		position: fixed;
 		margin: 20px;
 	}
-	.back-arrow{
-		color:$snow-white;
+	.back-arrow {
+		color: $snow-white;
 		background-color: $blue-valentine;
-		&:hover{
-			color:$blue-valentine;
+		&:hover {
+			color: $blue-valentine;
 			background-color: $snow-white;
 		}
 	}
-	.register-container-left {
+	.register-container-main {
 		min-height: calc(100vh - 260px);
 
 		width: 100%;
 		min-width: 320px;
-		max-width: 800px;
+		max-width: 100%;
 		padding-bottom: 1%;
 		padding-top: 1%;
 		.register-form {
@@ -50,7 +49,7 @@
 					border-radius: 8px;
 					border: none;
 					cursor: pointer;
-					&:hover{
+					&:hover {
 						border: 2px solid $snow-white;
 						background-color: $erudite-purple;
 						color: $snow-white;
@@ -118,7 +117,7 @@
 					font-size: 1.7rem;
 					border-radius: 5px;
 					cursor: pointer;
-					&:hover{
+					&:hover {
 						background-color: $erudite-purple;
 						border: 2px solid $snow-white;
 					}
@@ -131,32 +130,30 @@
 		width: 100%;
 		// height: calc(100vh - 300px);
 		height: calc(100vh - 351px);
-		background-image: url("https://images.pexels.com/photos/1171384/pexels-photo-1171384.jpeg?cs=srgb&dl=brown-concrete-brick-house-covered-by-green-leaf-vines-1171384.jpg&fm=jpg");
+		background-image: url('https://images.pexels.com/photos/1171384/pexels-photo-1171384.jpeg?cs=srgb&dl=brown-concrete-brick-house-covered-by-green-leaf-vines-1171384.jpg&fm=jpg');
 		background-repeat: no-repeat;
-		background-position: right;
+		// background-position: right;
 		background-size: cover;
-
 
 		@media #{$tablet} {
 			background-size: cover;
 			background-position-y: unset;
-			background-position-x: -50%;
+			background-position-x: 100%;
 		}
 		@media #{$tablet-small} {
-			display: none;
 		}
 	}
 }
 
-.dark-mode{
-	.register-container{
+.dark-mode {
+	.register-container {
 		background: $erudite-purple;
 		color: $snow-white;
-		.back-arrow{
-			color:$snow-white;
+		.back-arrow {
+			color: $snow-white;
 			background-color: $erudite-purple;
-			&:hover{
-				color:$erudite-purple;
+			&:hover {
+				color: $erudite-purple;
 				background-color: $snow-white;
 			}
 		}
