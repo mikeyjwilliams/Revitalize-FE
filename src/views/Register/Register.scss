@@ -16,10 +16,10 @@
 	}
 	.back-arrow {
 		color: $snow-white;
-		background-color: $blue-valentine;
+		background-color: transparent;
 		&:hover {
-			color: $blue-valentine;
-			background-color: $snow-white;
+			color: $ruby-enchantment;
+			background-color: transparent;
 		}
 	}
 	.register-container-main {
@@ -157,10 +157,10 @@
 		color: $snow-white;
 		.back-arrow {
 			color: $snow-white;
-			background-color: $erudite-purple;
+			background-color: transparent;
 			&:hover {
-				color: $erudite-purple;
-				background-color: $snow-white;
+				color: $ruby-enchantment;
+				background-color: transparent;
 			}
 		}
 	}
