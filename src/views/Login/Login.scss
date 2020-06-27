@@ -86,7 +86,7 @@
 				flex-direction: column;
 				.login-title {
 					margin: 0 0 5px 0;
-					color: $sub-zero;
+					color: $snow-white;
 				}
 				.login-mid {
 					text-align: center;
@@ -125,6 +125,12 @@
 				}
 			}
 			.login-card {
+				padding: 2.25rem;
+				border-radius: 0.75rem;
+				z-index: 1;
+				position: relative;
+				margin: 0 auto;
+				background-color: rgba($mirage, 0.5);
 			}
 		}
 	}
