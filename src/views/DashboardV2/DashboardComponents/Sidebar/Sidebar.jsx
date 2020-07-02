@@ -111,7 +111,7 @@ const Sidebar = props => {
 						<>
 							<div className="info">
 								<div className="text">
-									<p>Email</p>
+									<p>Email:</p>
 									<span>{user.email}</span>
 								</div>
 								<a href={`mailto: ${user.email}`}>
@@ -137,7 +137,7 @@ const Sidebar = props => {
 
 							<div className="info">
 								<div className="text">
-									<p>Location</p>
+									<p>Location:</p>
 									<span>{`${user.city}, ${user.state}`}</span>
 								</div>
 								<HashLink to="/#search-map">
