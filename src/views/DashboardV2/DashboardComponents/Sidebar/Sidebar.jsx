@@ -40,7 +40,6 @@ const Sidebar = props => {
 	];
 
 	let totalAchievements = countArray[0].count + countArray[1].count + countArray[2].count + countArray[3].count;
-
 	const displayCount = x => {
 		if (x.count > 0) {
 			return (
@@ -111,7 +110,7 @@ const Sidebar = props => {
 						<>
 							<div className="info">
 								<div className="text">
-									<p>Email</p>
+									<p>Email:</p>
 									<span>{user.email}</span>
 								</div>
 								<a href={`mailto: ${user.email}`}>
@@ -137,7 +136,7 @@ const Sidebar = props => {
 
 							<div className="info">
 								<div className="text">
-									<p>Location</p>
+									<p>Location:</p>
 									<span>{`${user.city}, ${user.state}`}</span>
 								</div>
 								<HashLink to="/#search-map">
