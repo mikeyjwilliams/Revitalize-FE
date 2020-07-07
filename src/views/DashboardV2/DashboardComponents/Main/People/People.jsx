@@ -7,7 +7,7 @@ import { ACCEPT_PROJECT_APPLICANT, DECLINE_PROJECT_APPLICANT } from '../../../..
 import { useMutation } from '@apollo/react-hooks';
 
 const People = props => {
-	const { project, person, selectedMainTab, mainTabs } = props;
+	const { project, person, selectedMainTab, mainTabs, refetch } = props;
 
 	const [, setVerified] = useState(false);
 	const [acceptProjectApplicant] = useMutation(ACCEPT_PROJECT_APPLICANT);
@@ -42,6 +42,7 @@ const People = props => {
 					},
 				},
 			});
+			refetch(); // updates the query and refetch the data. -MW DW
 		}
 		if (status === 'DECLINED') {
 			await declineProjectApplicant({
@@ -54,31 +55,21 @@ const People = props => {
 					},
 				},
 			});
+			refetch(); // updates the query and refetch the data. -MW DW
 		}
 
 		setProjectApplicantState({ project: '', profile: '', application: '' });
 	};
 
 	if (selectedMainTab === mainTabs.projectAdminTabs[0]) {
-		// Applicants
-		// console.log("this is an applicant")
 	}
-
-	// console.log("People props", props, projectApplicantState);
-
 	return (
 		<>
 			<div className="people-card-container">
 				<div className="people-body">
-					{person.profile.profileImage ? (
-						<div className="people-img-container">
-							<img src={person.profile.profileImage} alt="" />
-						</div>
-					) : (
 						<div className="display-none"></div>
-					)}
-
 					<div className="people-profile name">
+						<span className="person-status">status: {person.status}</span>
 						<h5>
 							{person.profile.firstName} {person.profile.lastName}
 						</h5>
@@ -100,48 +91,63 @@ const People = props => {
 					{selectedMainTab === mainTabs.projectAdminTabs[0] &&
 					props.dashNavTabState.selectedDashNavTab === props.possibleDashNavTabs[0] ? ( // If rendering applicants, allow setting status
 						<div className="people-profile assign">
-							{person.trade ? <h5>Licensed</h5> : null}
-							<p>Application status:</p>
-							{person.status === 'PENDING' ? (
-								<select
-									value={person.status}
-									onChange={event => {
+							{person.licensed ? <h5>Licensed</h5> : <h5>Not Licensed</h5>}
+							<div id="button-container" className="btn-sideways">
+                             { // Added ternary so button's will disappear to prevent bubbling                                      
+
+								 person.status === "PENDING" ? 
+							 (
+								 <>
+								 <button
+									className="btn-status"
+									type="button"
+									value="ACCEPTED"
+									onClick={e => {
 										let statusObject = {
 											...projectApplicantState,
 											project: project.id,
 											profile: person.profile.id,
 											application: person.id,
 										};
-										if (event.target.value === 'ACCEPTED') {
-											submitSetStatus('ACCEPTED', statusObject);
-										}
-										if (event.target.value === 'DECLINED') {
-											submitSetStatus('DECLINED', statusObject);
-										}
+										submitSetStatus('ACCEPTED', statusObject);
 									}}
 								>
-									<option value="PENDING">Pending</option>
-									<option value="ACCEPTED">Accept Application</option>
-									<option value="DECLINED">Decline Application</option>
-								</select>
-							) : (
-								(person.status === 'ACCEPTED' || person.status === 'DECLINED') && (
-									<select disabled value={person.status}>
-										<option>{person.status}</option>
-									</select>
+									Accept
+								</button>
+								<button
+									className="btn-decline"
+									type="button"
+									value="DECLINED"
+									onClick={e => {
+										let statusObject = {
+											...projectApplicantState,
+											project: project.id,
+											profile: person.profile.id,
+											application: person.id,
+										};
+										submitSetStatus('DECLINED', statusObject);
+									}}
+								>
+									Decline
+								</button>
+								</>
+							 )
+								: (   // empty div to hold space
+									
+                                    <div>
+
+									</div>
+									
 								)
-							)}
+
+                                  }
+
+							</div>
 						</div>
 					) : null}
-
-					{/* <div className="people-profile verified">
-                        <Toggle
-                            defaultChecked={verified}
-                            onChange={() => setVerified(!verified)}
-                        />
-                    </div> */}
 				</div>
 			</div>
+			<hr />
 		</>
 	);
 };

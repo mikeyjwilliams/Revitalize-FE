@@ -1,10 +1,8 @@
-
-
 .people-header {
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.4rem;
-	font-family: "Roboto";
+	font-family: 'Roboto';
 	text-transform: uppercase;
 	color: $mirage;
 	text-align: left;
@@ -13,7 +11,7 @@
 		width: 180px;
 		min-width: 180px;
 		max-width: 180px;
-	} 
+	}
 	.name {
 		width: 25%;
 	}
@@ -27,8 +25,47 @@
 		width: 18%;
 	}
 }
+// buttons for applicants
+.people-profile {
+	.email {
+		// aligns the email with the name and buttons.- MW
+		padding-top: 26px;
+	}
 
-
+	.btn-status {
+		@include btn-main($bg-color: $chillFi-purple, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+		// leave btn-main above cascade of rules that modify it below -MW
+		padding: 0.25rem;
+		border-width: 1px;
+		border-radius: 0.5rem;
+		margin-bottom: 5px;
+		&:hover {
+			border-width: 1px;
+		}
+	}
+	.btn-decline {
+		@include btn-main($bg-color: $ruby-enchantment, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+		// leave btn-main above cascade of rules that modify it below -MW
+		padding: 0.25rem;
+		border-width: 1px;
+		border-radius: 0.5rem;
+		margin-bottom: 5px;
+		&:hover {
+			border-width: 1px;
+		}
+	}
+	.person-status {
+		// Added so you can have the decline status showup above the name. D.W.
+		margin-bottom: 20px;
+		font-size: 1.2rem;
+	}
+	.btn-sideways {
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+		width: 100%;
+	}
+}
 .people-card-container {
 	width: 100%;
 	display: flex;
@@ -55,11 +92,12 @@
 		.people-profile.name {
 			width: 25%;
 			padding: 0 20px 0 0;
+			height: 100%; // Added so you can have the decline status showup above the name. D.W.
 			h5 {
 				margin-bottom: 10px;
 			}
 			p {
-				font-family: "Roboto";
+				font-family: 'Roboto';
 				font-size: 1.4rem;
 				font-weight: lighter;
 			}
@@ -95,10 +133,6 @@
 	}
 }
 
-
-
-
-
 .dark-mode {
 	.people-card-container {
 		background-color: $bleached-black;
@@ -106,5 +140,39 @@
 			color: inherit;
 		}
 	}
+	.people-profile {
+		.btn-status {
+			@include btn-main($bg-color: $police-blue, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+			// leave btn-main above cascade of rules that modify it below this comment -MW
+			padding: 0.25rem;
+			border-width: 1px;
+			border-radius: 0.5rem;
+			margin-bottom: 5px;
 
+			&:hover {
+				border-width: 1px;
+				background-color: $snow-white;
+				color: $police-blue;
+			}
+			// .people-status{
+			// 	color:
+			// }
+		}
+		.btn-decline {
+			@include btn-main($bg-color: $ruby-enchantment, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+			// leave btn-main above cascade of rules that modify it below this comment -MW
+			padding: 0.25rem;
+			border-width: 1px;
+			border-radius: 0.5rem;
+			margin-bottom: 5px;
+			&:hover {
+				border-width: 1px;
+				background-color: $snow-white;
+				color: $ruby-enchantment;
+			}
+			// .people-status{
+			// 	color:
+			// }
+		}
+	}
 }

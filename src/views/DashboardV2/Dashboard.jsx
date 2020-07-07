@@ -30,7 +30,7 @@ const Dashboard = () => {
 	const [selectedProject, setProject] = useState({ project: null, id: null, showMore: false, buttonToggle: false });
 
 	// This useQuery pulls in tons of data and can pull more! See graphql/queries to adjust what it pulls in
-	const { loading, error, data } = useQuery(GET_USER_PROFILE);
+	const { loading, error, data, refetch } = useQuery(GET_USER_PROFILE);
 
 	const setCurrentProject = object => setProject(object);
 
@@ -92,6 +92,7 @@ const Dashboard = () => {
 							// Renders the header and main components for PROJECT ADMIN
 							data.me.projects && dashNavTabState.selectedDashNavTab === possibleDashNavTabs[0] ? (
 								<HeaderMainSort
+								    refetch={refetch}
 									projectArray={data.me.projects} // <-- depending on view, this is what changes. This is the project array being sent
 									selectedProject={selectedProject} // --- These handle choosing a project to view
 									setProject={setCurrentProject} // -/
@@ -108,6 +109,7 @@ const Dashboard = () => {
 							// Renders the header and main components for STUDENT
 							data.me.studentProjects && dashNavTabState.selectedDashNavTab === possibleDashNavTabs[1] ? (
 								<HeaderMainSort
+								    refetch={refetch}
 									projectArray={data.me.studentProjects}
 									selectedProject={selectedProject}
 									setProject={setProject}
@@ -125,6 +127,7 @@ const Dashboard = () => {
 							data.me.tradeMasterProjects &&
 							dashNavTabState.selectedDashNavTab === possibleDashNavTabs[2] ? (
 								<HeaderMainSort
+								    refetch={refetch}
 									projectArray={data.me.tradeMasterProjects}
 									selectedProject={selectedProject}
 									setProject={setProject}
@@ -141,6 +144,7 @@ const Dashboard = () => {
 							// Renders the header and main components for DONATIONS
 							data.me.donations && dashNavTabState.selectedDashNavTab === possibleDashNavTabs[3] ? (
 								<HeaderMainSort
+								    refetch={refetch}
 									projectArray={data.me.donations}
 									selectedProject={selectedProject}
 									setProject={setProject}

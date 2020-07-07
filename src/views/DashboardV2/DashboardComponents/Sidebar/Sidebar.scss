@@ -1,15 +1,23 @@
-// .section.dashboard-sidebar {  }
-
 .dashboard-sidebar {
+	height: inherit;
 	width: 25%;
-	height: 100%;
 	text-align: center;
+	@media(max-width:"850px") {
+		min-width: 200px;
+
+	}
+	@media(max-width:"700px") {
+		width: 100%;
+	}
 	.sidebar-top {
 		.user-picture {
-			width: 164px;
 			height: 164px;
-			object-fit: contain;
+			overflow: hidden;
+    		object-fit: cover;
 			border-radius: 50%;
+			@media(max-width: "700px") {
+				height: 225px;
+			}
 		}
 		h3 {
 			color: $machiavellian;
@@ -38,6 +46,7 @@
 			color: $machiavellian;
 			line-height: 1.61;
 			letter-spacing: 1.08px;
+		
 		}
 		.info {
 			display: flex;
@@ -46,12 +55,22 @@
 				display: flex;
 				flex-direction: column;
 				text-align: left;
+				@media(max-width: "415px") {
+					display: block
+				}
 				span {
 					max-width: 200px;
 					width: 100%;
 					overflow: hidden;
 					white-space: nowrap;
 					text-overflow: ellipsis;
+					@media(max-width: "1120px") {
+						max-width: 100px;
+					}
+					@media(max-width:"700px") {
+						min-width: 300px
+					}
+			
 				}
 				.text-value {
 					font-family: $secondary-font;
@@ -219,10 +238,7 @@
 		h5 {
 			color: $snow-white;
 		}
-		// .number {
-		// 	background-color: $snow-white;
-		// 	color: $black-void;
-		// }
+	
 		.a-container {
 			.count {
 				color: $black-void;
