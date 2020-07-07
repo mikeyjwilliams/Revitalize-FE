@@ -22,6 +22,14 @@
         .add-trade-actions {
             width: 100%;
             text-align: right;
+            .close{
+              border: 2px solid $chillFi-purple;
+              border-radius: 15px;
+              &:hover{
+                color:$snow-white;
+                background-color: $chillFi-purple;
+              }
+            }
         }
         h3 {
             text-align: center;
@@ -33,7 +41,7 @@
             align-items: center;
             width: 100%;
             height: 80%;
-            input {
+            select {
                 margin: 10px auto;
                 width: 100%;
                 max-width: 340px;
@@ -48,4 +56,32 @@
             }
         }
     }
+}
+
+.dark-mode{
+  .add-trade-card {
+      background-color: $darkness;
+      .add-trade-actions{
+        .close{
+          border: 2px solid $chillFi-purple;
+          border-radius: 15px;
+          &:hover{
+            color:$darkness;
+
+          }
+        }
+      }
+
+      form {
+
+          .add-trade-button-container {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              button {
+                  @include buttonStyler($maastricht-blue, $snow-white, 0, 0);
+              }
+          }
+      }
+  }
 }
