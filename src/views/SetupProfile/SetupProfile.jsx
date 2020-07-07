@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { withRouter } from "react-router-dom";
 import { MdArrowBack, MdClose } from "react-icons/md";
-import { FaMoon } from "react-icons/fa";
+
 import { useMutation, useLazyQuery } from "@apollo/react-hooks";
 import { UPDATE_USER_PROFILE } from "../../graphql/mutations";
 import { GET_USER } from "../../graphql/queries";
-import Toggle from "react-toggle";
+
 import "react-toggle/style.css"
 
 // import Nav from "../../components/Layout/Nav";
@@ -14,7 +14,7 @@ import "react-toggle/style.css"
 
 const SetupProfile = props => {
     const [ updateUserProfile ] = useMutation(UPDATE_USER_PROFILE);
-    const [ , { loading, data } ] = useLazyQuery(GET_USER);
+    const [ , { loading } ] = useLazyQuery(GET_USER);
     const [ profileData, setProfileData ] = useState({
         firstName: "",
         lastName: "",
@@ -28,7 +28,7 @@ const SetupProfile = props => {
         zip: "",
         country: "USA",
     });
-    
+
 
 
     const handleChanges = event => {
