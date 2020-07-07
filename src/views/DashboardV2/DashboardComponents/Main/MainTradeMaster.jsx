@@ -128,7 +128,7 @@ const MainTradeMaster = props => {
 									mainTabs={mainTabs}
 									setMainTabs={setMainTabs}
 									tab={tab}
-									key={tab + Date.now()}
+									key={tab + Date.now()} 
 								/>
 							)) :
 							(

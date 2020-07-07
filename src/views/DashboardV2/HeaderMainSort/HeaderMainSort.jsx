@@ -27,7 +27,7 @@ export default function HeaderMainSort(props) {
                 setAddTaskModal={setAddTaskModal} 
                 addTaskModal={addTaskModal} 
                 selectedProject={addTaskModal.selectedProject} 
-
+                refetch={refetch}
                 trade={addTaskModal.trade}
             />
         )
