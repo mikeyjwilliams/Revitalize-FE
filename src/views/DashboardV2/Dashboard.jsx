@@ -15,14 +15,14 @@ import { GET_USER_PROFILE } from '../../graphql/queries/Users';
 
 const Dashboard = () => {
 	// Change these array values if you need to change the name of the dashnav tabs
-	let possibleDashNavTabs = ['Project Admin', 'Student', 'Trade Master', 'Donations'];
+	let possibleDashNavTabs = ['Project Manager', 'Apprentice', 'Trades Professional', 'Donations'];
 	const [dashNavTabState, setDashNavTab] = useState({ selectedDashNavTab: null, dashTabs: [], dashTabCount: null });
 
 	// Change these values to adjust the names of the tabs in the main view.
 	let possibleMainTabs = {
-		projectAdminTabs: ['Applicants', 'Students', 'Trade Masters', 'Trades', 'Analytics'],
+		projectAdminTabs: ['Applicants', 'Apprentices', 'Trades Professionals', 'Trades', 'Analytics'],
 		studentTabs: ['Tasks', 'Team'],
-		tradeMasterTabs: ['Applicants', 'Students', 'Tasks', 'Analytics'],
+		tradeMasterTabs: ['Applicants', 'Apprentices', 'Tasks', 'Analytics'],
 		donationTabs: ['All Donations', 'Project Donations'],
 	};
 	const [mainTabs, setMainTabs] = useState({ ...possibleMainTabs, selectedMainTab: '' });
