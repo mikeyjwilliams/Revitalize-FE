@@ -6,6 +6,27 @@
 	letter-spacing: 0.06em;
 	height: calc(100vh - 260px);
 	font-size: 1rem;
+
+	width: 100%;
+	// height: calc(100vh - 300px);
+	// height: calc(100vh - 351px);
+	background-image: url('https://images.pexels.com/photos/1171384/pexels-photo-1171384.jpeg?cs=srgb&dl=brown-concrete-brick-house-covered-by-green-leaf-vines-1171384.jpg&fm=jpg');
+	background-repeat: no-repeat;
+	// background-position: right;
+	background-size: cover;
+
+	@media #{$tablet} {
+		background-size: cover;
+		background-position-y: unset;
+		background-position-x: 100%;
+	}
+	@media #{$tablet-small} {
+	}
+	@media #{$mobile} {
+		background-image: none;
+		background-color: $erudite-purple;
+	}
+
 	h2 {
 		font-size: 2rem;
 	}
@@ -21,7 +42,12 @@
 			color: $ruby-enchantment;
 			background-color: transparent;
 		}
+		@media #{$mobile} {
+			// in mobile is not present. - MW
+			display: none;
+		}
 	}
+
 	.register-container-main {
 		min-height: calc(100vh - 260px);
 
@@ -42,12 +68,12 @@
 					color: $snow-white;
 				}
 				button {
+					// inside .register-third-party
 					background: $snow-white;
 					width: 100%;
 					margin-top: 30px;
 					height: 57px;
 					border-radius: 8px;
-					border: none;
 					cursor: pointer;
 					&:hover {
 						border: 2px solid $snow-white;
@@ -106,13 +132,14 @@
 					margin: 30px 0 5px 0;
 				}
 				button {
+					// inside register-pass
 					height: 40px;
 					width: 50%;
 					max-width: 200px;
 					background: $ruby-enchantment;
 					margin: 0 auto;
+					border: 2px solid $snow-white;
 					margin-top: 20px;
-					border: none;
 					color: $snow-white;
 					font-size: 1.7rem;
 					border-radius: 5px;
@@ -131,27 +158,14 @@
 			background-color: rgba($mirage, 0.5);
 		}
 	}
-
-	.imgContainer {
-		width: 100%;
-		// height: calc(100vh - 300px);
-		height: calc(100vh - 351px);
-		background-image: url('https://images.pexels.com/photos/1171384/pexels-photo-1171384.jpeg?cs=srgb&dl=brown-concrete-brick-house-covered-by-green-leaf-vines-1171384.jpg&fm=jpg');
-		background-repeat: no-repeat;
-		// background-position: right;
-		background-size: cover;
-
-		@media #{$tablet} {
-			background-size: cover;
-			background-position-y: unset;
-			background-position-x: 100%;
-		}
-		@media #{$tablet-small} {
-		}
-	}
 }
 
 .dark-mode {
+	.imgContainer {
+		@media #{$mobile} {
+			background-color: $police-blue;
+		}
+	}
 	.register-container {
 		background: $erudite-purple;
 		color: $snow-white;
