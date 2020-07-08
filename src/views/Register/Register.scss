@@ -6,6 +6,27 @@
 	letter-spacing: 0.06em;
 	height: calc(100vh - 260px);
 	font-size: 1rem;
+
+	width: 100%;
+	// height: calc(100vh - 300px);
+	// height: calc(100vh - 351px);
+	background-image: url('https://images.pexels.com/photos/1171384/pexels-photo-1171384.jpeg?cs=srgb&dl=brown-concrete-brick-house-covered-by-green-leaf-vines-1171384.jpg&fm=jpg');
+	background-repeat: no-repeat;
+	// background-position: right;
+	background-size: cover;
+
+	@media #{$tablet} {
+		background-size: cover;
+		background-position-y: unset;
+		background-position-x: 100%;
+	}
+	@media #{$tablet-small} {
+	}
+	@media #{$mobile} {
+		background-image: none;
+		background-color: $erudite-purple;
+	}
+
 	h2 {
 		font-size: 2rem;
 	}
@@ -26,6 +47,7 @@
 			display: none;
 		}
 	}
+
 	.register-container-main {
 		min-height: calc(100vh - 260px);
 
@@ -134,28 +156,6 @@
 			border-radius: 0.75rem;
 			margin: 0 auto;
 			background-color: rgba($mirage, 0.5);
-		}
-	}
-
-	.imgContainer {
-		width: 100%;
-		// height: calc(100vh - 300px);
-		height: calc(100vh - 351px);
-		background-image: url('https://images.pexels.com/photos/1171384/pexels-photo-1171384.jpeg?cs=srgb&dl=brown-concrete-brick-house-covered-by-green-leaf-vines-1171384.jpg&fm=jpg');
-		background-repeat: no-repeat;
-		// background-position: right;
-		background-size: cover;
-
-		@media #{$tablet} {
-			background-size: cover;
-			background-position-y: unset;
-			background-position-x: 100%;
-		}
-		@media #{$tablet-small} {
-		}
-		@media #{$mobile} {
-			background-image: none;
-			background-color: $erudite-purple;
 		}
 	}
 }
