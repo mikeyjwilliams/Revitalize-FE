@@ -83,7 +83,7 @@ const AddTask = props => {
 			<section className="add-task-container">
 				<div className="add-task-card">
 					<div className="add-task-actions">
-						<MdClose onClick={() => setAddTaskModal({ show: false })} />
+						<MdClose className="close" onClick={() => setAddTaskModal({ show: false })} />
 					</div>
 
 					{trade ? <h1>Add Task for {trade.name}</h1> : <h1>Add Task</h1>}
@@ -152,7 +152,7 @@ const AddTask = props => {
 								<option value={''}>Select apprentice</option>
 								{/* {
                                     selectedProject.students.map(eachStudent => (
-                                        <option 
+                                        <option
                                             name="apprentices"
                                             value={eachStudent.profile.id}
                                         >
