@@ -35,9 +35,10 @@
 
 .dark-mode {
 	.tabs {
-		color: $snow-white;
+		background-color: #191a1e;
 	}
-	.active-tab {
+	.tab.active-tab {
 		border-bottom: 5px solid $chillFi-purple;
+	
 	}
 }
