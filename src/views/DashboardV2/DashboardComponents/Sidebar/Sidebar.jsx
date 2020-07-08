@@ -40,7 +40,6 @@ const Sidebar = props => {
 	];
 
 	let totalAchievements = countArray[0].count + countArray[1].count + countArray[2].count + countArray[3].count;
-	console.log(user);
 	const displayCount = x => {
 		if (x.count > 0) {
 			return (
@@ -149,7 +148,7 @@ const Sidebar = props => {
 							{project ? (
 								<>
 									<hr />
-									{console.log(project)}
+									{/* {console.log(project)} */}
 									<div className="info project-details-container">
 										<div className="text">
 											<Link to={`/project/${project.slug}`}>
