@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdClose } from "react-icons/md";
 
 
@@ -12,46 +12,78 @@ const AddTrade = props => {
 
     } = props;
 
-    const [errors, setErrors] = useState({
-  		validate:false,
-      validate2:false,
-      validate3:true
-  	});
+    // const [errors, setErrors] = useState({
+  	// 	validate:false,
+    //   validate2:false,
+    //   validate3:true
+  	// });
+
+    const [validate, setValidate] = useState(false);
+    const [validate2, setValidate2] = useState(false);
+    const [validate3, setValidate3] = useState(true);
+    const [changeTrack, setChangeTrack] = useState(0);
+    const [changeTrack2, setChangeTrack2] = useState(0);
+
+
 
     const validateInput = e =>{
-      console.log("validation happens", e.target.name)
+      console.log("BEFORE: validation 1:", validate," 2:", validate2, " 3:", validate3)
+      console.log("changeTrack: ", changeTrack,"changeTrack2: ", changeTrack2, " value:", e.target.value)
       if (e.target.value == 0) {
         if(e.target.name == "name"){
-          setErrors({
-            ...errors,
-            validate: true,})
-        } else if(e.target.name =="description") {
-          setErrors({
-            ...errors,
-            validate2:true,})
+
+          setValidate(true);
+          setChangeTrack(0);
+          setValidate3(true);
+
+        } else {
+          setValidate2(true);
+          setChangeTrack2(0);
+          setValidate3(true);
+
         }
       } else {
         if(e.target.name == "name"){
-          setErrors({
-            ...errors,
-            validate: false,})
-        } else {
-          setErrors({
-            ...errors,
-            validate2:false,})
-        }
+          if(changeTrack == 0){
+            setChangeTrack(1);
+            if(changeTrack2 == 1){
+              setValidate3(false);
+            }
+          }
+          setValidate(false);
 
+        } else {
+          if(changeTrack2 == 0){
+            setChangeTrack2(1);
+            if(changeTrack == 1){
+              setValidate3(false);
+            }
+          }
+          setValidate2(false);
+
+        }
       }
-      console.log("validation3 1:", errors.validate," 2:",errors.validate2, " 3:", errors.validate3)
-      if(errors.validate == true || errors.validate2 == true){
-        setErrors({...errors, validate3:true})
-      } else if (errors.validate == false && errors.validate2 == false){
-        setErrors({...errors,validate3:false})
-      }
+
+
+
+
     }
 
 
-    console.log("are we validated?", errors.validate)
+
+    const updateValidation = () =>{
+      console.log("AFTER validation 1:", validate," 2:", validate2, " 3:", validate3, "changeTrack: ", changeTrack)
+      if(validate == true || validate2 == true){
+        setValidate3(true);
+      } else if (validate == false && validate2 == false){
+        if(changeTrack == 1 && changeTrack2 == 1){
+          setValidate3(false);
+        }
+      }
+      return
+    }
+
+    console.log("validated is?", validate3)
     return (
         <>
             <section
@@ -64,7 +96,7 @@ const AddTrade = props => {
                     </div>
 
                     <h3>Add Trade</h3>
-                    <form onSubmit={submitAddTrade} >
+                    <form>
                         <select
                             name='name'
                             onChange={(event) => {
@@ -83,7 +115,7 @@ const AddTrade = props => {
                           <option value="Landscaper">Landscaper</option>
                           <option value="Stone Mason">Stone Mason</option>
                         </select>
-                        {errors.validate && <p className="errorText">Please select a valid selection</p>}
+                        {validate && <p className="errorText">Please select a valid selection</p>}
                         <br />
 
                         <select
@@ -104,15 +136,18 @@ const AddTrade = props => {
                           <option value="You need 4">4</option>
                           <option value="You need 5+">5+</option>
                         </select>
-                        {errors.validate2 && <p className="errorText">Please select a valid selection</p>}
+                        {validate2 && <p className="errorText">Please select a valid selection</p>}
                         <br />
                         <br />
 
                         <div className="add-trade-button-container" >
 
-                            <button className={`add-trade-button ${!errors.validate3 && 'disabled'}`}  >
+                            <div className={`add-trade-button${validate3 ? ' disabled' : ''}`} onClick={submitAddTrade}  >
                                 Submit
-                            </button>
+                            </div>
+                            <div className={`add-trade-button${!validate3 ? ' disabled' : ' fake'}`} >
+                                Submit
+                            </div>
                         </div>
                     </form>
 
