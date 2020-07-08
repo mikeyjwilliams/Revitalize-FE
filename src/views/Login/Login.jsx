@@ -54,15 +54,16 @@ const Login = props => {
 								<div className="login-welcome">
 									<h1>Welcome Back!</h1>
 								</div>
-								<button>
-									<div>
-										<a className="login-button" href={`${process.env.REACT_APP_OAUTH_GOOGLE_LINK}`}>
-											<img src={googleLogo} alt="Google logo" />
-											<h2>Sign In With Google</h2>
-										</a>
-									</div>
-								</button>
-								<button>
+								<div className="buttons-container">
+									<button>
+										<div>
+											<a className="login-button" href={`${process.env.REACT_APP_OAUTH_GOOGLE_LINK}`}>
+												<img src={googleLogo} alt="Google logo" />
+												<h2>Sign In With Google</h2>
+											</a>
+										</div>
+									</button>
+									<button>
 									<div>
 										<a
 											className="login-button"
@@ -73,7 +74,7 @@ const Login = props => {
 										</a>
 									</div>
 								</button>
-
+								</div>
 								<div className="login-middle">
 									<div className="login-line"></div>
 									<p>or</p>

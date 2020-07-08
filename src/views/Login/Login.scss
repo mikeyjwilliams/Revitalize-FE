@@ -78,6 +78,9 @@
 					width: 40%;
 					background: $snow-white;
 				}
+				@media screen and (min-width:650px) {
+						display:none;
+					}
 			}
 
 			.login-local {
