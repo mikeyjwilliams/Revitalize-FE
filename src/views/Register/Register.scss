@@ -21,6 +21,10 @@
 			color: $ruby-enchantment;
 			background-color: transparent;
 		}
+		@media #{$mobile} {
+			// in mobile is not present. - MW
+			display: none;
+		}
 	}
 	.register-container-main {
 		min-height: calc(100vh - 260px);
@@ -42,12 +46,12 @@
 					color: $snow-white;
 				}
 				button {
+					// inside .register-third-party
 					background: $snow-white;
 					width: 100%;
 					margin-top: 30px;
 					height: 57px;
 					border-radius: 8px;
-					border: none;
 					cursor: pointer;
 					&:hover {
 						border: 2px solid $snow-white;
@@ -106,13 +110,14 @@
 					margin: 30px 0 5px 0;
 				}
 				button {
+					// inside register-pass
 					height: 40px;
 					width: 50%;
 					max-width: 200px;
 					background: $ruby-enchantment;
 					margin: 0 auto;
+					border: 2px solid $snow-white;
 					margin-top: 20px;
-					border: none;
 					color: $snow-white;
 					font-size: 1.7rem;
 					border-radius: 5px;
@@ -148,10 +153,19 @@
 		}
 		@media #{$tablet-small} {
 		}
+		@media #{$mobile} {
+			background-image: none;
+			background-color: $erudite-purple;
+		}
 	}
 }
 
 .dark-mode {
+	.imgContainer {
+		@media #{$mobile} {
+			background-color: $police-blue;
+		}
+	}
 	.register-container {
 		background: $erudite-purple;
 		color: $snow-white;
