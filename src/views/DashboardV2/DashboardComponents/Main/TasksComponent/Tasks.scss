@@ -33,7 +33,8 @@
 
 .list.tasks {	
 	display: flex;
-    align-items: center;
+	align-items: center;
+	margin-bottom: 20px;
 	.task-card-indicator.left-bg {
 		width: 10px;
 		height: 80px;
