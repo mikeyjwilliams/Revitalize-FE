@@ -19,6 +19,14 @@
         .add-task-actions {
             width: 100%;
             text-align: right;
+            .close{
+              border: 2px solid $chillFi-purple;
+              border-radius: 15px;
+              &:hover{
+                color:$snow-white;
+                background-color: $chillFi-purple;
+              }
+            }
         }
         h1 {
             text-align: center;
@@ -73,7 +81,7 @@
                     }
                 }
             }
-           
+
 
 
             .add-task-date-hours-container {
@@ -94,7 +102,7 @@
                     }
                 }
                 // .add-task-input.date {}
-                .add-task-input.hours { 
+                .add-task-input.hours {
                     input {
                         width: 90px;
                         text-align: right;
@@ -137,5 +145,22 @@
                 }
             }
         }
+    }
+}
+
+.dark-mode{
+  .add-task-card {
+      background-color: $darkness;
+      .add-task-actions{
+        .close{
+          border: 2px solid $chillFi-purple;
+          border-radius: 15px;
+          &:hover{
+            color:$darkness;
+
+          }
+        }
+      }
+
     }
 }

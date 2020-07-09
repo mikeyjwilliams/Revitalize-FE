@@ -28,13 +28,15 @@
 		.tab.active-tab {
 			color: $erudite-purple;
 			border-bottom: 5px solid $erudite-purple;
-			padding-bottom: 3.5rem;
+			padding-bottom: 1rem;
+
 		}
 	}
 }
 
 .dark-mode {
 	.tabs {
+		background-color: $dark-grey;
 		color: $snow-white;
 	}
 	.active-tab {

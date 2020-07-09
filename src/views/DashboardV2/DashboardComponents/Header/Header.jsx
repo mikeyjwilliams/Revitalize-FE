@@ -64,7 +64,7 @@ const Header = props => {
 
 		await createProjectTrade({ variables: { data: addTradeState } });
 
-		setAddTradeState({ ...addTradeState, project: '', name: '', description: '' });
+		// setAddTradeState({ ...addTradeState, project: '', name: '', description: '' });
 		setAddTradeModal({ show: false });
 	};
 
@@ -199,11 +199,11 @@ const Header = props => {
 
 						<div className="team-members">
 							<div className="member-icons">
-								{type === possibleDashNavTabs[0] 
-								|| type === possibleDashNavTabs[1] 
-								|| type === possibleDashNavTabs[2] 
+								{type === possibleDashNavTabs[0]
+								|| type === possibleDashNavTabs[1]
+								|| type === possibleDashNavTabs[2]
 								? (
-									<MemberIcons 
+									<MemberIcons
 										arrayOfUsers={projectData.students} // Should work for student view, but not tested yet
 									/>
 								) : (

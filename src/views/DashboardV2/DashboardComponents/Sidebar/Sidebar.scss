@@ -192,6 +192,11 @@
 }
 
 .dark-mode {
+
+	.overlay {
+		background-color: $dark-grey;
+		border: 1px solid $snow-white;
+	}
 	.sidebar-top {
 		h3,
 		h6,
