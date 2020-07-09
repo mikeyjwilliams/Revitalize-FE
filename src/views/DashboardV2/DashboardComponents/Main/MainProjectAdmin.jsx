@@ -3,7 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 
 // Components
 import Tab from './TabComponent/Tab';
-// import Task from "./TasksComponent/Task";
+import Task from "./TasksComponent/Task";
 import People from './People/People';
 import PeopleHeader from './People/PeopleHeader';
 import Trades from './Trades/Trades';
@@ -138,6 +138,12 @@ const MainProjectAdmin = props => {
 							/>
 						</div>
 					))}
+					{project.tasks.map(task => (
+							<div className="list tasks">
+								<Task task={task} tab={mainTabs.selectedMainTab} mainTabs={mainTabs} project={project}  />
+							</div>
+						))
+					}
 				</>
 			);
 			return (viewSelected = view);

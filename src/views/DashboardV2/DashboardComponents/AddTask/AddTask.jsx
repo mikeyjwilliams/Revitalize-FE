@@ -11,7 +11,7 @@ import { GET_PROJECT_BY_ID } from '../../../../graphql/queries';
 import LoadingSpinner from '../../../../components/LoadingSpinner/LoadingSpinner';
 
 const AddTask = props => {
-	const { setAddTaskModal, selectedProject, trade } = props;
+	const { setAddTaskModal, selectedProject, trade, refetch } = props;
 
 	const [addTaskState, setAddTaskState] = useState({
 		project: '',
@@ -23,7 +23,7 @@ const AddTask = props => {
 		budgetHours: '',
 	});
 
-	const { loading, error, data } = useQuery(GET_PROJECT_BY_ID, {
+	const { loading, error, data,} = useQuery(GET_PROJECT_BY_ID, {
 		variables: { id: selectedProject.id },
 	});
 
@@ -38,6 +38,7 @@ const AddTask = props => {
 				data: { projectById: projectById.tasks.concat([createProjectTask]) },
 			});
 		},
+		
 	});
 
 	useEffect(() => {
@@ -54,9 +55,11 @@ const AddTask = props => {
 					budgetHours: Number(addTaskState.budgetHours),
 					dueDate: formatDateForMutation(addTaskState.dueDate),
 				},
-			},
-		});
 
+			},
+			
+		});
+	
 		setAddTaskState({
 			...addTaskState,
 			project: '',
@@ -68,12 +71,14 @@ const AddTask = props => {
 			budgetHours: '',
 		});
 		setAddTaskModal({ show: false });
+		refetch()
 	};
 
 	if (loading) return <LoadingSpinner />;
 	if (error) {
 		console.log(error);
 		return <LoadingSpinner />;
+		
 	}
 
 	console.log('add task props ', props, addTaskState, '\nDue Date', '\naddTaskState', addTaskState, data);
@@ -255,7 +260,7 @@ const AddTask = props => {
 						</div>
 
 						<div className="add-task-button-container">
-							<button className="add-task-button" onClick={submitAddTask}>
+							<button type="submit" className="add-task-button">
 								Submit
 							</button>
 						</div>
