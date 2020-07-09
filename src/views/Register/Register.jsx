@@ -14,7 +14,7 @@ const Register = props => {
 
 	const [state, setState] = useState({
 		email: '',
-		password: '',
+		password: '', 
 	});
 
 	const handleChanges = event => {
