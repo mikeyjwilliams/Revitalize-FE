@@ -11,6 +11,9 @@
 	&-overview {
 		display: flex;
 		justify-content: space-between;
+		@media(max-width: "425px") {
+			flex-direction: column;
+		}
 
 		.analysis-card {
 			text-align: center;
@@ -18,8 +21,11 @@
 			margin: 0 5px 0px;
 			border-radius: 5px;
 			padding: 10px 5px;
-			width: 250px;
 			color: $snow-white;
+			@media(max-width: "425px") {
+				margin: 0% 0% 5% 1%;
+				width: 35%;
+			}
 		}
 	}
 }

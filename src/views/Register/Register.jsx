@@ -14,7 +14,7 @@ const Register = props => {
 
 	const [state, setState] = useState({
 		email: '',
-		password: '',
+		password: '', 
 	});
 
 	const handleChanges = event => {
@@ -76,9 +76,9 @@ const Register = props => {
 								</button>
 
 								<div className="register-middle">
-									<div className="register-Line"></div>
+									<div className="register-line"></div>
 									<p>or</p>
-									<div className="register-Line"></div>
+									<div className="register-line"></div>
 								</div>
 								<form className="register-local" onSubmit={handleSubmit}>
 									<label htmlFor="email-register">

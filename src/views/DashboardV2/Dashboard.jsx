@@ -15,14 +15,14 @@ import { GET_USER_PROFILE } from '../../graphql/queries/Users';
 
 const Dashboard = () => {
 	// Change these array values if you need to change the name of the dashnav tabs
-	let possibleDashNavTabs = ['Project Admin', 'Student', 'Trade Master', 'Donations'];
+	let possibleDashNavTabs = ['Project Manager', 'Apprentice', 'Trades Professional', 'Donations'];
 	const [dashNavTabState, setDashNavTab] = useState({ selectedDashNavTab: null, dashTabs: [], dashTabCount: null });
 
 	// Change these values to adjust the names of the tabs in the main view.
 	let possibleMainTabs = {
-		projectAdminTabs: ['Applicants', 'Students', 'Trade Masters', 'Trades', 'Analytics'],
+		projectAdminTabs: ['Applicants', 'Apprentices', 'Trades Professionals', 'Trades', 'Analytics'],
 		studentTabs: ['Tasks', 'Team'],
-		tradeMasterTabs: ['Applicants', 'Students', 'Tasks', 'Analytics'],
+		tradeMasterTabs: ['Applicants', 'Apprentices', 'Tasks', 'Analytics'],
 		donationTabs: ['All Donations', 'Project Donations'],
 	};
 	const [mainTabs, setMainTabs] = useState({ ...possibleMainTabs, selectedMainTab: '' });
@@ -31,7 +31,7 @@ const Dashboard = () => {
 
 	// This useQuery pulls in tons of data and can pull more! See graphql/queries to adjust what it pulls in
 	const { loading, error, data, refetch } = useQuery(GET_USER_PROFILE);
-
+	const [projectList, setProjectList] = useState();
 	const setCurrentProject = object => setProject(object);
 
 	// The following 2 functions and useEffect deal with determining what dash nav options should be shown based
@@ -51,9 +51,10 @@ const Dashboard = () => {
 		setProject({ project: null, id: null, showMore: false, buttonToggle: false });
 		setDashNavTab({ ...dashNavTabState, selectedDashNavTab: userSelectedTab });
 	};
+	const [actionHappened, setActionHappened] = useState(false);
 
 	useEffect(() => {
-		// refetch();
+		refetch();
 		let availDashTabs = [];
 		let count = '';
 		count = data ? (data.me.projects.length > 0 ? availDashTabs.push(possibleDashNavTabs[0]) : null) : null;
@@ -65,15 +66,18 @@ const Dashboard = () => {
 			: null;
 		count = data ? (data.me.donations.length > 0 ? availDashTabs.push(possibleDashNavTabs[3]) : null) : null;
 
+		setProjectList(data ? (data.me.projects.length > 0 ? data.me.projects : null) :null);
 		setAvailableDashNavTabs(availDashTabs, count);
-	}, [data]);
+		setActionHappened(false);
+
+	}, [data, actionHappened]);
 
 	if (loading) return <LoadingSpinner />;
 	if (error) return <p>Error....</p>;
 
 	return (
 		<>
-			{data.me.projects ? setAvailableDashNavTabs : null}
+			{projectList ? setAvailableDashNavTabs : null}
 
 			<main>
 
@@ -101,6 +105,8 @@ const Dashboard = () => {
 									possibleMainTabs={possibleMainTabs} // <-- This an array of main tab options
 									dashNavTabState={dashNavTabState} // <-- This handles the potential dashnav
 									possibleDashNavTabs={possibleDashNavTabs} // <-- This an array of options for dash nav tabs
+									setProjectList={setProjectList}
+									setActionHappened={setActionHappened}
 								/>
 							) : null
 						}
@@ -118,6 +124,8 @@ const Dashboard = () => {
 									possibleMainTabs={possibleMainTabs}
 									dashNavTabState={dashNavTabState}
 									possibleDashNavTabs={possibleDashNavTabs}
+									setProjectList={setProjectList}
+									setActionHappened={setActionHappened}
 								/>
 							) : null
 						}
@@ -136,6 +144,8 @@ const Dashboard = () => {
 									possibleMainTabs={possibleMainTabs}
 									dashNavTabState={dashNavTabState}
 									possibleDashNavTabs={possibleDashNavTabs}
+									setProjectList={setProjectList}
+									setActionHappened={setActionHappened}
 								/>
 							) : null
 						}
@@ -153,6 +163,8 @@ const Dashboard = () => {
 									possibleMainTabs={possibleMainTabs}
 									dashNavTabState={dashNavTabState}
 									possibleDashNavTabs={possibleDashNavTabs}
+									setProjectList={setProjectList}
+									setActionHappened={setActionHappened}
 								/>
 							) : null
 						}

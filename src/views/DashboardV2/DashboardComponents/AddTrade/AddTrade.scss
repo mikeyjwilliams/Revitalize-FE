@@ -1,18 +1,23 @@
 .add-trade-container {
-    background-color: rgba($bleached-black, 0.75);
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
+    // background-color: rgba($bleached-black, 0.75);
+    // height: 100vh;
+    // width: 100vw;
+    // // position: fixed;
+    // // bottom: calc(-100vh + 365px);
+    // // left: calc(-33vw);
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // transform: translate(-50%, -50%);
+
+
+
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20;
+    z-index: 50;
     .add-trade-card {
-        background-color: $snow-white;
+        background-color: $elans-grey;
         font-size: 1.8rem;
         width: 50%;
         max-width: 600px;
@@ -22,6 +27,15 @@
         .add-trade-actions {
             width: 100%;
             text-align: right;
+
+            .close{
+              border: 2px solid $chillFi-purple;
+              border-radius: 15px;
+              &:hover{
+                color:$snow-white;
+                background-color: $chillFi-purple;
+              }
+            }
         }
         h3 {
             text-align: center;
@@ -33,19 +47,85 @@
             align-items: center;
             width: 100%;
             height: 80%;
-            input {
+            select {
                 margin: 10px auto;
                 width: 100%;
                 max-width: 340px;
+                padding: 5px 0;
             }
             .add-trade-button-container {
                 width: 100%;
                 display: flex;
                 justify-content: center;
-                button {
-                    @include buttonStyler($chillFi-purple, $snow-white, 0, 0);
+                .add-trade-button {
+                    border: 2px solid $darkness;
+                    border-radius: 5px;
+                    text-align: center;
+                    padding: 15px;
+                    color:$snow-white;
+                    background-color: $chillFi-purple;
+                    &:hover{
+                      // border-color: $chillFi-purple;
+                      color: $chillFi-purple;
+                      background-color: $snow-white;
+                    }
+                    &.disabled{
+                      display: none;
+                    }
+                    &.fake{
+                      display:inline;
+                      opacity: 50%;
+                      &:hover{
+                        color: $snow-white;
+                        background-color: $chillFi-purple;
+                      }
+                    }
                 }
             }
         }
     }
+}
+
+.dark-mode{
+  .add-trade-card {
+      background-color: $darkness;
+      .add-trade-actions{
+        .close{
+          border: 2px solid $chillFi-purple;
+          border-radius: 15px;
+          &:hover{
+            color:$darkness;
+
+          }
+        }
+      }
+
+      form {
+
+          .add-trade-button-container {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .add-trade-button {
+                  color:$snow-white;
+                  background-color: $maastricht-blue;
+                  border-color: $snow-white;
+                  &:hover{
+                    border-color: $maastricht-blue;
+                    color: $maastricht-blue;
+                    background-color: $snow-white;
+                  }
+                  &.fake{
+                    &:hover{
+                      color: $snow-white;
+                      background-color: $maastricht-blue;
+                      border-color: $snow-white;
+                    }
+                  }
+              }
+
+          }
+      }
+  }
 }
