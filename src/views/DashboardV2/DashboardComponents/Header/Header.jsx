@@ -57,7 +57,7 @@ const Header = props => {
 
 
 	useEffect(() => {
-		console.log("this use effect works")
+
 		if(data){
 			setProjectData(data.projectById);
 		}
@@ -71,13 +71,13 @@ const Header = props => {
 
 		setAddTradeModal({ show: false });
 	};
-	console.log("before delete:", data);
+
 	const submitDeleteProject = async () => {
 		await deleteProject({
 			variables: { id: projectData.id },
 		});
 
-		console.log("inside delete: ", data);
+
 		setActionHappened(true);
 		refetch();
 

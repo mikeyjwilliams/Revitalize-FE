@@ -65,7 +65,7 @@ const Dashboard = () => {
 				: null
 			: null;
 		count = data ? (data.me.donations.length > 0 ? availDashTabs.push(possibleDashNavTabs[3]) : null) : null;
-		console.log("this ran.")
+
 		setProjectList(data ? (data.me.projects.length > 0 ? data.me.projects : null) :null);
 		setAvailableDashNavTabs(availDashTabs, count);
 		setActionHappened(false);
@@ -74,7 +74,7 @@ const Dashboard = () => {
 
 	if (loading) return <LoadingSpinner />;
 	if (error) return <p>Error....</p>;
-	console.log(projectList)
+
 	return (
 		<>
 			{projectList ? setAvailableDashNavTabs : null}
