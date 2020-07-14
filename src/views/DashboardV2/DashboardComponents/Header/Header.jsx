@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { FaPlusCircle, FaAngleDown, FaAngleUp, FaBan, FaPlus, FaLink } from 'react-icons/fa';
+import { FaAngleDown, FaAngleUp, FaBan, FaLink } from 'react-icons/fa';
 import { GoKebabVertical } from 'react-icons/go';
 
 // Sub components
@@ -14,13 +14,13 @@ import { calculateDueDate } from '../../../../helpers/helpers';
 // GQL
 import { DELETE_PROJECT } from '../../../../graphql/mutations';
 import { CREATE_PROJECT_TRADE } from '../../../../graphql/mutations';
-import { GET_USER_PROFILE } from '../../../../graphql/queries/Users';
+
 import { useMutation, useQuery } from '@apollo/react-hooks';
 
 import { GET_PROJECT_BY_ID } from '../../../../graphql/queries';
 
 const Header = props => {
-	const { project, setProject, selectedProject, type, possibleDashNavTabs, setAddTaskModal, setProjectList, setActionHappened } = props;
+	const { project, setProject, selectedProject, type, possibleDashNavTabs, setActionHappened } = props;
 
 	const [settingsToggle, setSettingsToggle] = useState({ settingsDropdown: false });
 	const [deleteProject] = useMutation(DELETE_PROJECT);

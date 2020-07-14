@@ -3,7 +3,7 @@ import Skeleton from 'react-loading-skeleton';
 
 import AddTrade from "../AddTrade/AddTrade";
 
-import { FaPlusCircle, FaAngleDown, FaAngleUp, FaBan, FaPlus, FaLink } from 'react-icons/fa';
+import { FaPlusCircle } from 'react-icons/fa';
 // Components
 import Tab from './TabComponent/Tab';
 import Task from "./TasksComponent/Task";
@@ -14,7 +14,7 @@ import TradesHeader from './Trades/TradesHeader';
 import Analytics from './Analytics/Analytics';
 import NoContent from './NoContent/NoContent';
 
-import { DELETE_PROJECT } from '../../../../graphql/mutations';
+
 import { CREATE_PROJECT_TRADE } from '../../../../graphql/mutations';
 
 import { GET_PROJECT_BY_ID } from '../../../../graphql/queries';
