@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MdClose } from "react-icons/md";
 
 
@@ -27,10 +27,9 @@ const AddTrade = props => {
 
 
     const validateInput = e =>{
-      console.log("BEFORE: validation 1:", validate," 2:", validate2, " 3:", validate3)
-      console.log("changeTrack: ", changeTrack,"changeTrack2: ", changeTrack2, " value:", e.target.value)
-      if (e.target.value == 0) {
-        if(e.target.name == "name"){
+    
+      if (e.target.value === 0) {
+        if(e.target.name === "name"){
 
           setValidate(true);
           setChangeTrack(0);
@@ -43,19 +42,19 @@ const AddTrade = props => {
 
         }
       } else {
-        if(e.target.name == "name"){
-          if(changeTrack == 0){
+        if(e.target.name === "name"){
+          if(changeTrack === 0){
             setChangeTrack(1);
-            if(changeTrack2 == 1){
+            if(changeTrack2 === 1){
               setValidate3(false);
             }
           }
           setValidate(false);
 
         } else {
-          if(changeTrack2 == 0){
+          if(changeTrack2 === 0){
             setChangeTrack2(1);
-            if(changeTrack == 1){
+            if(changeTrack === 1){
               setValidate3(false);
             }
           }
@@ -70,20 +69,6 @@ const AddTrade = props => {
     }
 
 
-
-    const updateValidation = () =>{
-      console.log("AFTER validation 1:", validate," 2:", validate2, " 3:", validate3, "changeTrack: ", changeTrack)
-      if(validate == true || validate2 == true){
-        setValidate3(true);
-      } else if (validate == false && validate2 == false){
-        if(changeTrack == 1 && changeTrack2 == 1){
-          setValidate3(false);
-        }
-      }
-      return
-    }
-
-    console.log("validated is?", validate3)
     return (
         <>
             <section

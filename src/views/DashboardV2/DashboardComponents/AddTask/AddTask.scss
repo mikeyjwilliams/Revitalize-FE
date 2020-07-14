@@ -62,6 +62,7 @@
                 input {
                     width: 340px;
                     height: 15px;
+                    color:$darkness;
                 }
                 select {
                     text-align-last:center;
@@ -161,6 +162,15 @@
           }
         }
       }
+      form{
+        .add-task-input-container {
 
-    }
+
+            input {
+
+                color:$snow-white;
+            }
+        }
+      }
+  }
 }
