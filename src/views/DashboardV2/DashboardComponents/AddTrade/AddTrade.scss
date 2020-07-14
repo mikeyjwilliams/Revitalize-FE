@@ -1,16 +1,21 @@
 .add-trade-container {
-    background-color: rgba($bleached-black, 0.75);
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
+    // background-color: rgba($bleached-black, 0.75);
+    // height: 100vh;
+    // width: 100vw;
+    // // position: fixed;
+    // // bottom: calc(-100vh + 365px);
+    // // left: calc(-33vw);
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // transform: translate(-50%, -50%);
+
+
+
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20;
+    z-index: 50;
     .add-trade-card {
         background-color: $elans-grey;
         font-size: 1.8rem;
