@@ -84,7 +84,7 @@ const Header = props => {
 	if (loading) return <HeaderSkeleton />;
 	if (error) {
 		console.log('there may be an error retrieving a project');
-		return;
+		return <div> </div>;
 	}
 	if (addTradeModal.show === true) {
 		return (
