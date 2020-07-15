@@ -27,8 +27,9 @@ const AddTrade = props => {
 
 
     const validateInput = e =>{
-    
-      if (e.target.value === 0) {
+
+      if (e.target.value === "0") {
+
         if(e.target.name === "name"){
 
           setValidate(true);
@@ -39,10 +40,11 @@ const AddTrade = props => {
           setValidate2(true);
           setChangeTrack2(0);
           setValidate3(true);
-
+          
         }
       } else {
         if(e.target.name === "name"){
+
           if(changeTrack === 0){
             setChangeTrack(1);
             if(changeTrack2 === 1){
