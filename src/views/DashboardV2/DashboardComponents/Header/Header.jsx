@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { FaAngleDown, FaAngleUp, FaBan, FaLink } from 'react-icons/fa';
-import { GoKebabVertical } from 'react-icons/go';
+
 
 // Sub components
 import AddTrade from "../AddTrade/AddTrade";
@@ -144,11 +144,11 @@ const Header = props => {
 
 							{(type === possibleDashNavTabs[0]) ? (  // Only PROJECT ADMIN can add trades or delete the project. If we have more items for the kebab, we can adjust this logic
 								<div className="project-settings">
-									<GoKebabVertical
-										onClick={() =>
-											setSettingsToggle({ settingsDropdown: !settingsToggle.settingsDropdown })
-										}
-									/>
+								<i className='icon-trash' onClick={() =>
+									setSettingsToggle({ settingsDropdown: !settingsToggle.settingsDropdown })} />
+
+
+
 									{(settingsToggle.settingsDropdown && type === possibleDashNavTabs[0]) ? (   // Only PROJECT ADMIN; Rendundant, but built to be added to
 										<div className="project-settings-dropdown">
 
