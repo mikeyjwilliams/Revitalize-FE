@@ -14,9 +14,7 @@ import { calculateDueDate } from '../../../../helpers/helpers';
 // GQL
 import { DELETE_PROJECT } from '../../../../graphql/mutations';
 import { CREATE_PROJECT_TRADE } from '../../../../graphql/mutations';
-
 import { useMutation, useQuery } from '@apollo/react-hooks';
-
 import { GET_PROJECT_BY_ID } from '../../../../graphql/queries';
 
 const Header = props => {
@@ -84,7 +82,10 @@ const Header = props => {
 	};
 
 	if (loading) return <HeaderSkeleton />;
-	if (error) return <h3>Error</h3>;
+	if (error) {
+		console.log('there may be an error retrieving a project');
+		return;
+	}
 	if (addTradeModal.show === true) {
 		return (
 			<AddTrade
@@ -140,12 +141,7 @@ const Header = props => {
 							<p className="header-project-description">{projectData.description}</p>
 						</div>
 						<div className="header-top-right">
-							{/*(type === possibleDashNavTabs[1]) ? null : ( // Don't render add task for student
-								<div className="add-tasks">
-									<div className="add-task-title">Add Task</div>
-									<FaPlusCircle className="add-task-button"  onClick={() => setAddTaskModal({ show: true, selectedProject: projectData })} />
-								</div>
-							) */}
+
 							{(type === possibleDashNavTabs[0]) ? (  // Only PROJECT ADMIN can add trades or delete the project. If we have more items for the kebab, we can adjust this logic
 								<div className="project-settings">
 									<GoKebabVertical
