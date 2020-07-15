@@ -38,7 +38,7 @@ const AddTask = props => {
 				data: { projectById: projectById.tasks.concat([createProjectTask]) },
 			});
 		},
-		
+
 	});
 
 	useEffect(() => {
@@ -57,9 +57,9 @@ const AddTask = props => {
 				},
 
 			},
-			
+
 		});
-	
+
 		setAddTaskState({
 			...addTaskState,
 			project: '',
@@ -76,12 +76,12 @@ const AddTask = props => {
 
 	if (loading) return <LoadingSpinner />;
 	if (error) {
-		console.log(error);
+
 		return <LoadingSpinner />;
-		
+
 	}
 
-	console.log('add task props ', props, addTaskState, '\nDue Date', '\naddTaskState', addTaskState, data);
+	
 
 	return (
 		<>
