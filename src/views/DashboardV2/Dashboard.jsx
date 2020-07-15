@@ -73,7 +73,7 @@ const Dashboard = () => {
 	}, [data, actionHappened]);
 
 	if (loading) return <LoadingSpinner />;
-	if (error) return <p>Error....</p>;
+	if (error) return <p>Error Loading Dashboard.</p>;
 
 	return (
 		<>
