@@ -1,18 +1,45 @@
 # Important Links
 [![Maintainability](https://api.codeclimate.com/v1/badges/5baf4f53288ddd737410/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/Revitalize-FE/maintainability)
+
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5baf4f53288ddd737410/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/Revitalize-FE/test_coverage)
 
-[Production deploy](https://revitalize.community)
-[Staging deploy](https://revitalize.netlify.com)
+[Production deploy v1.0(not current)](https://revitalize.community)
 
 
 [Nelify production logs](https://app.netlify.com/sites/sleepy-brattain-252a23/deploys)
-[Nelify staging logs](https://app.netlify.com/sites/revitalize/deploys)
 
 [GraphiQL Playground staging](https://revitalize-development.herokuapp.com/)
 
 
 ---
+# SASS/CSS Layout Notes
+
+### Preset Colors and styles:
+The main colors used throughout the app are located in `src/styles/_variables.scss`
+
+### Finding your style:
+If you are trying to edit the SASS/CSS the basic layout is very detailed and everything should be put into the correct file. The fastest way to find what file to edit is to inspect an element you are interested in changing and reading the class name.
+
+In most instances the names are laid out with the component file name then the component element.
+> **e.x. you are trying to edit the login card where you type your login info the name is `.login-container.login-card.`**
+**This shows you that you need to goto the Login component and edit that .scss file.**
+
+### Dark Mode styles:
+In every .scss file if there needs to be a change to the `dark-mode` at the bottom you will find .dark-mode. You must then add the hierarchy to edit that style.
+> **e.x. following the login example above the dark-mode version would be `.dark-mode.login-container.login-card.`**
+
+### Page Container and Footer explanation:
+All pages are setup to route as a single page app. If you look in `Routes.jsx` in the src folder you will see how the navigation and routing is setup for the app. We use the `<Switch>` from `react-router-dom` to make our pages maintain a single view that swaps only the middle content. This helps keep the site easily maintained and easier to update.
+
+If you want to add extra pages within the `<Switch> </Switch>` simply post the component route like you usually would. Anything outside these brackets will render in that order.
+>i.e. `<Nav> <Component> <Footer>`(only the *Component* will change when clicking a link with this design) 
+
+To ensure that the `<Footer>` is consistent on every page the `<Nav>` + `<Component>` is contained in a page container and the `<Footer>` is added after *(The code can be seen in src/components/Layout/PageContainer.scss)* The style `.page-container` is calculated based on a scaling calculation and leaves space for the `<Footer>`. If you change the size of the `<Footer>` **YOU MUST** change the amount in the calculation *(100vh means 100% view height)* or you will **DESTROY** the layout on other pages.
+
+### Adding New Components:
+If you are adding new pages or components with their own styling you must remember to add them via `@import` to the `base.scss` file *(located in src/styles/base.scss)* or your styles will not apply.
+
+
 # Warnings
 **File casing**
 Changing the casing on a file will often result in errors on Windows based machines! Be careful when doing this.
@@ -23,11 +50,7 @@ Please do not save `svg` files in assets. Export from figma as small `png`'s. Th
 Only save true vectors as `svg`, never rasters; if you don't know what that is, just save as `png`, no biggie!
 
 ---
-# Notes
-Staging is updated frequently throughout the day.
-Master is updated at the end of the day from staging.
 
----
 # Git flow cheat sheet
 **Push your work to your branch**
 On your branch, you did some work...
