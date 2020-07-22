@@ -1,20 +1,19 @@
 import React from 'react';
 import * as rtl from '@testing-library/react';
 import Login from './Login';
-import { client } from "../../config/apollo";
+import { client } from '../../config/apollo';
 import '@testing-library/jest-dom';
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { render, unmountComponentAtNode } from 'react-dom';
+import { act } from 'react-dom/test-utils';
 import { BrowserRouter as Router, withRouter } from 'react-router-dom';
 import { ApolloProvider, withApollo } from 'react-apollo';
 import { getByText, fireEvent } from '@testing-library/react';
-
 
 let container = null;
 
 beforeEach(() => {
 	// setup a DOM element as a render target
-	container = document.createElement("div");
+	container = document.createElement('div');
 	// container *must* be attached to document so events work correctly.
 	document.body.appendChild(container);
 });
@@ -24,25 +23,23 @@ afterEach(() => {
 	unmountComponentAtNode(container);
 	container.remove();
 	container = null;
-	rtl.cleanup
+	rtl.cleanup;
 });
-
 
 test('Renders text correctly', () => {
 	act(() => {
 		render(
-		<Router>
-			<ApolloProvider client={client}>
-				<Login />
-			</ApolloProvider>
-		</Router>, container
-	);
-	})
+			<Router>
+				<ApolloProvider client={client}>
+					<Login />
+				</ApolloProvider>
+			</Router>,
+			container,
+		);
+	});
 
-	expect(container).toHaveTextContent('Welcome Back!')
+	expect(container).toHaveTextContent('Welcome Back!');
 });
-
-
 
 it("checks button's content", () => {
 	const onChange = jest.fn();
@@ -52,57 +49,56 @@ it("checks button's content", () => {
 				<ApolloProvider client={client}>
 					<Login />
 				</ApolloProvider>
-			</Router>, container);
+			</Router>,
+			container,
+		);
 	});
 
 	// get ahold of the button element, and trigger some clicks on it
-	const button = document.querySelector("[data-testid=toggle]");
+	const button = document.querySelector('[data-testid=toggle]');
 
 	act(() => {
-		button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+		button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
 	});
 
 	expect(button).toHaveTextContent('Log In');
+});
 
-})
-
-
-it("checks placeholder text", () => {
+it('checks placeholder text', () => {
 	act(() => {
 		render(
 			<Router>
 				<ApolloProvider client={client}>
 					<Login />
 				</ApolloProvider>
-			</Router>, container);
+			</Router>,
+			container,
+		);
 	});
 
-	
-	const input = document.querySelector("[data-testid=email]");
-	
-	expect(input.hasAttribute("placeholder")).toEqual(true);
+	const input = document.querySelector('[data-testid=email]');
 
-})
+	expect(input.hasAttribute('placeholder')).toEqual(true);
+});
 
-it("changes value when clicked", async () => {
+it('changes value when clicked', async () => {
 	act(() => {
 		render(
 			<Router>
 				<ApolloProvider client={client}>
 					<Login />
 				</ApolloProvider>
-			</Router>, container);
+			</Router>,
+			container,
+		);
 	});
 
-	const h5 = document.querySelector("[data-testid=h5]");
-	 
-	expect(h5).toHaveTextContent("Sign In With Facebook")
+	const h5 = document.querySelector('[data-testid=h5]');
 
-	
+	expect(h5).toHaveTextContent('Sign In With Facebook');
+});
 
-})
-
-it("checks input for password", async () => {
+it('checks input for password', async () => {
 	const handleChanges = jest.fn();
 	act(() => {
 		render(
@@ -110,28 +106,29 @@ it("checks input for password", async () => {
 				<ApolloProvider handleChanges={handleChanges} client={client}>
 					<Login />
 				</ApolloProvider>
-			</Router>, container);
+			</Router>,
+			container,
+		);
 	});
 
 	// get ahold of the button element, and trigger some clicks on it
-	const password = document.querySelector("[data-testid=password]");
+	const password = document.querySelector('[data-testid=password]');
 
 	act(() => {
-		fireEvent.change(password,  { target: { value: 'hello' } })
+		fireEvent.change(password, { target: { value: 'hello' } });
 	});
-	expect(password).toHaveValue('hello')
-	expect(password.hasAttribute("placeholder")).toBeTruthy()
-  
+	expect(password).toHaveValue('hello');
+	expect(password.hasAttribute('placeholder')).toBeTruthy();
+
 	// fireEvent.change(getByText(password), {
 	// 	target: {
 	// 	  text: new Text('hello', { type: 'string' })
 	// },
 
 	expect(handleChanges).toHaveBeenCalledTimes(0);
+});
 
-})
-
-it("go back", async () => {
+it('go back', async () => {
 	const goBack = jest.fn();
 	act(() => {
 		render(
@@ -139,16 +136,17 @@ it("go back", async () => {
 				<ApolloProvider goBack={goBack} client={client}>
 					<Login />
 				</ApolloProvider>
-			</Router>, container);
+			</Router>,
+			container,
+		);
 	});
 
 	// get ahold of the button element, and trigger some clicks on it
-	const arrow = document.querySelector("[data-testid=backArrow]");
+	const arrow = document.querySelector('[data-testid=backArrow]');
 
 	act(() => {
 		fireEvent.click(arrow);
 	});
-  
-	expect(goBack).toHaveBeenCalledTimes(0)
 
-})
+	expect(goBack).toHaveBeenCalledTimes(0);
+});
