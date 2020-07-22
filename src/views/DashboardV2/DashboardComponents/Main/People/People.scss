@@ -1,10 +1,8 @@
-
-
 .people-header {
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.4rem;
-	font-family: "Roboto";
+	font-family: 'Roboto';
 	text-transform: uppercase;
 	color: $mirage;
 	text-align: left;
@@ -13,7 +11,7 @@
 		width: 180px;
 		min-width: 180px;
 		max-width: 180px;
-	} 
+	}
 	.name {
 		width: 25%;
 	}
@@ -27,17 +25,65 @@
 		width: 18%;
 	}
 }
+// buttons for applicants
+.people-profile {
+	.email {
+		// aligns the email with the name and buttons.- MW
+		padding-top: 26px;
+	}
 
-
+	.btn-status {
+		@include btn-main($bg-color: $chillFi-purple, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+		// leave btn-main above cascade of rules that modify it below -MW
+		padding: 0.25rem;
+		border-width: 1px;
+		border-radius: 0.5rem;
+		margin-bottom: 5px;
+		&:hover {
+			border-width: 1px;
+		}
+	}
+	.btn-decline {
+		@include btn-main($bg-color: $ruby-enchantment, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+		// leave btn-main above cascade of rules that modify it below -MW
+		padding: 0.25rem;
+		border-width: 1px;
+		border-radius: 0.5rem;
+		margin-bottom: 5px;
+		&:hover {
+			border-width: 1px;
+		}
+	}
+	.person-status {
+		// Added so you can have the decline status showup above the name. D.W.
+		margin-bottom: 20px;
+		font-size: 1.2rem;
+	}
+	.btn-sideways {
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+		width: 100%;
+	}
+}
 .people-card-container {
-	width: 100%;
+	width: 35%;
 	display: flex;
 	justify-content: space-between;
+	background-color: #ededef;
+	padding: 1%;
+	@media(max-width: "700px") {
+		width: 50%;
+	}
+	@media(max-width: "500px") {
+		width: 75%;
+	}
 	.people-body {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
+		flex-direction: column;
 		.people-img-container {
 			width: 120px;
 			min-width: 120px;
@@ -55,35 +101,42 @@
 		.people-profile.name {
 			width: 25%;
 			padding: 0 20px 0 0;
+			height: 100%; // Added so you can have the decline status showup above the name. D.W.
 			h5 {
 				margin-bottom: 10px;
 			}
 			p {
-				font-family: "Roboto";
+				font-family: 'Roboto';
 				font-size: 1.4rem;
 				font-weight: lighter;
 			}
 		}
 		.people-profile.contact {
-			width: 25%;
-			justify-content: flex-start;
-			text-align: left;
+		    width: 100%;
+				p {
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				margin: 2% 0;
+				}
 		}
 		.people-profile.address {
 			width: 30%;
 			min-width: 130px;
 			justify-content: flex-start;
 			text-align: left;
+			p {
+				margin: 2% 0;
+			}
 		}
 		.people-profile.assign {
-			width: 20%;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-end;
-			height: 100%;
-			justify-content: center;
+		
 			p {
 				line-height: 1.5;
+				margin: 2% 0;
+			}
+			h5 {
+				margin: 2% 0;
 			}
 		}
 		.people-profile.verified {
@@ -95,10 +148,6 @@
 	}
 }
 
-
-
-
-
 .dark-mode {
 	.people-card-container {
 		background-color: $bleached-black;
@@ -106,5 +155,39 @@
 			color: inherit;
 		}
 	}
+	.people-profile {
+		.btn-status {
+			@include btn-main($bg-color: $police-blue, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+			// leave btn-main above cascade of rules that modify it below this comment -MW
+			padding: 0.25rem;
+			border-width: 1px;
+			border-radius: 0.5rem;
+			margin-bottom: 5px;
 
+			&:hover {
+				border-width: 1px;
+				background-color: $snow-white;
+				color: $police-blue;
+			}
+			// .people-status{
+			// 	color:
+			// }
+		}
+		.btn-decline {
+			@include btn-main($bg-color: $ruby-enchantment, $color: $snow-white, $margin: 0 auto, $width: 10rem);
+			// leave btn-main above cascade of rules that modify it below this comment -MW
+			padding: 0.25rem;
+			border-width: 1px;
+			border-radius: 0.5rem;
+			margin-bottom: 5px;
+			&:hover {
+				border-width: 1px;
+				background-color: $snow-white;
+				color: $ruby-enchantment;
+			}
+			// .people-status{
+			// 	color:
+			// }
+		}
+	}
 }

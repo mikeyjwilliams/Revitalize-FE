@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { formatMoney, addUpDonations, donationCount } from "../../../../helpers/helpers";
-import ProgressBar from "../../../../components/ProgressBar/ProgressBar";
-import { useQuery } from "@apollo/react-hooks";
-import { GET_USER } from "../../../../graphql/queries/Users";
+import { formatMoney, addUpDonations, donationCount } from '../../../../helpers/helpers';
+import ProgressBar from '../../../../components/ProgressBar/ProgressBar';
+import { useQuery } from '@apollo/react-hooks';
+import { GET_USER } from '../../../../graphql/queries/Users';
 
 const Donate = props => {
 	const raised = addUpDonations(props.projectData.donations);
@@ -40,7 +40,7 @@ const Donate = props => {
 					<ProgressBar progress={raised} startingPoint={budgetProgressBar} />
 				</div>
 				<p className="donatorCount">{totalNumberOfDonations}</p>
-				<p className="donorText">{`${totalNumberOfDonations === 1 ? 'Donor' : 'Donors'}`}</p>
+				<p className="donorText text--color">{`${totalNumberOfDonations === 1 ? 'Donor' : 'Donors'}`}</p>
 				<div className="donationButtons">
 					{props.isProjectCreator ? (
 						<Link to="/dashboard">
@@ -65,7 +65,7 @@ const Donate = props => {
 				{!props.isProjectCreator && (
 					<div className="mid-line-container">
 						<div className="mid-line"></div>
-						<p>or</p>
+						<p className="mid-line--text">or</p>
 						<div className="mid-line"></div>
 					</div>
 				)}

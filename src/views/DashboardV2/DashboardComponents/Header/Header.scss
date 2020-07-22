@@ -1,13 +1,12 @@
 
 
-
-// .section.dashboard-header {}
-
-
 .dashboard .dashboard-body .dashboard-header.section {
 	width: 100%;
 	display: flex;
 	margin-bottom: 10px;
+	@media(max-width:"700px") {
+		width: 100%;
+	}
 	.dashboard-section-inner-container.show-more {
 		border: none;
 	}
@@ -29,15 +28,30 @@
 				align-items: flex-start;
 				.project-status {
 					background-color: $franks-grey;
-					color: $mirage;
+					color: lighten($dark-grey, 17%);
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					padding: 0 20px;
 					height: 40px;
 					border-radius: 5px;
-					font-size: 1.8rem;
+					font-size: 1.3rem;
 					margin-right: 10px;
+					@media(max-width: "755px") {
+						padding-top: 3rem;
+						padding-bottom: 3rem;
+						text-align: center;
+					}
+					@media(max-width: "700px") {
+						padding-top: 0;
+						padding-bottom: 0;
+
+					}
+					@media(max-width: "535px") {
+						padding-top: 3rem;
+						padding-bottom: 3rem;
+						text-align: center;
+					}
 				}
 				.project-status.started {
 					color: $live-fg;
@@ -53,8 +67,11 @@
 				display: flex;
 				align-items: center;
 				justify-content: right;
-				font-size: 1.8rem;
+				font-size: 2rem;
 				margin: 0 0 auto 0;
+				.icon-trash{
+					font-size: 2.7rem;
+				}
 				.project-settings-dropdown {
 					@include subtleBoxShadow;
 					color: $bleached-black;
@@ -84,13 +101,13 @@
 				}
 			}
 		}
-	
+
 		.add-tasks {
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
 			margin-right: 2rem;
-	
+
 			svg {
 				height: 35px;
 				width: 35px;
@@ -107,17 +124,17 @@
 					transition-duration: 0.5s;
 				}
 			}
-	
+
 			.add-task-title {
 				margin-right: 1rem;
 				font-size: 1.6rem;
-				color: $mirage;
+				color: darken($mirage, 27%);
 			}
 			.add-task-button {
 				font-size: 2.8rem;
 				color: $chillFi-purple;
 			}
-	
+
 			img {
 				width: 80%;
 				&:hover {
@@ -128,19 +145,49 @@
 		.header-top-right {
 			display: flex;
 		}
-	
+
+		.header-top-center{
+			color: lighten($darkness, 17%);
+			font-size: 1.6rem;
+			display: flex;
+			flex-direction: column;
+			align-items:flex-start;
+			width:80%;
+			margin-left: 5%;
+
+			.header-project-title{
+				color: $darkness;
+				font-size: 3.2rem;
+				margin-bottom: 4px;
+
+				svg {
+					color: $chillFi-purple;
+					font-size: 1rem;
+					margin-left: -1rem;
+				}
+			}
+			.header-project-description{
+				color: lighten($darkness, 17%);
+				font-size: 1.2rem;
+				max-width: 970px;
+				width: 100%;
+				line-height: 1.34;
+				letter-spacing: normal;
+				margin-bottom: 40px;
+			}
+		}
 		.header-middle {
 			display: flex;
 			flex-direction: column;
 			.header-middle-geo {
-				color: $mirage;
+				color: lighten($dark-grey, 17%);
 				font-size: 1.6rem;
 			}
 			.header-middle-title {
 				color: $machiavellian;
 				font-size: 3.2rem;
 				margin-bottom: 16px;
-	
+
 				svg {
 					color: $chillFi-purple;
 					font-size: 1rem;
@@ -148,7 +195,7 @@
 				}
 			}
 			.header-middle-description {
-				color: $mirage;
+				color: lighten($dark-grey, 17%);
 				font-size: 2rem;
 				max-width: 970px;
 				width: 100%;
@@ -157,14 +204,13 @@
 				margin-bottom: 40px;
 			}
 		}
-	
+
 		.header-bottom {
 			display: flex;
 			justify-content: space-between;
 			.bottom-left {
 				display: flex;
 				justify-content: flex-start;
-				// width: 75%;
 				.due-date {
 					background-color: $franks-grey;
 					color: $machiavellian;
@@ -187,6 +233,8 @@
 					justify-content: center;
 					align-items: center;
 					margin-bottom: -15px;
+					position: absolute;
+					left:50%;
 					&:active {
 						transform: translate(0px, 7px);
 						opacity: 0.15;
@@ -199,14 +247,14 @@
 							transition-duration: 0.5s;
 						}
 					}
-					.bottom-button.manage, .bottom-button.close {
+					.bottom-button.manage,
+					.bottom-button.close {
 						color: $mirage;
 						font-size: 1.2rem;
-						font-family: "Roboto";
+						font-family: 'Roboto';
 						text-transform: uppercase;
 						padding-top: 10px;
 						line-height: 1;
-						
 					}
 					.bottom-button.arrow {
 						font-size: 3rem;
@@ -217,11 +265,6 @@
 							color: lighten($chillFi-purple, 25%);
 							transition-duration: 0.5s;
 						}
-						// &:active {
-						// 	// transform: translate(0px, 7px);
-						// 	// opacity: 0.1;
-						// 	// transition-duration: 0.2s;
-						// }
 					}
 				}
 			}
@@ -234,6 +277,12 @@
 					display: flex;
 					justify-content: flex-end;
 					width: 100%;
+					@media(max-width: "460px") {
+						width: 90%;
+					}
+					@media(max-width: "430px") {
+						width: 70%;
+					}
 					.dashboard-picture-icons {
 						border-radius: 100%;
 					}
@@ -274,9 +323,6 @@
 			transition-duration: 0.2s;
 		}
 	}
-	// button {
-	// 	margin: 1rem;
-	// }
 }
 
 .dark-mode {
@@ -290,9 +336,25 @@
 				color: $notlive-fg;
 				background-color: rgba($notlive-bg, 0.5);
 			}
+			.header-top-center{
+				color:$static-grey;
+				.header-project-title{
+					color:$snow-white;
+
+				}
+				.header-project-description{
+						color:$static-grey;
+				}
+			}
+		}
+		.count {
+			color: $static-grey;
 		}
 
 		.add-tasks {
+			.add-task-title {
+				color: $static-grey;
+			}
 			.create-task-button {
 				color: $snow-white;
 			}

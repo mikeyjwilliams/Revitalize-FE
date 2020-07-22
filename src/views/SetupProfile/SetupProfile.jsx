@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { withRouter } from "react-router-dom";
 import { MdArrowBack, MdClose } from "react-icons/md";
-import { FaMoon } from "react-icons/fa";
+
 import { useMutation, useLazyQuery } from "@apollo/react-hooks";
 import { UPDATE_USER_PROFILE } from "../../graphql/mutations";
 import { GET_USER } from "../../graphql/queries";
-import Toggle from "react-toggle";
+
 import "react-toggle/style.css"
 
-import Nav from "../../components/Layout/Nav";
-import Footer from "../../components/Layout/Footer";
+// import Nav from "../../components/Layout/Nav";
+// import Footer from "../../components/Layout/Footer";
 
 
 const SetupProfile = props => {
     const [ updateUserProfile ] = useMutation(UPDATE_USER_PROFILE);
-    const [ , { loading, data } ] = useLazyQuery(GET_USER);
+    const [ , { loading } ] = useLazyQuery(GET_USER);
     const [ profileData, setProfileData ] = useState({
         firstName: "",
         lastName: "",
@@ -28,10 +28,7 @@ const SetupProfile = props => {
         zip: "",
         country: "USA",
     });
-    // const [darkModeState, setDarkMode] = useState(JSON.parse(localStorage.getItem('dark-mode')));
-    // if(darkModeState === null){
-    //   setDarkMode(false);
-    // }
+
 
 
     const handleChanges = event => {
@@ -55,40 +52,16 @@ const SetupProfile = props => {
 		}
     };
 
-    // const toggleDarkMode = () => {
-    //   console.log("settings toggle dark mode value before:", darkModeState);
-  	// 	setDarkMode(!darkModeState);
-  	// 	localStorage.setItem('dark-mode', !darkModeState);
-    //   if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
-  	// 		document.querySelector('body').classList.add('dark-mode');
-  	// 	} else {
-  	// 		document.querySelector('body').classList.remove('dark-mode');
-  	// 	}
-    //   console.log("settings toggle dark mode value after:", darkModeState);
-    // };
-
-  //   useEffect(() => {
-	// 	if (JSON.parse(localStorage.getItem('dark-mode')) === true) {
-	// 		document.querySelector('body').classList.add('dark-mode');
-	// 	} else {
-	// 		document.querySelector('body').classList.remove('dark-mode');
-	// 	}
-	// }, [darkModeState]);
 
     if (loading) return <h1>Loading</h1>
     if (!localStorage.getItem("token")) props.history.push("/");
     // if (data) console.log(data, profileData);
-    console.log(data, profileData);
+    // console.log(data, profileData);
 
     return (
         <>
-            {props.destination === "settings" ? (
-                <Nav />
-            ) : null}
 
-            <section
-                className={`setup-profile-container ${props.destination === "settings" ? "settings-view" : ""}`}
-            >
+            <section className={`setup-profile-container ${props.destination === "settings" ? "settings-view" : ""}`}>
                 <div className="setup-profile-container-card">
 
                     <div className="setup-profile-interaction-overlay">
@@ -141,13 +114,7 @@ const SetupProfile = props => {
                                         value={profileData.email}
                                         onChange={handleChanges}
                                     />
-                                    {/* <input
-                                        name="phone"
-                                        type="number"
-                                        placeholder="Phone"
-                                        value={profileData.phone}
-                                        onChange={handleChanges}
-                                    /> */}
+
                                     {props.destination === "settings" ? null : (
                                         <div className="setup-profile-button-container">
                                             <button onClick={formForward}>Next</button>
@@ -210,9 +177,7 @@ const SetupProfile = props => {
                     ) : null}
                 </div>
             </section>
-            {props.destination === "settings" ? (
-                <Footer />
-            ) : null}
+
         </>
     );
 };

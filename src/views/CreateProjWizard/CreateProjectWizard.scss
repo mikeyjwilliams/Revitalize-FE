@@ -2,229 +2,380 @@
 @import './Form2/Form2.scss';
 @import './Form3/Form3.scss';
 
+.errorText {
+	color: red;
+}
 
-	.errorText {
+.errorBorder {
+	color: red;
+	border-radius: 5px;
+	border: 1px solid red !important;
+
+	&::placeholder {
 		color: red;
 	}
+}
 
-	.errorBorder {
-		color: red;
-		border-radius: 5px;
-		border: 1px solid red !important;
+.create-project {
 
-		&::placeholder {
-			color: red;
+	display: flex;
+	// justify-content: space-around;
+
+	height: 935px;
+	max-width: 80%;
+
+	position: relative;
+	z-index: 5;
+	margin: 20px 10%;
+	@media #{$tablet} {
+		width: 100%;
+		max-width: 100%;
+		height:850px;
+		margin:0;
+		@media #{$mobile} {
+			height: 950px;
+
 		}
 	}
 
-	.create-project {
+
+.form-plus-quote-container{
+	width: 100%;
+	display: flex;
+	border-right: 4px solid $erudite-purple;
+	border-bottom: 2px solid	$erudite-purple;
+	@media #{$tablet} {
+		border: 0 solid white;
+		width:100%;
+		height: 100%;
+		margin: 0;
+		// margin-top: 20px;
+	}
+	.quote {
+		background-color: $elans-grey;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
 		align-items: center;
-		padding: 0;
-		margin-bottom: 50px;
-		min-height: 935px;
-		.form-plus-quote-container {
-			@include cardBoxShadow;
-			background-color: $chillFi-purple;
-			display: flex;
-			justify-content: space-around;
+		text-align: center;
+		width: 30%;
+		padding: 0 60px;
+		white-space: nowrap;
+
+		h5 {
+			height: auto;
+			margin: 340px 0 20px 0;
+			text-align: center;
+			letter-spacing: 0.05em;
+			color: $black-void;
+			font-style: italic;
+			font-weight: bold;
+			font-size: 1.4em;
+
+		}
+		p {
+			height: auto;
+			padding-bottom: 120px;
+			font-size: 1.3rem;
+			color: $bleached-black;
+			font-style: italic;
+			font-weight: lighter;
+		}
+		@media #{$tablet} {
+			display: none;
+			width: 0;
+			margin:0;
+			padding: 0;
+		}
+	}
+	.ui-section {
+		background-color: $snow-white;
+		width: 70%;
+
+		@media #{$tablet} {
 			width: 100%;
-			height: 935px;
-			max-width: 1200px;
-			position: relative;
-			z-index: 5;
+			height: 100%;
+		}
+		@media #{$mobile} {
+			width: 100%;
+			margin:0;
+		}
+		.title {
+			display: block;
+			margin: 40px auto 40px 8%;
 			@media #{$tablet} {
-				width: 100%;
-				margin-left: unset;
+				margin:auto;
 			}
-
-			q.quote {
+		}
+		.progress-tracker {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			min-width: 100%;
+			.tracker {
 				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-				width: 35%;
-				padding: 0 60px;
-				white-space: nowrap;
-				h5 {
-					height: auto;
-					margin: auto 0;
-					text-align: center;
-					letter-spacing: 0.06em;
-					color: $elans-grey;
-				}
-				p {
-					height: auto;
-					padding-bottom: 120px;
-					font-size: 1.8rem;
-					color: $elans-grey;
-				}
+				justify-content: space-around;
+				width: 50%;
+				margin: 30px auto 45px 8%;
 				@media #{$tablet} {
-					display: none;
+
+					margin:30px auto 50px auto;
+				}
+				.step {
+					border-radius: 5px;
+					background: $chillFi-purple;
+					width: 32%;
+					height: 10px;
+					&.active {
+						background-color: darken($chillFi-purple, 25%);
+					}
+				}
+
+			}
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			margin: 0 8% 0 8%;
+			// height: 500px;
+			// @media #{$tablet} {
+			// 	width: 100%;
+			// }
+			@media #{$tablet} {
+				width:80%;
+				margin:0 auto;
+			}
+			h2 {
+				// margin: 3% auto auto 0;
+
+				height: auto;
+				// font-size: 18px;
+				line-height: 24px;
+				letter-spacing: 0.06em;
+				@media #{$mobile}{
+					font-size: 1.4rem;
 				}
 			}
-			.ui-section {
-				background-color: $snow-white;
-				width: 65%;
+			input {
+				border: 1px solid $mirage;
+				margin: 6px 0 6px 0;
+				width: 80%;
+				@media #{$mobile}{
+					font-size: 1.4rem;
+				}
+			}
+			button {
+				@include buttonStyler($chillFi-purple, $snow-white, none);
+				border-radius: 3px;
+				align-self: flex-end;
+			}
+			select,
+			option {
+				font-family: 'Roboto';
+				padding: 0 15px;
+				width: 200px;
+			}
 
-				@media #{$tablet} {
-					width: 100%;
+			.form-navigation {
+				display: flex;
+				height: 100px;
+				justify-content: space-between;
+				.prev-step {
+					order: -1;
+					margin: 20px;
+					@media #{$tablet}{
+						margin-left: 5%;
+					}
 				}
-				@media #{$mobile} {
-					width: 100%;
-				}
-				.title {
-					display: block;
-					margin: 40px auto 40px 8%;
-				}
-				.progress-tracker {
-					display: flex;
-					flex-direction: column;
-					justify-content: space-around;
-					min-width: 100%;
-					.tracker {
-						display: flex;
-						justify-content: space-around;
-						width: 50%;
-						margin: 30px auto 45px 8%;
-						.step {
-							border-radius: 5px;
-							background: #ecebf3;
-							width: 32%;
-							height: 10px;
-						}
-						.active {
-							background-color: $chillFi-purple;
+				.prev-step2 {
+					//added for debug purposes
+					order: -1;
+					margin: 20px;
+					position: relative;
+					top: 28px;
+					@media #{$tablet}{
+						left:15%;
+						@media #{$mobile} {
+							left:-10%;
+							@media #{$mobile-small} {
+								top:130px;
+								left: 13%;
+							}
 						}
 					}
 				}
-				form {
-					display: flex;
-					flex-direction: column;
-					margin: 0 8% 0 8%;
-					// height: 500px;
+				.prev-step3 {
+					//added for debug purposes
+					order: -1;
+					margin: 20px;
+					position: relative;
+					// top: 100px;
+					@media #{$tablet}{
+						left:15%;
+						@media #{$mobile} {
+							left:-11%;
+							@media #{$mobile-small} {
+								top:100px;
+								left: 13%;
+							}
+						}
+					}
+				}
+				// ----------------
+				// controls the color of the buttons
+				.prev-step,
+				.next-step {
+					margin: 20px;
+					border: 2px solid $snow-white;
+					background-color: $chillFi-purple;
+					color: $snow-white;
+					&:hover{
+						background-color: $snow-white;
+						border-color: $chillFi-purple;
+						color: $chillFi-purple;
+					}
+
+
+				}
+				.next-step{
 					@media #{$tablet} {
-						width: 60%;
-					}
-					@media #{$mobile} {
-						width: 80%;
-					}
-					h2 {
-						// margin: 3% auto auto 0;
-
-						height: auto;
-						// font-size: 18px;
-						line-height: 24px;
-						letter-spacing: 0.06em;
-					}
-					input {
-						border: 1px solid $mirage;
-						margin: 6px 0 6px 0;
-
-						&:focus {
-							color: $chillFi-purple;
-							border: 1px solid $chillFi-purple;
+						left: -15%;
+						@media #{$mobile} {
+							left: -11%;
 						}
 					}
-					button {
-						@include buttonStyler($chillFi-purple, $snow-white, none);
-						border-radius: 3px;
-						align-self: flex-end;
-					}
-					select,
-					option {
-						font-family: 'Roboto';
-						padding: 0 15px;
-						width: 200px;
-
-						&:focus {
-							border: 1px solid $chillFi-purple;
-							color: $chillFi-purple;
-							outline: none;
+				}
+				.next-step2 {
+					//added for debug purposes
+					margin: 20px;
+					position: relative;
+					top: 28px;
+					@media #{$tablet} {
+						left: -15%;
+						@media #{$mobile} {
+							left: -14%;
+							@media #{$mobile-small} {
+								left: -61%;
+							}
 						}
 					}
 
-					.form-navigation {
-						display: flex;
-						height:100px;
-						justify-content: space-between;
-						.prev-step {
-							order: -1;
-							margin:20px;
-						}
-						.prev-step2 { //added for debug purposes
-							order: -1;
-							margin:20px;
-							position: relative;
-							top: 100px;
-						}
-						.next-step{
-							margin:20px;
-						}
-						.next-step2{ //added for debug purposes
-							margin:20px;
-							position: relative;
-							top: 100px;
-						}
-						.next-step3{ //added for debug purposes
-							margin:20px;
-							position: relative;
-							top: 40px;
-						}
-						button {
-							width: unset;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-						}
-						button.submit {
-							background-color: $mutant-turtle;
-							margin:20px;
+				}
+				.next-step3 {
+					//added for debug purposes
+					margin: 20px;
+					position: relative;
+					top: 40px;
+					@media #{$tablet} {
+						left: -15%;
+						@media #{$mobile} {
+							left: -14%;
+							@media #{$mobile-small} {
+								left: -61%;
+							}
 						}
 					}
-					.form-navigation.first-step {
-						justify-content: flex-end;
+				}
+				button {
+					width: unset;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				button.submit {
+					// background-color: $mutant-turtle;
+					margin: 20px;
+					background-color: darken($chillFi-purple, 15%);
+					&:hover{
+						color:$snow-white;
+						background-color: darken($chillFi-purple, 35%);
 					}
-					.description {
-						height: 11rem;
+					@media #{$tablet} {
+						position: relative;
+						left: -15%;
+						@media #{$mobile} {
+							left: -10%;
+							@media #{$mobile-small} {
+								left: -59%;
+							}
+						}
 					}
 
-					.start-date {
-						font-family: 'futura-pt';
-					}
-					textarea {
-						border: 1px solid $mirage;
-						max-width: 95%;
+				}
+			}
+			.form-navigation.first-step {
+				justify-content: flex-end;
+			}
+			.description {
+				height: 11rem;
+			}
 
-						&:focus {
-							color: $chillFi-purple;
-							border: 1px solid $chillFi-purple;
-						}
-					}
+			.start-date {
+				font-family: 'futura-pt';
+			}
+			textarea {
+				border: 1px solid $mirage;
+				max-width: 90%;
+				@media #{$tablet} {
+					max-width: 80%;
 				}
 			}
 		}
+		}
 	}
+}
 
 
 .dark-mode {
-	// .title{
-	// 	color: $dark-blue-gray;
-	// }
-	.create-project-wizard-container {
-		.create-project {
 
-			.form-plus-quote-container {
-				.ui-section {
-					background-color: $darkness;
+	.form-plus-quote-container {
+		border-color: $maastricht-blue;
+		.quote{
+			background-color: $darkness2;
+			h5, p{
+				color: $snow-white;
+			}
+		}
+		.ui-section {
+			background-color: $darkness;
+
+			.progress-tracker {
+
+				.tracker {
+
+					.step {
+
+						background: $maastricht-blue;
+
+						&.active {
+							background-color: darken($maastricht-blue, 20%);
+						}
+					}
+
+				}
+			}
+			form{
+				.form-navigation{
+
+					.prev-step,
+					.next-step, .next-step2, .next-step3 {
+						// @include btn-main($bg-color: $maastricht-blue, $color: $snow-white, $margin: 20px);
+						background-color: $maastricht-blue;
+						color: $snow-white;
+						&:hover{
+							background-color: $snow-white;
+							border-color: $maastricht-blue;
+							color: $maastricht-blue;
+						}
+					}
+					button.submit {
+						background-color: darken($maastricht-blue, 15%);
+						&:hover{
+							background-color: darken($maastricht-blue, 35%);
+						}
+					}
 				}
 			}
 		}
-	}
-	.form-plus-quote-container {
-		.ui-section {
-			background-color: $bleached-black;
-		}
+
 	}
 }

@@ -1,6 +1,7 @@
 @import '../../../styles/variables';
 
 .squad-container {
+	// background: red;
 	max-width: 1920px;
 	width: 100%;
 	margin-bottom: 10rem;
@@ -48,7 +49,7 @@
 			display: grid;
 			grid-gap: 0;
 			grid-template-columns: repeat(3, 1fr);
-			grid-auto-rows: minmax(0, 4.83%);
+			// grid-auto-rows: minmax(0, 4.83%);
 			grid-template-areas:
 				'anthony	        .           .'
 				'anthony        kerry         .'
@@ -113,6 +114,7 @@
 			.person {
 				position: relative;
 				width: 100%;
+				grid-area: auto;
 
 				@media #{$mobile} {
 					width: 100%;

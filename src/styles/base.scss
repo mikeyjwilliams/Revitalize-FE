@@ -14,10 +14,7 @@
 @import '../views/Login/Login.scss';
 @import '../views/Register/Register.scss';
 
-@import '../views/ProjectsHome/CTAplusTrending/CTAPlusTrades.scss';
-@import '../views/ProjectsHome/SubscribeCTA/SubscribeCTA.scss';
-@import '../views/ProjectsHome/RecomendedPlusStories/RecommendedPlusStories.scss';
-@import '../views/ProjectsHome/ProjectsHome.scss';
+
 @import '../views/ProjectsHome/ProjectsHome.scss';
 @import '../views/ProjectsHome/CTAplusTrending/CTAPlusTrades.scss';
 @import '../views/ProjectsHome/SubscribeCTA/SubscribeCTA.scss';
@@ -41,6 +38,7 @@
 @import '../components/Layout/Footer.scss';
 @import '../components/Layout/Nav.scss';
 @import '../components/Layout/PageContainer.scss';
+@import '../views/FAQ/FAQ.scss';
 
 // Mapbox
 @import '../../node_modules/mapbox-gl/dist/mapbox-gl.css';
@@ -61,6 +59,3 @@
 
 // Loading spinner
 @import '../components/LoadingSpinner/LoadingSpinner.scss';
-
-// Initial Avatar
-@import '../components/InitialAvatar/InitialAvatar.scss';

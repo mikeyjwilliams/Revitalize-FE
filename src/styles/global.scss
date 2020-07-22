@@ -1,9 +1,11 @@
 html {
 	font-size: 62.5%;
+	font-family: $default-font;
 }
 
 body {
-	font-family: 'futura-pt';
+	background-color: $franks-grey;
+	font-family: $default-font;
 	button:focus {
 		outline: none;
 	}
@@ -15,10 +17,14 @@ body {
 }
 
 a {
-	text-decoration: none;
 	color: inherit;
 	user-select: none;
 	cursor: pointer;
+	&:focus-visible {
+		outline: dotted;
+		outline-color: $luigi;
+		border-color: $luigi;
+	}
 }
 
 i {
@@ -26,7 +32,7 @@ i {
 }
 
 p {
-	font-family: 'futura-pt';
+	font-family: $primary-font;
 	font-size: 1.8rem;
 }
 
@@ -35,31 +41,31 @@ b {
 }
 
 h1 {
-	font-family: 'futura-pt';
+	font-family: $primary-font;
 	// font-weight: bold;
 	font-size: 4.8rem;
 }
 
 h2 {
-	font-family: 'futura-pt';
+	font-family: $primary-font;
 	// font-weight: bold;
 	font-size: 3.8rem;
 }
 
 h3 {
-	font-family: 'futura-pt';
+	font-family: $primary-font;
 	// font-weight: bold;
 	font-size: 2.4rem;
 }
 
 h4 {
-	font-family: 'futura-pt';
+	font-family: $primary-font;
 	// font-weight: bold;
 	font-size: 2.2rem;
 }
 
 h5 {
-	font-family: 'futura-pt';
+	font-family: $primary-font;
 	// font-weight: bold;
 	font-size: 2rem;
 }
@@ -70,7 +76,7 @@ h6 {
 }
 
 input {
-	font-family: 'Roboto';
+	font-family: $secondary-font;
 	font-size: 1.6rem;
 	padding: 10px 15px;
 	outline: none;
@@ -81,7 +87,7 @@ input {
 }
 
 textarea {
-	font-family: 'Roboto';
+	font-family: $secondary-font;
 	font-size: 1.6rem;
 	padding: 10px 15px;
 	margin: 10px 0 0;
@@ -91,7 +97,7 @@ textarea {
 }
 
 select {
-	font-family: 'Roboto';
+	font-family: $secondary-font;
 	font-size: 1.6rem;
 	border-radius: 5px;
 	border: 1px solid $mirage;

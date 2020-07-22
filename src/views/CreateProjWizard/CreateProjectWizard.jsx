@@ -5,8 +5,6 @@ import moment from 'moment';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_PROJECT } from '../../graphql/mutations/Project';
 
-import Nav from '../../components/Layout/Nav';
-import Footer from '../../components/Layout/Footer';
 import Form1 from './Form1/Form1';
 import Form2 from './Form2/Form2';
 import Form3 from './Form3/Form3';
@@ -74,13 +72,11 @@ const CreateProjectWizard = ({ history }) => {
 	};
 
 	return (
-		<>
-		<div className="page-container">
-			<Nav />
 
-				<div className="create-project">
+
+				<main className="create-project">
 					<div className="form-plus-quote-container">
-						<q className="quote">
+						<div className="quote">
 							<h5>
 								“Yesterday I was clever,
 								<br />
@@ -91,11 +87,11 @@ const CreateProjectWizard = ({ history }) => {
 								so I am changing myself.”
 							</h5>
 							<p>Jalal ad-Din Rumi PERSIAN POET</p>
-						</q>
+						</div>
 
 						<div className="ui-section">
 							<div className="progress-tracker">
-								<h1 className="title">Create Project</h1>
+								<h2 className="title">Create Project</h2>
 								<div className="tracker">
 									<div className={formPosition >= 1 ? `step active` : `step`}></div>
 									<div className={formPosition >= 2 ? `step active` : `step`}></div>
@@ -138,13 +134,10 @@ const CreateProjectWizard = ({ history }) => {
 							) : null}
 						</div>
 					</div>
-				</div>
+				</main>
 
 
-			
-			</div>
-			<Footer />
-		</>
+
 	);
 };
 

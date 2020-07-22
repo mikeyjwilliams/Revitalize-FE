@@ -38,9 +38,9 @@ const CarouselCard = props => {
 	});
 	const [deleteProjectLike] = useMutation(DELETE_PROJECT_LIKE, {
 		update(cache, { data: deleteProjectLike }) {
-			const { recommendedProjects } = cache.readQuery({
-				query: GET_RECOMMENDED_PROJECTS,
-			});
+			// const { recommendedProjects } = cache.readQuery({
+			// 	query: GET_RECOMMENDED_PROJECTS,
+			// });
 			// const recom = recommendedProjects.map(project => {
 			// 	if (project.id === createProjectLike.createProjectLike.project.id) {
 			// 		project.likes = createProjectLike.createProjectLike.project.likes;

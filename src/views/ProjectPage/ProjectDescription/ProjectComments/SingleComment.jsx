@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import InitialAvatar from '../../../../components/InitialAvatar/InitialAvatar'
+import InitialAvatar from '../../../../helpers/InitialAvatar'
 
 const SingleComment = props => {
 	const { each, editCommentMutation, deleteComment, currentUser, settings, bool } = props;
@@ -78,7 +78,7 @@ const SingleComment = props => {
 								<div className="dot"></div>
 								<div className="dot"></div>
 							</div>
-							{eachSetting && 
+							{eachSetting &&
 								<div className="settings-drop-buttons">
 									<button onClick={() => setEditing(true)}>Edit</button>
 									<button onClick={e => deleteComment(e, each.id)}>Delete</button>

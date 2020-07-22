@@ -48,11 +48,14 @@ const Form1 = ({ name, description, handleChanges, setFormPosition, startDate })
 	return (
 		<form onSubmit={nextStep} className="form-1">
 			<div className="form-1-field">
-				<h4>Name</h4>
+				<label htmlFor="projectName">
+					<h3>Name</h3>
+				</label>
 				<input
 					label="Project Name"
 					name="name"
 					type="text"
+					id="projectName"
 					className={`${errors.name && `errorBorder`}`}
 					placeholder="Project Name"
 					value={name}
@@ -65,10 +68,13 @@ const Form1 = ({ name, description, handleChanges, setFormPosition, startDate })
 			</div>
 
 			<div className="form-1-field">
-				<h4>Start Date</h4>
+				<label htmlFor="projectStartDate">
+					<h3>Start Date</h3>
+				</label>
 				<input
 					name="startDate"
 					type="date"
+					id="projectStartDate"
 					className="start-date"
 					value={startDate}
 					onChange={e => {
@@ -80,10 +86,13 @@ const Form1 = ({ name, description, handleChanges, setFormPosition, startDate })
 			</div>
 
 			<div className="form-1-field">
-				<h4>Description</h4>
+				<label htmlFor="projectDescription">
+					<h3>Description</h3>
+				</label>
 				<textarea
 					name="description"
 					type="text"
+					id="projectDescription"
 					className={`description ${errors.description && `errorBorder`}`}
 					placeholder="Project Description"
 					value={description}
@@ -96,7 +105,7 @@ const Form1 = ({ name, description, handleChanges, setFormPosition, startDate })
 			</div>
 
 			<div className="form-navigation first-step">
-				<button className="next-step3">
+				<button className="next-step3 next-step">
 					Next&nbsp;
 					<FaArrowRight />
 				</button>

@@ -29,17 +29,17 @@
 			justify-content: space-between;
 			align-items: center;
 
-			p {
+			.mid-line--text {
+				color: darken($mirage, 100%);
+				opacity: 1;
 				font-size: 1.8rem;
 				line-height: 212.81%;
 				letter-spacing: 0.06em;
-				color: $mirage;
 				margin-top: -5px;
-				opacity: 0.5;
 			}
 
 			.mid-line {
-				border: 1px solid $mirage;
+				border: 1px solid darken($mirage, 25%);
 				transform: rotate(180deg);
 				height: 1px;
 				width: 45%;
@@ -159,12 +159,13 @@
 				line-height: 19px;
 			}
 		}
-
+		.text--color {
+			color: darken($mirage, 20%);
+		}
 		.donorText {
 			font-size: 2rem;
 			line-height: 24px;
 			letter-spacing: 0.06em;
-			color: $mirage;
 
 			@media #{$mobile} {
 				font-size: 1.8rem;
@@ -255,6 +256,7 @@
 		}
 	}
 }
+
 .dark-mode {
 	.donateContainer {
 		box-shadow: none;
