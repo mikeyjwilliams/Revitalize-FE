@@ -13,6 +13,6 @@ describe('Crowdfunding test', () => {
 			</Router>,
 		);
 		const { getByTestId } = wrapper;
-		expect(getByTestId('login')).toHaveTextContent(/create a project/i);
+		expect(getByTestId('login-btn')).toHaveTextContent(/create a project/i);
 	});
 });

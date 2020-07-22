@@ -5,7 +5,6 @@ import Progress1v2 from '../../../assets/LandingPage/Progress1v2.png';
 import Progress2 from '../../../assets/LandingPage/Progress2.png';
 import Progress3 from '../../../assets/LandingPage/Progress3.png';
 
-
 const CrowdFunding = () => {
 	return (
 		<div className="crowdfunding-container">
@@ -20,10 +19,18 @@ const CrowdFunding = () => {
 			</div>
 			<p className="do-you-know">Do you know of a building near you that needs to be Revitalized?</p>
 			<div className="crowdfunding-buttons">
-			{localStorage.getItem("token")
-				? <Link to="/createproject"><button className="create-button"> Create a Project</button></Link>
-				: <Link to="/login"><button className="create-button"> Create a Project</button></Link>
-			}
+				{localStorage.getItem('token') ? (
+					<Link to="/createproject">
+						<button className="create-button"> Create a Project</button>
+					</Link>
+				) : (
+					<Link to="/login">
+						<button className="create-button" data-testid="login-btn">
+							{' '}
+							Create a Project
+						</button>
+					</Link>
+				)}
 			</div>
 		</div>
 	);
